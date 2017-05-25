@@ -1,0 +1,177 @@
+@media only screen and (max-width: 500px) {
+	iframe {
+		width: 100%;
+		max-width: 100%;
+	}	
+	.jumbotron h1 {
+		font-size: 30px;
+	}
+	.size-wrapper {
+		display:none;
+	}
+}
+@media only screen and (min-width: 501px) {
+	iframe {
+		width: 95%;
+		max-width: 95%;
+	}	
+	.jumbotron h1 {
+		font-size: 40px;
+	}
+	.size-wrapper {
+		display:block;
+	}
+
+}
+
+.container:first-child {
+	margin-top: 5%;
+}
+
+body {
+	background-color: lightblue;
+	padding-bottom:0;
+	
+}
+
+.jumbotron h1 {
+	font-family: 'Griffy', cursive;
+	color: #1159D7;
+	text-shadow: 2px 2px 2px black;
+	margin-bottom:5%;
+}
+
+.jumbotron {
+	width: 60%;
+	margin:5% auto;
+}
+
+#bookmark-form {
+	margin-right:5%;
+}
+
+#bookmark-form-button-wrapper {
+	text-align:center;
+	width:100%;
+}
+.alert {
+	display: none;
+} 
+.error {
+	border: 2px solid red;
+}
+#bookmark-icon-area {
+	position:fixed;
+	right:0;
+	z-index:1000;
+}
+
+#bookmark-icon-form .form-group{
+	display: inline-block;
+	display: -moz-inline-stack;
+	height:100px;
+	width: 250px;
+	margin-left: 2%;
+}
+
+#bookmark-icon-form button {
+	margin-left:2%;
+}
+
+.bookmark-icon {
+	cursor:pointer;
+}
+
+#bookmarksResults {
+	overflow-x:hidden;
+}
+
+#button-design {
+	box-shadow:2px 2px 2px black;
+}
+
+#button-design .glyphicon-edit {
+	color:white;
+}
+
+#bookmark-collapse {
+	max-width:250px;
+}
+
+.background-options, .bookmark-options, .border-options {
+	margin-left: 3%;
+}
+
+.background-options h4, .bookmark-options h4, .border-options h4 {
+	margin-left: -3%;;
+}
+
+#bookmark-icon-form hr {
+	background-color:blue;
+}
+
+.modal-body .popover {
+	max-width:500px;
+	max-height: 200px;
+	background-color:lightblue;
+}
+
+.modal-body .popover .arrow:after {
+	border-top-color:lightblue;
+}
+
+
+
+hr {
+	border-color: grey;
+	box-shadow: 2px 2px 2px;
+}
+
+
+iframe {
+	resize: both;
+	box-shadow:2px 2px 2px;
+	border: none;
+	height: 500px;
+}
+
+.glyphicon, .size, .move-frame span {
+	cursor: pointer;
+}
+
+.size {
+	font-size: 15px;
+}
+
+.size-wrapper {
+	box-shadow:2px 2px 2px black;
+	margin-top: 5%;
+	background-color:#156BFF;
+	color:white;
+}
+.glyphicon-remove {
+	color: red;
+}
+
+
+.bookmark-li:hover {
+
+	cursor: pointer;
+	color: #1159D7;
+	text-shadow: 1px 1px 1px black;
+}
+
+#minimize-bar {
+	padding:10px;
+	display:none;
+	position:fixed;
+	bottom:0;
+	right:0;
+	background-color:rgba(255,240,250,.5);
+	
+}
+
+#bookmark-storage-ul {
+	max-width: 400px;
+	list-style-type:square;
+}

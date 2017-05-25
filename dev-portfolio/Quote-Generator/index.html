@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Quote Generator</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="https://img.clipartfest.com/e1a66d12c2a7cce3882669887c2fca61_-think-bubble-quotes-quote-bubble-clip-art_1512-1355.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	</head>
+	<body>
+		<div class="container" id="select-quote-container">
+			<div class="row">
+				<div class="well col-md-6 col-md-offset-3 ">
+					<form id="quote-form" class="text-center">
+						
+						<h3>Select the topic</h3>
+						<div class="form-group">
+							<select id="select-topic">
+								<option value="random-quotes" default>Random Quotes</option>
+								<option value="inspirational-quotes">Inspirational Quotes</option>
+								<option value="love-quotes">Love quotes</option>
+								<option value="funny-quotes">Funny quotes</option>
+								<option value="friendship-quotes">Friendship Quotes</option>
+							</select>
+						</div>
+						<button class="btn btn-primary" type="submit">Submit</button>
+					</form>
+				</div> <!-- end of .well-->
+			</div> <!-- end of .row-->
+			
+			<div class="row">
+				<div id="quote-display" class="col-md-6 col-md-offset-3 ">
+					<h3 id="quote"></h3>
+				</div> <!-- end of #quote-display -->
+			</div> <!-- end of .row-->
+			
+			<div class="row">
+				<div id="controls-container" class="col-md-6 col-md-offset-3 ">
+					<ul class="pager">
+						<li>
+							<button id="previous-quote" class="btn btn-default" >
+								<span class="glyphicon glyphicon-circle-arrow-left"></span>
+						 		Previous Quote 
+						 	</button>
+						</li>
+						<li>
+							<button id="next-quote" class="btn btn-default ">Next Quote 
+								<span class="glyphicon glyphicon-circle-arrow-right"></span>
+							</button>
+						</li>
+						<li>
+							<a href="#" target="_blank" id="twitter" class="btn btn-default">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+				</div> <!-- end of #controls-container-->
+			</div> <!-- end of .row-->
+			</div> <!-- end of .container-->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<script src="quotes.json" type="application/json"></script>
+			<script src="https://use.fontawesome.com/7513968413.js"></script>
+			<script src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kayla's Portfolio | Frontend Projects</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/7513968413.js"></script>
+  <script>
+  	$(document).ready(function() {
+  	$('[data-toggle="popover"]').popover();
+  	$('#navbar').load('navbar.html', function() {
+			$('#frontend-projects').addClass('active').find('a').css({'color':'white'});;
+			$('#projects').addClass('active');
+		});
+  	$('#footer').load('footer.html');
+  	$('.projects-container .col-md-6').mouseenter(function() {
+  		$(this).addClass('animated swing');
+  	
+  	});
+  		$('.projects-container .col-md-6').mouseleave(function() {
+  		$(this).removeClass('animated swing');
+  	
+  	});
+  	
+  	$('form').on('submit', function(e) {
+  		e.preventDefault();
+  		let allValues = [];
+  		$('.container .col-md-6').hide();
+  		$("input[type='checkbox']:checked").each(function() {
+  			let checkboxValue = $(this).val();
+  			/*if ($('.panel-footer').find('span').html() === thisValue) {
+  				$('.panel-footer',this).show()
+  				$('.panel-footer').not(this).hide();
+  			}*/
+  			
+  			//$('.col-md-12').not(showProject).hide();
+  			
+  			//.show().not(this).hide();
+
+  			allValues.push(checkboxValue);
+  			
+  		}); // end of values each function
+  		//alert(allValues);
+  		
+  		for (var i = 0; i < allValues.length; i++) {
+  		//let thisValue = allValues[i];
+  			let showProject = $('.container .col-md-6 .label:contains('+allValues[i]+')').parents('.col-md-6');
+  			
+  					showProject.show();
+					
+					/*if (showProject.length === 0) {
+						$('.filter-results').html('Article match(es): '+ showProject.length);
+					}
+					
+					else {
+						//$('.filter-results').html('There were '+ showProject.length+ ' articles that match that criteria');
+						$('.filter-results').html('Article match(es): '+ showProject.length);
+					}*/
+				
+  					
+  			
+  			
+  		}
+  		let showProjectLength = $('.container .col-md-6:visible').length;
+  		$('.filter-results').html('Project match(es): '+ showProjectLength);
+  		$('form')[0].reset();
+	}); //end of form submit function
+  	});
+  </script>
+</head>
+<body>
+<div id="navbar"></div>
+        
+<div class="container-fluid" style="background-color:#A371FF;padding-bottom:5%;padding-top:5%;">
+	<div class="col-md-6 col-md-offset-3" >
+			
+			<div class="text-center" style="margin:auto;background-color:white;color:#A371FF;width:70%;border-radius:100px;">
+			<h2 style=""> Frontend Projects  </h2>
+			</div>
+    		<form class="text-center" style="height:300px;padding:10px;border:2px solid black;box-shadow:2px 2px 2px;text-align:left;background-color:white;">
+    			<h4 class="text-center">Search by Language/Library/Framework</h4>
+    				<div class="col-md-6 col-md-offset-3 text-left">
+    					<div class="checkbox" style="">
+						  <label><input type="checkbox" value="HTML"><span class="label label-success"> HTML </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="CSS"><span class="label label-warning"> CSS </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="JavaScript"><span class="label label-primary"> JavaScript </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="jQuery"><span class="label label-info"> jQuery </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="Bootstrap"><span class="label label-bootstrap"> Bootstrap  </span></label>
+						</div>
+						<div class="" style="margin-top:5%;">
+				<button class="btn btn-primary">Filter project results</button> <br>
+				<h5 class="filter-results"></h5>
+				</div>
+					</div> <!--end of col-md-6-->
+				
+    		</form>
+		</div> <!--end of col-md-6-->
+</div> <!--end of container-fluid-->
+  
+
+<div class="container projects-container" style="background-color:white;margin-top:0;padding-bottom:5%;">  
+	<h2 class="text-center" style="color:#20ABFF;border-bottom:2px dotted #20ABFF;padding-bottom:2%;">Personal Projects</h2>
+	<div class="row" style="margin-top:3%;">
+		
+		<div class="col-md-6 " >
+			<div class="panel panel-primary" >
+				<div class="panel-heading" ><h3><a  style="color:white" target="_blank" href="Bookmark-App/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p style='color:black;'>The bookmark application lets users save their favorite
+				websites, view those sites in a new tab or in the same tab (if there are no third party restrictions), minimize the sites that they are viewing on the same window, and design their own bookmark.</p>">Bookmark Application</a><h3></div>
+			  <div class="panel-body" style="padding:0"><iframe name="Bookmark Application" src="Bookmark-App/index.html" width="100%" height="450px" frameborder="0" >
+			  </iframe></div>
+			  <div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span> </div>
+	
+			</div> <!--end of panel-->
+		</div> <!--end of col-md-6-->
+		
+		<div class="col-md-6">
+			<div class="panel panel-primary" >
+			 <div class="panel-heading" ><h3><a style="color:white" target="_blank" href="Weather-App/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
+				The weather app shows users the current forecast and a 5-day forecast along with a background image that depicts the current weather condition in the user's location (if he or she allows their location to be accessed).
+The user can also change the measurements of temperature, wind, and precipitation from the imperial system to the metric system and vice versa.
+	</p>">Weather App</a><h3></div>
+      		<div class="panel-body" style="padding:0"><iframe name="weather-app" src="Weather-App/index.html" width="100%" height="450px" frameborder="0" ></iframe> </div>
+      		<div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span>  </div>
+    	
+			</div> <!--end of panel-->
+		</div> <!--end of col-md-6-->
+		
+		<!--<div class="col-md-2" style="width;padding:10px;border:2px solid black;box-shadow:2px 2px 2px;text-align:left;">
+    	
+    		
+    	
+		</div> end of col-md2-->
+		</div> <!--end of row-->
+		<hr/>
+	<div class="row">
+		<div class="col-md-6 ">
+			<div class="panel panel-primary" >
+			 <div class="panel-heading" ><h3><a style="color:white" target="_blank" href="Wikipedia-Viewer/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
+ 			The wikipedia app allows users to search for a wikipedia article and choose the amount of articles to be returned. If they click on the lucky button one article pertaining to the keywords searched will be returned.
+If they click the random button, one random article will be returned. Users can bookmark an article to read later or favorite an article, which will then be stored in the browser's local storage. 
+ </p>">Wikipedia Viewer</a><h3></div>
+      		<div class="panel-body" style="padding:0"><iframe name="wikipedia-viewer" src="Wikipedia-Viewer/index.html" width="100%" height="450px" frameborder="0" ></iframe> </div>
+      		<div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span> </div>
+    	
+			</div> <!--end of panel-->
+		</div> <!--end of col-md-6-->
+		
+		<div class="col-md-6 ">
+			<div class="panel panel-primary" >
+			 <div class="panel-heading" ><h3><a style="color:white" target="_blank" href="Quote-Generator/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
+			The quote generator app lets users pick a topic and view randomized quotes from that topic by clicking the next or previous button. Users can also click on the twitter button to tweet the current quote displayed. 
+	</p>">Quote Generator</a><h3></div>
+		  <div class="panel-body" style="padding:0"><iframe name="Scene Change" src="Quote-Generator/index.html" width="100%" height="450px" frameborder="0" ></iframe></div>
+		  <div class="panel-footer"><span  class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span> </div>
+	
+			</div> <!--end of panel-->
+		</div> <!--end of col-md-6-->
+		
+	</div> <!--end of row-->
+	<hr/>
+	<div class="row">
+		<div class="col-md-6 ">
+			<div class="panel panel-primary" >
+			 <div class="panel-heading" ><h3><a style="color:white" target="_blank" href="Twitch/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
+				The twitch app allows a user to search for Twitch channels and save them to the browser's local storage. Once they have channels stored, the user can search for those channels by name or number and see information regarding those channels on the home screen and the online screen, which are
+accessed by clicking on the appropriate button on the remote.
+The user can go to the channel's page by clicking on the channel name or watch the current program being streamed by clicking on the program name (on the online screen). The user can also use the remote to select channels by pressing the up and down arrow keys and then clicking the enter button
+to go to the channel's page or the tv button to watch the current program being streamed (on the online screen).  
+	</p>">Twitch App</a><h3></div>
+      		<div class="panel-body" style="padding:0"><iframe name="Scene Change" src="Twitch/index.html" width="100%" height="450px" frameborder="0" ></iframe> </div>
+      		<div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span> </div>
+    	
+			</div> <!--end of panel-->
+		</div> <!--end of col-md-6-->
+	</div> <!--end of row-->
+	
+</div>  <!-- end of container-fluid-->
+<div id="footer"></div>
+
+  
+
+</body>
+</html>

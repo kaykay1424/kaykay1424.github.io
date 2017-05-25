@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kayla's Portfolio | Frontend/Backend Projects</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/7513968413.js"></script>
+  <style>
+  	.checkbox {
+  		display: inline-block;
+  	}
+  </style>
+  <script>
+  	$(document).ready(function() {
+  	$('[data-toggle="popover"]').popover();
+  	 	$('#navbar').load('navbar.html', function() {
+			$('#projects').addClass('active');
+			$('#frontend-backend-projects').addClass('active').find('a').css({'color':'white'});
+	});
+	$('.projects-container .col-md-6').mouseenter(function() {
+  		$(this).addClass('animated swing');
+  	
+  	});
+  		$('.projects-container .col-md-6').mouseleave(function() {
+  		$(this).removeClass('animated swing');
+  	
+  	});
+  	$('#footer').load('footer.html');
+  	$('form').on('submit', function(e) {
+  		e.preventDefault();
+  		let allValues = [];
+  		$('.container .col-md-6').hide();
+  		$("input[type='checkbox']:checked").each(function() {
+  			let checkboxValue = $(this).val();
+  			/*if ($('.panel-footer').find('span').html() === thisValue) {
+  				$('.panel-footer',this).show()
+  				$('.panel-footer').not(this).hide();
+  			}*/
+  			
+  			//$('.col-md-12').not(showProject).hide();
+  			
+  			//.show().not(this).hide();
+
+  			allValues.push(checkboxValue);
+  			
+  		}); // end of values each function
+  		//alert(allValues);
+  		let projectArr = [];
+  		for (var i = 0; i < allValues.length; i++) {
+  		//let thisValue = allValues[i];
+  			let showProject = $('.container .col-md-6 .label:contains('+allValues[i]+')').parents('.col-md-6');
+  			
+  					showProject.show();
+					
+					
+					
+					
+  			
+  			
+  		}
+  		let showProjectLength = $('.container .col-md-6:visible').length;
+  		$('.filter-results').html('Project match(es): '+ showProjectLength);
+  		$('form')[0].reset();
+	}); //end of form submit function
+  	
+  	});
+  </script>
+</head>
+<body>
+<div id="navbar"></div>
+
+    
+<div class="container-fluid" style="background-color:#A371FF; padding-top:5%;padding-bottom:5%;">
+	<div class="col-md-6 col-md-offset-3 text-center" >
+			<div class="text-center" style="margin:auto;background-color:white;color:#A371FF;width:70%;border-radius:100px;">
+			<h2 style=""> Frontend/Backend Projects  </h2>
+			</div>
+    		<form class="text-center" style="height:300px;padding:10px;border:2px solid black;box-shadow:2px 2px 2px;text-align:left;background-color:white;">
+    			<h4 class="text-center">Search by Language/Library/Framework</h4>
+    				<div class="col-md-6 col-md-offset-3 text-left">
+    				<h5> Frontend </h5>
+    					<div class="checkbox" style="">
+						  <label><input type="checkbox" value="HTML"><span class="label label-success"> HTML </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="CSS"><span class="label label-warning"> CSS </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="JavaScript"><span class="label label-primary"> JavaScript </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="jQuery"><span class="label label-info"> jQuery </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="Bootstrap"><span class="label label-bootstrap"> Bootstrap  </span></label>
+						</div>
+						<h5> Backend </h5>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="PHP"><span class="label label-php"> PHP </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="SQL"><span class="label label-sql"> SQL </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="Ruby"><span class="label label-ruby"> Ruby </span></label>
+						</div>
+						<div class="checkbox" style="">
+						  <label><input type="checkbox" value="Ruby on Rails "><span class="label label-rails"> Ruby on Rails </span></label>
+						</div>
+						
+						<div class="" style="margin-top:5%;">
+				<button class="btn btn-primary">Filter project results</button> <br/>
+				<h5 class="filter-results"></h5>
+				</div>
+					</div> <!--end of col-md-6-->
+				
+    		</form>
+		</div> <!--end of col-md-6-->
+</div> <!--end of container-fluid-->
+<div class="container projects-container" style="background-color:white;margin-top:0;padding-top:2%;padding-bottom:5%;">  
+	<h2 class="text-center" style="color:#20ABFF;border-bottom:2px dotted #20ABFF;padding-bottom:2%;">Personal Projects</h2>
+	<div class="row" style="margin-top:3%;">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-primary" >
+				<div class="panel-heading" ><h3><a  style="color:white" target="_blank" href="http://127.0.0.1/ecommerce/index.php" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p style='background-color':'rgba(255,255,255,.5);color:black;'>The Online Shop
+				lets users view products and search for products by brand, category, and keywords. A user can add multiple items to their shopping cart and purchase the items using paypal, which will require them
+				to create an account or sign in if not already logged in. After they make an order they will be sent an email regarding their order and view their order as well as edit their account. There is also an admin panel to manage the website.
+				</p>">Online Shop</a><h3></div>
+			  <div class="panel-body" style="padding:0"><iframe name="Bookmark Application" src="http://127.0.0.1/ecommerce/index.php" width="100%" height="450px" frameborder="0" >
+			  </iframe></div>
+			  <div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span>
+			  		<span class="label label-info"> jQuery </span> <span class="label label-php"> PHP </span> <span class="label label-sql"> SQL </span>
+			  </div>
+	
+			</div> <!--end of panel-->
+		</div> <!--end of col-md-6-->
+		
+	
+	</div> <!--end of row-->
+	
+</div>  <!-- end of container-fluid-->
+<div id="footer"></div>
+
+  
+
+</body>
+</html>

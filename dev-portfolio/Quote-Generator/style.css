@@ -1,0 +1,36 @@
+body {
+	transition: background-color 1s;
+}
+.well {
+	display: none;
+	
+}
+#quote-form h3, #modal {
+	font-family: 'Cooper Black', sans;
+}
+#quote {
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+
+}
+
+#quote-display {
+	border: 5px solid white;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 60vh;
+}
+#quote,#next-quote,#previous-quote,#twitter {
+	text-shadow: 2px 2px 2px black;
+}
+#next-quote, #previous-quote, #twitter {
+	color: white;
+}
+#controls-container {
+	background-color: white;
+	padding: 10px;
+}
+
+

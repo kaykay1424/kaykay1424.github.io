@@ -1,0 +1,134 @@
+body {
+	background-color: #0D8931;
+	background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.container {
+	padding-top: 20px;
+}
+
+#wikipedia-title {
+	background-color:rgba(0,0,0,.6);
+	border-radius:100%;
+}
+
+#wikipedia-title h1 {
+	color: white;
+	text-shadow: 2px 2px 2px black;
+	padding: 10px;
+}
+
+#searchbox {
+	background-color: rgba(199,198,199,.5);
+	border-radius:5px;
+	height: auto;
+	padding: 2%;
+	text-align:center;
+	margin-bottom: 3%;
+}
+
+form h4 {
+	text-shadow:1px 1px 1px white;
+	color:black;
+}
+#alert-warning {
+	color:red;
+	display:none;
+}
+.title-div {
+	background-color: beige;
+	margin-bottom: 3%;
+	max-height: 400px;
+	border:2px solid black;
+	border-radius: 10px;
+	box-shadow:2px 2px 2px;
+	padding: 8px
+}
+
+.title-div:hover {
+	box-shadow: 5px 5px 5px #1159D7;
+}
+
+#favorites-bar {
+	padding:10px;
+	display:none;
+	position:fixed;
+	bottom:0;
+	right:0;
+	background-color:rgba(255,240,250,.5);
+}
+
+#favorites-storage-ul, #bookmarks-storage-ul {
+	list-style-type:square;
+	max-width: 400px;
+}
+
+#bookmarks-bar {
+	padding:10px;
+	display:none;
+	position:fixed;
+	bottom:0;
+	left:0;
+	background-color:rgba(255,240,250,.5);
+}
+
+.glyphicon-star {
+	color: rgb(13,167,255);
+	cursor:pointer;
+}
+.glyphicon-bookmark  {
+	color: #0D8931;
+	cursor:pointer;
+}
+
+.btn[data-target="#favorites-storage"]:hover {
+	background-color:rgba(255,0,0,1);
+}
+.glyphicon-remove {
+	color: red;
+	cursor: pointer;
+}
+
+#random {
+	background-color: black;
+}
+.glyphicon-question-sign {
+	color: white;
+	background-color: black;
+}
+.bookmarks-li a, .favorites-li a {
+	color: black;
+}
+
+#favorites-amount {
+	background-color: white;
+	color:#4397FE;
+}
+#favorites-button {
+	background-color: rgba(13,167,255,.5);
+	color:white;
+}
+#bookmarks-button {
+	background-color: #0D8931;
+	color:white;
+}
+#bookmarks-amount {
+	background-color: white;
+	color:#0D8931;
+}
+#bookmarks-button:hover {
+	box-shadow: 3px 2px 15px 3px #1CFF00 inset;
+}
+#favorites-button:hover {
+	box-shadow: 3px 2px 10px 3px #43DCFE inset;
+}
+.popover {
+	max-width: 500px;
+}
+.border-red {
+	border: 2px solid red;
+}
