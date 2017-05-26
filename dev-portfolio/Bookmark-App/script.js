@@ -340,7 +340,7 @@
 	function minimizeFrame(url,name) {
 		let frame = $('iframe[src="'+url+'"]');
 		bookmarkCounter++;
-		$('#minimized-bookmark-amount').html(bookmarkCounter);
+		//$('#minimized-bookmark-amount').html(bookmarkCounter);
 		frame.parent().hide();
 		let bookmarkStorage = document.getElementById('bookmark-storage');
 		$('#minimize-bar').show();
