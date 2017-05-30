@@ -1,77 +1,56 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Contact Me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<style>
+	<head>
+		<title>Contact Me</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link rel="stylesheet" href="styles/style.css">
+	</head>
 	
-    
-</style>
-<script>
-	$(document).ready(function() {
-		$('#header').load('header.html', function() {
-			$('#nav-contact').addClass('active');
-		});
-		$('#footer').load('footer.html');
-		/*$('#contact-form').submit(function(e) {
-		e.preventDefault();
-		let message = $('#message').val();
-		console.log(message);
-		window.open('mailto:sharise245@gmail.com?subject=subject&body='+message+'');
+	<body>
+		<div class="header-background"></div>
+	
+		<div class="header"></div>
 		
-		});*/
-		$('.contact-form').on('submit',function() {
-  		let mailTo = 'michaela.s.clements@gmail.com';
-  		let subject = $('#subject').val();
-  		let message = $('#message').val();
-  		$('button a').attr('href','mailto:'+mailTo+'?subject='+subject+'&body='+message+'');
-  		$('button a')[0].click();
-  	
-  	});
-	});
-</script>
-</head>
-<body>
-	<div style="background-size:contain;background-image:url('https://d2drx6n2xb0i5r.cloudfront.net/site/wp-content/themes/icanlocalize/images/bubbles.png');width:100%;height:200px;"></div>
+		<div class="container contact-container">
+		
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 col-lg-8 col-lg-offset-2 contact-form-container" >
+				<form  class="form-horizontal contact-form">
+					<h3 class="text-center">Contact Me</h3>
+					<div class="form-group">
+						<label for="name" class="control-label col-xs-3 col-sm-2 " >Name</label>
+						<div class="col-xs-9 col-sm-10">
+							<input type="text" name="sender" id="name" class="form-control" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="name" class="control-label col-xs-3 col-sm-2" >Subject</label>
+						<div class="col-xs-9 col-sm-10">
+							<input type="text" name="sender" id="subject" class="form-control" required />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="message" class="control-label col-xs-3 col-sm-2" >Message</label>
+						<div class="col-xs-9 col-sm-10">
+							<textarea id="message" class="form-control" name="message" rows="5" required></textarea>
+						</div>
+					</div>
+					<div class="form-group"> 
+						<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-2">
+						  <button type="submit" class="btn btn-default contact-button">Submit</button>
+						</div>
+				  	</div>
+				</form>
+			</div> <!--end of .contact-form-container-->
+		</div> <!--end of .contact-container-->
+		
+		<div class="footer"></div>
 	
-	<div id="header"></div>
-	<div class="container-fluid" style="margin-top:5%;margin-bottom:5%">
-		<div class="col-md-4 col-md-offset-4">
-					<form  class="form-horizontal contact-form">
-				<h3 class="text-center">Contact Me</h3>
-				<div class="form-group">
-					<label for="name" class="control-label col-md-2" >Name</label>
-					<div class="col-md-10">
-						<input type="text" name="sender" id="name" class="form-control" required />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="name" class="control-label col-md-2" >Subject</label>
-					<div class="col-md-10">
-						<input type="text" name="sender" id="subject" class="form-control" required />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="message" class="control-label col-md-2" >Message</label>
-					<div class="col-md-10">
-						<textarea id="message" class="form-control" name="message" required></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-    				<div class="col-md-offset-2 col-md-10">
-      					<button type="submit" class="btn btn-default btn-default"><a href="" style="">Send</a></button> 
-    				</div>
- 				</div>
-			</form>
-		</div>
-	</div>
-	<div id="footer"></div>
-</body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="scripts/main.js"></script>
+	
+	</body>
 </html>

@@ -1,0 +1,613 @@
+			/* Responsive styles */
+
+/* Mobile Sm */
+@media only screen and (max-width: 320px) {
+	.header-background {
+		height: 100px;
+		
+	}
+	.header-bubble h1 {
+		word-wrap: break-word;
+	}	
+	.header-bubble {
+	
+		padding-top:1%;
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:10%;
+		height:20px;
+		
+	}
+	.header-bubble-string { 
+		width:3.5%;
+	}
+	#talkbubble:before  {
+		right: 50%;
+		top: -1%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 20px solid lightgrey;
+	}
+	.political-articles-container {
+		padding:0;
+	}
+}
+/* Mobile Med */
+@media only screen and (max-width: 374px) and (min-width:321px) {
+	.header-background {
+		height: 100px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:1%;	
+	}
+	#talkbubble:before  {
+		right: 50%;
+		top: -1.5%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 25px solid lightgrey;
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:10%;
+		height:20px;
+		
+	}
+	.header-bubble h1 {
+		font-size:14px;
+	}
+	.header-bubble-string { 
+		width: 3.5%;
+	}
+}
+/* Mobile Lg */
+@media only screen and (max-width: 424px) and (min-width:375px) {
+	.header-background {
+		height: 100px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:1%;	
+	}
+	#talkbubble:before  {
+		right: 50%;
+		top: -1.3%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 25px solid lightgrey;
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:10%;
+		height:20px;
+		
+	}
+	.header-bubble-string { 
+		width: 3.5%;
+	}
+}
+/* Mobile Sm */
+@media only screen and (max-width: 767px) and (min-width:425px) {
+	.header-background {
+		height: 100px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:1%;	
+	}
+	#talkbubble:before  {
+		right: 50%;
+		top: -1.3%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 25px solid lightgrey;
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:10%;
+		height:20px;
+		
+	}
+	.header-bubble-string { 
+		width: 3.5%;
+	}
+	
+}
+/* Tablet */
+@media only screen and (max-width: 799px) and (min-width:768px) {
+	.header-background {
+		height: 100px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:.5%;
+	}
+	#talkbubble:before  {
+		right: 50%;
+		top: -2.5%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 25px solid lightgrey;
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:5%;
+		height:20px;
+		
+	}
+		.header-bubble-string { 
+		width: 2%;
+	}
+}
+/* Laptop */
+@media only screen and (min-width: 800px) {
+	.header-background {
+		height: 200px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:.5%;	
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:5%;
+		height:20px;
+		background-color:lightgrey;
+		border-radius:100px;
+	}	
+	#talkbubble:before  {
+		right: 99%;
+		top: 30%;
+		border-top: 13px solid transparent;
+		border-right: 20px solid lightgrey;
+		border-bottom: 13px solid transparent;
+	}
+	.header-bubble-string { 
+		width: 2%;
+	}
+
+}
+@media only screen and (max-width: 2560px) and (min-width:1441px) {
+	.header-bubble-string { 
+		width: 1%;
+	}
+}
+/* All Pages */
+
+.header-background {
+	background-size:contain;
+	background-image:url('https://d2drx6n2xb0i5r.cloudfront.net/site/wp-content/themes/icanlocalize/images/bubbles.png');
+	width:100%;
+}
+
+.navbar-header .navbar-brand  {
+	font-family: 'Lobster', cursive;
+	color: white;
+	border-right: 2px solid;
+}
+
+.navbar-header .navbar-brand:hover {
+	background-color: grey;
+	color:white;
+}
+
+.navbar {
+	background-color: #159C56;
+	margin-bottom:0;
+}
+
+.navbar .navbar-collapse {
+	padding-right:0;
+}
+
+.navbar .navbar-right li a {
+	color: white;
+}
+
+.navbar .navbar-right li a:hover {
+	color:  beige;
+}
+
+.navbar .dropdown-menu li a {
+	color: grey;
+	
+}
+
+.navbar .dropdown-menu .active a {
+	color:white;
+}
+
+.dropdown-menu li a:hover {
+	color: white;
+	background-color:grey;
+}
+
+.politics {
+	background-color: #E8270C;
+}
+
+.social-issues {
+	background-color: #9200FF;
+}
+ 	
+body {
+	background-color:beige;
+}
+
+footer {
+	background-color: #159C56;
+	padding: 10px;
+}
+
+footer h4 {
+	color:beige;
+	text-shadow: 1px 1px 1px black;
+}
+
+footer a {
+	color: white;
+	text-decoration:underline;
+}
+
+
+/* About Me Page */
+
+#open {
+	display:none;
+}
+
+.about-me-container {
+	margin-bottom:5%;
+}
+
+#about-me-h1 {
+	font-family: 'Britannic Bold';
+	color: #206EC4;
+}
+
+.about-me-container hr {
+	border:2px solid #206EC4;
+}
+
+#portfolio-img {
+	border:3px solid green;
+	height:300px;
+	width:100%;
+	background-image:url('../images/kayla-on-beach.jpeg');
+	background-size:cover;
+	background-position:center;
+}
+
+.about-me-profile {
+	background-color:lightgrey;
+	padding:10px;
+	box-shadow:2px 2px 2px black;
+	border-radius:20px;
+
+}
+
+.about-me-bio {
+	margin-bottom:5%;
+	padding:20px;
+}
+
+#talkbubble {  
+	padding: 15px;
+	height:auto;
+	background: lightgrey;
+	position: relative;
+	border-radius: 10px;box-shadow:2px 2px 2px black;
+ 
+}
+
+#talkbubble:before { 
+	content:"";
+	position: absolute;
+	width: 0;
+	height: 0;
+	
+}
+
+/* Contact Me Page */
+
+.contact-container {
+	margin-top:5%;
+	margin-bottom:5%;
+}
+
+.contact-form {
+  	background-color: #206EC4;
+  	box-shadow: 2px 2px 2px black;
+  	color: white;
+  	padding:5%;
+  	margin-top:5%;
+  	margin-bottom: 5%;
+  	height:auto;
+  	border-radius: 20px;
+}
+
+	/* All Translated Articles Pages */
+.header-bubble-container {
+	padding-bottom:5%;
+	background-color: lightgrey;
+}
+
+.header-bubble-string-row {
+	margin-bottom:0;
+}
+
+.header-bubble-row {
+	margin-top:0;
+	padding-top:0;
+}
+
+.header-bubble-string-tie {
+	width:2%;
+	height:13px;
+	background-color:beige;
+	margin:auto;
+	border-left:2px ridge beige;
+	border-right:2px ridge beige;
+	position:absolute;
+	right:49%;
+	top:-2.5%;
+	border-radius:4px;
+}
+
+.header-bubble  {
+  	border: 2px solid #206EC4;
+  	box-shadow: 2px 2px 2px black;
+  	position:relative;
+  	font-family: 'Britannic Bold', 'sans-serif';
+  	background-color:white;
+  	color:#206EC4;
+  	border-radius:100px;
+}
+
+.header-bubble-hole {
+  	background-color:lightgrey;
+	border-radius:100px;
+	border:2px solid #206EC4;
+	box-shadow: 1px 1px 1px 1px black inset;
+}
+.header-bubble-string-container {
+	padding-top:0;
+}
+.header-bubble-string {
+  	border:2px ridge black;
+  	margin: auto;
+  	border-radius:2px;
+  	height:80px;
+  	background-color:beige;
+  	/*box-shadow:2px 0 0 -2px black;*/
+  	box-shadow: 1px 1px 1px black;
+}
+
+.filter-button-container {
+	margin-top:5%;
+}
+
+table td div {
+  		height: 350px;
+  		overflow: auto;
+}
+
+table {
+	background-color: white;
+	box-shadow: 3px 3px 5px black;
+}
+
+table a:link {
+	color: lightgrey;
+	text-decoration: underline;
+}
+
+table a:visited {
+	color: #B18DFF;
+}
+
+table th {
+	font-weight: normal;
+}
+
+table th[colspan='2'] div {
+	width: 300px;
+	margin: auto;
+}
+
+table td[colspan="2"] {
+	background-color: #206EC4;
+	color: white;
+}
+	/* Government Articles Page */
+
+#gov-image-background-1 {
+	padding:0;
+	height:300px;
+	background-color:white;
+	background-image:url('http://3.bp.blogspot.com/-sTNrzr0i25o/UEuXJCXAm-I/AAAAAAAAACY/xaJP1jll56s/s1600/2000px-US-GreatSeal-Obverse_svg.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+}
+
+#gov-image-background-2 {
+	padding:0;
+	height:300px;
+	background-color:white;
+	margin-bottom:5%;
+	background-image:url('http://ian.umces.edu/imagelibrary/albums/userpics/10002/normal_ian-symbol-government-1.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+}
+
+#government-topic-form-container {
+	padding: 0;
+}
+
+#government-topic-form {
+	height:300px;
+	padding:10px;
+	border-right:2px solid black;
+	border-left:2px solid black;
+	text-align:left;
+	background-color:#94600D;
+	color:white;
+}
+
+#government-filter-results {
+	color:white;
+}
+
+#government-topics-container {
+	margin-bottom:5%;
+}
+	/* Political Articles Page */
+	
+#politics-image-background-1 {
+	padding:0;
+	height:300px;
+	background-color:white;
+	background-image:url('https://upload.wikimedia.org/wikipedia/en/e/e3/DemocraticLogo.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+}
+
+#politics-image-background-2 {
+	padding:0;
+	height:300px;
+	background-color:white;
+	margin-bottom:5%;
+	background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Republicanlogo.svg/2000px-Republicanlogo.svg.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+}
+
+#politics-topic-form-container {
+	padding:0;
+}
+
+#politics-topic-form {
+	height:300px;
+	padding:10px;
+	border-right:2px solid black;
+	border-left:2px solid black;
+	text-align:left;
+	background-color:#1E2DD7;
+	color:white;
+}
+
+.political-articles-container {
+	padding-top:1%;
+}
+
+.all-topics-container {
+	margin-top:5%;
+}
+	/* All Articles Page */
+	
+.all-topics-form-background {
+	background-color:#206EC4;
+}
+#all-topics-form {
+	height:350px;
+	padding:10px;
+	border-right:2px solid black;
+	border-left:2px solid black;
+	text-align:left;
+	background-color:white;
+}
+	/* Resume Page */
+#resume {
+	margin-top:5%;
+	margin-bottom: 5%;
+	border:2px solid black;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	background-color:white;
+	box-shadow:2px 2px 2px black;
+}
+
+#resume-header {
+	height:auto:
+	background-color:lightgrey;
+	border-bottom:2px solid black;
+}
+
+#translation-experience {
+	background-image: url('https://cdn4.iconfinder.com/data/icons/seo-4-3/436/16-_Translate-512.png');
+	background-size: contain;
+	background-color: #5293D7;
+	background-position: center left;
+	background-repeat: no-repeat;
+	height:auto;
+	margin-top:0;
+
+}
+
+#education {
+	background-image: url('https://mises.org/sites/default/files/styles/social_media_1200_x_1200/public/static-page/img/graduation-day-approaches-cap-and-rolled-diploma-the-candles-330b3X-clipart.png?itok=qvCtzzfx');
+	background-size: contain;
+	background-color:#FF3625;
+	background-position: center left;
+	background-repeat: no-repeat;
+	height:auto;
+	margin-top:0;
+	
+}
+#education h3 {
+	text-decoration: underline;
+}
+ #employment {
+	background-image: url('https://mediatorsoftexas.com/wp-content/uploads/2015/06/job-icon.png');
+	background-size: contain;
+	background-color:yellow;
+	background-position: center left;
+	background-repeat: no-repeat;
+	height:auto;
+	margin-top:0;
+}
+
+.resume-row {
+	border-bottom: 2px solid black;
+}
+
+.resume-sections:not(#translation-experience) {
+	background-color: white;
+	border-right:2px solid black;
+	height: 700px;
+	
+	
+}
+
+.resume-sections {
+	padding:0;
+}
+
+.resume-section-wrapper {
+	padding:10px;
+}
+
+.resume-dates {
+	float:right;
+	font-weight:0;
+	font-size: 14px;
+}
+
+#resume-header h1 {
+	font-family: 'Cooper Black';
+}
+
+
+  
+  

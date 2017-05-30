@@ -1,168 +1,106 @@
 <!doctype html>
-<html lang="es">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset = "UTF-8">
-  <title> Politics Articles </title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset = "UTF-8">
+		<title> Politics  </title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
+		<link rel="stylesheet" href="styles/style.css">
 	
-<style>
-	body {
-		background-color: grey;
-	}
-	
-  	table td div {
-  		height: 350px;
-  		overflow: auto;
-  	}
-  	table {
-  		background-color: white;
-  		box-shadow: 3px 3px 5px black;
-  	}
-  	table th {
-  		font-weight: normal;
-  	}
-  	table th[colspan='2'] div {
-  		width: 300px;
-  		margin: auto;
-  	}
-  	table td[colspan="2"] {
-		background-color: navy;
-		color: white;
-	}
-	.politics {
-		background-color: #E8270C;
-	}
-	 .political-articles-container .row {
-  	/*margin-bottom:5%;*/
-  }
-</style>
-<script>	
-	$(document).ready(function() {
-		$('table').addClass('table-bordered table');
-		$('#header').load('header.html');
-		$('#header').load('header.html', function() {
-			$('#nav-translations').addClass('active');
-			$('#nav-politics').addClass('active');
-		});
-		$('.col-xs-4').mouseenter(function() {
-  		$(this).addClass('animated swing');
-  	
-  		});
-  		$('.col-xs-4').mouseleave(function() {
-  		$(this).removeClass('animated swing');
-  	
-  	});
-		$('#footer').load('footer.html');
-		$('form').on('submit', function(e) {
-  		e.preventDefault();
-  		let allValues = [];
-  		$('.col-md-12').hide();
-  		let selectedDate = $('select option:selected').val();
-  		$('.col-md-12').find('.article-dates:contains('+selectedDate+')').parents('.col-md-12').show();
-  		//alert(allValues);
-  		
-  		let showArticleLength = $('.col-md-12:visible').length;
-  		$('.filter-results').html('Article match(es): '+ showArticleLength);
-  		
-  		$('form')[0].reset();
-	}); //end of form submit function
-	}); // end of document ready
-</script>
-</head>
+	</head>
 	<body>
-	<div style="background-size:contain;background-image:url('https://d2drx6n2xb0i5r.cloudfront.net/site/wp-content/themes/icanlocalize/images/bubbles.png');width:100%;height:200px;"></div>
+		<div class="header-background" ></div>
 	
-	<div id="header">
-	
-	</div>
-	<div class="container-fluid" style="padding-bottom:5%;background-color: lightgrey">
-		<div class="row" style="margin-bottom:0">
-		<div class="col-xs-1 col-xs-offset-6" style="border-left:5px solid beige;height:80px;"></div>
-		</div>
-		<div class="row" style="margin-top:0;padding-top:0;">
-		<div  class="col-xs-4 col-xs-offset-4 text-center" style="font-family: 'Britannic Bold';color: #206EC4;background-color:white;color:#206EC4;border-radius:100px;"><div style="margin:auto;width:5%;height:20px;background-color:lightgrey;border-radius:100px;"></div><h1>Political Articles</h1></div>
+		<div class="header"></div>
+		<div class="container-fluid header-bubble-container">
+			<div class="row header-bubble-string-row">
+				<div  class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 text-center header-bubble-string-container">
+					<div class="header-bubble-string" ></div>
+				</div>
+			</div> <!--end of ..row-->
+			<div class="row header-bubble-row">
+				<div  class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 text-center header-bubble" >
+					<div class="header-bubble-string-tie" ></div>
+					<div class="header-bubble-hole" ></div>
+					<h1>Political Articles</h1>
+				</div> <!--end of .header-bubble-->
+			</div> <!--end of ..row-->
+		</div> <!--end of .header-bubble-container-->
+		<div class="container-fluid" >
+			<div class="row">
+			<div id="politics-image-background-1" class="col-md-4" >
 		
 		</div>
-	</div>
-	<div class="container-fluid" >
-		<div class="row">
-		<div class="col-md-4" style="padding:0;height:300px;background-color:white;background-image:url('https://upload.wikimedia.org/wikipedia/en/e/e3/DemocraticLogo.png');
-		background-repeat:no-repeat;background-position:center;background-size:contain;">
-		
-		</div>
-		<div class="col-md-4 " style="padding:0;"  >
+		<div id="politics-topic-form-container" class="col-md-4 " >
 			
-    		<form class="text-center" style="height:300px;padding:10px;border:2px solid black;text-align:left;background-color:#1E2DD7;color:white;">
+    		<form  class="text-center" id="politics-topic-form" >
     			<h4 class="text-center">Search translated articles by year</h4>
-    				
-					<div class="col-md-6 col-md-offset-3">
-						<div class="form-group">
-							
-							<select class="form-control" id="select-date">
-								<option value="select-year" selected>Select year</option>
-								<option value="2016">2016</option>
-								<option value="2015">2015</option>
-								<option value="2014">2014</option>
-							</select>
-							
-					  </div>
-					
-					</div><!--end of col-md-6-->
-					  <div class="col-md-3 col-md-offset-3" style="margin-top:5%;">
-							<button type="submit" class="btn btn-default">Filter article results</button>
-							
-					  </div>
-					  <div class="col-md-5 col-md-offset-3" style="">
-							
-							<h5 style="color:white" class="filter-results"></h5>
-					  </div>
+				<div class="col-md-6 col-md-offset-3">
+					<div class="form-group">
+						
+						<select class="form-control" id="select-date">
+							<option value="select-year" selected>Select year</option>
+							<option value="2016">2016</option>
+							<option value="2015">2015</option>
+							<option value="2014">2014</option>
+						</select>
+						
+				  </div>
+				
+				</div><!--end of col-md-6-->
+				<div class="col-md-3 col-md-offset-3 filter-button-container">
+						<button type="submit" class="btn btn-default">Filter article results</button>
+						
+				</div>
+				<div class="col-md-5 col-md-offset-3" style="">
+						
+						<h5 style="color:white" class="filter-results"></h5>
+				</div>
 				
     		</form>
 		</div> <!--end of col-md-6-->
-		<div class="col-md-4" style="padding:0;height:300px;background-color:white;margin-bottom:5%;background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Republicanlogo.svg/2000px-Republicanlogo.svg.png');background-repeat:no-repeat;background-position:center;background-size:contain;">
+		
+		<div id="politics-image-background-2" class="col-md-4" >
 		
 		</div>
-		</div> <!--end of .row-->
+		</div> <!--end of ..row-->
 	</div>
-	</br>
-	<div class="container political-articles-container" style="padding-top:1%;">
+	
+	<div class="container political-articles-container" >
 		<div class="row">
 				<div class="col-md-12">
-				<table>
-					<thead>
-						<tr>
-							<th colspan="2">
-								<div>
-								<b>Organization:</b> Watching America </br>
-								<b>Subject(s):</b> <span class="label politics" >Politics</span> <br/>
-								<b>Date: </b> April 6, <span class="article-dates">2016 </span>
-								</div>
-							</th>
-						</tr>
-						<tr>
-							<th><b>Source:</b> Spanish </br>
-								<b>Title:</b> Algún desahogo pero nada de libertad </br>
-								<b>Organization:</b> Watching America </br>
-								<b>Words:</b> <span class="badge"> 592 </span> </br>
+					<table>
+						<thead>
+							<tr>
+								<th colspan="2">
+									<div>
+									<b>Organization:</b> Watching America </br>
+									<b>Subject(s):</b> <span class="label politics" >Politics</span> <br/>
+									<b>Date: </b> April 6, <span class="article-dates">2016 </span>
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<th><b>Source:</b> Spanish </br>
+									<b>Title:</b> Algún desahogo pero nada de libertad </br>
+									<b>Organization:</b> Watching America </br>
+									<b>Words:</b> <span class="badge"> 592 </span> </br>
 								
-							</th>
-							<th><b>Target:</b> English</br>
-								<b>Title:</b> Some Relief but No Freedom </br>
-								<b>Organization:</b> Watching America </br>
-								<b>Words:</b> <span class="badge"> 594 </span> </br>
+								</th>
+								<th><b>Target:</b> English</br>
+									<b>Title:</b> Some Relief but No Freedom </br>
+									<b>Organization:</b> Watching America </br>
+									<b>Words:</b> <span class="badge"> 594 </span> </br>
 								 
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div>
 										<p>El carácter histórico de la visita de Barack Obama a Cuba radica no solo en haber sido el primer
 										presidente de Estados Unidos en llegar a la isla en 88 años sino también en la transformación
 										que augura en la vida de los cubanos. En su encuentro con el presidente Raúl Castro quedó
@@ -203,8 +141,8 @@
 										apertura más o menos democrática tendrá que seguir esperando por la renovación de su
 										dirigencia y por el efecto natural de presiones futuras de una sociedad algo más próspera. </p>
 
-								</div>
-							</td>
+									</div>
+								</td>
 							<td>
 							 	<div>
 										<p>The historic nature of Barack Obama’s visit to Cuba lies not only in having been the first U.S.
@@ -255,7 +193,7 @@
 						</tr>
 						<tr>
 							<td colspan='2'>
-								<p style="text-align:center">Click <a href="some-relief.pdf" target="_blank"> here </a> to see PDF file<p>
+								<p style="text-align:center">Click <a href="translation-pdfs/some-relief.pdf" target="_blank"> here </a> to see PDF file<p>
 								
 								<p style="text-align:center">Click <a href="http://watchingamerica.com/WA/2016/04/06/some-relief-but-no-freedom/" target="_blank">
 								here</a> to go to the Watching America page<p>
@@ -265,8 +203,8 @@
 						</tr>
 					</tbody>
 				</table>
-			</div> <!--end of col-md-12 div-->
-		</div> <!--end of row2-->
+			</div> <!--end of .col-md-12 div-->
+		</div> <!--end of .row2-->
 		<div class="row">
 				<div class="col-md-12">
 				<table>
@@ -374,12 +312,12 @@
 										before – to militarize cyberspace. Let’s not dismiss the idea that in the upcoming months we
 										may see new developments and actions in this direction.</p>
 
-</div>
+								</div>
 							</td>
 						</tr>
 						<tr>
 							<td colspan='2'>
-								<p style="text-align:center">Click <a href="obama-against-pessimism.pdf" target="_blank">here</a> to see PDF file<p>
+								<p style="text-align:center">Click <a href="translation-pdfs/obama-against-pessimism.pdf" target="_blank">here</a> to see PDF file<p>
 								<p style="text-align:center">Click <a href="http://watchingamerica.com/WA/2016/04/06/some-relief-but-no-freedom/" target="_blank">
 								here</a> to go to the Watching America page<p>
 								
@@ -387,8 +325,8 @@
 						</tr>
 					</tbody>
 				</table>
-			</div> <!--end of col-md-12 div-->
-		</div> <!--end of row3-->
+			</div> <!--end of .col-md-12 div-->
+		</div> <!--end of .row3-->
 		<div class="row">
 				<div class="col-md-12">
 				<table>
@@ -470,7 +408,7 @@
 									promised to turn the urban environment into a “Little New York,” in reference to the benefits
 									offered by that American metropolis where more than one million fellow citizens live.</p>
 
-									<p>Because of its vertical real estate growth, tunnels and elevated passageways, and because of
+									<p>Because of its vertical real estate g.rowth, tunnels and elevated passageways, and because of
 									Santo Domingo’s metro, it can be said that the Dominican capital is seeking a profile somewhat
 									similar to the famous “tower of Babel,” with chimerical disproportion maintained.</p>
 
@@ -498,7 +436,7 @@
 						</tr>
 						<tr>
 							<td colspan='2'>
-								<p style="text-align:center">Click <a target="blank" href="similarity.pdf">here</a> to see PDF file<p>
+								<p style="text-align:center">Click <a target="blank" href="translation-pdfs/similarity.pdf">here</a> to see PDF file<p>
 								<p style="text-align:center">Click <a target="blank" href="http://watchingamerica.com/WA/2016/01/01/the-similarity/" target="_blank">
 								here</a> to go to the Watching America page<p>
 								
@@ -506,8 +444,8 @@
 						</tr>
 					</tbody>
 				</table>
-			</div> <!--end of col-md-12 div-->
-		</div> <!--end of row7-->
+			</div> <!--end of .col-md-12 div-->
+		</div> <!--end of .row7-->
 		<div class="row">
 				<div class="col-md-12">
 				<table>
@@ -599,7 +537,7 @@
 						</tr>
 						<tr>
 							<td colspan='2'>
-								<p style="text-align:center">Click <a href="hillary.pdf" target="_blank"> here </a> to see PDF file<p>
+								<p style="text-align:center">Click <a href="translation-pdfs/hillary.pdf" target="_blank"> here </a> to see PDF file<p>
 								
 								<p style="text-align:center">Click <a href="http://watchingamerica.com/WA/2015/05/02/hillary-2/" target="_blank">
 								here</a> to go to the Watching America page<p>
@@ -609,323 +547,8 @@
 						</tr>
 					</tbody>
 				</table>
-			</div> <!--end of col-md-12 div-->
-		</div> <!--end of row5-->
-		<div class="row">
-				<div class="col-md-12">
-				<table>
-					<thead>
-						<tr>
-							<th colspan="2">
-								<div>
-								<b>Organization:</b> Watching America </br>
-								<b>Subject(s):</b> <span class="label politics" >Politics</span> <br/>
-								<b>Date: </b> February 11, <span class="article-dates">2015 </span>
-								</div>
-							</th>
-						</tr>
-						<tr>
-							<th><b>Source:</b> Spanish </br>
-								<b>Title:</b> La ambiciosa agenda de Obama </br>
-								
-								<b>Words:</b> <span class="badge"> 714 </span> </br>
-								
-							</th>
-							<th><b>Target:</b> English</br>
-								<b>Title:</b> Obama’s Ambitious Agenda </br>
-								
-								<b>Words:</b> <span class="badge"> 730 </span> </br>
-								 
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<div>
-									<p>Al presentar, el martes, su sexto “Estado de la Unión”, el presidente Barack Obama no se
-									centró en resumir los logros de su administración, sino en utilizarlos como base de una
-									ambiciosa agenda para los próximos dos años, y más allá de ellos. Durante su discurso,
-									defendió lo hecho hasta ahora, delineó lo que pretende hacer y lanzó un claro mensaje a la
-									mayoría republicana en ambas Cámaras del Congreso: debemos buscar puntos de encuentro, pero
-									cualquier iniciativa que pretenda echar atrás el camino andado –en salud, migración,
-									regulación financiera y otros ámbitos– será vetada.</p><p> Obama se fundamentó en el concepto de
-									“economía de clase media”, aplicado a las características y desafíos del siglo XXI, para
-									sintetizar las principales propuestas de política interna. Su punto de partida fue que, con
-									la economía en franca recuperación, un vigoroso crecimiento en el empleo, reducción del
-									déficit fiscal, mejoras en el sistema de salud y el retiro de tropas de combate en Afganistán
-									e Irak, es hora de “dar vuelta a la página” y emprender una nueva etapa del camino. Esta ruta
-									debe estar orientada, principalmente, a incrementar los ingresos de la clase media,
-									incrementar algunos créditos fiscales, ampliar sus oportunidades de estudio y capacitación,
-									extender los programas de cuidado infantil y las licencias laborales por enfermedad, y a
-									ampliar la infraestructura física y de telecomunicaciones.</p><p> Obama planteó que, a partir de sus
-									iniciativas, no solo mejorarán las condiciones de vida de la población, sino que, también,
-									Estados Unidos será más competitivo, generará más riqueza y mantendrá su liderazgo global.
-									Para financiar los nuevos proyectos –sin duda, muy costosos– y, además, reducir las
-									desigualdades en los ingresos, propuso modificaciones en la estructura tributaria, que
-									incluirían no solo mayores impuestos a las ganancias y el capital, sino también una
-									simplificación de las leyes vigentes e incentivos a las compañías que repatrien sus ganancias
-									a Estados Unidos. Según sus cálculos, la combinación de estas medidas serán “fiscalmente
-									neutras”.</p><p> La necesidad de nuevos acuerdos comerciales (transpacífico y transatlántico) y la
-									de combatir el cambio climático estuvieron entre los principales componentes internacionales
-									de su discurso. En materia de comercio, la mayoría republicana será, paradójicamente, un gran
-									punto de apoyo. Varios legisladores demócratas, vinculados a intereses sindicales, no ven con
-									buenos ojos una mayor apertura comercial; la mayoría de los republicanos, en cambio, la
-									suscribe. En temas ambientales, sin embargo, será muy difícil que cuente con el apoyo del
-									actual Congreso. Por eso, dependerá, como en otras iniciativas, de usar al máximo sus
-									potestades ejecutivas.</p><p> Tras resaltar la interdependencia entre lo nacional y lo global, Obama
-									insistió en la importancia de un liderazgo estadounidense que combine “el poder militar con
-									una diplomacia vigorosa”, y que construya coaliciones para impulsar intereses comunes con
-									otros países. Es un abordaje acertado y más consecuente con las necesidades y estructuras de
-									poder del mundo actual. En esta línea defendió, apropiadamente, las negociaciones sobre el
-									programa nuclear de Irán, cuyo éxito no está asegurado, pero en las cuales se han producido
-									algunos avances, y dijo que vetará cualesquiera sanciones prematuras del Congreso. También
-									defendió su política hacia Cuba e instó a la eliminación del embargo.</p><p> En el contexto de la
-									política estadounidense, una gran parte de su agenda interna se puede calificar de “liberal”
-									(en el sentido de “intervención estatal” que en ese país le dan al término) y, por tanto, ya
-									los republicanos han anunciado su rechazo a una gran cantidad de puntos. Sin embargo, lo que,
-									en realidad, pretende el Ejecutivo es potenciar el enorme vigor de una economía basada en la
-									libertad de mercado, para hacer que sus frutos se distribuyan mejor; para esto,
-									esencialmente, apela a las transferencias. A la agenda interna se añade una actitud más
-									estratégica, mesurada y de largo plazo en política exterior, que no solo contemple reaccionar
-									militarmente ante las crisis, sino también abordar desafíos realmente globales y, además,
-									impulsar intereses y valores con un mejor equilibrio entre fuerza y diplomacia. La
-									consideramos acertada.</p><p> En síntesis, fue un buen mensaje, portador de una buena visión. La
-									gran pregunta es cuánto de lo propuesto será posible impulsar bajo el dominio republicano del
-									Congreso. Para lograrlo, Obama deberá poner a prueba su genio político, y añadir a su
-									vocación de liderazgo (no siempre exitoso) una paciente disposición a negociar y ceder.</p> 
-
-
-								</div>
-							</td>
-							<td>
-							 	<div>
-										<p>Upon presenting his sixth State of the Union address on Tuesday, President Barack Obama did
-	not focus on summarizing the achievements of his administration but on utilizing them as the
-	base for an ambitious agenda for the next two years and the years following them. During his
-	speech, he defended what has been done up to now, delineated what he plans to do, and
-	launched a clear message to the Republican majority in both Houses of Congress: We must find
-	focal points, but any initiative that tries to move backward — in health, immigration,
-	financial regulation, and other areas — will be vetoed.</p><p> Obama anchored himself on the concept
-	of "middle class economics," applicable to the characteristics and challenges of the 21st
-	century, to synthesize the main domestic policy proposals. His starting point was that with
-	the economy in full-blown recovery, a vigorous growth in employment, reduction of the fiscal
-	deficit, improvements in the health care system, and withdrawal of combat troops from
-	Afghanistan and Iraq, it is time to “turn the page” and undertake a new stage of the journey.
-	This path must be directed mainly toward increasing the income of the middle class,
-	increasing some tax credits, expanding their [the middle class’s] opportunities for education
-	and training, expanding child care programs and sick leave, and expanding physical and
-	telecommunications infrastructure.</p><p> Obama stated that following his initiatives, not only will
-	the population’s living conditions improve, but the United States will also be more
-	competitive, generate more wealth, and maintain its global leadership. To finance the new
-	projects — undoubtedly, very expensive — and, in addition, to reduce income inequality, he
-	proposed modifications to the tax structure, which would include not only higher taxes on
-	profit and capital, but also a simplification of regulations and incentives for companies to
-	repatriate their profit to the United States. According to his calculations, the combination
-	of these measures will be “fiscally neutral.”</p><p> The need for new trade agreements —
-	trans-Pacific and trans-Atlantic — and the need to combat climate change were among the main
-	international components of his speech. On the subject of commerce, the Republican majority
-	will paradoxically be a major base of support. Several Democratic legislators, linked to
-	union interests, do not look favorably upon more openness to trade; the majority of
-	Republicans, on the other hand, endorse it. On environmental matters, however, it will be
-	very difficult to count on the support of the current Congress. Therefore, it will depend, as
-	with other initiatives, on [Obama] using his executive powers to the maximum.</p><p> After
-	highlighting the interdependence between national and global issues, Obama stressed the
-	importance of an American leadership that combines “military power with strong diplomacy,”
-	and that builds coalitions to promote common interests with other countries. It is a sensible
-	approach and is more consistent with the needs and power structures in the current world. In
-	this line [of his speech] he appropriately defended the negotiations on Iran’s nuclear
-	program, whose success is not assured, but where some progress has been made, and said that
-	he would veto any premature sanctions from Congress. He also defended his policy toward Cuba
-	and urged the elimination of the embargo.</p><p> In the context of American politics, a large part
-	of his domestic agenda can be described as “liberal” — in the meaning of “state intervention”
-	that, that country has given to the term — and, therefore, the Republicans have already
-	announced their rejection of a large number of points. Nevertheless, what the president
-	actually aims to do is strengthen the enormous force of an economy based on the free market,
-	so that its fruits are better distributed; to do this, he essentially appeals to [the idea
-	of] transfers. An attitude that is more strategic, measured, and long-term in regards to
-	foreign policy is being added to the domestic agenda that not only considers reacting
-	militarily to the crisis, but also addresses challenges that are really global ones, in
-	addition to promoting interests and values with a better balance between force and diplomacy.
-	We consider it sensible.</p><p> In short, it was a good message that carried a good vision. The big
-	question is how much of what he proposed will be able to thrive under the Republican
-	dominance of Congress. To succeed, Obama will have to put his political genius to the test,
-	and add to his vocation of leadership — not always successful — a patient disposition to
-	negotiate and compromise.</p>
-							 	</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan='2'>
-								<p style="text-align:center">Click <a href="obama-ambitious-agenda.pdf" target="_blank"> here </a> to see PDF file<p>
-								
-								<p style="text-align:center">Click <a href="http://watchingamerica.com/WA/2015/02/11/obamas-ambitious-agenda/" target="_blank">
-								here</a> to go to the Watching America page<p>
-								
-								
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div> <!--end of col-md-12 div-->
-		</div> <!--end of row4-->
-		
-		
-		<div class="row">
-				<div class="col-md-12">
-				<table>
-					<thead>
-						<tr>
-							<th colspan="2">
-								<div>
-								<b>Organization:</b> Watching America </br>
-								<b>Subject(s):</b> <span class="label politics" >Politics</span> <br/>
-								<b>Date: </b>  November 20, <span class="article-dates">2014</span>
-								</div>
-							</th>
-						</tr>
-						<tr>
-							<th><b>Source:</b> Spanish </br>
-								<b>Title:</b> Washington ganó. Obama falló. </br>
-							
-								<b>Words:</b> <span class="badge"> 602 </span> </br>
-								
-							</th>
-							<th><b>Target:</b> English</br>
-								<b>Title:</b> Washington Won – Obama Failed</br>
-								
-								<b>Words:</b> <span class="badge"> 664 </span> </br>
-								 
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<div>
-										<p>
-										En los últimos dos años el descontento contra Obama creció. El martes pasado votaron quienes
-										nunca han querido al Presidente: La minoría blanca, mayores de cincuenta años y conservadores. No
-										les gustó tener a un afroamericano como líder y desde 2008 mostraron su descontento. Ahora lo
-										revirtieron.</p>
-
-										<p>La campaña de oposición y destrucción contra el Presidente funcionó. A pesar de los
-										resultados económicos, mejores que en otras regiones del mundo, los americanos querían más. Con
-										los logros en varios otros temas, los blancos nunca lo aceptaron. Los republicanos ganaron con
-										creces al salir a votar. Ni los hispanos, ni los afroamericanos, ni los asiáticos los pudieron
-										frenar. Faltaron los jóvenes que apoyaron a Obama. Quienes votaron lo hicieron por él como
-										también las mujeres. Fueron insuficientes.</p>
-
-										<p>El sistema político en Estados Unidos mostró de nuevo sus inconsistencias. Desde sus inicios
-										se diseñó con sus pesos y contrapesos. Se buscaba que los congresistas frenaran al Presidente y
-										viceversa y que compitieran por los diferentes temas. Pensaban favorecer así, los intereses de
-										los ciudadanos. Esto siempre fue ineficiente. Hoy mucho más. Desde 2012 Washington se inmovilizó.
-										El Congreso vivió su gran incapacidad legislativa. Las ineficacias ocasionaron enorme
-										desconfianza y descontento en la población. En las instituciones fue a la guerra de todos contra
-										todos. Republicanos contra demócratas. Conservadores contra liberales. Nadie debía caminar. El
-										objetivo: tirar al Presidente. El resultado: el mapa de Estados Unidos se pintó de rojo y en
-										todos los niveles, representantes, senadores y gobernadores. Obama perdió.</p>
-
-										<p>No habían todavía publicado el resultado cuando los líderes de las mayorías, trabajaban su
-										agenda. John Boehner con los representantes, y Mitch McConnell con los senadores, definían
-										prioridades. Quieren mostrar que el gobierno funciona. Buscan el 2016. Presentan cambios a favor
-										del gasoducto Keystone XL desde Alberta, Canadá hasta el Golfo de México. Quieren revertir la
-										política de salud del Presidente. Coinciden en temas de comercio, en especial con Asia a favor
-										del TPP y con Europa. Ahora sí es probable que logren acuerdos. Van por aprobar el presupuesto y
-										cambiar la política fiscal. Migración no es su prioridad.</p>
-
-										<p>El juego empieza ahora. A Obama le queda hacer lo que no ha podido hasta ahora. Mostrar un
-										liderazgo en favorecer la construcción de acuerdos y dejar con esto un legado que el martes
-										perdió. Puede tomar decisiones ejecutivas o conciliar sus intereses con los propuestos. Ni EU y
-										menos el mundo, ganan con la inmovilidad. Los demócratas por su parte, deben reconstruirse y
-										retomar decisiones positivas si quieren mantenerse en la Presidencia. Sin duda las elecciones
-										intermedias son muy distintas de las presidenciales y tiene dos años para replantear su
-										estrategia. El descontento de la población debe ser satisfecho con resultados favorables en todos
-										los temas, incluida en especial, la reforma migratoria. Los hispanos serán determinantes en la
-										próxima elección pero no se les puede seguir prometiendo. Habrá que aprovechar las disputas entre
-										los mismos republicanos. Los más conservadores y del famoso Partido del Té, no coinciden con los
-										liberales. Entre ellos, la relación será difícil. Es aquí con quienes los demócratas pueden
-										sumar. Es con ellos que Obama podría retomar su rumbo. La gran expectativa que levantó en 2008
-										podría no verse tan lastimada como en 2014. No debe desvanecerse sin más. La tiene difícil pero
-										es momento de retomarse a pesar de la enorme adversidad.</p>
-
-										<p>Los acuerdos entre los estadounidenses son fundamentales para México. Nuestra economía y
-										estabilidad dependen de sus mejoras. De ahí que debamos negociar con ambos: republicanos y
-										demócratas. Nos afecta directamente su falta de resultados por inmovilidad. Necesitamos un EU
-										fuerte independientemente de partidos y de las personas.
-
-										</p>
-								</div>
-							</td>
-							<td>
-							 	<div>
-										<p>
-											Over the last two years, the discontent against Obama has grown. On Nov. 4, those who have
-										never wanted the president in office—the conservative white minority over the age of 50—voted.
-										They did not like having an African-American as a leader, and have shown their discontent since
-										2008. Now, they have reversed things.</p><p> The campaign of opposition and destruction against the
-										president worked. Despite the economic situation— better than that in other regions of the world
-										— Americans wanted more. Despite success on various other issues, white people never accepted
-										him. Republicans won by far in going out to vote. Neither Hispanics, nor African-Americans, nor
-										Asians could stop them. The youth that supported Obama were missing. Those young people who did
-										vote, including women, including, did so for him. They were not enough.</p><p> Again, the political
-										system in the United States showed its inconsistencies. Since the beginning, it was designed to
-										include checks and balances. The goal was for congressmen to check the president and vice versa,
-										and it was intended that they compete on different issues. They intended to favor, in this way,
-										the citizen’s interest. This was always inefficient, and today, much more so. Since 2012,
-										Washington has been immobilized. Congress experienced a great inability to legislate.
-										Inefficiencies caused enormous mistrust and discontent among the population. Within institutions,
-										it came to an "everybody against everybody" war: Republicans against Democrats; conservatives
-										against liberals. Nobody could remain independent. The objective was to get rid of the president.
-										The result was a United States map painted red, and on all levels, representatives, senators and
-										governors, Obama lost.</p><p> Election results had not yet been published when the majority leaders
-										began working on their agendas. John Boehner, in the House of Representatives, and Mitch
-										McConnell, in the Senate, were setting priorities. They want to show that the government works.
-										They are seeking to win the presidency in 2016. They propose changes in favor of the Keystone XL
-										pipeline from Alberta, Canada to the Gulf of Mexico. They want to reverse the president's health
-										policy. They agree on trade issues, especially with Asia in favor of the Trans-Pacific
-										Partnership, and with Europe. Now, they are likely to finalize agreements. They are in the
-										process of approving the budget and changing fiscal policy. Immigration is not their priority.</p>
-										<p>The game starts now. What remains for Obama to do is what he has not been able to until now: show
-										leadership that favors agreement, and with this, leave a legacy that he lost in the midterm
-										elections. He can make executive decisions or reconcile his interests with the proposed ones.
-										Neither the U.S. nor the world gains anything from immobility. Democrats, for their part, need to
-										rebuild themselves and make positive decisions again if they want to retain the presidency.
-										Undoubtedly, the midterm elections are very different from the presidential race, and Obama has
-										two years to rethink his strategy. The country’s discontent must be addressed by favorable
-										results on all issues, especially immigration reform. Hispanics will be a determining factor in
-										the next election, but they cannot continue to receive empty promises. It will be necessary to
-										take advantage of the disparity among Republicans. The most conservative ones who are also part
-										of the famous Tea Party do not agree with the liberals. The relationship will be difficult
-										between them. It is there that Democrats can join together. It is there that Obama could get back
-										on track. The high expectations that he raised in 2008 may have been damaged their most in 2014.
-										Obama must not simply disappear. He has a difficult task ahead of him, but it is time to resume
-										work despite the enormous adversity he faces.</p><p> Agreement among Americans is essential to Mexico.
-										Our economy and stability depend on America’s improvements. That is why we must negotiate with
-										both Republicans and Democrats. The parties’ inability to achieve results due to immobility
-										affects us directly. We need a strong U.S. regardless of parties and people.
-
-										</p>
-
-
-
-							 	</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan='2'>
-								<p style="text-align:center">Click <a href="washington-won.pdf" target="_blank"> here </a> to see PDF file<p>
-								
-								<p style="text-align:center">Click <a href="http://watchingamerica.com/WA/2014/11/20/washington-won-obama-failed/" target="_blank">
-								here</a> to go to the Watching America page<p>
-								
-								
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div> <!--end of col-md-12 div-->
-		</div> <!--end of row6-->	
+			</div> <!--end of .col-md-12 div-->
+		</div> <!--end of .row5-->
 		<div class="row">
 				<div class="col-md-12">
 				<table>
@@ -1039,7 +662,7 @@
 						</tr>
 						<tr>
 							<td colspan='2'>
-								<p style="text-align:center">Click <a href="prudent-leader.pdf" target="_blank"> here </a> to see PDF file<p>
+								<p style="text-align:center">Click <a href="translation-pdfs/prudent-leader.pdf" target="_blank"> here </a> to see PDF file<p>
 								
 								<p style="text-align:center">Click <a href="http://watchingamerica.com/WA/2014/09/16/the-efficacy-of-a-prudent-leader/" target="_blank">
 								here</a> to go to the Watching America page<p>
@@ -1049,12 +672,13 @@
 						</tr>
 					</tbody>
 				</table>
-			</div> <!--end of col-md-12 div-->
-		</div> <!--end of row5-->
-		
-		
-		
-	</div> <!--end of container-->
-	<div id="footer"></div>
+			</div> <!--end of .col-md-12 div-->
+		</div> <!--end of .row5-->
+			
+		</div> <!--end of container-->
+		<div class="footer"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="scripts/main.js"></script>
 	</body>
 </html>
