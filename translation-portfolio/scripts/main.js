@@ -7,7 +7,7 @@ $(document).ready(function() {
 	
 		if (pageTitle.match(/about/i) !== null) {
 			$('#nav-about').addClass('active');
-			$('#open')[0].click();
+			
 		}
 		else if (pageTitle.match(/resume/i) !== null) {
 			$('#nav-resume').addClass('active');
@@ -30,16 +30,17 @@ $(document).ready(function() {
 		}
 	}); // .header.load()
 
-	$('.footer').load('footer.html');
+	$('.footer').load('loads/footer.html');
 
 	$('#portfolio-img').mouseenter(function() {
-		$(this).html('<p>Hola, me llamo Kayla</p>');
-		$(this).find('p').css({'background-color': 'rgba(255,255,255,.5)', 'color':'green'});
+		$(this).html('<h3 class="span-greeting">Hola, me llamo Kayla</h3><h3 class="eng-greeting">Hi, I\'m Kayla</h3>').css({'position':'relative'});
+		$('.eng-greeting').css({'position':'absolute', 'top':0,'background-color': 'rgba(255,255,255,.5)', 'color':'green', 'width':'100%','text-align':'center', 'text-shadow': '1px 1px 1px black'});
+		$('.span-greeting').css({'position':'absolute', 'bottom':0,'background-color': 'rgba(255,255,255,.5)', 'color':'green', 'width':'100%','text-align':'center', 'text-shadow': '1px 1px 1px black'});
 
 	});
 
 	$('#portfolio-img').mouseleave(function() {
-		$(this).find('p').remove();
+		$(this).find('h3').remove();
 
 	});
 	
