@@ -1,360 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Kayla's Portfolio</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://use.fontawesome.com/7513968413.js"></script>
-
-  <style>
-    #who-am-i p, #what-have-i-done p {
-    	/*display:none;*/
-    }
-    .affix {
-    	z-index: 2000;
-    }
-   .mark {
-   	background-color: #20ABFF;
-   }
-  </style>
-  <script>
-  	$(document).ready(function() {
-  	
-  	$('[data-toggle="popover"]').popover();
-  	$('.projects-container .col-md-4:not(.alert)').mouseenter(function() {
-  		$(this).addClass('animated bounce');
-  	
-  	});
-  		$('.projects-container .col-md-4:not(.alert)').mouseleave(function() {
-  		$(this).removeClass('animated bounce');
-  	
-  	});
-  	
-  	let bioArray = [{"intro": "<p style='color:#20ABFF'>&lt;aboutme&gt;</p> <p  class='text-center'>Hi, I'm Kayla, a 24 yr old aspiring Full Stack Developer currently living in Oklahoma.</p><p style='color:#20ABFF'>&lt;&#47;aboutme&gt;</p>"}
-  	,{"education":"<p style='color:#20ABFF'>&lt;education&gt;</p> <p class='text-center'> B.A. in Spanish and World Business from University of Tennessee at Knoxville</p><p style='color:#20ABFF'>&lt;&#47;education&gt;</p>"},
-  	 {"devexp": "<p style='color:#20ABFF'>&lt;devexp&gt;</p><p class='text-center'>9 months learning full stack development online using resources like Codecademy, Free Code Camp, and Khan Academy.</p><p style='color:#20ABFF'>&lt;&#47;devexp&gt;</p>"},
-  	 {"hobbies": "<p style='color:#20ABFF'>&lt;hobbies&gt;</p><p class='text-center'> <ul ><li>Basketball</li><li>Soccer</li><li>Musichip hop, r&b, pop, rock, soul, salsa, bachata, merengue, sertanejo, pretty much everything)</li><li>Movies(action,comedy,romance)</li><li>Traveling</li><li>Learning language(both computer and human)</li></ul></p><p style='color:#20ABFF'>&lt;&#47;hobbies&gt;</p>"},
-  	 {"backstory":"<p style='color:#20ABFF'>&lt;backstory&gt;</p><p class='text-center'>I have always been fascinated by technology but never pursued it until the Fall of 2016. After spending a short time going through a few online courses on Khan Academy, I realized I really enjoyed the challenge of solving problems to get programs to work and getting to create an infinite amount of things.Since then I have continued to utilize online courses (check out some of the courses I have used <a href='courses.html'> here </a>) to learn Web Development skills and apply those skills by doing projects. I am working to become a Full Stack Developer and am looking for any opportunities in either Frontend or Backend development. </p><p style='color:#20ABFF'>&lt;&#47;backstory&gt;</p>"}
-  	 ];
-  	let animationsArray = ['animated rollIn', 'animated lightSpeedIn', 'animated fadeInDownBig', 'animated flipInY'];
-	let imagesArray = [{"intro": 'http://kids.nationalgeographic.com/content/dam/kids/photos/States/O-W/oklahoma-map.ngsversion.1484342225228.svg'}, {"education": "http://contracts.utk.edu/wp-content/uploads/sites/38/2013/01/FJG-UTK-3554.jpg"},
-	 {"devexp":"http://d177s889mq500p.cloudfront.net/wp-content/uploads/2016/07/webdevelopment-bg.jpg"},
-	 {"hobbies": "http://kwtv.images.worldnow.com/images/20062279_SA.jpg" },
-	 {"backstory": "DSCF0534.JPG"}
-	];
-  	let counter = 0;
-  	let description = Object.keys(bioArray[counter])[0];
-  	$('#who-am-i-info').html(bioArray[counter][Object.keys(bioArray[counter])]).css({'background-color':'rgba(0,0,0,.5)', 'color':'white','font-size':'20px', 'padding':'10px'}).addClass(animationsArray[counter]).delay(4000).fadeOut();
-	$('#who-am-i').css({'background-image': 'url('+imagesArray[counter][Object.keys(imagesArray[counter])]+')', 'background-size': 'cover','background-repeat':'no-repeat'});
-	$('.'+description+'').addClass('mark');
-	let interval;		
-  	function aboutMeSlideshow() {
-			
-			interval = setInterval(function() {
-				$('#who-am-i-info').removeClass(animationsArray[counter-1]).fadeIn();
-				if (counter > bioArray.length-1) {
-					clearInterval(interval);
-					/*$('#who-am-i-info').html("I have always been fascinated by technology but never pursued it until the Fall of 2016. After spending a short time going through a few online courses on Khan Academy, "+
-  	 "I realized I really enjoyed the challenge of solving problems to get programs to work and getting to create an infinite amount of things."+
-	"Since then I have continued to utilize online courses (check out some of the courses I have used <a href='courses.html'> here </a>) to learn Web Development skills and apply "+
-	"those skills by doing projects. I am working to become a Full Stack Developer and am looking for any opportunities in either Frontend or Backend development. ").css({'background-color':'white', 'color':'black','font-size':'16px','border': '2px ridge black','padding':'10px'});
-					$('#who-am-i').css({'background-image':'none', 'background-color': 'green'});*/
-			}
-			else {
-				counter++;
-			//$('#who-am-i-info').removeClass('animated rollIn');
-			//$('.tag-name').html(Object.keys(bioArray[counter]));
-			let description = Object.keys(bioArray[counter])[0];
-			$('.'+description+'').addClass('mark');
-			$('.col-md-3 span').not('.'+description+'').removeClass('mark');
-			$('#who-am-i-info').html(bioArray[counter][Object.keys(bioArray[counter])]).css({'background-color':'rgba(0,0,0,.5)', 'color':'white','font-size':'20px', 'padding':'10px'}).addClass(animationsArray[counter]).delay(4000).fadeOut();
-			$('#who-am-i').css({'background-image': 'url('+imagesArray[counter][Object.keys(imagesArray[counter])]+')', 'background-size': 'cover','background-repeat':'no-repeat'});
-			console.log($('.'+bioArray[counter][Object.keys(bioArray[counter])]+'').html());
-			//$('.'+Object.keys(bioArray[counter])+'').addClass('mark');
-			//console.log(Object.keys(bioArray[counter])[0]);
-			
-			//$('.intro').addClass('mark');
-			}
+	<head>
+		<title>About Me</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		
-		},7000);
+	</head>
+	<body data-spy="scroll" data-target="#mobile-nav-scroll" data-offset="0">
 		
-		
-  	}
-  	aboutMeSlideshow();
-  	
-  	//let interval = setInterval(aboutMeSlideshow,3000);
-  	
-  	/*$('#who-am-i').mouseenter(function() {
-  		$('#who-am-i p').show().addClass('animated rollIn');
-  	});
-  	$('#what-have-i-done').mouseenter(function() {
-  		$('#what-have-i-done p').show().addClass('animated rotateInUpRight');
-  	});*/
-  	//$('#navbar').load('navbar.html');
-  	$('#footer').load('footer.html');
-  	$('.contact-form').on('submit',function() {
-  		let mailTo = 'michaela.s.clements@gmail.com';
-  		let subject = $('#subject').val();
-  		let message = $('#message').val();
-  		$('button a').attr('href','mailto:'+mailTo+'?subject='+subject+'&body='+message+'');
-  		$('button a')[0].click();
-  	
-  	});
-  	/*$('#projects, #projects-group').hide();
-  	$(document).scroll(function() {
-    if ($(document).scrollTop() > 200) {
-    $('#projects').fadeIn(1500);
-     
-    } 
-    if ($(document).scrollTop() > 500) {
-   
-      $('#projects-group').fadeIn(1500);
-    } 
-    /*if ($(document).scrollTop() > 00) {
-      $('#projects-group').addClass();
-    } 
-    });*/
-  	});
-  </script>
-</head>
-<body data-spy="scroll" data-target="#myScrollspy" data-offset="15">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="index.html">Kayla Clements</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav ">
-        <li class="active"><a href="index.html">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="frontend-projects.html">Frontend Projects</a></li>
-          <li><a href="frontend-backend-projects.html">Frontend/Backend Projects </a></li>
-        </ul>
-      </li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!--<div style="padding-left:0;width:2%;background-color:black;height:100px;position:fixed;right:0;z-index:3000">
-<p><img src="http://www.oceanhomeinspections.com/wp-content/uploads/2014/03/cv_cover_letter-512-150x150.png" width="20" /></p>
-<p><img src="https://www.quanterion.com/wp-content/uploads/2014/11/training-icon.jpg" width="20" /></p>
-</div>-->
-	
-<div class="container-fluid" >
-
-  	<div class="row">
-  	
-  		<div id="section1" class="col-md-12" style="height: 700px;background-color:white;color:black;">
-  			<div class="row">
-  				<div class="col-md-3">
-  			<h3 class="text-center">My Profile</h3>
-  			<div class="text-center" style="margin:auto;width:100%;">
-  			<img id="myphoto" src="kayla-on-beach.jpeg" class="img-circle img-responsive " style="box-shadow:2px 2px 2px black;width:250px;border: 5px solid green;" />
-  			</div> 
-  			<br/>
-  			<p><i><span class="intro"> Aspiring Full Stack Developer </span></i></p>
-  			<p><b><span class="education">Education:</span></b> B.A. in Spanish and World Business from University of Tennessee at Knoxville</p>
-			<p><b><span class="devexp">Development experience:</span></b> 9 months learning full stack development
-			<p><b><span class="intro">Current location:</span></b> Oklahoma</p>
-			<p><b><span class="intro">Age:</span></b> 24</p>
-			<p><b><span class="hobbies">Hobbies:</span></b> Basketball, Soccer, Music (hip hop, r&b, pop, rock, soul, salsa, bachata, merengue, sertanejo, pretty much everything),
-			Movies (action,comedy,romance), Learning languages (both computer and human)</p>
-			
-  				</div> <!--end of col-md-4-->
-  				<div id="who-am-i" class="col-md-9" style="height: 700px;color:white;background-image: url('http://d177s889mq500p.cloudfront.net/wp-content/uploads/2016/07/webdevelopment-bg.jpg');background-size:cover;">
-  					<div class="row">
-  						<div class="col-md-11">
-  						<p id="who-am-i-info">  </p>
-  			
-			<!--<h3 id="who-am-i-info" class="text-center"></h3>-->
-  						</div>
-  						<nav class="col-md-1" id="myScrollspy" style="background-color:black;color:white;border-radius:5px;padding:0;">
-						  <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205" style="background-color:black;color:white;border-radius:5px">
-							<li><a href="#section1">About</a></li>
-							<li><a href="#skill-level">Skill Level</a></li>
-							<li><a href="#projects-group">Projects</a></li>
-							<li><a href="#contact">Contact</a></li>
-						  </ul>
-						</nav>
-  						</div>
-  			
-  		
-  			
-			
-  				</div> <!--end of col-md-9-->
-  				</div> <!--end of row-->
-  			</div> <!--end of col-md-11-->
-			
-  	</div><!-- end of row--> 
-  	<div id="skill-level" class="row">
-  		<div class="col-md-12" style="background-color:#95C7E0;height:600px;padding:0;">
-  			<h2 class="text-center" style="background-color:white;color:#95C7E0;margin-top:0;padding:10px;text-shadow:1px 1px 1px black;border:2px solid black;"> Languages/Libraries/Frameworks Knowledge Level</h2>
-			<div class="row" style="margin-top:5%;"  >
-			<span class="col-sm-3" style="font-weight:bold;font-size:16px"  >HTML (Advanced)</span>
-				<div class="progress" class="col-sm-9"  >
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 77%">
-					<span class="">77% </span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-			<div class="row" >
-			<span class="col-sm-3" >CSS (Intermediate)  </span>
-				<div class="progress" class="col-sm-9">
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
-					<span class="">55% </span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-			<div class="row">
-			<span class="col-sm-3" >Javascript (Intermediate) </span>
-				<div class="progress" class="col-sm-9">
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 44%">
-					<span class="">44% </span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-			<div class="row">
-			<span class="col-sm-3" >jQuery (Intermediate)</span>
-				<div class="progress" class="col-sm-9">
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 66%">
-					<span class="">66%</span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-			<div class="row">
-			<span class="col-sm-3">Bootstrap (Beginner) </span>
-				<div class="progress" class="col-sm-9">
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
-					<span class="">33% </span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-			<div class="row">
-			<span class="col-sm-3">PHP (Intermediate)</span>
-				<div class="progress" class="col-sm-9">
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
-					<span class="">55%</span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-			<div class="row">
-			<span class="col-sm-3">MySQL (Advanced)</span>
-				<div class="progress" class="col-sm-9">
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 77%">
-					<span class="">77% </span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-			<div class="row">
-			<span class="col-sm-3">Ruby (Beginner) </span>
-				<div class="progress" class="col-sm-9">
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 22%">
-					<span class="">22% </span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-			<div class="row">
-			<span class="col-sm-3">Ruby on Rails (Beginner) </span>
-				<div class="progress" class="col-sm-9">
-				  <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 11%">
-					<span class="">11% </span>
-				  </div>
-				</div>
-			</div> <!--end of row-->
-  		
-  		</div>  <!--end of col-md-4-->
-  	
-  	</div> <!--end of row-->
-	<div id="projects-group" class="row projects-container" style="background-color:#ED68FF;">
-		<h2 class="text-center" style="background-color:white;color:#ED68FF;margin-top:0;padding:10px;text-shadow:1px 1px 1px black;border:2px solid black;"> Projects</h2>
-		<div class="col-md-4 " style="margin-top:5%;margin-bottom:5%;">
-			<div class="panel panel-primary" >
-			 <div class="panel-heading" ><h3><a style="color:white" target="_blank" href="Wikipedia-Viewer/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
- 			The wikipedia app allows users to search for a wikipedia article and choose the amount of articles to be returned. If they click on the lucky button one article pertaining to the keywords searched will be returned.
-If they click the random button, one random article will be returned. Users can bookmark an article to read later or favorite an article, which will then be stored in the browser's local storage. 
- </p>">Wikipedia Viewer</a><h3></div>
-      		<div class="panel-body" style="padding:0"><iframe name="wikipedia-viewer" src="Wikipedia-Viewer/index.html" width="100%" height="450px" frameborder="0" ></iframe> </div>
-      		<div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span> </div>
-    	
-			</div> <!--end of panel-->
-		</div> <!--end of col-md-6-->
-		<div class="col-md-4" style="margin-top:5%;margin-bottom:5%;">
-			<div class="panel panel-primary" >
-			 <div class="panel-heading" ><h3><a style="color:white" target="_blank" href="Quote-Generator/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
-			The quote generator app lets users pick a topic and view randomized quotes from that topic by clicking the next or previous button. Users can also click on the twitter button to tweet the current quote displayed. 
-	</p>">Quote Generator</a><h3></div>
-		  <div class="panel-body" style="padding:0"><iframe name="Scene Change" src="Quote-Generator/index.html" width="100%" height="450px" frameborder="0" ></iframe></div>
-		  <div class="panel-footer"><span  class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span> </div>
-	
-			</div> <!--end of panel-->
-		</div> <!--end of col-md-6-->
-		<div class="col-md-4 " style="margin-top:5%;margin-bottom:5%;">
-			<div class="panel panel-primary" >
-				<div class="panel-heading" ><h3><a  style="color:white" target="_blank" href="http://127.0.0.1/ecommerce/index.php" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p style='background-color':'rgba(255,255,255,.5);color:black;'>The Online Shop
-				lets users view products and search for products by brand, category, and keywords. A user can add multiple items to their shopping cart and purchase the items using paypal, which will require them
-				to create an account or sign in if not already logged in. After they make an order they will be sent an email regarding their order and view their order as well as edit their account. There is also an admin panel to manage the website.
-				</p>">Online Shop</a><h3></div>
-			  <div class="panel-body" style="padding:0"><iframe name="Bookmark Application" src="http://127.0.0.1/ecommerce/index.php" width="100%" height="450px" frameborder="0" >
-			  </iframe></div>
-			  <div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span>
-			  		<span class="label label-info"> jQuery </span> <span class="label label-php"> PHP </span> <span class="label label-sql"> SQL </span>
-			  </div>
-	
-			</div> <!--end of panel-->
-			</div> <!--end of col-md-4-->
-		<div class="col-md-4 col-md-offset-4 alert alert-info" style="margin-bottom:0;padding:10px;">
-			<p style="">See more <a href="frontend-projects.html"> frontend projects </a>  or <a href="frontend-backend-projects.html"> frontend/backend projects </a> </p>
-		</div>
-		</div> <!--end of row-->
-		
-<div id="contact" class="row" style="background-color:#7587E0;padding:0;">
-	
-		<h2 class="text-center" style="margin-top:0;background-color:white;color:#7587E0;padding:10px;text-shadow:1px 1px 1px black;border:2px solid black;"> Contact Me</h2>
-	
-	<div class="col-md-6 col-md-offset-3" style="margin-top:5%;margin-bottom:5%; background-color: white;
-    box-shadow: 2px 2px 2px black;">
-    	
-
-		<form class="contact-form" style="padding:15px;">
-			<div class="form-group">
-				<label class="name" for="name" >Name</label>
-				<input class="form-control" type="text" id="name"  required />
+		<nav class="navbar navbar-inverse " id="home-navbar" style="background:linear-gradient( to right,blue,purple);">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#about-navbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			  </button>
+			  <a class="navbar-brand" href="index.html">Kayla Clements</a>
 			</div>
-			<div class="form-group">
-				<label class="name" for="subject" >Subject</label>
-				<input class="form-control" type="text" id="subject"  required />
+			<div class="collapse navbar-collapse" id="about-navbar">
+			  <ul class="nav navbar-nav ">
+				<li id="nav-about" class="active"><a href="index.html">About</a></li>
+				<li><a href="courses.html">Courses</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a href="frontend-projects.html">Frontend Projects</a></li>
+					  <li><a href="frontend-backend-projects.html">Frontend/Backend Projects </a></li>
+					</ul>
+			 	</li>
+				
+			  </ul>
 			</div>
-       		<div class="form-group">
-       			<label class="name" for="message">Message</label>
-        		<textarea class="form-control"  id="message" type="text"   required style="-moz-appearance: textfield;" ></textarea>
-       		</div>
-        
-        <button type="submit" class="btn btn-default btn-primary"><a href="" style="color:white">Send</a></button> 
-		</form>
-	
-	
-	</div> <!-- end of .col-md-6-->
-	</div>  <!--end of row-->
-</div> <!--end of container-fluid-->
-<div id="footer"></div>
+		  </div>
+		</nav>
+		
+		<nav class="navbar navbar-inverse navbar-fixed-top mobile-navbar">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobile-nav">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			  </button>
+			  <a class="navbar-brand" href="index.html">Kayla Clements</a>
+			</div>
+			<div class="collapse navbar-collapse" id="mobile-nav">
+			  <ul class="nav navbar-nav ">
+				<li class="dropdown ">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#about-me-info">About</a></li>
+						<li><a href="#skill-level-info">Skill Level</a></li>
+						<li><a href="#sample-projects-group">Projects</a></li>
+					</ul>
+			 	</li>
+				<li><a href="courses.html">Courses</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a href="frontend-projects.html">Frontend Projects</a></li>
+					  <li><a href="frontend-backend-projects.html">Frontend/Backend Projects </a></li>
+					</ul>
+			 	</li>
+				
+			  </ul>
+			</div>
+		  </div>
+		</nav>
 
-  
-
-</body>
+		<nav id="mobile-nav-scroll">
+			<ul class="nav nav-pills nav-stacked" style="">
+				<li><a href="#about-me-info">About</a></li>
+				<li><a href="#skill-level-info">Skill Level</a></li>
+				<li><a href="#sample-projects-group">Projects</a></li>
+			</ul>
+		</nav>
+								
+		<div class="container" id="about-me-info">
+			<div class="row">
+				<div class="col-md-3 my-photo-container text-center" >
+					<img id="my-photo" src="images/kayla-on-beach.jpeg"  />
+					 <p  class='text-center greeting'> Hi, I'm Kayla, a 24 yr old aspiring Full Stack Developer currently living in Oklahoma, U.S.. </p>
+				
+				</div> <!--end of .my-photo-container-->
+				<div class="col-md-9 my-bio">
+					<div class="row">
+						<div class="col-md-12 my-bio-title">
+							<h3 class="text-center" >About Me</h3>
+						</div> <!--end of .my-bio-title-->
+					
+					</div> <!--end of .row-->
+					<div class="row">
+						<div class="col-md-4 quick-facts" >
+							<p><code>&lt;education&gt;</code></p> <p class='text-center'> B.A. in Spanish and World Business from University of Tennessee at Knoxville</p><p><code>&lt;&#47;education&gt;</code></p>
+					
+						
+				
+							<p><code>&lt;devexp&gt;</code></p><p class='text-center'>9 months learning full stack development online</p><p><code>&lt;&#47;devexp&gt;</code></p>
+					
+						
+							<p><code>&lt;hobbies&gt;</code></p><p class='text-center'> <ul ><li>Basketball</li><li>Soccer</li><li>Music (hip hop, r&b, pop, rock, soul, salsa, bachata, merengue, sertanejo, pretty much everything)</li><li>Movies(action,comedy,romance)</li><li>Traveling</li><li>Learning language(both computer and human)</li></ul></p><p><code>&lt;&#47;hobbies&gt;</code></p>
+					
+					
+						</div> <!--end of .quick-facts-->
+						<div class="col-md-8 backstory-container">
+							<p  class="backstory">I have always been fascinated by technology but never pursued it until the Fall of 2016. After spending
+								 a short time going through a few online courses on Khan Academy, I realized I really enjoyed the challenge of solving problems to get programs to work and getting 
+								 to create an infinite amount of things.Since then I have continued to utilize online courses (check out some of the courses I have used <a href='courses.html'> here </a>) 
+								 to learn Web Development skills and apply those skills by doing projects. I am working to become a Full Stack Developer and am looking for any opportunities in either Frontend
+								  or Backend development.
+							</p>
+							
+						</div> <!--end of .backstory-->
+					</div> <!--end of .row-->
+				</div> <!--end of .my-bio-->
+			</div> <!--end of .row-->
+		
+		</div> <!--end of #about-me-info-->
+		
+		<div class="container" id="skill-level-info">
+		<h2 class="text-center"> Languages/Libraries/Frameworks Knowledge Level</h2>
+			<div class="container">
+				<div class="row" style="padding:0">
+				
+					<span class="col-sm-3" >HTML (Advanced)</span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-html " role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
+							<span class="">77% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+			
+			<div class="container">
+				<div class="row">
+					<span class="col-sm-3" >CSS (Intermediate) </span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-css " role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" >
+							<span class="">55% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+			
+			<div class="container">
+				<div class="row">
+					<span class="col-sm-3" >Javascript (Intermediate) </span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-js" role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100">
+							<span class="">44% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+			
+			<div class="container">
+				<div class="row">
+					<span class="col-sm-3" >jQuery (Intermediate) </span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-jquery " role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
+							<span class="">77% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+			
+			<div class="container">
+				<div class="row">
+					<span class="col-sm-3" >Bootstrap (Beginner)</span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-bootstrap" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+							<span class="">33% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+			
+			<div class="container">
+				<div class="row">
+					<span class="col-sm-3" >PHP (Intermediate)</span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-php" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" >
+							<span class="">55% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+			<div class="container">
+				<div class="row">
+					<span class="col-sm-3" >MySQL (Advanced)</span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-mysql" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
+							<span class="">77% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+			<div class="container">
+				<div class="row">
+					<span class="col-sm-3" >Ruby (Beginner)</span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-ruby" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100">
+							<span class="">22% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+			<div class="container">
+				<div class="row">
+					<span class="col-sm-3" >Ruby on Rails (Beginner) </span>
+					<div class="progress" class="col-sm-9"  >
+						<div class="progress-bar progress-bar-striped progress-bar-rails" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100">
+							<span class="">11% </span>
+						</div> <!--end of .progress-bar-->
+					</div> <!--end of .progress-->
+				</div> <!--end of .row-->
+			</div> <!--end of .container-->
+		</div>	<!--end of #skill-level-info-->
+		
+		<div id="sample-projects-group" class="container projects-container">
+			<h2 class="text-center"> Projects</h2>
+			<div class="container">
+				<div class="col-md-4 sample-projects" >
+					<div class="panel panel-primary" >
+						<div class="panel-heading" >
+							<h3>
+								<a target="_blank" href="Wikipedia-Viewer/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
+										The wikipedia app allows users to search for a wikipedia article and choose the amount of articles to be returned. If they click on the lucky button one article pertaining to the keywords searched will be returned.
+										If they click the random button, one random article will be returned. Users can bookmark an article to read later or favorite an article, which will then be stored in the browser's local storage. 
+										</p>">Wikipedia Viewer
+								</a>
+							<h3>
+						</div>
+						<div class="panel-body" ><iframe name="wikipedia-viewer" src="Wikipedia-Viewer/index.html" width="100%" height="450px" frameborder="0" ></iframe> </div>
+						<div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span> </div>
+					
+					</div> <!--end of .panel-->
+				</div> <!--end of .sample-projects-->
+				<div class="col-md-4 sample-projects" >
+					<div class="panel panel-primary" >
+						<div class="panel-heading" >
+							<h3>
+								<a  target="_blank" href="Quote-Generator/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
+									The quote generator app lets users pick a topic and view randomized quotes from that topic by clicking the next or previous button. Users can also click on the twitter button to tweet the current quote displayed. 
+									</p>">Quote Generator
+								</a>
+							<h3>
+						</div>
+						<div class="panel-body" ><iframe name="Scene Change" src="Quote-Generator/index.html" width="100%" height="450px" frameborder="0" ></iframe></div>
+						<div class="panel-footer"><span  class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> <span class="label label-info"> jQuery </span> </div>
+				
+					</div> <!--end of .panel-->
+				
+				</div> <!--end of .sample-projects-->
+			
+				<div class="col-md-4 sample-projects" >
+					<div class="panel panel-primary" >
+						<div class="panel-heading" >
+							<h3>
+								<a target="_blank" href="http://127.0.0.1/ecommerce/index.php" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p style='background-color':'rgba(255,255,255,.5);color:black;'>The Online Shop
+									lets users view products and search for products by brand, category, and keywords. A user can add multiple items to their shopping cart and purchase the items using paypal, which will require them
+									to create an account or sign in if not already logged in. After they make an order they will be sent an email regarding their order and view their order as well as edit their account. There is also an admin panel to manage the website.
+									</p>">Online Shop
+								</a>
+							<h3>
+						</div>
+						<div class="panel-body" style="padding:0"><iframe name="Bookmark Application" src="http://127.0.0.1/ecommerce/index.php" width="100%" height="450px" frameborder="0" ></iframe></div>
+						<div class="panel-footer"><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span>
+							<span class="label label-info"> jQuery </span> <span class="label label-php"> PHP </span> <span class="label label-sql"> SQL </span>
+						 </div>
+	
+					</div> <!--end of .panel-->
+			
+				</div><!--end of .sample-projects-->
+			
+				<div class="col-md-4 col-md-offset-4 alert alert-info" >
+						<p style="">See more <a href="frontend-projects.html"> frontend projects </a>  or <a href="frontend-backend-projects.html"> frontend/backend projects </a> </p>
+				</div> <!--end of .alert-info-->
+			</div> <!--end of .container-->
+		</div> <!--end of #sample-projects-group-->
+		
+			
+		<footer class="footer"></footer>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://use.fontawesome.com/7513968413.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+		<script src="scripts/main.js"></script>
+		
+	</body>
 </html>

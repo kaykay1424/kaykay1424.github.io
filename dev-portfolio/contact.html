@@ -1,64 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Kayla's Portfolio | Courses</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://use.fontawesome.com/7513968413.js"></script>
-  <script>
-  	$(document).ready(function() {
-  	$('[data-toggle="popover"]').popover();
-  	 $('#navbar').load('navbar.html', function() {
-			$('.contact').addClass('active');
-	});
-  	$('#footer').load('footer.html');
-  	$('.contact-form').on('submit',function() {
-  		let mailTo = 'michaela.s.clements@gmail.com';
-  		let subject = $('#subject').val();
-  		let message = $('#message').val();
-  		$('button a').attr('href','mailto:'+mailTo+'?subject='+subject+'&body='+message+'');
-  		$('button a')[0].click();
-  	
-  	});
-  	});
-  </script>
-  
-</head>
-<body>
-<div id="navbar"></div>
-        
-<div class="container-fluid" style="background-color:#7587E0;padding-bottom:5%;padding-top:5%;">
+	<head>
+		<title>Contact</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/main.css">
+		
+	</head>
+	<body>
+		<nav class="navbar"></nav>
+		
+		<div class="container-fluid contact-container">
 	
-	<div class="col-md-6 col-md-offset-3" style=" background-color: white;
-    box-shadow: 2px 2px 2px black;padding:20px;">
-		<form class="contact-form">
-			<h2 class="text-center"> Contact Me </h2>
-			<div class="form-group">
-				<label class="name" for="name" >Name</label>
-				<input class="form-control" type="text" id="name"  required />
-			</div>
-			<div class="form-group">
-				<label class="name" for="subject" >Subject</label>
-				<input class="form-control" type="text" id="subject"  required />
-			</div>
-       		<div class="form-group">
-       			<label class="name" for="message">Message</label>
-        		<textarea class="form-control"  id="message" type="text"   required style="-moz-appearance: textfield;" ></textarea>
-       		</div>
-        
-        <button type="submit" class="btn btn-default btn-primary"><a href="" style="color:white">Send</a></button> 
-		</form>
+			<div class="col-md-6 col-md-offset-3 contact-form-container">
+				<form class="contact-form" id="contact-form1">
+					<h2 class="text-center"> Contact Me </h2>
+					
+					<div class="form-group">
+						<label class="name" for="name1" >Name</label>
+						<input class="form-control" type="text" id="name1" class="name" required />
+					</div>
+					<div class="form-group">
+						<label class="name" for="subject1" >Subject</label>
+						<input class="form-control" type="text" class="subject" id="subject1" required />
+					</div>
+					<div class="form-group">
+						<label class="name" for="message1">Message</label>
+						<textarea class="form-control" id="message1" class="message" type="text"  required ></textarea>
+					</div>
+		
+					<button type="submit" class="btn btn-default btn-primary contact-button"><a href="#" >Send</a></button> 
+				</form>
 	
-	</div> <!-- end of .col-md-6-->
+			</div> <!-- end of .col-md-6-->
 
-</div> <!--end of container-fluid-->
-<div id="footer"></div>
+		</div> <!--end of .contact-container-->
+		
+		<footer class="footer"></footer>
 
-  
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://use.fontawesome.com/7513968413.js"></script>
+		<script src="scripts/main.js"></script>
 
-</body>
+	</body>
 </html>

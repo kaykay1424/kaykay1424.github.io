@@ -77,7 +77,7 @@ $(document).ready(function() {
 		let selectedDate = $('select option:selected').val();
 		$('#government-topics-container .col-md-12').find('.article-dates:contains('+selectedDate+')').parents('#government-topics-container .col-md-12').show();
 		let showArticleLength = $('#government-topics-container .col-md-12:visible').length;
-		$('.filter-results').html('Article match(es): '+ showArticleLength);;
+		$('#government-topic-form .filter-results').html('Article match(es): '+ showArticleLength);;
 		$('#government-topic-form')[0].reset();
 	}); //end of #government-topic-form submit function
 		
@@ -113,13 +113,13 @@ $(document).ready(function() {
 			}
 	
 			else {
-			let showArticle = $('.col-md-12 .label:contains('+allValues[i]+')').parents('.col-md-12');
+			let showArticle = $('.col-md-12 .label:contains('+allValues[i]+')').parents('.all-topics-container .col-md-12');
 			showArticle.show();
 			}
 	
 		}
 		let showArticleLength = $('.all-topics-container .col-md-12:visible').length;
-		$('.filter-results').html('Article match(es): '+ showArticleLength);
+		$('#all-topics-form .filter-results').html('Article match(es): '+ showArticleLength);
 		$('#all-topics-form')[0].reset();
 	}); //end of #all-topics-form submit function
 			

@@ -1,0 +1,600 @@
+	/* All Pages */
+
+
+
+
+.navbar {
+	margin-bottom: 0;
+  	border-radius: 0;
+  	background:linear-gradient( to right,blue,purple);
+}
+
+.navbar .navbar-header a, .navbar .navbar-nav li a  {
+	color: white;
+	
+}
+
+.navbar .navbar-nav .dropdown-menu li a {
+	color: black;
+}
+.navbar .navbar-nav .dropdown-menu .active a {
+	color: white;
+}
+
+.navbar .navbar-nav li a:hover {
+	text-decoration: underline;
+}	
+
+.footer {
+  background:linear-gradient( to left,blue,purple);
+  color: white;
+  padding-top:2%;
+  padding-bottom: 2%;
+
+}
+
+.footer i {
+	color: darkblue;
+}
+
+.footer .btn-sm {
+	border-radius:100%;
+	margin-top: 2%;
+}
+body {
+	background-color:lightgrey;
+}
+
+
+ /* Courses Page */
+
+
+
+#courses [data-toggle="collapse"] {
+	color: white;
+	text-decoration: underline;
+	cursor:pointer;
+}
+
+#courses {
+	padding:0;
+}
+#courses p {
+	font-size: 18px;
+}
+ 
+.courses-container  {
+	background-image:url('http://www.clodaghemoe.com/wp-content/uploads/2016/05/Blackboard-2007.jpg') ;
+	background-size:cover ;
+	background-repeat:no-repeat;
+	background-position:center ;
+	font-family:'Chalkduster', cursive;
+	color:white ;
+	padding-bottom:5% ;
+	padding-top:5% ;
+	height:auto;
+	margin-top:4.5%;
+}
+.courses-body {
+	background-color: lightgrey;
+	
+	
+}
+
+
+
+		/* Responsive styles */
+/* Mobile Sm */
+@media only screen and (max-width: 320px) {
+	.projects-title {
+		width: 100%;
+		font-size:22px;
+	}
+	.mobile-navbar {
+		display: inline;
+	}
+	#mobile-nav-scroll {
+		display:none;
+	}
+	.home-navbar {
+		display: none;
+	}
+}
+/* Mobile Med */
+@media only screen and (max-width: 374px) and (min-width:321px) {
+	.projects-title {
+		width: 100%;
+		font-size:32px;
+	}
+	.mobile-navbar {
+		display: inline;
+	}
+	#mobile-nav-scroll {
+		display:none;
+	}
+	.home-navbar {
+		display: none;
+	}
+}
+/* Mobile Sm */
+@media only screen and (max-width: 424px) and (min-width:375px) {
+	.projects-title {
+		width: 100%;
+		font-size:30px;
+	}
+	.mobile-navbar {
+		display: inline;
+	}
+	#mobile-nav-scroll {
+		display:none;
+	}
+	.home-navbar {
+		display: none;
+	}
+}
+/* Mobile Lg */
+@media only screen and (max-width: 767px) and (min-width:425px) {
+	.projects-title {
+		width: 100%;
+		font-size:32px;
+	}
+	.mobile-navbar {
+		display: inline;
+	}
+	#mobile-nav-scroll {
+		display:none;
+	}
+	.home-navbar {
+		display: none;
+	}
+	
+}
+/* Tablet */
+@media only screen and (max-width: 799px) and (min-width:768px) {
+	.projects-title {
+		width: 70%;
+		font-size:32px;
+	}
+	.mobile-navbar {
+		display: none;
+	}
+	#mobile-nav-scroll {
+		display:inline;
+	}
+	.home-navbar {
+		display: inline;
+		margin-bottom: 0;
+  		border-radius: 0;
+  		background:linear-gradient( to right,blue,purple);
+	}
+}
+/* Laptop */
+@media only screen and (min-width: 800px) {
+	.projects-title {
+		width: 70%;
+		font-size:30px;
+	}
+	.mobile-navbar {
+		display: none;
+	}
+	#mobile-nav-scroll {
+		display:inline;
+	}
+	.home-navbar {
+		display: inline;
+		margin-bottom: 0;
+  		border-radius: 0;
+  		background:linear-gradient( to right,blue,purple);
+	}
+}
+	/* Laptop Lg */
+@media only screen and (max-width: 2560px) and (min-width:1441px) {
+	.projects-title {
+		width: 70%;
+		font-size:32px;
+	}
+	.mobile-navbar {
+		display: none;
+	}
+	#mobile-nav-scroll {
+		display:inline;
+	}
+	.home-navbar {
+		display: inline;
+	}
+}
+
+
+
+
+				
+
+
+
+	/* About Me Page */
+.affix {
+	z-index: 2000;
+}
+
+#mobile-nav-scroll li a:hover {
+	background-color: purple;
+}
+
+#mobile-nav-scroll li a:focus {
+	background-color: transparent;
+}
+
+
+
+#about-me-info {
+	height: auto;
+	
+	background-color:white;
+}
+
+.quick-facts code {
+	background-color: white;
+	color:  #3D85D7 ;
+}
+
+.my-photo-container {
+
+	background-color:white;
+	/*height:756px;*/
+	padding-bottom:10%;
+	margin:0;
+}
+
+.greeting {
+	border: 5px dotted black;
+	background-color: rgb(30,25,200);
+	color: white;
+	margin-top: 5%;
+	padding:10px;
+	display:none;
+}
+
+.my-bio-title {
+	padding:0;
+	background-color:rgba(167,182,184,.5);
+	color:white;
+	text-shadow:1px 1px 1px black;
+	margin:0;
+}
+
+#mobile-nav-scroll {
+	z-index:1000;
+	position:fixed;
+	top:10%;
+	right:0;
+	background-color:black;
+	color:white;
+	border-radius:5px;
+	padding:0;
+
+}
+
+.nav-pills li a {
+	background-color:black;
+	color:white;
+	border-radius:5px;
+
+}
+
+#my-photo {
+	box-shadow:2px 2px 2px black;
+	border: 5px ridge black;
+	margin-top: 5%;
+	width:90%;
+}
+
+.my-bio {
+	background-color:black;
+	color:white;
+	
+	/*height:30%;*/
+	background-image:url('http://d177s889mq500p.cloudfront.net/wp-content/uploads/2016/07/webdevelopment-bg.jpg');
+	background-size:cover;
+	background-position:center;
+		
+}
+
+.quick-facts {
+	background-color:rgba(30,25,200,.5);
+	/*height:645px;*/
+	padding-top:3%;
+	padding-bottom:3%;
+
+}
+
+.backstory-container {
+	/*height:700px;*/
+	padding:0;
+	padding-bottom:5%;
+
+}
+
+
+.backstory {
+	height:auto;
+	font-size:18px;
+	background-color: rgba(0,0,0,.5);
+	padding:3%;
+
+}
+
+
+.progress-bar-css, .progress-bar-php {
+	width: 55%;
+
+}
+
+.progress-bar-html, .progress-bar-jquery, .progress-bar-mysql {
+	width: 77%;
+
+}
+
+.progress-bar-js {
+	width:44%;
+}
+
+.progress-bar-bootstrap {
+	width: 33%;
+}
+
+.progress-bar-ruby {
+	width: 22%;
+}
+
+.progress-bar-rails {
+	width: 11%;
+}
+
+#who-am-i {
+	height: 700px;
+	color:white;
+	background-image: url('http://d177s889mq500p.cloudfront.net/wp-content/uploads/2016/07/webdevelopment-bg.jpg');
+	background-size:cover;
+}
+
+#skill-level-info .row {
+	
+	font-weight:bold;
+	font-size: 16px;
+	color:black;
+}
+
+#skill-level-info {
+	background-color:#95C7E0;
+	height:auto;
+	padding:0;
+	padding-bottom:5%;
+	
+}
+
+#skill-level-info h2 {
+	background-color:white;
+	color:#95C7E0;
+	margin-top:0;
+	padding:10px;
+	text-shadow:1px 1px 1px black;
+	border:2px solid black;
+	margin-bottom:5%;
+}
+
+
+#sample-projects-group {
+	background-color:#ED68FF;
+	padding:0;
+}
+
+#sample-projects-group h2 {
+
+	background-color:white;
+	color:#ED68FF;
+	margin-top:0;
+	padding:10px;
+	text-shadow:1px 1px 1px black;
+	border:2px solid black;
+}
+
+.sample-projects {
+	margin-top:5%;
+	margin-bottom:5%;
+}
+
+.alert-info {
+	margin-bottom:0;
+	padding:10px;
+}
+
+#contact {
+	background-color:#7587E0;
+	height:400px;
+	padding:0;
+	
+}
+
+#contact h2 {
+	margin-top:0;
+	background-color:white;
+	color:#7587E0;
+	padding:10px;
+	text-shadow:1px 1px 1px black;
+	border:2px solid black;
+	margin-bottom:5%;
+}
+
+.contact-form-container {
+	margin-top:5%;
+	margin-bottom:5%;
+	background-color: white;
+	box-shadow: 2px 2px 2px black;
+}
+
+#contact-form {
+    padding:15px;
+    
+}
+ 
+   
+
+
+
+    
+    
+   	 /* All Projects Pages/About Me Page */
+
+.label {
+	margin-left:2%;
+	line-height: 2.5em;
+}
+    
+.label-bootstrap {
+	background-color: #E030FF;
+	color: white;
+	
+}
+
+ .label-php {
+	background-color: #4AFEAC;
+	color: white;
+}
+
+ .label-sql {
+	background-color: #313D54;
+	color: white;
+}
+
+ .label-ruby {
+	background-color: #EF231A;
+	color: white;
+}
+
+ .label-rails {
+	background-color: #4A5354;
+	color: white;
+} 
+	
+.projects-form-container {
+
+	background-color:#A371FF;
+	padding-bottom:5%;
+	padding-top:5%;
+}
+
+.projects-container {
+	background-color:white;
+	margin-top:0;
+	padding-bottom:5%;
+}
+
+.projects-container h2 {
+	color:#20ABFF;
+	border-bottom:2px dotted #20ABFF;
+	padding-bottom:2%;
+
+}
+
+.projects-container .row:first-child {
+	margin-top:3%;
+}
+
+.projects-container hr {
+    	border:2px solid #20ABFF;
+}
+
+.projects-container .popover {
+    color: black;
+    max-width: 500px;
+}
+
+.projects-title {
+	margin:auto;
+	background-color:white;
+	color:#A371FF;
+	font-weight: bold;
+	border-radius:100px;
+} 
+
+.filter-project-container {
+	margin-top:5%;
+}
+
+.panel {
+    box-shadow: 2px 2px 2px black;
+}
+.panel-heading a {
+	color:white;
+}
+.panel-body {
+	padding:0;
+}
+
+
+
+
+	/* Frontend Projects Page */
+	
+#frontend-form {
+	height:350px;
+	padding:10px;
+	border:2px solid black;
+	box-shadow:2px 2px 2px;
+	text-align:left;
+	background-color:white;
+}
+	  
+	
+	
+	
+	
+	/* Frontend/Backend Projects Page */
+	
+#frontend-backend-form {
+	height:350px;
+	border:2px solid black;
+	box-shadow:2px 2px 2px;
+	text-align:left;
+	background-color:white;
+}
+  
+#frontend-backend-form .checkbox {
+	display: inline-block;
+}
+	  
+    /* Contact Page/About Me Page */
+  
+.contact-form .form-control {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	box-shadow: none;
+	border-bottom: 2px solid grey;
+	background-color: transparent;
+}
+
+.contact-form {
+
+	padding-bottom:5%;
+}
+.contact-container {
+	background-color:#7587E0;
+	padding-bottom:5%;
+	padding-top:5%;
+
+}
+
+.contact-button {
+	width:300px;
+}
+.contact-button a {
+	color: white;
+}
+.message {
+	-moz-appearance: textfield;
+}
+
+
+    
+    
