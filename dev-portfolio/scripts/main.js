@@ -1,9 +1,18 @@
 $(document).ready(function() {
 					// All Pages
+
+	
 	$('.Navbar').load('loads/navbar.html', function() {
 		
 		let = pageTitle = $(document).find("title").text();
 	
+		
+		
+		if (pageTitle.match(/about/i) !== null) {
+			$('#nav-about').addClass('active');
+			$('nav').removeClass('navbar-fixed-top');
+		}
+		
 		if (pageTitle.match(/courses/i) !== null) {
 			$('#nav-courses').addClass('active');
 		}
@@ -33,6 +42,8 @@ $(document).ready(function() {
 		
 		// About Page
   	
+  	
+  	
   	$('.my-photo-container').mouseenter(function() {
   		$('.greeting').removeClass('animated flipOutX');
   		$('.greeting').show().addClass('animated flipInX');
@@ -50,23 +61,26 @@ $(document).ready(function() {
   		$(this).removeClass('focus');
   	}); 
   	
-  	$('.nav-pills li a ').smoothScroll({ afterScroll: function()
+  	if ($('script[src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"]').length === 1) {
+  	
+  
+  		$('.nav-pills li a ').smoothScroll({ afterScroll: function()
   	
   		
-  	 { 
+		 { 
+	 
+			let element = $(this).attr('href'); 
+			$(this).blur();
+			//alert('yo');
+	 
+		  }
+	 
+	 
+	 
+	 
+		 });
   	 
-  		let element = $(this).attr('href'); 
-  		$(this).blur();
-  	 	//alert('yo');
-  	 
-  	  }
-  	 
-  	 
-  	 
-  	 
-  	 });
-  	 
-  	
+  	}
   	
   	
 		// Frontend Projects Page
@@ -83,7 +97,7 @@ $(document).ready(function() {
 	$('#frontend-form').on('submit', function(e) {
 			e.preventDefault();
 			let allValues = [];
-			
+			$('#frontend-projects-container').show();
 			$('#frontend-projects-container .col-md-6').hide();
 			
 			$("#frontend-form input[type='checkbox']:checked").each(function() {
@@ -102,6 +116,12 @@ $(document).ready(function() {
 			
 			$('#frontend-form .filter-results').html('Project match(es): '+ showProjectLength);
 			$('#frontend-form')[0].reset();
+			
+			if (showProjectLength === 0) {
+				$('#frontend-projects-container').hide();
+			}
+			
+			
 	}); //end of #frontend-form.submit()
 		
 		
@@ -113,6 +133,7 @@ $(document).ready(function() {
 	$('#frontend-backend-form').on('submit', function(e) {
 	e.preventDefault();
 	let allValues = [];
+	$('#frontend-backend-projects-container').show();
 	$('#frontend-backend-projects-container .col-md-6').hide();
 	$("#frontend-backend-form input[type='checkbox']:checked").each(function() {
 		let checkboxValue = $(this).val();
@@ -129,6 +150,10 @@ $(document).ready(function() {
 	let showProjectLength = $('#frontend-backend-projects-container  .col-md-6:visible').length;
 	$('#frontend-backend-form .filter-results').html('Project match(es): '+ showProjectLength);
 	$('#frontend-backend-form')[0].reset();
+	
+	if (showProjectLength === 0) {
+		$('#frontend-backend-projects-container').hide();
+	}
 	}); //end of #frontend-backend-form.submit()
 		
 		

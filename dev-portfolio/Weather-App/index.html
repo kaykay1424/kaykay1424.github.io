@@ -10,10 +10,10 @@
 	</head>
 	<body>
 		<div class="container-flud" id="loading-div">
-			<div class="loading col-md-4 col-md-offset-4"><p>Getting weather data for your location</p></div>
-			<div class="location-access col-md-4 col-md-offset-4"><p>Please allow your location to be accessed in order to view the weather</p></div>
-			<div class="refresh-page col-md-4 col-md-offset-4"><p>Please refresh the page and allow your location to be accessed in order to view the weather</p></div>
-			<div class="error col-md-4 col-md-offset-4"><p>There was an error. Please refresh the page. </p></div>
+			<div class="loading text-center col-md-8 col-md-offset-2"><p>Getting weather data for your location</p></div>
+			<div class="location-access text-center col-md-8 col-md-offset-2"><p>Please allow your location to be accessed in order to view the weather</p></div>
+			<div class="refresh-page text-center col-md-8 col-md-offset-2"><p>Please refresh the page and allow your location to be accessed in order to view the weather</p></div>
+			<div class="error text-center col-md-8 col-md-offset-2"><p>There was an error. Please refresh the page. </p></div>
 		</div> 
 		<div class="container-fluid" id="forecasts">
 			<div class="row">
@@ -28,43 +28,45 @@
 					<p class="wind"></p>
 					<p class="humidity"></p>
 				</div> <!-- end of col-md-4 -->
-			</div> <!-- end of row -->
+			</div> <!-- end of .row -->
+			
 			<div class="row">
 				<div class="col-md-12"  id="week-forecast" >
 					<h3 class="text-center">5-day Forecast</h3>
-					<div id="day1" class="col-md-2 col-md-offset-1 ">
-						<h5 class="current-day"></h5>
-						<p class="condition-description"> </p>
-						<p class="high-low"><span class="high"></span> <span class="low"></span></p>
 					
-					</div> <!-- end of day1 -->
-					<div class="col-md-2 " id="day2">
-					<h5 class="current-day"></h5>
-						<p class="condition-description"></p>
-						<p class="high-low"><span class="high"></span> <span class="low"></span></p>
+						<div id="day1" class="col-md-2 col-md-offset-1 ">
+							<h5 class="current-day"></h5>
+							<p class="condition-description"> </p>
+							<p class="high-low"><span class="high"></span> <span class="low"></span></p>
 					
-					</div> <!-- end of day2 -->
-					<div class="col-md-2 " id="day3">
+						</div> <!-- end of day1 -->
+						<div class="col-md-2 " id="day2">
 						<h5 class="current-day"></h5>
-						<p class="condition-description"></p>
-						<p class="high-low"><span class="high"></span> <span class="low"></span></p>
+							<p class="condition-description"></p>
+							<p class="high-low"><span class="high"></span> <span class="low"></span></p>
 					
-					</div> <!-- end of day3 -->
-					<div class="col-md-2 " id="day4">
-						<h5 class="current-day"></h5>
-						<p class="condition-description"></p>
-						<p class="high-low"><span class="high"></span> <span class="low"></span></p>
+						</div> <!-- end of day2 -->
+						<div class="col-md-2 " id="day3">
+							<h5 class="current-day"></h5>
+							<p class="condition-description"></p>
+							<p class="high-low"><span class="high"></span> <span class="low"></span></p>
 					
-					</div> <!-- end of day4 -->
-					<div class="col-md-2 " id="day5">
-						<h5 class="current-day"></h5>
-						<p class="condition-description"></p>
-						<p class="high-low"><span class="high"></span> <span class="low"></span></p>
-					</div> <!-- end of day5 -->
-				
+						</div> <!-- end of day3 -->
+						<div class="col-md-2 " id="day4">
+							<h5 class="current-day"></h5>
+							<p class="condition-description"></p>
+							<p class="high-low"><span class="high"></span> <span class="low"></span></p>
+					
+						</div> <!-- end of day4 -->
+						<div class="col-md-2 " id="day5">
+							<h5 class="current-day"></h5>
+							<p class="condition-description"></p>
+							<p class="high-low"><span class="high"></span> <span class="low"></span></p>
+						</div> <!-- end of day5 -->
+					
 				</div> <!-- end of col-md-12 -->
 			
-			</div>
+			</div> <!-- end of .row -->
 		</div> <!-- end of container-fluid -->
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

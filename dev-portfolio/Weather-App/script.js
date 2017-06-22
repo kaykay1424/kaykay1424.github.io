@@ -16,6 +16,8 @@ $(document).ready(function() {
 	$('.location-access').show();
 	$('.loading, .refresh-page, .error').hide();
 
+	
+	
 	getPosition();
 	$('[data-toggle="popover"]').popover();
 
@@ -40,19 +42,18 @@ $(document).ready(function() {
 		switch(weather) {
 			case 'Clear':
 				$('body').css({'background-image': 'url("https://dottech.org/wp-content/uploads/2013/08/moon_clear_sky_wallpaper_2560x1440.jpg?6445")'});
-			
+				
 			break;
 			case 'Sunny':
-				$('body').css({'background-image': 'url("http://aramgurum.ru/w/25/peyzazh_zelenyy_lug_polden_2560x1600.jpg")'});
-			
+				$('body').css({'background-image': 'url("https://aramgurum.ru/w/25/peyzazh_zelenyy_lug_polden_2560x1600.jpg")'});
 			break;
 			case 'Cloudy':
 				if (time > 19 || time < 8) {
-					$('body').css({'background-image': 'url("https://www.walldevil.com/wallpapers/a82/moon-cloud-night.jpg")'});
+					$('body').css({'background-image': 'url("https://ak6.picdn.net/shutterstock/videos/9098582/thumb/1.jpg")'});
 			
 				}
 				else {
-					$('body').css({'background-image': 'url("http://aaj.tv/wp-content/uploads/2015/10/partly-cloudy.jpg")'});
+					$('body').css({'background-image': 'url("https://static1.squarespace.com/static/57523357c2ea515ccf6c1adb/58dcea75bebafb06e997da9c/58dcece61e5b6cf38585d46b/1490873606398/mostly+cloudy.jpg")'});
 			
 				}
 			break;
@@ -62,15 +63,15 @@ $(document).ready(function() {
 			
 				}
 				else {
-					$('body').css({'background-image': 'url("http://photonaturalist.net/wp-content/uploads/2009/06/overcast-1.jpg")'});
+					$('body').css({'background-image': 'url("https://pointssouth.files.wordpress.com/2014/08/ocean.jpg")'});
 				}
 			break;
 			case 'Mist':
 				if (time > 19 || time < 8) {
-					$('body').css({'background-image': 'url("http://pre01.deviantart.net/066c/th/pre/f/2008/049/1/a/misty_moon_by_ralij.jpg")'});
+					$('body').css({'background-image': 'url("https://pre01.deviantart.net/066c/th/pre/f/2008/049/1/a/misty_moon_by_ralij.jpg")'});
 				}
 				else {
-					$('body').css({'background-image': 'url("http://germistoncitynews.co.za/wp-content/uploads/sites/31/2016/07/31GCNGENERALWEATMH_50804.jpg")'});
+					$('body').css({'background-image': 'url("https://s-media-cache-ak0.pinimg.com/originals/55/b5/e0/55b5e0d97151143631e37d7fc3743e5e.jpg")'});
 				}
 			break;
 			case'Rain':
@@ -79,7 +80,7 @@ $(document).ready(function() {
 				
 				}
 				else {
-					$('body').css({'background-image': 'url("http://sparklequotes.com/wp-content/uploads/2016/10/Rain-Status-2.jpg")'});
+					$('body').css({'background-image': 'url("https://sparklequotes.com/wp-content/uploads/2016/10/Rain-Status-2.jpg")'});
 				}
 			break;
 			case 'Snow':
@@ -87,34 +88,34 @@ $(document).ready(function() {
 					$('body').css({'background-image': 'url("https://media.tenor.co/images/51868920f30546dcfdc998db25c48cba/tenor.gif")'});
 				} 
 				else {
-					$('body').css({'background-image': 'url("http://kingofwallpapers.com/snowing/snowing-003.jpg")'});
+					$('body').css({'background-image': 'url("https://kingofwallpapers.com/snowing/snowing-003.jpg")'});
 				}
 			break;
 			case 'Thunder':
-				$('body').css({'background-image': 'url("http://chicothunderheads.com/wp-content/uploads/sites/12/thunder-background.jpg")'});
+				$('body').css({'background-image': 'url("https://chicothunderheads.com/wp-content/uploads/sites/12/thunder-background.jpg")'});
 			break;
 			case 'Fog':
 				if (time > 19 || time < 8) {
-					$('body').css({'background-image': 'url("https://www.walldevil.com/wallpapers/a38/fog-night-moon-sky-tree-fir-mountain.jpg")'});
+					$('body').css({'background-image': 'url("https://i.ytimg.com/vi/BwtJPFR6s50/maxresdefault.jpg")'});
 				}
 				else {
-					$('body').css({'background-image': 'url("http://kingofwallpapers.com/fog/fog-003.jpg")'});
+					$('body').css({'background-image': 'url("https://kingofwallpapers.com/fog/fog-003.jpg")'});
 				}
 			break;
 			case 'Sleet':
 				if (time > 19 || time < 8) {
-					$('body').css({'background-image': 'url("http://wfsb.images.worldnow.com/images/6892846_G.jpg")'});
+					$('body').css({'background-image': 'url("https://cdn.shutterstock.com/shutterstock/videos/186820/thumb/1.jpg?i10c=img.resize(height:160)")'});
 				}
 				else {
-					$('body').css({'background-image': 'url("https://cdn.patchcdn.com/users/22817504/stock/T600x450/20150154a59af8d4c7f.png")'});
+					$('body').css({'background-image': 'url("https://kpbs.media.clients.ellingtoncms.com/static/kpbs/assets/PUBLISH2/snow-213-001-ec99268e2482e664c02f4d631ef7009a833ef7e8_tx800.jpg?aae402d4163f394116c3dd6e602f75682c526327")'});
 				}
 			break;
 			case 'Ice':
 				if (time > 19 || time < 8) {
-					$('body').css({'background-image': 'url("https://i.cbc.ca/1.3952348.1485383635!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_620/frozen-tree.JPG")'});
+					$('body').css({'background-image': 'url("https://baristanet.com/wp-content/uploads/2015/01/edgmont-night.jpg")'});
 				}
 				else {
-					$('body').css({'background-image': 'url("http://www.aljazeera.com/mritems/images/2014/12/3/201412391056782956_8.jpg")'});
+					$('body').css({'background-image': 'url("https://c1.staticflickr.com/6/5046/5264624737_8dfe41b8de_b.jpg")'});
 				}
 			break;
 			default:
@@ -223,6 +224,8 @@ $(document).ready(function() {
 	function getWeatherData(latitude, longitude) {
 	// get current forecast data
 
+		
+			
 		$.getJSON('https://api.apixu.com/v1/forecast.json?key=10f7e01ace7a4be298a185347172404&q='+latitude+','+ longitude+ '&days=6', function(data) {
 			$('#forecasts').show();
 			$('#loading-div').hide();
@@ -355,7 +358,7 @@ $(document).ready(function() {
 		 		$('#current-forecast .precip .btn-warning ').html('KPH');
 			}		
 		});
-		$('#current-forecast .humidity').html('<b>Average humidity:</b> ' + humidity +'%');
+		$('#current-forecast .humidity').html('<b>Avg. humidity:</b> ' + humidity +'%');
 
 		// get week forecast data (day1)
 
@@ -773,8 +776,13 @@ $(document).ready(function() {
 			$('#day5 .precip').html('Total precipitation: ' + day5Precip + ' in. ');
 			$('#day5 .wind').html('Max wind: ' + day5Wind +'mph');
 			$('#day5 .humidity').html('Average humidity: ' + day5Humidity +'%');
-
-
+			
+			$('.current-day a').click(function(e) {
+	
+				e.preventDefault();
+				
+			});
+			
 
 		}); // end of getJSON
 

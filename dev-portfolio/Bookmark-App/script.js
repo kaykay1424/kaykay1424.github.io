@@ -63,11 +63,19 @@
 		
 	}
 	
+	$('#bookmark-icon-form')[0].reset();
+	$('#bookmark-form')[0].reset();
+	
 	}); //end of document ready
 
+	$('.bookmark-icon').click(function() {
+		fetchBookmarks();
+	
+	});
+	
 	$('[data-toggle="popover"]').popover();
 	
-	$('#bookmark-icon-form')[0].reset();
+	
 	
 	$('#bookmark-icon-form').on('submit', changeBookmark);
 	
@@ -351,7 +359,7 @@
 
 	function showFrame(url,name) {
 		bookmarkCounter--;
-		$('#minimized-bookmark-amount').html(bookmarkCounter);
+		//$('#minimized-bookmark-amount').html(bookmarkCounter);
 		$('iframe[src="'+url+'"]').parent().show();
 		let text = $('.bookmark-li').text();
 		$('.bookmark-li[name="'+name+'"]').parent().remove();
@@ -380,18 +388,30 @@
 	} // end of increaseWidth()
 	
 	function decreaseHeight(url) {
-		$('iframe[src="'+url+'"]').animate({height: "-=100"});
+		let frameHeight = $('iframe[src="'+url+'"]').css("height");
+		let heightNumber = parseInt(frameHeight);
+		
+		if (heightNumber > 200) {
+		$('iframe[src="'+url+'"]').animate({height: "-=100px"});
+		
+		}
 	}
 	
 	function increaseHeight(url) {
-		$('iframe[src="'+url+'"]').animate({height: "+=100"});
+		$('iframe[src="'+url+'"]').animate({height: "+=100px"});
 	}
 	
 	function addFrame(url,name) {
-
+		
+		
 		let bookmarksResults = $('#bookmarksResults');
 		
-		bookmarksResults.append('<div class="frame-wrapper col-md-12 " style="display:block;">' +
+		if ($('#bookmarksResults .frame-wrapper .frame-name:contains('+name+')').length !== 0) {
+			alert('You have already opened up a frame from that website');
+			return false;
+		}
+		
+		bookmarksResults.append('<div class="frame-wrapper col-md-12 ">' +
 		'<div class="pull-left size-wrapper" style="" title="Size control. W is for width. H is for height. Or if your browser allows you can drag the frame to control size.">'+ '<span id="width-increase" class="size" onclick="increaseWidth(\''+url+'\')" onmouseover="hoverInWidthIncrease(\''+url+'\')" onmouseout="hoverOutWidthIncrease(\''+url+'\')"> W+ </span>'+ '</br>'+
 		'<span id="width-decrease" class="size" onclick="decreaseWidth(\''+url+'\')" onmouseover="hoverInWidthDecrease(\''+url+'\')" onmouseout="hoverOutWidthDecrease(\''+url+'\')"> W- </span>'+ '</br>'+ '<span id="height-increase" class="size" onclick="increaseHeight(\''+url+'\')" onmouseover="hoverInHeightIncrease(\''+url+'\')" onmouseout="hoverOutHeightIncrease(\''+url+'\')"> H+ </span>' + '</br>'+
 		'<span id="height-decrease" class="size" onclick="decreaseHeight(\''+url+'\')" onmouseover="hoverInHeightDecrease(\''+url+'\')" onmouseout="hoverOutHeightDecrease(\''+url+'\')"> H- </span>' + '</div>'+ '<div class="move-frame">'+ '<span id="span-remove" class="badge" onclick="deleteFrame(\''+url+'\')" onmouseover="hoverInRemove(\''+url+'\')" onmouseout="hoverOutRemove(\''+url+'\')" style="background-color:red;color:white;margin-right:2px;box-shadow:2px 2px 2px black;">&times; </span>' + '<span id="span-minimize" class="badge" style="background-color:orange;color:white;margin-right:2%;box-shadow:2px 2px 2px black;" onmouseover="hoverInMinimize(\''+url+'\')" onmouseout="hoverOutMinimize(\''+url+'\')" onclick="minimizeFrame(\'' + url + '\',\'' + name + '\')"> &#8722; </span>' +
@@ -399,7 +419,8 @@
 
 		$('.alert').show();
 
-
+		
+		
 	} // end of addFrame()
 	
 	function hoverInRemove(url) {

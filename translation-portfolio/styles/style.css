@@ -194,10 +194,13 @@
 }
 
 .navbar-header .navbar-brand:hover {
-	background-color: grey;
+	background-color:#206EC4;
 	color:white;
 }
 
+#nav-translations .dropdown-menu {
+	background-color: #159C56;
+}
 .navbar {
 	background-color: #159C56;
 	margin-bottom:0;
@@ -210,25 +213,60 @@
 .navbar .navbar-right li a {
 	color: white;
 }
+.navbar-default .navbar-nav .active a:not(.dropdown-a) {
 
+	background-color: grey;
+	color:white;
+	
+	
+}
+.navbar-default .navbar-nav .active a:hover:not(.dropdown-a) {
+	background-color: white;
+	color:grey;
+	
+}
 .navbar .navbar-right li a:hover {
 	color:  beige;
 }
 
-.navbar .dropdown-menu li a {
-	color: grey;
+.dropdown-menu li a:hover {
+	color: white;
+	background-color:#159C56;
+}
+ .navbar .navbar-nav > li.open > a:focus {
+	background-color:grey;
+	color:white;
+	
+}
+.navbar .navbar-nav .dropdown .dropdown-toggle:focus, .navbar .navbar-nav .dropdown .dropdown-toggle:active  {
+	background-color:#206EC4;
+	color:white;
+}
+.navbar-default .dropdown-menu li a {
+	color: white;
+	
+}
+.navbar-default .navbar-nav .dropdown-menu .active a {
+
+	background-color: grey;
+	color:white;
+	
+	
+}
+.navbar-default .navbar-nav .dropdown-menu .active a:hover {
+
+	background-color: white;
+	color:grey;
+
+	
 	
 }
 
-.navbar .dropdown-menu .active a {
-	color:white;
-}
 
-.dropdown-menu li a:hover {
-	color: white;
-	background-color:grey;
-}
 
+.label {
+	border:2px ridge white;
+}
 .politics {
 	background-color: #E8270C;
 }
@@ -341,6 +379,8 @@ footer a {
 
 	/* All Translated Articles Pages */
 .header-bubble-container {
+	margin-top:0;
+	padding-top:0;
 	padding-bottom:5%;
 	background-color: lightgrey;
 }
@@ -448,30 +488,32 @@ table td[colspan="2"] {
 	padding:0;
 	height:300px;
 	background-color:white;
-	margin-bottom:5%;
 	background-image:url('http://ian.umces.edu/imagelibrary/albums/userpics/10002/normal_ian-symbol-government-1.png');
 	background-repeat:no-repeat;
 	background-position:center;
 	background-size:contain;
 }
-
+.article-form-container {
+	border-top:2px solid black;
+	border-bottom:2px solid black;
+	margin-bottom:5%;
+	background-color:white;
+}
 #government-topic-form-container {
 	padding: 0;
 }
 
 #government-topic-form {
 	height:300px;
-	padding:10px;
+	padding-top:10px;
 	border-right:2px solid black;
 	border-left:2px solid black;
 	text-align:left;
 	background-color:#94600D;
-	color:white;
+	
 }
 
-#government-filter-results {
-	color:white;
-}
+
 
 #government-topics-container {
 	margin-bottom:5%;
@@ -492,7 +534,7 @@ table td[colspan="2"] {
 	padding:0;
 	height:300px;
 	background-color:white;
-	margin-bottom:5%;
+	
 	background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Republicanlogo.svg/2000px-Republicanlogo.svg.png');
 	background-repeat:no-repeat;
 	background-position:center;
@@ -505,20 +547,30 @@ table td[colspan="2"] {
 
 #politics-topic-form {
 	height:300px;
-	padding:10px;
+	padding:10px 0 0 0;
 	border-right:2px solid black;
 	border-left:2px solid black;
 	text-align:left;
 	background-color:#1E2DD7;
+	
+}
+
+.color-white {
 	color:white;
+	
 }
 
 .political-articles-container {
 	padding-top:1%;
+	padding-bottom:5%;
 }
-
+.select-all-topics {
+	background-color: lightgrey;
+	color:black;
+}
 .all-topics-container {
 	margin-top:5%;
+	margin-bottom:5%;
 }
 	/* All Articles Page */
 	
@@ -533,6 +585,12 @@ table td[colspan="2"] {
 	text-align:left;
 	background-color:white;
 }
+
+.form-error {
+	background-color:white;
+	padding:5px;
+	
+}
 	/* Resume Page */
 #resume {
 	margin-top:5%;
@@ -542,6 +600,7 @@ table td[colspan="2"] {
 	border-top-right-radius:20px;
 	background-color:white;
 	box-shadow:2px 2px 2px black;
+	
 }
 
 #resume-header {
@@ -550,7 +609,7 @@ table td[colspan="2"] {
 	border-bottom:2px solid black;
 }
 
-#translation-experience {
+#translation-experience h3 {
 	background-image: url('https://cdn4.iconfinder.com/data/icons/seo-4-3/436/16-_Translate-512.png');
 	background-size: contain;
 	background-color: #5293D7;
@@ -561,7 +620,7 @@ table td[colspan="2"] {
 
 }
 
-#education {
+#education h3 {
 	background-image: url('https://mises.org/sites/default/files/styles/social_media_1200_x_1200/public/static-page/img/graduation-day-approaches-cap-and-rolled-diploma-the-candles-330b3X-clipart.png?itok=qvCtzzfx');
 	background-size: contain;
 	background-color:#FF3625;
@@ -571,10 +630,8 @@ table td[colspan="2"] {
 	margin-top:0;
 	
 }
-#education h3 {
-	text-decoration: underline;
-}
- #employment {
+
+ #employment h3 {
 	background-image: url('https://mediatorsoftexas.com/wp-content/uploads/2015/06/job-icon.png');
 	background-size: contain;
 	background-color:yellow;
@@ -582,6 +639,11 @@ table td[colspan="2"] {
 	background-repeat: no-repeat;
 	height:auto;
 	margin-top:0;
+}
+
+.international-experience {
+	border-bottom:2px solid black;
+	padding-bottom:2%;
 }
 
 .resume-row {

@@ -6,7 +6,8 @@
 .navbar {
 	margin-bottom: 0;
   	border-radius: 0;
-  	background:linear-gradient( to right,blue,purple);
+  	background:linear-gradient( to right,#2027D7,purple);
+  	background-color:red;
 }
 
 .navbar .navbar-header a, .navbar .navbar-nav li a  {
@@ -34,7 +35,7 @@
 }
 
 .footer i {
-	color: darkblue;
+	color: #2027D7;
 }
 
 .footer .btn-sm {
@@ -43,6 +44,7 @@
 }
 body {
 	background-color:lightgrey;
+	font-family: 'Georgia', serif;
 }
 
 
@@ -90,13 +92,13 @@ body {
 		width: 100%;
 		font-size:22px;
 	}
-	.mobile-navbar {
+	#mobile-navbar {
 		display: inline;
 	}
 	#mobile-nav-scroll {
 		display:none;
 	}
-	.home-navbar {
+	#home-navbar {
 		display: none;
 	}
 }
@@ -106,13 +108,13 @@ body {
 		width: 100%;
 		font-size:32px;
 	}
-	.mobile-navbar {
+	#mobile-navbar {
 		display: inline;
 	}
 	#mobile-nav-scroll {
 		display:none;
 	}
-	.home-navbar {
+	#home-navbar {
 		display: none;
 	}
 }
@@ -122,13 +124,13 @@ body {
 		width: 100%;
 		font-size:30px;
 	}
-	.mobile-navbar {
+	#mobile-navbar {
 		display: inline;
 	}
 	#mobile-nav-scroll {
 		display:none;
 	}
-	.home-navbar {
+	#home-navbar {
 		display: none;
 	}
 }
@@ -138,13 +140,13 @@ body {
 		width: 100%;
 		font-size:32px;
 	}
-	.mobile-navbar {
+	#mobile-navbar {
 		display: inline;
 	}
 	#mobile-nav-scroll {
 		display:none;
 	}
-	.home-navbar {
+	#home-navbar {
 		display: none;
 	}
 	
@@ -155,13 +157,13 @@ body {
 		width: 70%;
 		font-size:32px;
 	}
-	.mobile-navbar {
+	#mobile-navbar {
 		display: none;
 	}
 	#mobile-nav-scroll {
 		display:inline;
 	}
-	.home-navbar {
+	#home-navbar {
 		display: inline;
 		margin-bottom: 0;
   		border-radius: 0;
@@ -174,13 +176,13 @@ body {
 		width: 70%;
 		font-size:30px;
 	}
-	.mobile-navbar {
+	#mobile-navbar {
 		display: none;
 	}
 	#mobile-nav-scroll {
 		display:inline;
 	}
-	.home-navbar {
+	#home-navbar {
 		display: inline;
 		margin-bottom: 0;
   		border-radius: 0;
@@ -193,13 +195,13 @@ body {
 		width: 70%;
 		font-size:32px;
 	}
-	.mobile-navbar {
+	#mobile-navbar {
 		display: none;
 	}
 	#mobile-nav-scroll {
 		display:inline;
 	}
-	.home-navbar {
+	#home-navbar {
 		display: inline;
 	}
 }
@@ -216,6 +218,11 @@ body {
 	z-index: 2000;
 }
 
+[data-spy="scroll"] {
+	position:relative;
+
+}
+
 #mobile-nav-scroll li a:hover {
 	background-color: purple;
 }
@@ -224,34 +231,40 @@ body {
 	background-color: transparent;
 }
 
-
+ .nav-pills .active  {
+   background-color: #2027D7;
+}
 
 #about-me-info {
 	height: auto;
-	
+	border-right:2px solid black;
+	border-left:2px solid black;
 	background-color:white;
 }
 
 .quick-facts code {
 	background-color: white;
-	color:  #3D85D7 ;
+	color:  #2027D7 ;
 }
 
 .my-photo-container {
 
 	background-color:white;
 	/*height:756px;*/
-	padding-bottom:10%;
+	height:500px;
+	/*padding-bottom:10%;*/
+	
 	margin:0;
 }
 
 .greeting {
 	border: 5px dotted black;
-	background-color: rgb(30,25,200);
+	background-color: rgb(32,39,215);
 	color: white;
 	margin-top: 5%;
 	padding:10px;
 	display:none;
+	
 }
 
 .my-bio-title {
@@ -265,7 +278,7 @@ body {
 #mobile-nav-scroll {
 	z-index:1000;
 	position:fixed;
-	top:10%;
+	top:12%;
 	right:0;
 	background-color:black;
 	color:white;
@@ -286,6 +299,7 @@ body {
 	border: 5px ridge black;
 	margin-top: 5%;
 	width:90%;
+	
 }
 
 .my-bio {
@@ -300,7 +314,7 @@ body {
 }
 
 .quick-facts {
-	background-color:rgba(30,25,200,.5);
+	background-color:rgba(32,39,215,.5);
 	/*height:645px;*/
 	padding-top:3%;
 	padding-bottom:3%;
@@ -323,6 +337,10 @@ body {
 
 }
 
+.progress {
+	display:inline-block;
+	width:73%;
+}
 
 .progress-bar-css, .progress-bar-php {
 	width: 55%;
@@ -369,6 +387,8 @@ body {
 	height:auto;
 	padding:0;
 	padding-bottom:5%;
+	border-right: 2px solid black;
+	border-left: 2px solid black;
 	
 }
 
@@ -378,24 +398,30 @@ body {
 	margin-top:0;
 	padding:10px;
 	text-shadow:1px 1px 1px black;
-	border:2px solid black;
+	border-top:2px solid black;
+	border-bottom:2px solid black;
 	margin-bottom:5%;
 }
 
 
 #sample-projects-group {
-	background-color:#ED68FF;
+	background-color:#A371FF;
 	padding:0;
+	border-right: 2px solid black;
+	border-left: 2px solid black;
+
+
 }
 
 #sample-projects-group h2 {
 
 	background-color:white;
-	color:#ED68FF;
+	color:#A371FF;
 	margin-top:0;
 	padding:10px;
 	text-shadow:1px 1px 1px black;
-	border:2px solid black;
+	border-top:2px solid black;
+	border-bottom:2px solid black;
 }
 
 .sample-projects {
@@ -406,6 +432,10 @@ body {
 .alert-info {
 	margin-bottom:0;
 	padding:10px;
+	border-right:2px solid;
+	border-top:2px solid;
+	border-left:2px solid;
+	text-align:center;
 }
 
 #contact {
@@ -445,9 +475,10 @@ body {
     
    	 /* All Projects Pages/About Me Page */
 
-.label {
-	margin-left:2%;
+.panel .label {
+	margin-left:3%;
 	line-height: 2.5em;
+
 }
     
 .label-bootstrap {
@@ -477,22 +508,25 @@ body {
 } 
 	
 .projects-form-container {
-
 	background-color:#A371FF;
 	padding-bottom:5%;
 	padding-top:5%;
+	border-bottom: 2px solid black;
 }
 
 .projects-container {
 	background-color:white;
 	margin-top:0;
 	padding-bottom:5%;
+	border-right: 2px solid black;
+	border-left: 2px solid black;
 }
 
 .projects-container h2 {
-	color:#20ABFF;
-	border-bottom:2px dotted #20ABFF;
+	color:#2027D7;
+	border-bottom:2px dotted #2027D7;
 	padding-bottom:2%;
+	
 
 }
 
@@ -501,7 +535,7 @@ body {
 }
 
 .projects-container hr {
-    	border:2px solid #20ABFF;
+    	border:2px solid #2027D7;
 }
 
 .projects-container .popover {
@@ -513,6 +547,7 @@ body {
 	margin:auto;
 	background-color:white;
 	color:#A371FF;
+	
 	font-weight: bold;
 	border-radius:100px;
 } 
@@ -545,7 +580,7 @@ body {
 	background-color:white;
 }
 	  
-	
+
 	
 	
 	

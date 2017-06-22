@@ -14,9 +14,10 @@
 
 }
 body {
-	background-size: cover;
+	background-size: 100% auto;
+	/*background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: center;*/
 	text-shadow: 2px 2px 2px black;
 	background-color:orange;
 	padding-top: 2%;
@@ -39,14 +40,20 @@ body {
 	padding: 5%;
 }
 
+#week-forecast-container {
+	padding:0;
+}
+
 #week-forecast {
 	background-color: rgba(20,250,100,.5);
 	color: white;
 	padding-top:0;
 	border-top: 2px solid white;
 	border-bottom: 2px solid white;
-	margin-top: 10%;
+	margin-top: 5%;
 	margin-bottom: 0;
+	
+	
 }
 
 
@@ -84,4 +91,5 @@ body {
 .loading, .location-access, .refresh-page, .error {
 	color: white;
 	font-size: 20px;
+	display:none;
 }

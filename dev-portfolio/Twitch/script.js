@@ -307,22 +307,22 @@ $(document).ready(function() {
 							} // end of else if nameChannel !== ''
 						}); // end of channel search submit function
 					} // end of else
-					$('tr').mouseenter(function() {
+					$('#add-table-content tr').mouseenter(function() {
 						$(this).not('#channel-header').css({'background-color': 'grey', 'color': 'white'});
 						$(this).not('#channel-header').find('a').css({'color': 'white', 'text-decoration':'underline'});
 					});
-					$('tr').mouseleave(function() {
+					$('#add-table-content tr').mouseleave(function() {
 						$(this).not('#channel-header').css({'background-color': 'white', 'color': 'black'});
 						$(this).not('#channel-header').find('a').css({'color': '#337ab7', 'text-decoration':'none'});
 	
 					});
 				}); // end of search function
-				$('tr').mouseenter(function() {
+				$('#add-table-content tr').mouseenter(function() {
 				$(this).not('#channel-header').css({'background-color': 'grey', 'color': 'white'});
 				$(this).not('#channel-header').find('a').css({'color': 'white', 'text-decoration':'underline'});
 	
 				});
-				$('tr').mouseleave(function() {
+				$('#add-table-content tr').mouseleave(function() {
 					$(this).not('#channel-header').css({'background-color': 'white', 'color': 'black'});
 					$(this).not('#channel-header').find('a').css({'color': '#337ab7', 'text-decoration':'none'});
 	
@@ -617,30 +617,43 @@ $(document).ready(function() {
 						} // end of else if nameChannel !== ''
 					}); // end of channel search submit function
 				} // end of else
-				$('tr').mouseenter(function() {
+				$('#add-table-content tr').hover(function() {
+					$(this).not('#channel-header').css({'background-color': 'grey', 'color': 'white'});
+					$(this).not('#channel-header').find('a').css({'color': 'white', 'text-decoration':'underline'});
+				}, function() {
+					$(this).not('#channel-header').css({'background-color': 'white', 'color': 'black'});
+					$(this).not('#channel-header').find('a').css({'color': '#337ab7', 'text-decoration':'none'});
+				});
+				/*$('#add-table-content tr').mouseenter(function() {
 					$(this).not('#channel-header').css({'background-color': 'grey', 'color': 'white'});
 					$(this).not('#channel-header').find('a').css({'color': 'white', 'text-decoration':'underline'});
 					//$(this).css({'color':'purple'});
 	
 				});
-				$('tr').mouseleave(function() {
+				$('#add-table-content tr').mouseleave(function() {
 					$(this).not('#channel-header').css({'background-color': 'white', 'color': 'black'});
 					$(this).not('#channel-header').find('a').css({'color': '#337ab7', 'text-decoration':'none'});
 	
-				});
+				});*/
 			}); // end of search function
-			
-				$('tr').mouseenter(function() {
+				$('#add-table-content tr').hover(function() {
+					$(this).not('#channel-header').css({'background-color': 'grey', 'color': 'white'});
+					$(this).not('#channel-header').find('a').css({'color': 'white', 'text-decoration':'underline'});
+				}, function() {
+					$(this).not('#channel-header').css({'background-color': 'white', 'color': 'black'});
+					$(this).not('#channel-header').find('a').css({'color': '#337ab7', 'text-decoration':'none'});
+				});
+				/*$('#add-table-content tr').mouseenter(function() {
 					$(this).not('#channel-header').css({'background-color': 'grey', 'color': 'white'});
 					$(this).not('#channel-header').find('a').css({'color': 'white', 'text-decoration':'underline'});
 					//$(this).css({'color':'purple'});
 	
 				});
-				$('tr').mouseleave(function() {
+				$('#add-table-content tr').mouseleave(function() {
 					$(this).not('#channel-header').css({'background-color': 'white', 'color': 'black'});
 					$(this).not('#channel-header').find('a').css({'color': '#337ab7', 'text-decoration':'none'});
 	
-				});
+				});*/
 	}); // end of home click function
 	$('#remote').mouseenter(function() {
 		let counter1 = -1;
@@ -650,15 +663,15 @@ $(document).ready(function() {
 		
 			channelArray.push(parseInt(id));
 		});
-		
+		let selectedChannelArray = [];
 		$('body').keyup(function(key) {
 
-			if (counter1 > channelArray.length) {
+			/*if (counter1 > channelArray.length-1) {
 				counter1 = -1;
 			}	
 			else if (counter1 < 0) {
 				counter1 = -1;
-			}	
+			}	*/
 
 			if (key.which === 40) {
 				counter1++;
@@ -671,7 +684,12 @@ $(document).ready(function() {
 					let thisNumber = channelArray[counter1];
 					let thisName = $('#' + thisNumber).siblings('a').html();
 					let thisClass = $('#' + thisName).attr('class');
-					console.log(thisClass);
+					$('#'+ thisName).addClass('selected');
+					if (channelArray.includes(thisNumber)) {
+					 selectedChannelArray.push(thisNumber);
+					 }
+					$('#add-table-content tr').not('#' + thisName).removeClass('selected');
+					$('#add-table-content tr').not('#' + thisNumber).removeClass('selected');
 					if (  thisClass === 'tv-guide-online-channels' || thisClass === 'tv-guide-online-search-channels') {
 							console.log('this is an online class');
 							showProgramDetails(thisName);
@@ -692,6 +710,12 @@ $(document).ready(function() {
 					let thisNumber = channelArray[counter1];
 					let thisName = $('#' + thisNumber).siblings('a').html();
 					let thisClass = $('#' + thisName).attr('class');
+					if (channelArray.includes(thisNumber)) {
+					selectedChannelArray.push(thisNumber);
+					}
+					$('#'+ thisName).addClass('selected');
+					$('#add-table-content tr').not('#' + thisName).removeClass('selected');
+					
 					if (  thisClass === 'tv-guide-online-channels' || thisClass === 'tv-guide-online-search-channels') {
 							showProgramDetails(thisName);
 					}
@@ -702,6 +726,9 @@ $(document).ready(function() {
 	
 				}
 			} // end of else if key === 38
+			
+				//console.log(counter1);
+			}); // end of body keyup function
 			$('#enter').click(function() {
 		 		let thisNumber = channelArray[counter1];
 		
@@ -710,14 +737,48 @@ $(document).ready(function() {
 				$('#enter').parent().attr('href', link);
 			}); // end of enter click function
 			$('#watch').click(function() {
-			let thisNumber = channelArray[counter1];
+				
+				
+				let thisNumber = channelArray[counter1];
 				
 				let	thisName = $('#' + thisNumber).siblings('a').html();
-						showProgram(thisName);
+				
+					showProgram(thisName);
+				
+				
+				/*let thisStream = $('#'+ thisName).find('.stream').html();
+				console.log(thisNumber);
+				let match = thisStream.match(/Offline/);
+			
+				let counter = 0;
+				if (match !== null) {
+					counter++;
+					if (counter <= 1) {
+					alert('This channel is not currently streaming.');
+					
+					if (counter > 1) {
+						self.close;
+					}
+					
+					
+					}
+				
+				}
+				else {
+				
+				
+						
+							showProgram(thisName);
+					
+				
+				
+			
+			
+				}*/
+				
+				
 		
 				}); // end of watch click function
-			}); // end of body keyup function}
-		
 			}); // end of remote mouseenter function
 	
 		
@@ -944,10 +1005,10 @@ $(document).ready(function() {
 			if (h <= 12 && h >= 0 ) {
 			
 				if ( h === 0 ) {
-					time = 12 + ":" + m + ":" + "am";
+					time = 12 + ":" + m + "am";
 				}
 				else {
-			 time = h + ":" + m + ":" + "am";
+			 time = h + ":" + m + "am";
 			
 				}
 			
@@ -1425,24 +1486,24 @@ $(document).ready(function() {
 						} // end of else if nameChannel !== ''
 					}); // end of channel search submit function
 				} // end of else
-				$('tr').mouseenter(function() {
+				$('#add-table-content tr').mouseenter(function() {
 					$(this).not('#channel-header').css({'background-color': 'grey', 'color': 'white'});
 					$(this).not('#channel-header').find('a').css({'color': 'white', 'text-decoration':'underline'});
 					//$(this).css({'color':'purple'});
 	
 				});
-				$('tr').mouseleave(function() {
+				$('#add-table-content tr').mouseleave(function() {
 					$(this).not('#channel-header').css({'background-color': 'white', 'color': 'black'});
 					$(this).not('#channel-header').find('a').css({'color': '#337ab7', 'text-decoration':'none'});
 	
 				});
 			}); // end of search function
-			$('tr').mouseenter(function() {
+			$('#add-table-content tr').mouseenter(function() {
 				$(this).not('#channel-header').css({'background-color': 'grey', 'color': 'white'});
 					$(this).not('#channel-header').find('a').css({'color': 'white', 'text-decoration':'underline'});
 	
 				});
-				$('tr').mouseleave(function() {
+				$('#add-table-content tr').mouseleave(function() {
 					$(this).not('#channel-header').css({'background-color': 'white', 'color': 'black'});
 					$(this).not('#channel-header').find('a').css({'color': '#337ab7', 'text-decoration':'none'});
 	

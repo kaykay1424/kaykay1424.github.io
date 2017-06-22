@@ -41,9 +41,11 @@
 	
 */	
 $(document).ready(function() {
+	let favorites = JSON.parse(localStorage.getItem('favorites'));
+	if (favorites !== null) {
+		fetchFavorites();
 	
-	fetchFavorites();
-
+	}
 	
 	$('#favorites-button').mouseenter(function() {
 		$('#favorites-button .badge').hide();
@@ -72,6 +74,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		
 	});
+	
 	$('#search-button').click(defaultSearch);
 	$('#lucky').click(luckySearch);
 	$('#random').click(randomSearch);
@@ -81,6 +84,8 @@ $(document).ready(function() {
 	
 	function randomSearch() {
 		$('.title-div').hide();
+		$('#alert-warning').hide();
+		$('#search').removeClass('border-red');
 		$.ajax({
 			url: "https://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=1&utf8=&format=json",
 			dataType: "jsonp",
@@ -138,6 +143,7 @@ $(document).ready(function() {
 		if (searchLimit.length === 0) {
 			searchLimit = 10;
 		}
+		
 		if (keyword === '') {
 			$('.title-div').hide();
 			$('#alert-warning').show().addClass('animated flash');
@@ -194,19 +200,24 @@ $(document).ready(function() {
 		}).on('mouseleave',function() {
 			$(this).removeClass('animated pulse');
 		
-		}).on('click', '.glyphicon-heart', function() {
-			let titleArray = [];
+		}).on('click', '.glyphicon-star', function() {
+			/*let titleArray = [];
 			titleArray.push(URL);
 			let favoritesStorage = document.getElementById('favorites-storage-ul');
 			let name;
 			let url;
 			name = favorites[favorites.length-1].title;
-			url = favorites[favorites.length-1].url;
+			url = favorites[favorites.length-1].url;*/
 
 	
 		}).on('click', '.glyphicon-bookmark',function() {
+			let matchingArticlesLength = $('.bookmarks-li:contains('+title1+')').length;
+			if ( matchingArticlesLength !== 0 ) {
+				alert('This article has already been bookmarked.');
+				return false;
+			}
 			let bookmarksLi = $('<li class="bookmarks-li" style="font-size: 16px">'
-			+ '<span>' + '<a href="'+URL+'" target="_blank">' + title1 + '</a>' + ' ' + '<span class="glyphicon glyphicon-star" onclick="saveFavorites(\'' + title1 + '\',\'' + URL + '\')"></span>'+ ' ' + '<span class="delete glyphicon glyphicon-remove"> </span>' +'</li>')
+			+ '<span>' + '<a href="'+URL+'" target="_blank">' + title1 + '</a>' + ' ' + '<span class="glyphicon glyphicon-star" onclick="saveFavorites(\'' + title1 + '\',\'' + URL + '\')"></span>'+ ' ' + '<span class="delete glyphicon glyphicon-remove"> </span>' +'</li>');
 			bookmarksLi.on('click', '.delete', function() {
 			bookmarksLi.remove();
 			bookmarkArticleCounter--;
@@ -214,6 +225,7 @@ $(document).ready(function() {
 			if (bookmarkArticleCounter < 1) {
 				$('#bookmarks-bar').hide();
 			}
+			
 		}).appendTo('#bookmarks-storage-ul');
 
 		bookmarkArticleCounter++;
@@ -246,6 +258,20 @@ $(document).ready(function() {
 	$('[data-toggle="popover"]').popover();
 	
 	function saveFavorites(title1, URL) {
+		if (localStorage.getItem('favorites') !== null) {
+			let favorites = JSON.parse(localStorage.getItem('favorites'));
+			for (let i = 0; i < favorites.length; i++) {
+				let name = favorites[i].title;
+				let url = favorites[i].url;
+
+				if (title1 === name || URL === url) {
+				alert('This article has already been favorited.');
+				return false;
+				}
+	
+	
+			} // end of for loop
+		} // end of if
 		let favorite = {
 			title: title1,
 			url: URL

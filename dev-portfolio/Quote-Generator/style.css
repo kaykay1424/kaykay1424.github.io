@@ -1,3 +1,51 @@
+@media only screen and (max-width: 320px) {
+	#quote-display {
+		height: 57vh;
+	
+	}
+}
+/* Mobile Med */
+@media only screen and (max-width: 374px) and (min-width:321px) {
+	#quote-display {
+		height: 60vh;
+	
+	}
+}
+/* Mobile Sm */
+@media only screen and (max-width: 424px) and (min-width:375px) {
+	#quote-display {
+		height: 60vh;
+	
+	}
+}
+/* Mobile Lg */
+@media only screen and (max-width: 767px) and (min-width:425px) {
+	#quote-display {
+		height: 60vh;
+	
+	}
+}
+/* Tablet */
+@media only screen and (max-width: 799px) and (min-width:768px) {
+	#quote-display {
+		height: 60vh;
+	
+	}
+}
+/* Laptop */
+@media only screen and (min-width: 800px) and (max-height:601px) {
+	#quote-display {
+		height: 54vh;
+	
+	}
+}
+	/* Laptop Lg */
+@media only screen and (max-width: 2560px) and (min-width:1441px) {
+	#quote-display {
+		height: 60vh;
+	
+	}
+}
 body {
 	transition: background-color 1s;
 }
@@ -5,6 +53,11 @@ body {
 	display: none;
 	
 }
+
+.quote-display-row, .controls-container-row {
+	display:none;
+}	
+
 #quote-form h3, #modal {
 	font-family: 'Cooper Black', sans;
 }
@@ -19,8 +72,9 @@ body {
 	border: 5px solid white;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;
-	height: 60vh;
+	background-position: center top;
+	/*height: 60vh;*/
+	display:none;
 }
 #quote,#next-quote,#previous-quote,#twitter {
 	text-shadow: 2px 2px 2px black;
@@ -31,6 +85,6 @@ body {
 #controls-container {
 	background-color: white;
 	padding: 10px;
+	display:none;
 }
-
 

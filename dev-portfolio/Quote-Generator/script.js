@@ -67,7 +67,7 @@ $(document).ready(function() {
 	let colorsCounter = 0;
 	let selecTopic = '';
 	
-	$('#quote-display,.pager').parent().hide();
+	//$('#quote-display,.pager').parent().hide();
 	
 	let colors = ['#2122FF', '#5CFF96','#20ACFF','#E8270C', '#FFF73E','#98270C', '#FF3142',
 	 '#D93DEF','#EF39C1','#984A28', '#3EFF49','#FFBB49','#EF3D8D', '#000000'];
@@ -278,6 +278,85 @@ $(document).ready(function() {
 		"photo": "http://cdn8.openculture.com/wp-content/uploads/2015/03/30193908/isaac-newton-list-of-sins.jpg"}
 		];
 		
+	
+	function shuffle(inspirationQuotesArray) {
+		let currentIndex = inspirationQuotesArray.length, temporaryValue, randomIndex;
+		// While there remain elements to shuffle...
+		while (0 !== currentIndex) {
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+			// And swap it with the current element.
+			temporaryValue = inspirationQuotesArray[currentIndex];
+			inspirationQuotesArray[currentIndex] = inspirationQuotesArray[randomIndex];
+			inspirationQuotesArray[randomIndex] = temporaryValue;
+		}
+		return inspirationQuotesArray;
+	}
+
+	inspirationQuotes = shuffle(inspirationQuotes);
+	loveQuotes = shuffle(loveQuotes);
+	funnyQuotes = shuffle(funnyQuotes);
+	friendshipQuotes = shuffle(friendshipQuotes);
+	randomQuotes = shuffle(randomQuotes);
+	colors = shuffle(colors);
+
+	
+	for (let i = 0; i < inspirationQuotes.length; i++) {
+		inspirationQuotesArray.push(inspirationQuotes[i]["quote"]);
+		inspirationAuthorsArray.push(inspirationQuotes[i]["author"]);
+		inspirationPhotosArray.push(inspirationQuotes[i]["photo"]);
+		}
+	
+	for (let j = 0; j < funnyQuotes.length; j++) {
+		funnyQuotesArray.push(funnyQuotes[j]["quote"]);
+		funnyAuthorsArray.push(funnyQuotes[j]["author"]);
+		funnyPhotosArray.push(funnyQuotes[j]["photo"]);
+		}
+	
+	for (let k = 0; k < loveQuotes.length; k++) {
+		loveQuotesArray.push(loveQuotes[k]["quote"]);
+		loveAuthorsArray.push(loveQuotes[k]["author"]);
+		lovePhotosArray.push(loveQuotes[k]["photo"]);
+		}
+	
+	for (let l = 0; l < friendshipQuotes.length; l++) {
+		friendshipQuotesArray.push(friendshipQuotes[l]["quote"]);
+		friendshipAuthorsArray.push(friendshipQuotes[l]["author"]);
+		friendshipPhotosArray.push(friendshipQuotes[l]["photo"]);
+		}
+	
+	for (let m = 0; m < colors.length; m++) {
+		colorsArray.push(colors[m]);
+		}
+	
+	for (let n = 0; n < randomQuotes.length; n++) {
+		randomQuotesArray.push(randomQuotes[n]["quote"]);
+		randomAuthorsArray.push(randomQuotes[n]["author"]);
+		randomPhotosArray.push(randomQuotes[n]["photo"]);
+
+		}	
+		
+		
+	function shuffleArrays() {	
+		alert('shuffle');
+		inspirationQuotesArray = [];
+		inspirationAuthorsArray = [];
+		inspirationPhotosArray = [];
+		funnyQuotesArray = [];
+		 funnyAuthorsArray = [];
+		funnyPhotosArray = [];
+		 loveQuotesArray = [];
+		loveAuthorsArray = [];
+		 lovePhotosArray = [];
+		 colorsArray = [];
+		 friendshipQuotesArray = [];
+		 friendshipAuthorsArray = [];
+		 friendshipPhotosArray = [];
+		 randomQuotesArray = [];
+		 randomAuthorsArray = [];
+		 randomPhotosArray = [];
+	
 	function shuffle(inspirationQuotesArray) {
 		let currentIndex = inspirationQuotesArray.length, temporaryValue, randomIndex;
 		// While there remain elements to shuffle...
@@ -336,15 +415,23 @@ $(document).ready(function() {
 
 		}	
 	
+	} // end of shuffleArrays()
+	
 	function submitForm() {
 		$('#quote-form').on('submit', function(e) {
 			e.preventDefault();
+			shuffleArrays();
 			selecTopic = $('#select-topic').val();
-			$('#quote-display,.pager').parent().show();
+				
+			$('.quote-display-row, .controls-container-row,#quote-display,#controls-container').show();
 			$('#next-quote,#previous-quote,#twitter,body').css({'background-color':colorsArray[colorsCounter]});
 			$('#quote').css({'color':colorsArray[colorsCounter], 'background-color':'rgba(255,255,255,.5)'});
 			
 			if ($('#select-topic').val() === 'random-quotes') {
+				
+				
+			
+
 				let quoteString = randomQuotesArray[quotesCounter];
 				let quoteAndAuthorString = quoteString + " -" + randomAuthorsArray[quotesCounter];
 				let fullTwitterString = 'https://twitter.com/intent/tweet?hashtags=quotes&text='+quoteAndAuthorString;
@@ -354,6 +441,11 @@ $(document).ready(function() {
 			}
 		
 			else if ($('#select-topic').val() === 'funny-quotes') {
+				
+				
+	
+
+				
 				let quoteString = funnyQuotesArray[quotesCounter];
 				let quoteAndAuthorString = quoteString + " -" + funnyAuthorsArray[quotesCounter];
 				let fullTwitterString = 'https://twitter.com/intent/tweet?hashtags=quotes&text='+quoteAndAuthorString;
@@ -363,6 +455,9 @@ $(document).ready(function() {
 			}
 			
 			else if ($('#select-topic').val() === 'inspirational-quotes') {
+				inspirationQuotes = shuffle(inspirationQuotes);
+	
+
 				let quoteString = inspirationQuotesArray[quotesCounter];
 				let quoteAndAuthorString = quoteString + " -" + inspirationAuthorsArray[quotesCounter];
 				let fullTwitterString = 'https://twitter.com/intent/tweet?hashtags=quotes&text='+quoteAndAuthorString;
@@ -372,6 +467,9 @@ $(document).ready(function() {
 			}
 			
 			else if ($('#select-topic').val() === 'love-quotes') {
+				
+	
+
 				let quoteString = loveQuotesArray[quotesCounter];
 				let quoteAndAuthorString = quoteString + " -" +loveAuthorsArray[quotesCounter];
 				let fullTwitterString = 'https://twitter.com/intent/tweet?hashtags=quotes&text='+quoteAndAuthorString;
@@ -382,6 +480,10 @@ $(document).ready(function() {
 			
 				else if ($('#select-topic').val() === 'friendship-quotes') {
 					
+				
+	
+	
+
 					let quoteString = friendshipQuotesArray[quotesCounter];
 					let quoteAndAuthorString = quoteString + " -" +friendshipAuthorsArray[quotesCounter];
 					let fullTwitterString = 'https://twitter.com/intent/tweet?hashtags=quotes&text='+quoteAndAuthorString;
@@ -583,7 +685,7 @@ $(document).ready(function() {
 					$('body').css('background-color','#55aaee');
 					$('#next-quote,#previous-quote').css({'background-color':'#55aaee', 'color': 'white'});
 					$('#quote-display').css({'background-image':'none','background-color': '#55aaee'}).hide().fadeIn(1000);
-					$('#quote').css({'background-color':'transparent', 'color':'white'}).html('No previous quotesCounter. Check out the next quotes, choose another topic, or choose this topic again to re-randomize the quotes.').hide().fadeIn(1500);
+					$('#quote').css({'background-color':'transparent', 'color':'white'}).html('No previous quotes. Check out the next quotes, choose another topic, or choose this topic again to re-randomize the quotes.').hide().fadeIn(1500);
 					$('#twitter').hide();
 					quotesCounter = -1;
 				}
