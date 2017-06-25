@@ -1,7 +1,24 @@
 			/* Responsive styles */
 
 /* Mobile Sm */
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 320px) and (max-width:359px) {
+	.resume-sections:not(#translation-experience) {
+		height: auto;
+	}
+	#politics-topic-form-container {
+	padding:0;
+	}
+	.filter-button-container button {
+		margin-bottom:3%;
+	}
+	#all-topics-form { 
+		height: 460px;
+	}
+	.header-bubble-string-tie {
+		width:4%;
+		right:48%;
+		top:-4%;
+	}
 	.header-background {
 		height: 100px;
 		
@@ -19,8 +36,12 @@
 		height:20px;
 		
 	}
+	
+	#all-topics-form .col-sm-6:first-child {
+		margin-bottom:3%;
+	}
 	.header-bubble-string { 
-		width:3.5%;
+		width:5%;
 	}
 	#talkbubble:before  {
 		right: 50%;
@@ -32,9 +53,16 @@
 	.political-articles-container {
 		padding:0;
 	}
+	#politics-topic-form {
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+	}
 }
 /* Mobile Med */
-@media only screen and (max-width: 374px) and (min-width:321px) {
+@media only screen and (max-width: 374px) and (min-width:360px) {
+	.resume-sections:not(#translation-experience) {
+		height: auto;
+	}
 	.header-background {
 		height: 100px;
 		
@@ -45,7 +73,7 @@
 	}
 	#talkbubble:before  {
 		right: 50%;
-		top: -1.5%;
+		top: -1.25%;
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
 		border-bottom: 25px solid lightgrey;
@@ -57,17 +85,42 @@
 		
 	}
 	.header-bubble h1 {
-		font-size:14px;
+		/*font-size:14px;*/
+	}
+	.header-bubble-string-tie {
+		width:4%;
+		right:48%;
+		top:-4%;
 	}
 	.header-bubble-string { 
-		width: 3.5%;
+		width: 4%;
+		
+	}
+	
+	#all-topics-form { 
+		height: 445px;
+	}
+	#all-topics-form .col-sm-6:first-child {
+		margin-bottom:3%;
+	}
+	#politics-topic-form {
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
 	}
 }
 /* Mobile Lg */
-@media only screen and (max-width: 424px) and (min-width:375px) {
+@media only screen and (max-width: 413px) and (min-width:375px) {
+	.resume-sections:not(#translation-experience) {
+		height: auto;
+	}
 	.header-background {
 		height: 100px;
 		
+	}
+	.header-bubble-string-tie {
+		width:4%;
+		right:48%;
+		top:-4%;
 	}
 	.header-bubble {
 	
@@ -87,11 +140,21 @@
 		
 	}
 	.header-bubble-string { 
-		width: 3.5%;
+		width: 4%;
+	}
+	#all-topics-form .col-sm-6:first-child {
+		margin-bottom:3%;
+	}
+	#politics-topic-form {
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
 	}
 }
 /* Mobile Sm */
-@media only screen and (max-width: 767px) and (min-width:425px) {
+@media only screen and (max-width: 639px) and (min-width:414px) {
+	.resume-sections:not(#translation-experience) {
+		height: auto;
+	}
 	.header-background {
 		height: 100px;
 		
@@ -114,12 +177,31 @@
 		
 	}
 	.header-bubble-string { 
-		width: 3.5%;
+		width: 4%;
 	}
-	
+	.header-bubble-string-tie {
+		width:4%;
+		right:48%;
+		top:-4%;
+	}
+	#all-topics-form .col-sm-6:first-child {
+		margin-bottom:3%;
+	}
+	#politics-topic-form {
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+	}
 }
 /* Tablet */
-@media only screen and (max-width: 799px) and (min-width:768px) {
+@media only screen and (max-width: 799px) and (min-width:640px) {
+	.resume-sections:not(#translation-experience) {
+		height: auto;
+	}
+	#portfolio-img {
+		height: 500px;
+	
+	}
+	
 	.header-background {
 		height: 100px;
 		
@@ -142,11 +224,30 @@
 		
 	}
 		.header-bubble-string { 
-		width: 2%;
+		width: 2.5%;
+	}
+	.header-bubble-string-tie {
+		width:2.5%;
+		right:48.7%;
+		top:-4%;
+	}
+	#all-topics-form .col-sm-6:first-child {
+		margin-bottom:3%;
+	}
+	#politics-topic-form {
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
 	}
 }
 /* Laptop */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 800px) and (max-width:959px) {
+	.resume-sections:not(#translation-experience) {
+		height: auto;
+	}
+	#portfolio-img {
+		height: 600px;
+	
+	}
 	.header-background {
 		height: 200px;
 		
@@ -163,21 +264,143 @@
 		border-radius:100px;
 	}	
 	#talkbubble:before  {
-		right: 99%;
-		top: 30%;
-		border-top: 13px solid transparent;
-		border-right: 20px solid lightgrey;
-		border-bottom: 13px solid transparent;
+		right: 50%;
+		top: -2.5%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 25px solid lightgrey;
 	}
 	.header-bubble-string { 
-		width: 2%;
+		width: 2.9%;
+	}
+	.header-bubble-string-tie {
+		width:2.5%;
+		right:48.7%;
+		top:-4%;
 	}
 
 }
-@media only screen and (max-width: 2560px) and (min-width:1441px) {
-	.header-bubble-string { 
-		width: 1%;
+@media only screen and (max-width: 1023px) and (min-width:960px) {
+	#portfolio-img {
+		height: 600px;
+	
 	}
+	.resume-sections:not(#translation-experience) {
+		height: auto;
+	}
+	.header-bubble-string { 
+		width: 2.5%;
+	}
+	.header-bubble-string-tie {
+		width:2.5%;
+		right:48.7%;
+		top:-4%;
+	}
+	#talkbubble:before  {
+		right: 50%;
+		top: -2.5%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 25px solid lightgrey;
+	}
+	.header-background {
+		height: 200px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:.5%;	
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:5%;
+		height:20px;
+		background-color:lightgrey;
+		border-radius:100px;
+	}	
+
+}
+@media only screen and (max-width: 1599px) and (min-width:1024px) {
+	.header-bubble-string { 
+		width: 3.8%;
+	}
+	#portfolio-img {
+		height: 300px;
+	
+	}
+	.resume-sections:not(#translation-experience) {
+		height: 700px;
+	}
+	
+	.header-bubble-string-tie {
+		width:3.5%;
+		right:47.9%;
+		top:-4%;
+	}
+	#talkbubble:before  {
+		right: 100%;
+		top: 50%;
+		border-top: 13px solid transparent;
+		border-right: 18px solid lightgrey;
+		border-bottom: 13px solid transparent;
+	}
+	.header-background {
+		height: 200px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:.5%;	
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:5%;
+		height:20px;
+		background-color:lightgrey;
+		border-radius:100px;
+	}	
+}
+@media only screen and (min-width: 1600px)  {
+	.header-bubble-string { 
+		width: 2.8%;
+		right:47.9%;
+		top:-4%;
+	}
+	#portfolio-img {
+		height: 300px;
+	
+	}
+	.resume-sections:not(#translation-experience) {
+		height: 700px;
+	}
+	
+	.header-bubble-string-tie {
+		width:3.5%;
+		right:47.9%;
+		top:-4%;
+	}
+	#talkbubble:before  {
+		right: 100%;
+		top: 50%;
+		border-top: 13px solid transparent;
+		border-right: 18px solid lightgrey;
+		border-bottom: 13px solid transparent;
+	}
+	.header-background {
+		height: 200px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:.5%;	
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:5%;
+		height:20px;
+		background-color:lightgrey;
+		border-radius:100px;
+}
 }
 /* All Pages */
 
@@ -322,7 +545,7 @@ footer a {
 
 #portfolio-img {
 	border:3px solid green;
-	height:300px;
+	/*height:300px;*/
 	width:100%;
 	background-image:url('../images/kayla-on-beach.jpeg');
 	background-size:cover;
@@ -395,15 +618,17 @@ footer a {
 }
 
 .header-bubble-string-tie {
-	width:2%;
+	/*width:2%;*/
 	height:13px;
 	background-color:beige;
 	margin:auto;
 	border-left:2px ridge beige;
 	border-right:2px ridge beige;
 	position:absolute;
-	right:49%;
-	top:-2.5%;
+	background-image:url('https://st.hzcdn.com/simgs/7e619c2f069d3f82_4-5992/fabric.jpg');
+  	background-size: contain;
+	/*right:49%;
+	top:-2.5%;*/
 	border-radius:4px;
 }
 
@@ -427,11 +652,13 @@ footer a {
 	padding-top:0;
 }
 .header-bubble-string {
-  	border:2px ridge black;
+  	border:2px ridge beige;
   	margin: auto;
   	border-radius:2px;
   	height:80px;
   	background-color:beige;
+  	background-image:url('https://st.hzcdn.com/simgs/7e619c2f069d3f82_4-5992/fabric.jpg');
+  	background-size: contain;
   	/*box-shadow:2px 0 0 -2px black;*/
   	box-shadow: 1px 1px 1px black;
 }
@@ -450,12 +677,12 @@ table {
 	box-shadow: 3px 3px 5px black;
 }
 
-table a:link {
+table a:link, .article a:link {
 	color: lightgrey;
 	text-decoration: underline;
 }
 
-table a:visited {
+table a:visited, .article a:visited {
 	color: #B18DFF;
 }
 
@@ -499,7 +726,7 @@ table td[colspan="2"] {
 	margin-bottom:5%;
 	background-color:white;
 }
-#government-topic-form-container {
+#government-topic-form-container, #politics-form-container {
 	padding: 0;
 }
 
@@ -513,17 +740,59 @@ table td[colspan="2"] {
 	
 }
 
+.article {
+	background-color:white;
+	border:2px solid black;
+	box-shadow: 2px 2px 2px black;
+	margin-bottom:5%;
+	padding-bottom:0;
+	height:auto;
+}
 
+.article-header-container {
+	border-bottom:2px solid black;
+
+}
+.article-footer {
+	background-color: #206EC4;
+	color: white;
+	padding:5%;
+	/*padding-bottom:10%;*/
+	
+}
+
+.spanish-translation-container {
+	border-right:2px solid black;
+	padding:0;
+}
+
+.english-translation-container {
+	padding:0;
+
+}
+
+.english-translation, .spanish-translation {
+	height:350px;
+	overflow:auto;
+	padding:5px
+	
+
+}
+.english-translation-header, .spanish-translation-header  {
+	border-bottom: 2px solid black;
+	padding:5px;
+}
 
 #government-topics-container {
 	margin-bottom:5%;
+	padding:0;
 }
 	/* Political Articles Page */
 	
 #politics-image-background-1 {
 	padding:0;
 	height:300px;
-	background-color:white;
+	/*background-color:white;*/
 	background-image:url('https://upload.wikimedia.org/wikipedia/en/e/e3/DemocraticLogo.png');
 	background-repeat:no-repeat;
 	background-position:center;
@@ -533,7 +802,7 @@ table td[colspan="2"] {
 #politics-image-background-2 {
 	padding:0;
 	height:300px;
-	background-color:white;
+	/*background-color:white;*/
 	
 	background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Republicanlogo.svg/2000px-Republicanlogo.svg.png');
 	background-repeat:no-repeat;
@@ -541,15 +810,14 @@ table td[colspan="2"] {
 	background-size:contain;
 }
 
-#politics-topic-form-container {
-	padding:0;
-}
+
 
 #politics-topic-form {
 	height:300px;
-	padding:10px 0 0 0;
-	border-right:2px solid black;
-	border-left:2px solid black;
+	margin: 0;
+	padding-top: 10px;
+	/*border-right:2px solid black;
+	border-left:2px solid black;*/
 	text-align:left;
 	background-color:#1E2DD7;
 	
@@ -577,8 +845,12 @@ table td[colspan="2"] {
 .all-topics-form-background {
 	background-color:#206EC4;
 }
+
+
+
 #all-topics-form {
-	height:350px;
+	/*height:500px;*/
+	
 	padding:10px;
 	border-right:2px solid black;
 	border-left:2px solid black;
@@ -653,7 +925,7 @@ table td[colspan="2"] {
 .resume-sections:not(#translation-experience) {
 	background-color: white;
 	border-right:2px solid black;
-	height: 700px;
+	/*height: 700px;*/
 	
 	
 }

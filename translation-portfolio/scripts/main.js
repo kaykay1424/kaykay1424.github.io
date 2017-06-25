@@ -110,13 +110,13 @@ $(document).ready(function() {
   			
 			$('.political-articles-container .col-md-12').find('.article-dates:contains('+selectedDate+')').parents('.political-articles-container .col-md-12').show();
 			let showArticleLength = $('.political-articles-container .col-md-12:visible').length;
-			$('.filter-results').html('Article match(es): '+ showArticleLength).removeClass('form-error').parent().removeClass(' text-warning col-md-12 col-md-6 col-md-offset-2').addClass('col-md-6 col-md-offset-2 color-white');
+			$('.filter-results').html('Article match(es): '+ showArticleLength).removeClass('form-error').parent().removeClass('text-warning ').addClass('color-white');
 			if (showArticleLength === 0) {
 				$('.political-articles-container').append('<div class="no-results alert alert-danger text-center"><h3>No articles match that search criteria. Please try another search or click on the "Show All Articles" button to see all the articles again.</h3></div>');
 			}
   		}
   		else {
-  			$('#politics-topic-form .filter-results').html('Please choose a topic and/or select a year to search for an article').addClass('form-error').parent().removeClass('col-md-6 col-md-offset-2 col-md-12 color-white').addClass('col-md-12 text-warning')
+  			$('#politics-topic-form .filter-results').html('Please choose a topic and/or select a year to search for an article').addClass('form-error').parent().removeClass(' color-white').addClass('text-warning')
 			$('.political-articles-container .col-md-12').show();
 			return false;
   		}
@@ -130,11 +130,12 @@ $(document).ready(function() {
 			
 			$('.no-results').remove();
 			$('.all-topics-container .col-md-12, .political-articles-container .col-md-12, #government-topics-container .col-md-12').show();
-			$('.filter-results').html('');
+			$('.filter-results').html('').removeClass('form-error');
 			$('#all-topics-form, #politics-topic-form')[0].reset();
 			
 		});
-	$('.all-select-all-topics').click(function() {
+	$('.select-all-topics').click(function() {
+	
 		if ($("input[type='checkbox']:checked").length === $("input[type='checkbox']").length) {
 			
 			$("input[type='checkbox']").prop('checked', false);
@@ -189,12 +190,12 @@ $(document).ready(function() {
 		}
 		 
 		else  {
-			$('#all-topics-form .filter-results').html('Please choose a topic and/or select a year to search for an article').parent().removeClass('col-md-6 col-md-offset-3 col-md-10 col-md-offset-2').addClass('col-md-10 col-md-offset-2 text-warning');
+			$('#all-topics-form .filter-results').html('Please choose a topic and/or select a year to search for an article').parent().removeClass('col-md-6 col-md-offset-3 col-md-10 col-md-offset-2').addClass(' text-warning');
 			$('.all-topics-container .col-md-12').show();
 			return false;
 		}
 		let showArticleLength = $('.all-topics-container .col-md-12:visible').length;
-		$('#all-topics-form .filter-results').html('Article match(es): '+ showArticleLength).parent().removeClass('text-warning col-md-10 col-md-offset-2 col-md-6 col-md-offset-3').addClass('col-md-6 col-md-offset-3');
+		$('#all-topics-form .filter-results').html('Article match(es): '+ showArticleLength).parent().removeClass('text-warning ');
 		if (showArticleLength === 0) {
 			$('.all-topics-container').append('<div class="no-results alert alert-danger text-center"><h3>No articles match that search criteria. Please try another search or click on the "Show All Articles" button to see all the articles again.</h3></div>');
 		}

@@ -14,47 +14,49 @@
 		<div class="container-fluid projects-form-container" >
 			<div class=" col-md-6 col-md-offset-3 text-center" >
 				<div class="text-center projects-title">
-					<p> Frontend/Backend Projects  <p>
+					<h2 id="frontend-backend-projects-title"> Frontend/Backend Projects  <h2>
 				</div>
 			
 				<form id="frontend-backend-form" class="text-center" >
 					<h4 class="text-center">Search by Language/Library/Framework</h4>
-					<div class="col-md-6 col-md-offset-3 text-left">
+					<div class="col-md-12 col-lg-offset-3 text-left">
 						<h5> Frontend </h5>
 					
 						<div class="checkbox" >
-						  <label><input type="checkbox" value="HTML"><span class="label label-success"> HTML </span></label>
+						  <label><input type="checkbox" value="HTML"><span class="label frontend-label"> HTML </span></label>
 						</div>
 						<div class="checkbox" >
-						  <label><input type="checkbox" value="CSS"><span class="label label-warning"> CSS </span></label>
+						  <label><input type="checkbox" value="CSS"><span class="label frontend-label"> CSS </span></label>
 						</div>
 						<div class="checkbox" >
-						  <label><input type="checkbox" value="JavaScript"><span class="label label-primary"> JavaScript </span></label>
+						  <label><input type="checkbox" value="JavaScript"><span class="label frontend-label"> JavaScript </span></label>
 						</div>
 						<div class="checkbox" >
-						  <label><input type="checkbox" value="jQuery"><span class="label label-info"> jQuery </span></label>
+						  <label><input type="checkbox" value="jQuery"><span class="label frontend-label"> jQuery </span></label>
 						</div>
 						<div class="checkbox" >
-						  <label><input type="checkbox" value="Bootstrap"><span class="label label-bootstrap"> Bootstrap  </span></label>
+						  <label><input type="checkbox" value="Bootstrap"><span class="label frontend-label"> Bootstrap  </span></label>
 						</div>
 						<h5> Backend </h5>
 					
 						<div class="checkbox" >
-						  <label><input type="checkbox" value="PHP"><span class="label label-php"> PHP </span></label>
+						  <label><input type="checkbox" value="PHP"><span class="label backend-label"> PHP </span></label>
 						</div>
 						<div class="checkbox">
-						  <label><input type="checkbox" value="SQL"><span class="label label-sql"> SQL </span></label>
+						  <label><input type="checkbox" value="SQL"><span class="label backend-label"> SQL </span></label>
 						</div>
 						<div class="checkbox" >
-						  <label><input type="checkbox" value="Ruby"><span class="label label-ruby"> Ruby </span></label>
+						  <label><input type="checkbox" value="Ruby"><span class="label backend-label"> Ruby </span></label>
 						</div>
 						<div class="checkbox" >
-						  <label><input type="checkbox" value="Ruby on Rails "><span class="label label-rails"> Ruby on Rails </span></label>
+						  <label><input type="checkbox" value="Ruby on Rails "><span class="label backend-label"> Ruby on Rails </span></label>
 						</div>
 					
 						<div class="filter-project-container">
-							<button class="btn btn-primary">Filter project results</button> <br/>
-							<h5 class="filter-results"></h5>
+							<button class="select-all-languages btn btn-default" type="button">Select/Unselect All Topics</button> 
+								<button type="submit" class="btn btn-primary" >Filter project results</button>
+								<button class="btn btn-info show-projects" type="button">Show all projects</button> <br/>
+								<h5 class="filter-results"></h5>
 						</div>
 					</div> <!--end of .col-md-6-->
 				
@@ -76,8 +78,8 @@
 							<h3>
 						</div>
 					  	<div class="panel-body"><iframe name="Bookmark Application" src="http://127.0.0.1/ecommerce/index.php" width="100%" height="450px" frameborder="0" ></iframe></div>
-					  	<div class="panel-footer"><p><span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span>
-							<span class="label label-info"> jQuery </span> <span class="label label-php"> PHP </span> <span class="label label-sql"> SQL </span></p>
+					  	<div class="panel-footer"><div  class="label frontend-label">JavaScript</div> <div class="label frontend-label">HTML</div> <div class="label frontend-label">CSS</div> <div class="label frontend-label"> Bootstrap </div> <div class="label frontend-label"> jQuery </div> 
+					  	 <div class="label backend-label"> PHP </div> <div class="label backend-label"> SQL </div>
 					  	</div>
 	
 					</div> <!--end of .panel-->

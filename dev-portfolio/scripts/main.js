@@ -10,7 +10,7 @@ $(document).ready(function() {
 		
 		if (pageTitle.match(/about/i) !== null) {
 			$('#nav-about').addClass('active');
-			$('nav').removeClass('navbar-fixed-top');
+			//$('nav').removeClass('navbar-fixed-top');
 		}
 		
 		if (pageTitle.match(/courses/i) !== null) {
@@ -94,18 +94,51 @@ $(document).ready(function() {
 	
 	});
 	
+	$('.show-projects').click(function() {
+			
+			
+			$('.filter-results').html('');
+			$('.projects-container').show().find('.col-md-6').show();
+			
+			$('.projects-container h2').html('Personal Projects').css({'border-bottom':'2px dotted #2027D7'});;
+			$('#frontend-form, #frontend-backend-form')[0].reset();
+			
+	});
+	
+	$('.select-all-languages').click(function() {
+		
+		if ($("input[type='checkbox']:checked").length === $("input[type='checkbox']").length) {
+			
+			$("input[type='checkbox']").prop('checked', false);
+		}
+		
+		
+		else {
+			$("input[type='checkbox']").prop('checked', true);
+			
+		}
+		
+		
+	});
+	
+	
 	$('#frontend-form').on('submit', function(e) {
 			e.preventDefault();
 			let allValues = [];
 			$('#frontend-projects-container').show();
 			$('#frontend-projects-container .col-md-6').hide();
-			
+			$('#frontend-projects-container h2').html('Personal Projects').css({'border-bottom':'2px dotted #2027D7'});
 			$("#frontend-form input[type='checkbox']:checked").each(function() {
 				let checkboxValue = $(this).val();
 				allValues.push(checkboxValue);
 			
 			}); // end of values each function
+			if (allValues.length === 0) {
+				$('#frontend-form .filter-results').html('Please choose a language/library/framework to search for a project').addClass('text-warning');
+				$('#frontend-projects-container ').show().find('.col-md-6').show();
+				return false;
 			
+			}
 			for (var i = 0; i < allValues.length; i++) {
 				showProject = $('#frontend-projects-container .col-md-6 .label:contains('+allValues[i]+')').parents('#frontend-projects-container .col-md-6');
 			
@@ -114,13 +147,17 @@ $(document).ready(function() {
 			
 			let showProjectLength = $('#frontend-projects-container  .col-md-6:visible').length;
 			
-			$('#frontend-form .filter-results').html('Project match(es): '+ showProjectLength);
-			$('#frontend-form')[0].reset();
+			$('#frontend-form .filter-results').removeClass('text-warning').html('Project match(es): '+ showProjectLength);
+			
 			
 			if (showProjectLength === 0) {
-				$('#frontend-projects-container').hide();
+				
+				$('#frontend-projects-container h2').html('<div class="no-results text-danger text-center">No projects match that search criteria. Please try another search or click on the "Show All Projects" button to see all the projects again.</div>').css({'border':'none'});
+				$('#frontend-projects-container *:not(h2) ').hide();
 			}
-			
+			$('#frontend-form')[0].reset();
+  		
+  		
 			
 	}); //end of #frontend-form.submit()
 		
@@ -135,12 +172,18 @@ $(document).ready(function() {
 	let allValues = [];
 	$('#frontend-backend-projects-container').show();
 	$('#frontend-backend-projects-container .col-md-6').hide();
+	$('#frontend-backend-projects-container h2').html('Personal Projects').css({'border-bottom':'2px dotted #2027D7'});
 	$("#frontend-backend-form input[type='checkbox']:checked").each(function() {
 		let checkboxValue = $(this).val();
 		allValues.push(checkboxValue);
 		
 	}); // end of values each function
-	
+		if (allValues.length === 0) {
+				$('#frontend-backend-form .filter-results').html('Please choose a language/library/framework to search for a project').addClass('text-warning');
+				$('#frontend-backend-projects-container').show().find('.col-md-6').show();
+				return false;
+			
+			}
 	for (var i = 0; i < allValues.length; i++) {
 		let showProject = $('#frontend-backend-projects-container .col-md-6 .label:contains('+allValues[i]+')').parents('#frontend-backend-projects-container .col-md-6');
 		showProject.show();
@@ -149,11 +192,14 @@ $(document).ready(function() {
 	
 	let showProjectLength = $('#frontend-backend-projects-container  .col-md-6:visible').length;
 	$('#frontend-backend-form .filter-results').html('Project match(es): '+ showProjectLength);
-	$('#frontend-backend-form')[0].reset();
+	
 	
 	if (showProjectLength === 0) {
-		$('#frontend-backend-projects-container').hide();
-	}
+				
+				$('#frontend-backend-projects-container h2').html('<div class="no-results text-danger text-center">No projects match that search criteria. Please try another search or click on the "Show All Projects" button to see all the projects again.</div>').css({'border':'none'});
+				
+			}
+	$('#frontend-backend-form')[0].reset();		
 	}); //end of #frontend-backend-form.submit()
 		
 		

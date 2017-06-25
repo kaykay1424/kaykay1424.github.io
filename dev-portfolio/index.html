@@ -10,8 +10,34 @@
 		
 	</head>
 	<body data-spy="scroll" data-target="#mobile-nav-scroll" data-offset="300">
-		<nav class="Navbar" id="home-navbar"></nav>
 		
+		<nav id="#home-navbar" class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Kayla Clements</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav ">
+        <li id="nav-about"><a href="index.html">About</a></li>
+        <li id="nav-courses"><a href="courses.html">Courses</a></li>
+        <li id="nav-projects" class="dropdown">
+        <a class="dropdown-toggle " data-toggle="dropdown" href="#">Projects
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li id="nav-frontend-projects"><a href="frontend-projects.html">Frontend Projects </a></li>
+          <li id="nav-frontend-backend-projects"><a href="frontend-backend-projects.html">Frontend/Backend Projects</a></li>
+        </ul>
+      </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
 		
 		<nav id="mobile-navbar" class="navbar navbar-inverse navbar-fixed-top">
 		  <div class="container-fluid">
@@ -48,6 +74,8 @@
 			</div>
 		  </div>
 		</nav>
+		
+		
 
 		<nav id="mobile-nav-scroll">
 			<ul class="nav nav-pills nav-stacked">
@@ -64,15 +92,15 @@
 					 <p  class='text-center greeting'> Hi, I'm Kayla, a 24 yr old aspiring Full Stack Developer currently living in Oklahoma, U.S.. </p>
 				
 				</div> <!--end of .my-photo-container-->
-				<div class="col-md-9 my-bio">
-					<div class="row">
-						<div class="col-md-12 my-bio-title">
+				<div class="col-md-9 my-bio" >
+					<div class="row" >
+						<div class="col-md-12 my-bio-title" >
 							<h3 class="text-center" >About Me</h3>
 						</div> <!--end of .my-bio-title-->
 					
 					</div> <!--end of .row-->
 					<div class="row">
-						<div class="col-md-4 quick-facts" >
+						<div class="col-lg-4 quick-facts" >
 							<p><code>&lt;education&gt;</code></p> <p class='text-center'> B.A. in Spanish and World Business from University of Tennessee at Knoxville</p><p><code>&lt;&#47;education&gt;</code></p>
 					
 						
@@ -80,7 +108,7 @@
 							<p><code>&lt;devexp&gt;</code></p><p class='text-center'>9 months learning full stack development online</p><p><code>&lt;&#47;devexp&gt;</code></p>
 					
 						
-							<p><code>&lt;hobbies&gt;</code></p><p class='text-center'> <ul ><li>Basketball</li><li>Soccer</li><li>Music (hip hop, r&b, pop, rock, soul, salsa, bachata, merengue, sertanejo, pretty much everything)</li><li>Movies(action,comedy,romance)</li><li>Traveling</li><li>Learning language(both computer and human)</li></ul></p><p><code>&lt;&#47;hobbies&gt;</code></p>
+							<p><code>&lt;hobbies&gt;</code></p><p class='text-center'> <ul ><li>Basketball</li><li>Soccer</li><li>Music (hip hop, r&b, pop, rock, soul, salsa, bachata, merengue, sertanejo, pretty much everything)</li><li>Movies (action, comedy, romance)</li><li>Traveling</li><li>Learning language(both computer and human)</li></ul></p><p><code>&lt;&#47;hobbies&gt;</code></p>
 					
 					
 						</div> <!--end of .quick-facts-->
@@ -100,11 +128,12 @@
 		</div> <!--end of #about-me-info-->
 		
 		<div class="container" id="skill-level-info">
+		
 		<h2 class="text-center"> Languages/Libraries/Frameworks Knowledge Level</h2>
 			<div class="container">
 				<div class="row" >
 				
-					<span class="col-sm-3" >HTML (Advanced)</span>
+					<span class="col-md-3" >HTML (Advanced)</span>
 					<div class="progress">
 						<div class="progress-bar progress-bar-striped progress-bar-html " role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
 							<span class="">77% </span>
@@ -115,7 +144,7 @@
 			
 			<div class="container">
 				<div class="row">
-					<span class="col-sm-3" >CSS (Intermediate) </span>
+					<span class="col-md-3" >CSS (Intermediate) </span>
 					<div class="progress" >
 						<div class="progress-bar progress-bar-striped progress-bar-css " role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" >
 							<span class="">55% </span>
@@ -126,7 +155,7 @@
 			
 			<div class="container">
 				<div class="row">
-					<span class="col-sm-3" >Javascript (Intermediate) </span>
+					<span class="col-md-3" >Javascript (Intermediate) </span>
 					<div class="progress"  >
 						<div class="progress-bar progress-bar-striped progress-bar-js" role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100">
 							<span class="">44% </span>
@@ -137,7 +166,7 @@
 			
 			<div class="container">
 				<div class="row">
-					<span class="col-sm-3" >jQuery (Intermediate) </span>
+					<span class="col-md-3" >jQuery (Intermediate) </span>
 					<div class="progress"  >
 						<div class="progress-bar progress-bar-striped progress-bar-jquery " role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
 							<span class="">77% </span>
@@ -148,7 +177,7 @@
 			
 			<div class="container" >
 				<div class="row">
-					<span class="col-sm-3" >Bootstrap (Beginner)</span>
+					<span class="col-md-3" >Bootstrap (Beginner)</span>
 					<div class="progress">
 						<div class="progress-bar progress-bar-striped progress-bar-bootstrap" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
 							<span class="">33% </span>
@@ -159,7 +188,7 @@
 			
 			<div class="container">
 				<div class="row">
-					<span class="col-sm-3" >PHP (Intermediate)</span>
+					<span class="col-md-3" >PHP (Intermediate)</span>
 					<div class="progress" class="col-sm-9"  >
 						<div class="progress-bar progress-bar-striped progress-bar-php" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" >
 							<span class="">55% </span>
@@ -169,7 +198,7 @@
 			</div> <!--end of .container-->
 			<div class="container">
 				<div class="row">
-					<span class="col-sm-3" >MySQL (Advanced)</span>
+					<span class="col-md-3" >MySQL (Advanced)</span>
 					<div class="progress" >
 						<div class="progress-bar progress-bar-striped progress-bar-mysql" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
 							<span class="">77% </span>
@@ -179,7 +208,7 @@
 			</div> <!--end of .container-->
 			<div class="container">
 				<div class="row">
-					<span class="col-sm-3" >Ruby (Beginner)</span>
+					<span class="col-md-3" >Ruby (Beginner)</span>
 					<div class="progress"   >
 						<div class="progress-bar progress-bar-striped progress-bar-ruby" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100">
 							<span class="">22% </span>
@@ -189,7 +218,7 @@
 			</div> <!--end of .container-->
 			<div class="container">
 				<div class="row">
-					<span class="col-sm-3" >Ruby on Rails (Beginner) </span>
+					<span class="col-md-3" >Ruby on Rails (Beginner) </span>
 					<div class="progress"  >
 						<div class="progress-bar progress-bar-striped progress-bar-rails" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100">
 							<span class="">11% </span>
@@ -216,12 +245,13 @@
 						<div class="panel-body" ><iframe name="wikipedia-viewer" src="Wikipedia-Viewer/index.html" width="100%" height="450px" frameborder="0" ></iframe> </div>
 						<div class="panel-footer">
 								
-									
-										<span class="label label-primary ">JavaScript</span> <span class="label label-success ">HTML</span> <span class="label label-warning ">CSS</span> <span class="label label-info"> jQuery </span> 
+										
+										<div class="label frontend-label" >JavaScript</div> <div class="label label-success frontend-label">HTML</div> <div class="label frontend-label">CSS</div> <div class="label frontend-label" > jQuery </div> 
 								
-										</br>
-										<span class="label label-bootstrap "> Bootstrap </span> 
-							
+										
+										<div class="label frontend-label " > Bootstrap </div> 
+										
+									
 								
 								
 						</div> <!--end of.panel-footer-->
@@ -239,12 +269,10 @@
 						</div>
 						<div class="panel-body" ><iframe name="Scene Change" src="Quote-Generator/index.html" width="100%" height="450px" frameborder="0" ></iframe></div>
 						<div class="panel-footer">
-							
-								<span  class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span> 
-						
-								</br>
-								<span class="label label-info"> jQuery </span>
-							
+							<div class="label frontend-label " >JavaScript</div> <div class="label frontend-label  ">HTML</div> <div class="label frontend-label  ">CSS</div> <div class="label frontend-label " > jQuery </div> 
+								
+										
+								<div class="label frontend-label   " > Bootstrap </div> 
 						</div>
 				
 					</div> <!--end of .panel-->
@@ -265,11 +293,10 @@
 						<div class="panel-body"><iframe name="Bookmark Application" src="http://127.0.0.1/ecommerce/index.php" width="100%" height="450px" frameborder="0" ></iframe></div>
 						<div class="panel-footer">
 							
-							<span class="label label-primary">JavaScript</span> <span class="label label-success">HTML</span> <span class="label label-warning">CSS</span> <span class="label label-bootstrap"> Bootstrap </span>
-							
-							</br>
-							<span class="label label-info"> jQuery </span> <span class="label label-php"> PHP </span> <span class="label label-sql"> SQL </span>
-							
+							<div class="label frontend-label  " >JavaScript</div> <div class="label frontend-label  ">HTML</div> <div class="label frontend-label ">CSS</div> <div class="label frontend-label " > jQuery </div> 
+								
+										
+							<div class="label frontend-label " > Bootstrap </div> <div class="label backend-label " > PHP </div> <div class="label backend-label " > SQL</div> 
 						 </div>
 	
 					</div> <!--end of .panel-->
@@ -282,7 +309,6 @@
 			</div> <!--end of .container-->
 		</div> <!--end of #sample-projects-group-->
 		
-			
 		<footer class="footer"></footer>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
