@@ -1,6 +1,54 @@
 $(document).ready(function() {
-					// All Pages
-
+let = pageTitle = $(document).find("title").text();					// All Pages
+if (pageTitle.match(/about/i) !== null) {
+			$('.nav-about').addClass('active');
+			if ($(window).width() >= 176 && $(window).width() <= 240 ) {
+					$('#home-navbar').hide();
+					$('#mobile-nav-scroll').hide();
+					
+				}
+				else if ($(window).height() >= 1400) {
+					$('#mobile-navbar').hide();
+					$('#home-navbar').show();
+					$('#mobile-nav-scroll').show();
+					alert('big');
+				}
+			$(window).resize(function() {
+				if ($(window).width() >= 176 && $(window).width() <= 359 ) {
+					$('#mobile-navbar').show();
+					$('#home-navbar').hide();
+					$('#mobile-nav-scroll').hide();
+				}
+				else if ($(window).width() >= 1400) {
+					$('#mobile-navbar').hide();
+					$('#home-navbar').show();
+					$('#mobile-nav-scroll').show();
+					alert('big');
+				}
+				
+			
+			});
+			//$('nav').removeClass('navbar-fixed-top');
+		}
+		
+		if (pageTitle.match(/courses/i) !== null) {
+			$('.nav-courses').addClass('active');
+		}
+		
+		else if (pageTitle.match(/backend/i) !== null) {
+			$('.nav-frontend-backend-projects').addClass('active');
+			$('.nav-projects').addClass('active');
+		}
+		
+		else if (pageTitle.match(/frontend /i) !== null) {
+			$('.nav-frontend-projects').addClass('active');
+			$('.nav-projects').addClass('active');
+		}
+		
+		else if (pageTitle.match(/contact/i) !== null) {
+			$('.nav-contact').addClass('active');
+			
+		}
 	
 	$('.Navbar').load('loads/navbar.html', function() {
 		
@@ -9,26 +57,32 @@ $(document).ready(function() {
 		
 		
 		if (pageTitle.match(/about/i) !== null) {
-			$('#nav-about').addClass('active');
+			//$('.nav-about').addClass('active');
+			console.log($(window).height());
+			alert('yo');
+			if ($(window).height() >= '1440px') {
+				
+				$('body').css({'background-color':'red'});
+			}
 			//$('nav').removeClass('navbar-fixed-top');
 		}
 		
 		if (pageTitle.match(/courses/i) !== null) {
-			$('#nav-courses').addClass('active');
+			$('.nav-courses').addClass('active');
 		}
 		
 		else if (pageTitle.match(/backend/i) !== null) {
-			$('#nav-frontend-backend-projects').addClass('active');
-			$('#nav-projects').addClass('active');
+			$('.nav-frontend-backend-projects').addClass('active');
+			$('.nav-projects').addClass('active');
 		}
 		
 		else if (pageTitle.match(/frontend /i) !== null) {
-			$('#nav-frontend-projects').addClass('active');
-			$('#nav-projects').addClass('active');
+			$('.nav-frontend-projects').addClass('active');
+			$('.nav-projects').addClass('active');
 		}
 		
 		else if (pageTitle.match(/contact/i) !== null) {
-			$('#nav-contact').addClass('active');
+			$('.nav-contact').addClass('active');
 			
 		}
 	}); // .header.load()

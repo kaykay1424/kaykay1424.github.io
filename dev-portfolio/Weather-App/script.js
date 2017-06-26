@@ -13,6 +13,18 @@
 */	
 
 $(document).ready(function() {
+	let screenHeight = $(window).height();
+	/*$('body').height(screenHeight);
+	
+	$(window).resize(function() {
+		let screenHeight = $(window).height();
+		$('body').height(screenHeight);
+		let bodyHeight = $('body').height();
+		console.log(screenHeight);
+		console.log(bodyHeight);
+	
+	});
+	*/
 	$('.location-access').show();
 	$('.loading, .refresh-page, .error').hide();
 
@@ -45,7 +57,7 @@ $(document).ready(function() {
 				
 			break;
 			case 'Sunny':
-				$('body').css({'background-image': 'url("https://aramgurum.ru/w/25/peyzazh_zelenyy_lug_polden_2560x1600.jpg")'});
+				$('body').css({'background-image': 'url("https://a248.e.akamai.net/secure.meetupstatic.com/photos/theme_body/4/6/b/5/full_7218101.jpeg")'});
 			break;
 			case 'Cloudy':
 				if (time > 19 || time < 8) {
@@ -227,7 +239,7 @@ $(document).ready(function() {
 		
 			
 		$.getJSON('https://api.apixu.com/v1/forecast.json?key=10f7e01ace7a4be298a185347172404&q='+latitude+','+ longitude+ '&days=6', function(data) {
-			$('#forecasts').show();
+			$('#forecasts, #week-forecast').show();
 			$('#loading-div').hide();
 			
 			// get current forecast data (day0)
