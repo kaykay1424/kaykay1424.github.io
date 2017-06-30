@@ -13,18 +13,26 @@
 */	
 
 $(document).ready(function() {
-	let screenHeight = $(window).height();
-	/*$('body').height(screenHeight);
+	
+	let bodyHeight = $('body').height();
+	let currentForecastRowHeight = $('.current-forecast-row').height();
+	let difference = bodyHeight - currentForecastRowHeight;
+	$('.week-forecast-row').height(difference);
+	$('#week-forecast').height(difference);
+	console.log(currentForecastRowHeight);
+	console.log('body:'+ bodyHeight);
+	console.log('week-forecast:' + difference);
 	
 	$(window).resize(function() {
-		let screenHeight = $(window).height();
-		$('body').height(screenHeight);
 		let bodyHeight = $('body').height();
-		console.log(screenHeight);
-		console.log(bodyHeight);
-	
+	let currentForecastRowHeight = $('.current-forecast-row').height();
+	let difference = bodyHeight - currentForecastRowHeight;
+	$('.week-forecast-row').height(difference);
+	$('#week-forecast').height(difference);
+	console.log(currentForecastRowHeight);
+	console.log('body:'+ bodyHeight);
+	console.log('week-forecast:' + difference);
 	});
-	*/
 	$('.location-access').show();
 	$('.loading, .refresh-page, .error').hide();
 
@@ -799,5 +807,56 @@ $(document).ready(function() {
 		}); // end of getJSON
 
 	} // end of getWeatherData()
+	
+	/*let screenHeight = $(window).height();
+	let screenWidth = $(window).width();
+	let forecastHeight = parseInt($('#week-forecast').height());
+	let realHeight = screenHeight+forecastHeight;
+		$('body').height(screenHeight).css({'background-size':screenWidth +''+ screenHeight});*/
+	//$('body').css({'max-height':screenHeight + 'px'});
+	//$('#week-forecast').height(screenHeight/4);
+	/*if (forecastHeight > screenHeight) {
+			$('#week-forecast').height(screenHeight/3).css({'overflow':'auto'});
+		
+		}
+	if (screenWidth >= 1024) {
+		$('#week-forecast').addClass('absolute-position');
+	
+	}
+	else {
+		$('#week-forecast').removeClass('absolute-position');
+	}*/
+
+	/*$(window).resize(function() {
+		let screenHeight = $(window).height();
+		let screenWidth = $(window).width();
+		let forecastHeight = parseInt($('#week-forecast').css('height'));
+		let currentHeight = $('#forecasts').height();
+		//$('body').height(screenHeight);
+		//$('#week-forecast').height(screenHeight/4);
+		let realHeight = screenHeight+forecastHeight;
+		//$('body').height(screenHeight);
+		$('body').height(screenHeight).css({'background-size':screenWidth +''+ screenHeight});
+		let bodyHeight = $('body').height();
+		let htmlHeight = $('html').height();
+		console.log(htmlHeight);
+		console.log(forecastHeight);
+		console.log(currentHeight);
+		console.log(screenHeight);
+		console.log(bodyHeight);
+		if (forecastHeight > screenHeight) {
+			$('#week-forecast').height(screenHeight/3).css({'overflow':'auto'});
+		
+		}
+		if (screenWidth >= 1024) {
+			$('#week-forecast').addClass('absolute-position');
+			alert('absolute');
+		}
+		else {
+			$('#week-forecast').removeClass('absolute-position');
+			alert('no absolute');
+		}
+	
+	});*/
 
 }); // end of document ready

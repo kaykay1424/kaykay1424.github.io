@@ -25,6 +25,51 @@
 */	
 
 $(document).ready(function() {
+	
+	let bodyHeight = $('body').height();
+	let tvRowHeight = $('.tv-row').height();
+	let baseboardHeight = $('.baseboard-row').height();
+	let difference = bodyHeight - (tvRowHeight + baseboardHeight);
+	let containerFluidHeight = tvRowHeight + baseboardHeight;
+	let paintingHeight = $('#painting').height();
+	$('.carpet-row').height(difference);
+	$('#table').css({'height':difference/2 + 'px'});
+	let tableHeight = $('#table').height();
+	let tableWidth = $('#table').width();
+	$('#remote').css({'height':tableHeight+ 'px', 'max-height':tableHeight+ 'px' ,'width': tableWidth/3, 'max-width':tableWidth/2 +'px'});
+	let remoteContainerWidth = $('#remote-controls-container').width();
+	let plantHeight = $('#plant').height();
+	//$('#plant').css({'top': containerFluidHeight- plantHeight + 'px'});
+	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
+	console.log('body:' +bodyHeight);
+	console.log('TV:' +tvRowHeight);
+	console.log('baseboard:' +baseboardHeight);
+	console.log('difference:' +difference);
+	console.log('containerFluid:' + containerFluidHeight);
+	$(window).resize(function() {
+	
+			let bodyHeight = $('body').height();
+	let tvRowHeight = $('.tv-row').height();
+	let baseboardHeight = $('.baseboard-row').height();
+	let difference = bodyHeight - (tvRowHeight + baseboardHeight);
+	let conainerFluidHeight = tvRowHeight + baseboardHeight;
+	$('.carpet-row').height(difference);
+	$('#table').css({'height':difference/2 + 'px'});
+		let tableHeight = $('#table').height();
+	let tableWidth = $('#table').width();
+	$('#remote').css({'height':tableHeight+ 'px','max-height':tableHeight+ 'px' , 'width': tableWidth/3,'max-width':tableWidth/2 +'px'});
+	let remoteContainerWidth = $('#remote-controls-container').width();
+	//$('#plant').css({'top': containerFluidHeight-difference + 'px'});
+	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
+	let plantHeight = $('#plant').height();
+	//$('#plant').css({'top': containerFluidHeight- plantHeight + 'px'});
+	console.log('body:' +bodyHeight);
+	console.log('TV:' +tvRowHeight);
+	console.log('baseboard:' +baseboardHeight);
+	console.log('difference:' +difference);
+	console.log('containerFluid:' + containerFluidHeight);
+	});
+	
 	fetchChannels();
 	$('[data-toggle="popover"]').popover(); 
 	
@@ -1560,4 +1605,6 @@ $(document).ready(function() {
 		}); // end of getJSON
 		
 	} // end of showProgramLogo(name)
+	
+	
 	

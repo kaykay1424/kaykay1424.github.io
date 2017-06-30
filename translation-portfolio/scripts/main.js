@@ -1,6 +1,14 @@
 $(document).ready(function() {
 		
-			
+		let articleHeight = $('.article-form').height();
+		
+		$('.form-background-image').height(articleHeight);
+		$(window).resize(function() {
+			let articleHeight = $('.article-form').height();
+		
+		$('.form-background-image').height(articleHeight);
+		
+		});
 		// About Me page
 		
 	$('.header').load('loads/header.html', function() {
@@ -80,12 +88,12 @@ $(document).ready(function() {
 	e.preventDefault();
   		let allValues = [];
   		$('#government-topics-container').find('.no-results').remove();
-  		$('#government-topics-container .col-md-12').hide();
+  		$('#government-topics-container .article').hide();
   		let selectedDate = $('select option:selected').val();
   		if (selectedDate !== 'select-year') {
   		
-			$('#government-topics-container .col-md-12').find('.article-dates:contains('+selectedDate+')').parents('#government-topics-container .col-md-12').show();
-			let showArticleLength = $('#government-topics-container .col-md-12:visible').length;
+			$('#government-topics-container .article').find('.article-dates:contains('+selectedDate+')').parents('#government-topics-container .article').show();
+			let showArticleLength = $('#government-topics-container .article:visible').length;
 			$('.filter-results').html('Article match(es): '+ showArticleLength).removeClass('form-error').parent().removeClass('text-warning col-md-12 col-md-6 col-md-offset-2').addClass('col-md-6 col-md-offset-2 color-white');
 			if (showArticleLength === 0) {
 				$('#government-topics-container').append('<div class="no-results alert alert-danger text-center"><h3>No articles match that search criteria. Please try another search or click on the "Show All Articles" button to see all the articles again.</h3></div>');
@@ -93,7 +101,7 @@ $(document).ready(function() {
   		}
   		else {
   			$('#government-topic-form .filter-results').html('Please choose a topic and/or select a year to search for an article').addClass('form-error').parent().removeClass('col-md-6 col-md-offset-2 col-md-12 color-white').addClass('col-md-12 text-warning');
-			$('#government-topics-container .col-md-12').show();
+			$('#government-topics-container .article').show();
 			return false;
   		}
   		
@@ -104,12 +112,12 @@ $(document).ready(function() {
   		e.preventDefault();
   		let allValues = [];
   		$('.political-articles-container').find('.no-results').remove();
-  		$('.political-articles-container .col-md-12').hide();
+  		$('.political-articles-container .article').hide();
   		let selectedDate = $('select option:selected').val();
   		if (selectedDate !== 'select-year') {
   			
-			$('.political-articles-container .col-md-12').find('.article-dates:contains('+selectedDate+')').parents('.political-articles-container .col-md-12').show();
-			let showArticleLength = $('.political-articles-container .col-md-12:visible').length;
+			$('.political-articles-container .article').find('.article-dates:contains('+selectedDate+')').parents('.political-articles-container .article').show();
+			let showArticleLength = $('.political-articles-container .article:visible').length;
 			$('.filter-results').html('Article match(es): '+ showArticleLength).removeClass('form-error').parent().removeClass('text-warning ').addClass('color-white');
 			if (showArticleLength === 0) {
 				$('.political-articles-container').append('<div class="no-results alert alert-danger text-center"><h3>No articles match that search criteria. Please try another search or click on the "Show All Articles" button to see all the articles again.</h3></div>');
@@ -117,7 +125,7 @@ $(document).ready(function() {
   		}
   		else {
   			$('#politics-topic-form .filter-results').html('Please choose a topic and/or select a year to search for an article').addClass('form-error').parent().removeClass(' color-white').addClass('text-warning')
-			$('.political-articles-container .col-md-12').show();
+			$('.political-articles-container .article').show();
 			return false;
   		}
   		
@@ -129,7 +137,7 @@ $(document).ready(function() {
 			
 			
 			$('.no-results').remove();
-			$('.all-topics-container .col-md-12, .political-articles-container .col-md-12, #government-topics-container .col-md-12').show();
+			$('.all-topics-container .article, .political-articles-container .article, #government-topics-container .article').show();
 			$('.filter-results').html('').removeClass('form-error');
 			$('#all-topics-form, #politics-topic-form')[0].reset();
 			
@@ -156,7 +164,7 @@ $(document).ready(function() {
 		let allValues = [];
 		$('.all-topics-container').find('.no-results').remove();
 		
-		$('.all-topics-container .col-md-12').hide();
+		$('.all-topics-container .article').hide();
 		
 			
 		
@@ -171,19 +179,19 @@ $(document).ready(function() {
 
 				let selectedDate = $('select option:selected').val();
 				if (selectedDate !== 'select-year') {
-					let showArticle = $('.all-topics-container .col-md-12 .label:contains('+allValues[i]+')').siblings('.all-topics-container .article-dates:contains('+selectedDate+')').parents('.all-topics-container .col-md-12');
+					let showArticle = $('.all-topics-container .article .label:contains('+allValues[i]+')').siblings('.all-topics-container .article-dates:contains('+selectedDate+')').parents('.all-topics-container .article');
 					showArticle.show();
 				}
 	
 				else {
-				let showArticle = $('.all-topics-container .col-md-12 .label:contains('+allValues[i]+')').parents('.all-topics-container .col-md-12');
+				let showArticle = $('.all-topics-container .article .label:contains('+allValues[i]+')').parents('.all-topics-container .article');
 				showArticle.show();
 				}
 	
 			}
 			if ($("input[type='checkbox']:checked").length === 0 && $('select option:selected').val() !== 'select-year') {
 			let selectedDate = $('select option:selected').val();
-			let showArticle = $('.all-topics-container .article-dates:contains('+selectedDate+')').parents('.all-topics-container .col-md-12');
+			let showArticle = $('.all-topics-container .article-dates:contains('+selectedDate+')').parents('.all-topics-container .article');
 				showArticle.show();
 		
 			}
@@ -191,10 +199,10 @@ $(document).ready(function() {
 		 
 		else  {
 			$('#all-topics-form .filter-results').html('Please choose a topic and/or select a year to search for an article').parent().removeClass('col-md-6 col-md-offset-3 col-md-10 col-md-offset-2').addClass(' text-warning');
-			$('.all-topics-container .col-md-12').show();
+			$('.all-topics-container .article').show();
 			return false;
 		}
-		let showArticleLength = $('.all-topics-container .col-md-12:visible').length;
+		let showArticleLength = $('.all-topics-container .article:visible').length;
 		$('#all-topics-form .filter-results').html('Article match(es): '+ showArticleLength).parent().removeClass('text-warning ');
 		if (showArticleLength === 0) {
 			$('.all-topics-container').append('<div class="no-results alert alert-danger text-center"><h3>No articles match that search criteria. Please try another search or click on the "Show All Articles" button to see all the articles again.</h3></div>');

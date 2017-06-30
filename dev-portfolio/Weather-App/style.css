@@ -13,17 +13,26 @@
 	}
 
 }*/
+
+html,body {
+     
+  	height: 100%;
+  	padding-bottom:0;
+  	
+   
+}
+
 body {
 	/*background-size: 100% auto;*/
-	background-size: cover;
+	/*background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center ;
+	background-position: center ;*/
 	text-shadow: 2px 2px 2px black;
 	background-color:orange;
-	padding-bottom:0;
-	margin:0;
 	
-   	padding-top: 2%;
+	/*position: relative;*/
+   	/*padding-top: 5%;*/
+   
 	-ms-word-break: break-all;
      word-break: break-all;
 
@@ -36,11 +45,6 @@ body {
 	
 }
 
-#forecasts {
-	
-	margin-bottom: 10%;
-	display: none;
-}
 
 #current-forecast {
 	background-color: rgba(20,50,200,.5);
@@ -50,6 +54,8 @@ body {
 	border-radius: 100%;
 	box-shadow: 2px 2px 2px black;
 	padding: 5%;
+	/*height:50vh;*/
+	/*overflow:auto;*/
 	
 }
 
@@ -57,19 +63,10 @@ body {
 	padding:0;
 }
 
-#week-forecast {
-	background-color: rgba(20,250,100,.5);
-	color: white;
-	padding-top:0;
-	border-top: 2px solid white;
-	border-bottom: 2px solid white;
-	display:none;
-	margin-top: 5%;
-	margin-bottom: 0;
-
-	
+.absolute-position {
+	position:absolute;
+	bottom:0;
 }
-
 #week-forecast .col-md-2 {
 	padding:1%;
 }
@@ -112,16 +109,24 @@ body {
 @media only screen and (max-width: 200px)  {
 	#current-forecast {
 		border-radius: 0;
-		margin-bottom:10%;
+		
 		
 	}
-	 .current-day button {
+	#forecasts {
+		margin-bottom:10%;
+	}
+	 #week-forecast .current-day button {
 		margin:3%;
 	
-	}
+	} 
 	#week-forecast .col-md-2:not(#day5) {
 		border-bottom: 2px solid white;
 		border-right: 0;
+	}
+	#week-forecast {
+		position:initial;
+		
+	
 	}
 
 }
@@ -129,60 +134,100 @@ body {
 @media only screen and (max-width: 320px) and (min-width:201px) {
 	#current-forecast {
 		border-radius: 0;
-		margin-bottom:10%;
 		
+		
+	}
+	#forecasts {
+		margin-bottom:10%;
 	}
 	#week-forecast .col-md-2:not(#day5) {
 		border-bottom: 2px solid white;
 		border-right: 0;
+	}
+	#week-forecast {
+		position:initial;
+		
+	
 	}
 }
 @media only screen and (max-width: 375px) and (min-width:321px) {
 	#current-forecast {
 		border-radius: 0;
-		margin-bottom:10%;
+
 		
+	}
+	#forecasts {
+		margin-bottom:10%;
 	}
 	#week-forecast .col-md-2:not(#day5) {
 		border-bottom: 2px solid white;
 		border-right: 0;
+	}
+	#week-forecast {
+		position:initial;
+		
+	
 	}
 }
 @media only screen and (max-width: 425px) and (min-width:375px) {
 	#current-forecast {
 		border-radius: 0;
-		margin-bottom:10%;
 		
+		
+	}
+	#forecasts {
+		margin-bottom:10%;
 	}
 	#week-forecast .col-md-2:not(#day5) {
 		border-bottom: 2px solid white;
 		border-right: 0;
+	}
+	#week-forecast {
+		position:initial;
+		
+	
 	}
 }
-@media only screen and (max-width: 768px) and (min-width:426px) {
+@media only screen and (max-width: 991px) and (min-width:426px) {
 	#current-forecast {
 		border-radius: 0;
-		margin-bottom:10%;
 		
+		
+	}
+	#forecasts {
+		margin-bottom:10%;
 	}
 	#week-forecast .col-md-2:not(#day5) {
 		border-bottom: 2px solid white;
 		border-right: 0;
+	}
+	#week-forecast {
+		position:initial;
+		
+	
 	}
 	
 }
-@media only screen and (max-width: 1023px) and (min-width:769px) {
+@media only screen and (max-width: 1023px) and (min-width:992px) {
 	#current-forecast {
 		border-radius: 100%;
-		margin-bottom:10%;
 		
+		
+	}
+	#forecasts {
+		margin-bottom:10%;
 	}
 	#week-forecast .col-md-2:not(#day5) {
 		border-right: 2px solid white;
 		border-bottom: 0;
 	}
-	 .current-day button {
+	 #week-forecast .current-day button {
 		margin:3%;
+	
+	}
+	#week-forecast {
+		position:initial;
+		
 	
 	}
 
@@ -197,7 +242,10 @@ body {
 		border-right: 2px solid white;
 		border-bottom: 0;
 	}
-	
+	#week-forecast {
+		height:auto;
+		overflow:visible;
+	}
 
 }
 
@@ -211,6 +259,38 @@ body {
 		border-right: 2px solid white;
 		border-bottom: 0;
 	}
+	#week-forecast {
+		height:auto;
+		overflow:visible;
+	}
 	 
 
+}
+
+#forecasts {
+	
+	/*margin-bottom: 15%;*/
+	display: none;
+	height:100%;
+}
+#week-forecast {
+	background-color: rgba(20,250,100,.5);
+	color: white;
+	padding-top:0;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	display:none;
+	/*height:auto;
+	position: fixed;
+  	bottom: 0;*/
+  	width: 100%;
+ 	/*overflow:auto;*/
+  /* Set the fixed height of the footer here */
+  	
+	
+	/*overflow:auto;*/
+	
+	
+
+	
 }
