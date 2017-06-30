@@ -142,7 +142,7 @@ footer a {
 
 #portfolio-img {
 	border:3px solid green;
-	/*height:300px;*/
+	height:300px;
 	width:100%;
 	background-image:url('../images/kayla-on-beach.jpeg');
 	background-size:cover;
@@ -809,7 +809,7 @@ table td[colspan="2"] {
 		height: auto;
 	}
 	#portfolio-img {
-		height: 500px;
+		height: 600px;
 	
 	}
 	
