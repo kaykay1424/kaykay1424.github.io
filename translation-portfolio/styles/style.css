@@ -564,7 +564,7 @@ table td[colspan="2"] {
 		margin-bottom:3%;
 	}
 	#all-topics-form { 
-		height: 460px;
+		height: 510px;
 	}
 	.header-bubble-string-tie {
 		width:4%;
@@ -598,7 +598,7 @@ table td[colspan="2"] {
 	}
 	#talkbubble:before  {
 		right: 50%;
-		top: -1%;
+		top: -.7%;
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
 		border-bottom: 20px solid lightgrey;
@@ -623,7 +623,7 @@ table td[colspan="2"] {
 		margin-bottom:3%;
 	}
 	#all-topics-form { 
-		height: 460px;
+		height: 480px;
 	}
 	.header-bubble-string-tie {
 		width:4%;
@@ -762,13 +762,17 @@ table td[colspan="2"] {
 	}
 }
 /* Mobile Sm */
-@media only screen and (max-width: 639px) and (min-width:414px) {
+@media only screen and (max-width: 600px) and (min-width:414px) {
 	.resume-sections:not(#translation-experience) {
 		height: auto;
 	}
 	.header-background {
 		height: 100px;
 		
+	}
+	#portfolio-img {
+		height: 500px;
+	
 	}
 	.header-bubble {
 	
@@ -788,10 +792,10 @@ table td[colspan="2"] {
 		
 	}
 	.header-bubble-string { 
-		width: 4%;
+		width: 3%;
 	}
 	.header-bubble-string-tie {
-		width:4%;
+		width:3.5%;
 		right:48%;
 		top:-4%;
 	}
@@ -803,8 +807,9 @@ table td[colspan="2"] {
 		border-bottom: 2px solid black;
 	}
 }
+
 /* Tablet */
-@media only screen and (max-width: 799px) and (min-width:640px) {
+@media only screen and (max-width: 799px) and (min-width:601px) {
 	.resume-sections:not(#translation-experience) {
 		height: auto;
 	}
@@ -931,7 +936,7 @@ table td[colspan="2"] {
 	}	
 
 }
-@media only screen and (max-width: 1599px) and (min-width:1024px) {
+@media only screen and (max-width: 1279px) and (min-width:1024px) {
 	.header-bubble-string { 
 		width: 3.8%;
 	}
@@ -970,6 +975,49 @@ table td[colspan="2"] {
 		background-color:lightgrey;
 		border-radius:100px;
 	}	
+}
+@media only screen and (max-width: 1599px) and (min-width:1280px) {
+	.header-bubble-string { 
+		width: 3%;
+		
+	}
+	#portfolio-img {
+		height: 300px;
+	
+	}
+	.resume-sections:not(#translation-experience) {
+		height: 700px;
+	}
+	
+	.header-bubble-string-tie {
+		width:3%;
+		right:48%;
+		top:-4%;
+		height:15px;
+	}
+	#talkbubble:before  {
+		right: 100%;
+		top: 50%;
+		border-top: 13px solid transparent;
+		border-right: 18px solid lightgrey;
+		border-bottom: 13px solid transparent;
+	}
+	.header-background {
+		height: 200px;
+		
+	}
+	.header-bubble {
+	
+		padding-top:.5%;	
+	}
+	.header-bubble-hole {
+		margin:auto;
+		width:5%;
+		height:20px;
+		background-color:lightgrey;
+		border-radius:100px;
+	}	
+
 }
 @media only screen and (min-width: 1600px)  {
 	.header-bubble-string { 
