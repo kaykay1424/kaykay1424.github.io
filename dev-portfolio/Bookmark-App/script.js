@@ -24,7 +24,7 @@
 */	
 	$(document).ready(function() {
 	
-	
+
 	
 	if (localStorage.getItem('bookmarkIcons') !== null && localStorage.getItem('bookmarkIcons')!== null) {
 
@@ -33,7 +33,8 @@
 		fetchBookmarks();
 		let screenWidth = $(window).width();
 		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
-		
+		$('#bookmark-icon-form')[0].reset();
+		$('#bookmark-form')[0].reset();
 		}
 		
 	else if (localStorage.getItem('bookmarkIcons') === null && localStorage.getItem('bookmarkIcons')  === null) {
@@ -47,7 +48,8 @@
 		'border': '5px solid purple',
 		'box-shadow':'2px 2px 5px black'});
 		
-   		
+   		$('#bookmark-icon-form')[0].reset();
+		$('#bookmark-form')[0].reset();
 	}
 	
 	else if (localStorage.getItem('bookmarkIcons')  === null && localStorage.getItem('bookmarkIcons')  !== null )  {
@@ -62,6 +64,8 @@
 		'box-shadow':'2px 2px 5px black'});
 		
    		fetchBookmarks();
+   		$('#bookmark-icon-form')[0].reset();
+		$('#bookmark-form')[0].reset();
    		
 	}
 
@@ -70,6 +74,8 @@
 		deleteBookmarkIcons();
 		let screenWidth = $(window).width();
 		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
+		$('#bookmark-icon-form')[0].reset();
+	$('#bookmark-form')[0].reset();
 		
 	}
 
@@ -577,13 +583,19 @@
 	let borderWidth = $('.bookmark-icon').css('border-width');
 	let bookmarkSizeWidth = $('.bookmark-icon').width();
 	$('#bookmark-size-width').attr({'max': screenWidth/4, 'value': (screenWidth/4)-10});
-		$('#bookmark-size-height').attr({'max': screenHeight/2, 'value': (screenHeight/2)-10});
-	$('iframe').css({'height':screenHeight/2} + 'px');
+	$('#bookmark-size-height').attr({'max': screenHeight/2, 'value': (screenHeight/2)-10});
+	$('iframe').css({'height':screenHeight/2 + 'px'});
 	$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
 	if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {
 	$('.bookmark-icon').css({'border-width': (screenWidth/4) - bookmarkSizeWidth + 'px'});
 	
 	}
+	if (screenWidth < 200) {
+			$('#bookmark-icon-form button[type="button"]').removeClass('pull-right').css({'margin-top':'5%'});;
+	}
+	else {
+			$('#bookmark-icon-form button[type="button"]').addClass('pull-right').css({'margin-top':0});;
+		}
 	
 	$(window).resize(function() {
 		let screenWidth = $(window).width();
@@ -599,5 +611,11 @@
 			$('.bookmark-icon').css({'border-width': (screenWidth/4) - bookmarkSizeWidth + 'px'});
 	
 			}
+		if (screenWidth < 200) {
+			$('#bookmark-icon-form button[type="button"]').removeClass('pull-right').css({'margin-top':'5%'});
+		}
+		else {
+			$('#bookmark-icon-form button[type="button"]').addClass('pull-right').css({'margin-top':0});
+		}
 	});
 

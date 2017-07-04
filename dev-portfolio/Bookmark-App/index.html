@@ -77,11 +77,11 @@
 				</div> <!--end of #bookmark-storage-->
 			</div> <!--end of #minimize-bar-->
 		</div> <!--end of .container-fluid-->
-		<div id="bookmark-modal" class="modal fade" role="dialog">
+		<div id="bookmark-modal" class="modal fade" role="dialog" >
   			<div class="modal-dialog modal-lg">
     			<div class="modal-content">
       				<div class="modal-body">
-        				<form id="bookmark-icon-form" >
+        				<form id="bookmark-icon-form">
 							<h3 class="text-center">Design your own bookmark!</h3>
 							<div class="background-options">
 								<h4>Design the background</h4>
@@ -258,9 +258,11 @@
 							</div> <!--end of border-options-->
 
 							<hr id="border-options-hr"/>
-
-							<button type="submit" class="btn btn-primary">Submit</button>
-
+							<div >
+								<button type="submit" class="btn btn-primary ">Submit</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+							</div>
+							
 						</form>
       				</div> <!--end of .modal-body-->
 
