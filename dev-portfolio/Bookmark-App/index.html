@@ -49,7 +49,7 @@
 
 			</div>
 		</div>
-		<div class="alert alert-success alert-warning col-md-6 col-md-offset-3">
+		<div class="alert alert-success alert-warning col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
   			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   			<strong> &#9888 Notice: </strong><br/>
   			<p>
@@ -61,7 +61,7 @@
   		</div>
       	<div class="container-fluid">
       		<div class="row">
-				<div id="bookmarksResults" class="col-md-12">
+				<div id="bookmarksResults" class="col-md-12 col-sm-12">
 					
 				</div> <!--end of .col-md-12-->
 			</div> <!--end of .row-->
@@ -85,18 +85,19 @@
 							<h3 class="text-center">Design your own bookmark!</h3>
 							<div class="background-options">
 								<h4>Design the background</h4>
+								<div id="background-size-errors" class="alert alert-danger" >The background size of the image cannot be bigger than the bookmark size. </div>
 								<div id="background-errors" class="alert alert-danger">Please choose a background image <strong>AND/OR</strong> a background color. If you choose an image, please input the height <strong>AND</strong> width (in pixels) <strong>OR</strong> choose a keyword (cover or contain) to specify width and height.
 								If you choose a color, leave the size fields blank or choose none.</div>
 								
 								<div class="form-group">
-									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'> Input the url of the image you want to use for the background of the bookmark (or leave blank if you do not wish to use a background image).</p>">
+									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'> Input the url of the image you want to use for the background of the bookmark (or leave blank if you do not wish to use a background image).</p>">
 
 									<label for="bg-image">Background Image*</label></a>
 
 									<input type="url" id="bg-image" class="form-control">
 								</div>
 								<div class="form-group">
-									 <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose a background color for the bookmark (or choose none if you do not want a different background color than that of the page).</p>">
+									 <a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose a background color for the bookmark (or choose none if you do not want a different background color than that of the page).</p>">
 
 									<label  for="bg-color" >Background Color*</label></a>
 
@@ -118,7 +119,7 @@
 								</div>
 
 								<div class="form-group">
-									 <a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose whether you want the background image to be repeated horizontally, vertically, both horizontally and vertically, or not at all.
+									 <a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose whether you want the background image to be repeated horizontally, vertically, both horizontally and vertically, or not at all.
 									 (The image will only be repeated if its width and height are small enough to do so.)</p>">
 
 									<label for="bg-repeat">Background Repeat</label></a>
@@ -133,7 +134,7 @@
 								</div>
 
 								<div class="form-group">
-									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose what position you want the background image to start from, e.g. 'Left Top' means 'start on the left side at the top'.</p>">
+									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose what position you want the background image to start from, e.g. 'Left Top' means 'start on the left side at the top'.</p>">
 
 									<label for="bg-position">Background Position</label></a>
 
@@ -152,7 +153,7 @@
 								</div>
 
 								<div class="form-group">
-									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>
+									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>
 										<b>Cover:</b> scales the background image to be as large as possible so that it completely covers the bookmark area. Some parts of the background image may
 											not be visible within the bookmark area.</p>
 										<p><b>Contain:</b> scales the image to the largest size so that both its width and its height can fit inside the bookmark area.</p>
@@ -168,7 +169,7 @@
 								</div>
 
 								<div class="form-group">
-									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>
+									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>
 									 Input the number for the width (in pixels) of the background image . The default width of the bookmark area is 60 (pixels). </p>">
 
 									<label for="bg-size-width">Background Size (Width)*</label></a>
@@ -178,7 +179,7 @@
 								</div>
 
 								<div class="form-group">
-									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>
+									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>
 									 Input the number for the height (in pixels) of the background image. The default height of the bookmark area is 110 (pixels). </p>
 									">
 									<label for="bg-size-height">Background Size (Height)*</label></a>
@@ -193,13 +194,13 @@
 								<h4>Choose the bookmark size</h4>
 								<div id="bookmark-errors" class="alert alert-danger" >Please input the width (in pixels) <strong> AND </strong> height (in pixels) of the bookmark area  </div>
 									<div class="form-group">
-									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>Input the number for the width (in pixels) of the bookmark area. The default is 60 (pixels). </p>">
+									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>Input the number for the width (in pixels) of the bookmark area. The default is 60 (pixels). </p>">
 									<label for="bookmark-size-width">Bookmark Size (Width)*</label></a>
 									<input type="number"  id="bookmark-size-width" class="form-control" value="60">
 								</div>
 
 								<div class="form-group">
-								<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>Input the number for the height (in pixels) of the bookmark area. The default is 120 (pixels).</p>">
+								<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>Input the number for the height (in pixels) of the bookmark area. The default is 120 (pixels).</p>">
 								<label for="bookmark-size-height">Bookmark Size (Height)*</label></a>
 								<input type="number" id="bookmark-size-height" class="form-control" value="110">
 								</div>
@@ -209,16 +210,18 @@
 
 							<div class="border-options">
 								<h4>Design the border</h4>
+									<div id="border-size-errors" class="alert alert-danger" >The border width is too big. Please decrease the size. </div>
+								
 									<div id="border-errors" class="alert alert-danger">Please select the border width, border color, <strong>AND </strong> border style </div>
 
 								<div class="form-group">
-								<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>Input the number for the width (in pixels) of the border of the bookmark area. The default is 3 (pixels) </p>">
+								<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>Input the number for the width (in pixels) of the border of the bookmark area. The default is 3 (pixels) </p>">
 								<label for="border-width">Border Width</label></a>
 								<input type="number" id="border-width" class="form-control" min="1" >
 								</div>
 
 								<div class="form-group">
-									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose the color of the border (if you choose none if you want the border will not show).</p>">
+									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose the color of the border (if you choose none if you want the border will not show).</p>">
 									<label for="border-color">Border Color</label></a>
 									<select class="form-control" id="border-color">
 										<option value="transparent">None</option>
@@ -237,7 +240,7 @@
 								</div>
 
 								<div class="form-group">
-									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose the style of the border (or select none if you do not wish to have a border).</p>">
+									<a href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p class='bookmark-design-descriptions'>Choose the style of the border (or select none if you do not wish to have a border).</p>">
 									<label for="border-style">Border Style</label></a>
 									<select class="form-control" id="border-style">
 										<option value="none">None</option>

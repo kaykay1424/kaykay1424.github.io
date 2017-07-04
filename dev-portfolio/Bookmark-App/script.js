@@ -23,17 +23,23 @@
 	
 */	
 	$(document).ready(function() {
+	
+	
+	
 	if (localStorage.getItem('bookmarkIcons') !== null && localStorage.getItem('bookmarkIcons')!== null) {
 
 		fetchBookmarkIcons();
 		deleteBookmarkIcons();
 		fetchBookmarks();
-		
+		let screenWidth = $(window).width();
+		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
 		
 		}
 		
 	else if (localStorage.getItem('bookmarkIcons') === null && localStorage.getItem('bookmarkIcons')  === null) {
+		let screenWidth = $(window).width();
 		$('.bookmark-icon').css({'width': '60px',
+		'max-width': screenWidth/4 + 'px',
 		'height': '110px',
 		'background-image': 'url("http://www.parisattitude.com/images/monuments.jpg")',
 		'background-size': 'cover',
@@ -45,7 +51,9 @@
 	}
 	
 	else if (localStorage.getItem('bookmarkIcons')  === null && localStorage.getItem('bookmarkIcons')  !== null )  {
+		let screenWidth = $(window).width();
 		$('.bookmark-icon').css({'width': '60px',
+		'max-width': screenWidth/4 + 'px',
 		'height': '110px',
 		'background-image': 'url("http://www.parisattitude.com/images/monuments.jpg")',
 		'background-size': 'cover',
@@ -60,8 +68,11 @@
 	else if (localStorage.getItem('bookmarkIcons') === null && localStorage.getItem('bookmarkIcons')  !== null) {
 		fetchBookmarkIcons();
 		deleteBookmarkIcons();
+		let screenWidth = $(window).width();
+		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
 		
 	}
+
 	
 	$('#bookmark-icon-form')[0].reset();
 	$('#bookmark-form')[0].reset();
@@ -202,7 +213,7 @@
 	} // end of fetchBookmarkIcons()
 
 	function validateBookmarkIconsForm() {
-
+		let screenWidth = $(window).width();
 		let bgSize = $('#bg-size').val();
 		let bgSizeWidth = $('#bg-size-width').val();
 		let bgSizeHeight = $('#bg-size-height').val();
@@ -217,6 +228,11 @@
 		let backgroundStatus = '';
 		let bookmarkStatus = '';
 		let borderStatus = '';
+		let sizeStatus = '';
+		
+		
+		
+		
 		if (bgImage.length !== 0 && ((bgSizeWidth.length !== 0 && bgSizeHeight.length !== 0 && bgSize === 'none') || (bgSize !== 'none' && bgSizeWidth.length === 0 && bgSizeHeight.length === 0 ))) {
 			backgroundStatus = true;
 			$('#background-errors').hide();
@@ -246,14 +262,33 @@
 			$('#bookmark-size-height, #bookmark-size-width').addClass('error');
 		}
 		
+		if (bgSizeWidth.length !== 0 || bgSizeHeight.length !== 0) {
+			if (bgSizeWidth > bookmarkSizeWidth || bgSizeHeight > bookmarkSizeHeight ) {
+				sizeStatus = false;
+				$('#background-size-errors').html('The background size (width/height) of the image cannot be bigger than the bookmark size (width: '+bookmarkSizeWidth+'/height: '+bookmarkSizeHeight+'). Please decrease the width <strong>and/or</strong> height of the image background.').show();
+				$('#bg-size-width,#bg-size-height, #bookmark-size-height, #bookmark-size-width').addClass('error');
+			}
+		
+			else {
+				sizeStatus = true;
+				$('#background-size-errors').hide();
+				$('#bg-size-width,#bg-size-height, #bookmark-size-height, #bookmark-size-width').removeClass('error');
+			}
+		}
+		
+		
 		if (borderColor !== 'transparent' || borderStyle !== 'none' || borderWidth.length !== 0  ) {
+				 
+					
 				if (borderColor !== 'transparent' &&  borderStyle !== 'none' && borderWidth.length !== 0) {
-
-
-				borderStatus = true;
-				$('#border-errors').hide();
-				$('#border-color, #border-style,#border-width').removeClass('error');
-				
+						borderStatus = true;
+						$('#border-errors').hide();
+						$('#border-color, #border-style,#border-width').removeClass('error');
+					
+					
+						
+					
+						
 				}
 				else {
 				borderStatus = false;
@@ -263,7 +298,23 @@
 		
 		}
 		
-		if (backgroundStatus === true && bookmarkStatus === true) {
+		
+		if (borderWidth.length !== 0) {
+			if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {
+				let goodBorderSize  = screenWidth/4 - bookmarkSizeWidth;
+				$('#border-size-errors').html('The border width must be less than or equal to ' + goodBorderSize + '. Please decrease the size.').show();
+				$('#border-width').addClass('error');
+				sizeStatus = false;
+			}
+			else {
+				sizeStatus = true;
+				$('#border-size-errors').hide();
+				$('#border-width').removeClass('error');
+			}
+		
+		}
+		
+		if (backgroundStatus === true && bookmarkStatus === true && sizeStatus === true) {
 			if (borderStatus !== '') {
 				if ( borderStatus === true) {
 					return true;
@@ -374,12 +425,15 @@
 	} 
 	
 	function increaseWidth(url) {
-		let frameWidth = $('iframe[src="'+url+'"]').css("width");
+		let frameWidth = $('iframe[src="'+url+'"]').width();
 		let widthNumber = parseInt(frameWidth);
-		
-		if (widthNumber < 1300) {
+		let screenWidth = $(window).width();
+		if (frameWidth < screenWidth -100) {
 			$('iframe[src="'+url+'"]').animate({width: "+=100px"});
 		}
+		/*if (widthNumber < 1300) {
+			$('iframe[src="'+url+'"]').animate({width: "+=100px"});
+		}*/
 		
 		else {
 			return false;
@@ -518,5 +572,32 @@
 
         } // end of fetchBookmarks()
 
+		let screenWidth = $(window).width();
+	let screenHeight = $(window).height();
+	let borderWidth = $('.bookmark-icon').css('border-width');
+	let bookmarkSizeWidth = $('.bookmark-icon').width();
+	$('#bookmark-size-width').attr({'max': screenWidth/4, 'value': (screenWidth/4)-10});
+		$('#bookmark-size-height').attr({'max': screenHeight/2, 'value': (screenHeight/2)-10});
+	$('iframe').css({'height':screenHeight/2} + 'px');
+	$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
+	if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {
+	$('.bookmark-icon').css({'border-width': (screenWidth/4) - bookmarkSizeWidth + 'px'});
 	
+	}
+	
+	$(window).resize(function() {
+		let screenWidth = $(window).width();
+		let screenHeight = $(window).height();
+		let borderWidth = $('.bookmark-icon').css('border-width');
+		let bookmarkSizeWidth = $('.bookmark-icon').width();
+		$('#bookmark-size-width').attr({'max': screenWidth/4, 'value': (screenWidth/4)-10});
+		$('#bookmark-size-height').attr({'max': screenHeight/2, 'value': (screenHeight/2)-10});
+		$('iframe').css({'height':screenHeight/2 + 'px'});
+		$('.bookmark-icon').css({'max-width':screenWidth/4 + 'px'});
+		
+		if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {
+			$('.bookmark-icon').css({'border-width': (screenWidth/4) - bookmarkSizeWidth + 'px'});
+	
+			}
+	});
 

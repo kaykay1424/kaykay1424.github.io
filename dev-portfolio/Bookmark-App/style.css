@@ -3,9 +3,7 @@
 		width: 100%;
 		max-width: 100%;
 	}	
-	.jumbotron h1 {
-		font-size: 30px;
-	}
+	
 	.size-wrapper {
 		display:none;
 	}
@@ -15,9 +13,7 @@
 		width: 95%;
 		max-width: 95%;
 	}	
-	.jumbotron h1 {
-		font-size: 40px;
-	}
+	
 	.size-wrapper {
 		display:block;
 	}
@@ -31,6 +27,15 @@
 body {
 	background-color: lightblue;
 	padding-bottom:0;
+	-ms-word-break: break-all;
+     word-break: break-all;
+
+     /* Non standard for WebKit */
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
 	
 }
 
@@ -45,10 +50,6 @@ body {
 	width: 60%;
 	margin:5% auto;
 	
-}
-
-#bookmark-form {
-	margin-right:5%;
 }
 
 #bookmark-form-button-wrapper {
@@ -73,6 +74,7 @@ body {
 .error {
 	border: 2px solid red;
 }
+
 #bookmark-icon-area {
 	position:fixed;
 	right:0;
@@ -86,8 +88,6 @@ body {
 #bookmark-icon-form .form-group{
 	display: inline-block;
 	display: -moz-inline-stack;
-	height:100px;
-	width: 250px;
 	margin-left: 2%;
 }
 
@@ -112,7 +112,7 @@ body {
 }
 
 #bookmark-collapse {
-	max-width:250px;
+	max-width:100%;
 }
 
 .background-options, .bookmark-options, .border-options {
@@ -120,7 +120,7 @@ body {
 }
 
 .background-options h4, .bookmark-options h4, .border-options h4 {
-	margin-left: -3%;;
+	margin-left: -3%;
 }
 
 #bookmark-icon-form hr {
@@ -128,13 +128,12 @@ body {
 }
 
 .modal-body .popover {
-	max-width:500px;
-	max-height: 200px;
+	
 	background-color:lightblue;
 }
 
 .modal-body .popover .arrow:after {
-	border-top-color:lightblue;
+	border-bottom-color:lightblue;
 }
 
 
@@ -153,15 +152,12 @@ iframe {
 	resize: both;
 	box-shadow:2px 2px 2px;
 	border: none;
-	height: 500px;
+	
+	
 }
 
 .glyphicon, .size, .move-frame span {
 	cursor: pointer;
-}
-
-.size {
-	font-size: 15px;
 }
 
 .size-wrapper {
@@ -183,13 +179,13 @@ iframe {
 
 	cursor: pointer;
 	color: #1159D7;
-	/*text-decoration: underline;*/
 	border-bottom: 2px solid #1159D7;
 }
 
 #minimize-bar {
 	padding:10px;
 	display:none;
+	max-width:100%;
 	position:fixed;
 	bottom:0;
 	right:0;
@@ -200,7 +196,7 @@ iframe {
 
 
 #bookmark-storage-ul {
-	max-width: 400px;
+	max-width:100%;
 	list-style-type:none;
 }
 

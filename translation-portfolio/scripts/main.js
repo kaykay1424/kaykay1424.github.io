@@ -1,14 +1,17 @@
 $(document).ready(function() {
+		if ($(window).width() < 700) {
+			$('.navbar .navbar-nav .dropdown-menu li a').css({'color':'white'});
+	
+		}
 		
-		let articleHeight = $('.article-form').height();
-		
-		$('.form-background-image').height(articleHeight);
 		$(window).resize(function() {
-			let articleHeight = $('.article-form').height();
-		
-		$('.form-background-image').height(articleHeight);
+		if ($(window).width() < 700) {
+			$('.navbar .navbar-nav .dropdown-menu li a').css({'color':'white'});
+	
+		}
 		
 		});
+		
 		// About Me page
 		
 	$('.header').load('loads/header.html', function() {

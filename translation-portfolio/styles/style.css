@@ -18,13 +18,16 @@
 	color:white;
 }
 
-#nav-translations .dropdown-menu {
-	background-color: #159C56;
-}
+
+
 .navbar {
 	background-color: #159C56;
 	margin-bottom:0;
 }
+#nav-translations .dropdown-menu {
+	background-color: #159C56;
+}
+
 
 .navbar .navbar-collapse {
 	padding-right:0;
@@ -33,14 +36,14 @@
 .navbar .navbar-right li a {
 	color: white;
 }
-.navbar-default .navbar-nav .active a:not(.dropdown-a) {
+.navbar-default .navbar-right .active a:not(.dropdown-a) {
 
 	background-color: grey;
 	color:white;
 	
 	
 }
-.navbar-default .navbar-nav .active a:hover:not(.dropdown-a) {
+.navbar-default .navbar-right .active a:hover:not(.dropdown-a) {
 	background-color: white;
 	color:grey;
 	
@@ -62,7 +65,7 @@
 	background-color:#206EC4;
 	color:white;
 }
-.navbar-default .dropdown-menu li a {
+.navbar .navbar-nav .dropdown-menu li a {
 	color: white;
 	
 }
