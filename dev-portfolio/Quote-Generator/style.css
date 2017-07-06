@@ -1,53 +1,17 @@
-@media only screen and (max-width: 320px) {
-	#quote-display {
-		height: 57vh;
-	
-	}
-}
-/* Mobile Med */
-@media only screen and (max-width: 374px) and (min-width:321px) {
-	#quote-display {
-		height: 60vh;
-	
-	}
-}
-/* Mobile Sm */
-@media only screen and (max-width: 424px) and (min-width:375px) {
-	#quote-display {
-		height: 60vh;
-	
-	}
-}
-/* Mobile Lg */
-@media only screen and (max-width: 767px) and (min-width:425px) {
-	#quote-display {
-		height: 60vh;
-	
-	}
-}
-/* Tablet */
-@media only screen and (max-width: 799px) and (min-width:768px) {
-	#quote-display {
-		height: 60vh;
-	
-	}
-}
-/* Laptop */
-@media only screen and (min-width: 800px) and (max-height:601px) {
-	#quote-display {
-		height: 54vh;
-	
-	}
-}
-	/* Laptop Lg */
-@media only screen and (max-width: 2560px) and (min-width:1441px) {
-	#quote-display {
-		height: 60vh;
-	
-	}
+body,html {
+	height:100%;
 }
 body {
 	transition: background-color 1s;
+	-ms-word-break: break-all;
+     word-break: break-all;
+
+     /* Non standard for WebKit */
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
 }
 .well {
 	display: none;
@@ -70,17 +34,20 @@ body {
 
 #quote-display {
 	border: 5px solid white;
-	background-size: cover;
+	background-size: 100% 100%;
+	background-color:white;
 	background-repeat: no-repeat;
-	background-position: center top;
+	background-position: center;
 	/*height: 60vh;*/
 	display:none;
 }
 #quote,#next-quote,#previous-quote,#twitter {
 	text-shadow: 2px 2px 2px black;
+	white-space: normal;
 }
 #next-quote, #previous-quote, #twitter {
 	color: white;
+	white-space: normal;
 }
 #controls-container {
 	background-color: white;
@@ -88,3 +55,10 @@ body {
 	display:none;
 }
 
+@media only screen and (max-width: 329px) {
+	#controls-container button {
+	
+	margin-bottom:5%;
+	}
+
+}

@@ -47,6 +47,7 @@
 */
 $(document).ready(function() {
 	
+	
 	let inspirationQuotesArray = [];
 	let inspirationAuthorsArray = [];
 	let inspirationPhotosArray = [];
@@ -339,7 +340,7 @@ $(document).ready(function() {
 		
 		
 	function shuffleArrays() {	
-		alert('shuffle');
+		
 		inspirationQuotesArray = [];
 		inspirationAuthorsArray = [];
 		inspirationPhotosArray = [];
@@ -449,7 +450,8 @@ $(document).ready(function() {
 				let quoteString = funnyQuotesArray[quotesCounter];
 				let quoteAndAuthorString = quoteString + " -" + funnyAuthorsArray[quotesCounter];
 				let fullTwitterString = 'https://twitter.com/intent/tweet?hashtags=quotes&text='+quoteAndAuthorString;
-				$('#twitter').attr('href', fullTwitterString).show()
+				$('#twitter').attr('href', fullTwitterString).show();
+				//$('#quote-display img').attr('src', funnyPhotosArray[quotesCounter]).hide().fadeIn(1500);
 				$('#quote-display').css({'background-image': 'url('+funnyPhotosArray[quotesCounter]+')'}).hide().fadeIn(1500);
 				$('#quote').html('<i class="fa fa-quote-left" aria-hidden="true"></i>' + ' ' + funnyQuotesArray[quotesCounter]+ ' ' + '<i class="fa fa-quote-right" aria-hidden="true"></i>'+ "</br>" +" -" + funnyAuthorsArray[quotesCounter]).fadeIn(1500);
 			}
@@ -509,6 +511,38 @@ $(document).ready(function() {
   
 	$('body').find('#modal').delay(5000).fadeOut(1000, function() {
 		$('.well').show().addClass('animated slideInDown');
+		let screenHeight = $(window).height();
+	let rowWellHeight = $('.row-well').height();
+	let controlsRowHeight = $('.controls-container-row').height();
+	if (screenHeight >= 1000) {
+		
+		let difference = screenHeight-(rowWellHeight +controlsRowHeight);
+		$('.quote-display-row').height(difference/2);
+		let quoteDisplayRowHeight = $('.quote-display-row').height();
+		$('#quote-display').height(quoteDisplayRowHeight - 5);
+		console.log(screenHeight);
+		console.log(quoteDisplayRowHeight);
+	}
+	else {
+	
+	let difference = screenHeight-(rowWellHeight +controlsRowHeight);
+	
+	
+	$('.quote-display-row').height(difference);
+	let width = $('.well ').width();
+	let quoteDisplayRowHeight = $('.quote-display-row').height();
+	$('#quote-display').height(quoteDisplayRowHeight - 5);
+	//$('.quote-display-row').css({'max-height':'800px'});
+	//$('#quote-display').css({'max-height':'800px'});
+	//$('#quote-display').css({'min-height':quoteDisplayRowHeight - 5});
+	//$('#quote-display img').attr('height', quoteDisplayRowHeight - 10).css({'float':'left'});
+	//$('#quote-display').css({'background-size': width +'px'+ ' ' + 'auto'});
+	
+	console.log(screenHeight);
+	console.log(quoteDisplayRowHeight);
+	
+	}
+	
 	});
 	
 	function nextQuote() {
@@ -773,6 +807,36 @@ $(document).ready(function() {
 		$(this).css('box-shadow','none');
 	});
 	
-
+	
+	
+	$(window).resize(function() {
+		
+		let screenHeight = $(window).height();
+		let rowWellHeight = $('.well').height();
+		let controlsRowHeight = $('.controls-container-row').height();
+		if (screenHeight >= 1000) {
+		
+		let difference = screenHeight-(rowWellHeight +controlsRowHeight);
+		$('.quote-display-row').height(difference/2);
+		let quoteDisplayRowHeight = $('.quote-display-row').height();
+		$('#quote-display').height(quoteDisplayRowHeight - 5);
+	
+	}
+	else {
+		
+		let difference = screenHeight-(rowWellHeight +controlsRowHeight);
+	
+		$('.quote-display-row').height(difference);
+		let quoteDisplayRowWidth = $('.well').width();
+		let quoteDisplayRowHeight = $('.quote-display-row').height();
+		//$('#quote-display').css({'min-height':quoteDisplayRowHeight - 5});
+		$('#quote-display').height(quoteDisplayRowHeight - 5);
+		//$('.quote-display-row').css({'max-height':'800px'});
+	//$('#quote-display').css({'max-height':'800px'});
+		//$('#quote-display').css({'background-size': width +'px'+ ' ' + 'auto'});
+		let bgSize = $('#quote-display').css('background-size');
+		}
+	});
+	
 
 }); // end of document ready()
