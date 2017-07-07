@@ -498,7 +498,18 @@ $(document).ready(function() {
 				quotesCounter = 0;
 				colorsCounter = 0;
 			});
-			
+			let screenHeight = $(window).height();
+	let rowWellHeight = $('.row-well').height();
+	let controlsRowHeight = $('.controls-container-row').height();
+	let difference = screenHeight-(rowWellHeight +controlsRowHeight);
+	$('.quote-display-row').height(difference-100).css({'min-height':'400px', 'max-height':'600px'});
+	let quoteDisplayRowHeight = $('.quote-display-row').height();
+	$('#quote-display').height(difference - 105).css({'min-height':'400px', 'max-height':'600px'});
+	let controlsDifference = screenHeight-rowWellHeight-quoteDisplayRowHeight;
+	//$('#controls-container').css({'max-height': controlsDifference + 'px'});
+	console.log(screenHeight);
+	console.log(quoteDisplayRowHeight);
+	console.log(controlsRowHeight);
 			}); // end of #quote-form submit function
 			
 	 } // end of submitForm()
@@ -511,10 +522,8 @@ $(document).ready(function() {
   
 	$('body').find('#modal').delay(5000).fadeOut(1000, function() {
 		$('.well').show().addClass('animated slideInDown');
-		let screenHeight = $(window).height();
-	let rowWellHeight = $('.row-well').height();
-	let controlsRowHeight = $('.controls-container-row').height();
-	if (screenHeight >= 1000) {
+		
+	/*if (screenHeight >= 800) {
 		
 		let difference = screenHeight-(rowWellHeight +controlsRowHeight);
 		$('.quote-display-row').height(difference/2);
@@ -541,7 +550,7 @@ $(document).ready(function() {
 	console.log(screenHeight);
 	console.log(quoteDisplayRowHeight);
 	
-	}
+	}*/
 	
 	});
 	
@@ -814,7 +823,16 @@ $(document).ready(function() {
 		let screenHeight = $(window).height();
 		let rowWellHeight = $('.well').height();
 		let controlsRowHeight = $('.controls-container-row').height();
-		if (screenHeight >= 1000) {
+		let difference = screenHeight-(rowWellHeight +controlsRowHeight);
+		$('.quote-display-row').height(difference-100).css({'min-height':'400px', 'max-height':'600px'});
+	let quoteDisplayRowHeight = $('.quote-display-row').height();
+	$('#quote-display').height(difference - 105).css({'min-height':'400px', 'max-height':'600px'});
+	let controlsDifference = screenHeight-rowWellHeight-quoteDisplayRowHeight;
+	//$('#controls-container').css({'max-height': controlsDifference + 'px'});
+	console.log(screenHeight);
+	console.log(quoteDisplayRowHeight);
+	console.log(controlsRowHeight);
+		/*if (screenHeight >= 1000) {
 		
 		let difference = screenHeight-(rowWellHeight +controlsRowHeight);
 		$('.quote-display-row').height(difference/2);
@@ -835,7 +853,7 @@ $(document).ready(function() {
 	//$('#quote-display').css({'max-height':'800px'});
 		//$('#quote-display').css({'background-size': width +'px'+ ' ' + 'auto'});
 		let bgSize = $('#quote-display').css('background-size');
-		}
+		}*/
 	});
 	
 

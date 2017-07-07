@@ -41,6 +41,26 @@
 	
 */	
 $(document).ready(function() {
+	let screenWidth = $(window).width();
+	var options = {
+		placement: function () {
+			if (screenWidth < 800) {
+				return "top";
+			} else {
+				return "right";
+			}
+		}
+	};
+	
+	$('#searchbox [data-toggle="popover"]').popover(options);
+	
+	$(window).resize(function() {
+		$('#searchbox [data-toggle="popover"]').popover(options);
+		
+	}); 
+	
+	$('[data-toggle="popover"]').popover();
+	
 	let favorites = JSON.parse(localStorage.getItem('favorites'));
 	if (favorites !== null) {
 		fetchFavorites();
@@ -255,7 +275,7 @@ $(document).ready(function() {
 	
 	}); // end of document ready 
 	
-	$('[data-toggle="popover"]').popover();
+	
 	
 	function saveFavorites(title1, URL) {
 		if (localStorage.getItem('favorites') !== null) {

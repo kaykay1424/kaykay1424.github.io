@@ -1,6 +1,6 @@
-body,html {
+/*body,html {
 	height:100%;
-}
+}*/
 body {
 	transition: background-color 1s;
 	-ms-word-break: break-all;
@@ -56,9 +56,9 @@ body {
 }
 
 @media only screen and (max-width: 329px) {
-	#controls-container button {
+	#controls-container .btn {
 	
-	margin-bottom:5%;
+	margin-bottom:3%;
 	}
 
 }
