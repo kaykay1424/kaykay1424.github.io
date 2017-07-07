@@ -198,7 +198,7 @@ $(document).ready(function() {
 
 	function extractInfo(word) {
 		$.ajax({
-			url: "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=&explaintext=&exsentences=3&titles=" + word + "&utf8=&format=json",
+			url: "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=&explaintext=&exsentences=3&titles=" + word + "&utf8=&format=json",
 			dataType: "jsonp",
 			success: function(data,url) {
 				let queried1 = data.query.pages;
@@ -258,7 +258,7 @@ $(document).ready(function() {
 
 	function extractURL(title, query, key) {
 		$.ajax({
-			url: "http://en.wikipedia.org/w/api.php?action=query&prop=info&inprop=url&titles=" + title +"&utf8=&format=json" ,
+			url: "https://en.wikipedia.org/w/api.php?action=query&prop=info&inprop=url&titles=" + title +"&utf8=&format=json" ,
 			dataType: "jsonp",
 			success: function(response) {
 				let queried2 = response.query.pages;
