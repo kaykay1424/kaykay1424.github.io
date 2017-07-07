@@ -5,15 +5,13 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
-	-ms-word-break: break-all;
-     word-break: break-all;
-
-     /* Non standard for WebKit */
-     word-break: break-word;
-
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-        hyphens: auto;
+	padding-bottom:10%;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
 }
 
 .container {
@@ -25,6 +23,7 @@ body {
 	background-color:rgba(0,0,0,.6);
 	border-radius:100%;
 	padding:5% 2% 5% 2%;
+	overflow:auto;
 }
 
 #wikipedia-title h1 {

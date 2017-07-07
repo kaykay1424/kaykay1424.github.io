@@ -41,9 +41,10 @@
 	
 */	
 $(document).ready(function() {
-	let screenWidth = $(window).width();
+	
 	var options = {
 		placement: function () {
+			let screenWidth = $(window).width();
 			if (screenWidth < 800) {
 				return "top";
 			} else {
