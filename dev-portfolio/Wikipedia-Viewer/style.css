@@ -5,7 +5,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
-	padding-bottom:10%;
+	
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
@@ -66,6 +66,7 @@ form h4 {
 	position:fixed;
 	bottom:0;
 	right:0;
+	max-width:45%;
 	background-color:rgba(255,240,250,.5);
 	
 }
@@ -80,9 +81,11 @@ form h4 {
 	padding:10px;
 	display:none;
 	position:fixed;
+	max-width:45%;
 	bottom:0;
 	left:0;
 	background-color:rgba(255,240,250,.5);
+	
 	
 }
 
@@ -141,6 +144,31 @@ form h4 {
 	border: 2px solid red;
 }
 
+.info a {
+	color:white;
+	text-decoration:none;
+}
+.btn {
+	white-space:normal;
+}
+@media only screen and (max-width:767px) {
+	#bookmarks-bar {
+	position:static;
+	margin-bottom:5%;
+	
+	text-align:center;
+	max-width:100%;
+	
+	}
+	#favorites-bar {
+	position:static;
+	margin-bottom:0;
+	text-align:center;
+	max-width:100%;
+	}
+
+
+}
 @media only screen and (max-width: 767px) {
 	#wikipedia-title {
 		
@@ -150,5 +178,5 @@ form h4 {
 	.container {
 	
 		padding-top: 0;
-}
+	}
 }

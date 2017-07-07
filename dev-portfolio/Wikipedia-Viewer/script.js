@@ -60,7 +60,7 @@ $(document).ready(function() {
 		
 	}); 
 	
-	$('[data-toggle="popover"]').popover();
+	
 	
 	let favorites = JSON.parse(localStorage.getItem('favorites'));
 	if (favorites !== null) {
@@ -212,10 +212,11 @@ $(document).ready(function() {
 	let status = true;
 	
 	function listArticle(title1, extract, URL) {
+		
 		if ( extract.length === 0 ) {
 			let extract = 'N/A';
 		}
-		$("<div class='title-div'>" +"<strong>Title: </strong>" + '<a href="'+URL+'" target="_blank">' + title1 + '</a>'+ "</br>" + "<strong>Brief Intro:</strong>"+ "<p>"+ extract + "</p> " +"</div>").append('<a href="#" data-toggle="popover" data-placement="left" data-trigger="hover">' + '<span class="glyphicon glyphicon-star" onclick="saveFavorites(\'' + title1 + '\',\'' + URL + '\')" ></span>' + '</a>'+ ' ' + '<a href="#" data-toggle="popover" data-trigger="hover">' + '<span class="glyphicon glyphicon-bookmark"></span>' + '</a>').on('mouseenter',function() {
+		$("<div class='title-div'>" +"<strong>Title: </strong>" + '<a href="'+URL+'" target="_blank">' + title1 + '</a>'+ "</br>" + "<strong>Brief Intro:</strong>"+ "<p>"+ extract + "</p> " +"</div>").append('<i>Favorite article:</i> <span class="glyphicon glyphicon-star" onclick="saveFavorites(\'' + title1 + '\',\'' + URL + '\')" ></span> ' + '<i>Read article later:</i> <span class="glyphicon glyphicon-bookmark"></span>').on('mouseenter',function() {
 			$(this).addClass('animated pulse');
 		
 		}).on('mouseleave',function() {
@@ -253,7 +254,7 @@ $(document).ready(function() {
 		$('#bookmarks-amount').html(bookmarkArticleCounter);
 		$('#bookmarks-bar').show();
 		}).appendTo('#article-list');
-
+	
 	} // end of listArticle()
 
 	function extractURL(title, query, key) {

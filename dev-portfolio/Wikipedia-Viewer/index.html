@@ -54,28 +54,36 @@
 				</div> <!--end of #article-list-->
 			</div> <!--end of row-->
 		</div> <!--end of container-->
+		
+			<div class="" id="bookmarks-bar" >
+					<span class="badge info"><a href="#" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="top" data-content="These articles are added temporarily and will not be available when you reload the page">
+						?</a></span>
+						<button id="bookmarks-button" class="btn" data-toggle="collapse" data-target="#bookmarks-storage" >Pending 
+							<span id="bookmarks-amount"  class="badge"></span>
+						</button>
+					
+				<div id="bookmarks-storage" class="collapse">
+					<ul id="bookmarks-storage-ul" >
+					</ul>
+				 </div> <!--end of bookmarks-storage-->
+				 </div> <!--end of bookmarks-bar-->
+				 
 			<div id="favorites-bar" >
-				<a href="#" data-toggle="popover" data-trigger="hover" data-container="#favorites-bar" data-placement="top" data-content="These articles are saved in your browser and will be available when you reload the page">
+					
+						<span class="badge info"><a href="#" data-toggle="popover" data-trigger="hover" data-container="#favorites-bar" data-placement="top" data-content="These articles are saved in your browser and will be available when you reload the page">
+				?</a></span>
+					
+				
 					<button id="favorites-button" class="btn" data-toggle="collapse" data-target="#favorites-storage" >Favorites
 						<span id="favorites-amount" class="badge" ></span>
 					</button>
-				</a>
+					
 				<div id="favorites-storage" class="collapse">
 					<ul id="favorites-storage-ul"></ul> 	
 				</div> <!--end of favorites-storage-->
 			</div> <!--end of favorites-bar-->
 	
-			<div class="" id="bookmarks-bar" >
-					<a href="#" data-toggle="popover" data-trigger="hover" data-container="#bookmarks-bar" data-placement="top" data-content="These articles are added temporarily and will not be available when you reload the page">
-						<button id="bookmarks-button" class="btn" data-toggle="collapse" data-target="#bookmarks-storage" >Pending 
-							<span id="bookmarks-amount"  class="badge"></span>
-						</button>
-					</a>
-				<div id="bookmarks-storage" class="collapse">
-					<ul id="bookmarks-storage-ul" >
-					</ul>
-				 </div> <!--end of bookmars-storage-->
-				 </div> <!--end of bookmarks-storage-->
+		
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
