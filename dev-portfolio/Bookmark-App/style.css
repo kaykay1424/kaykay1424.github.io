@@ -81,7 +81,7 @@ body {
 	overflow-x:hidden;
 }
 
-#button-design {
+#button-design {  
 	box-shadow:2px 2px 2px black;
 }
 
@@ -139,7 +139,7 @@ iframe {
 	resize: both;
 	box-shadow:2px 2px 2px;
 	border: none;
-	
+	min-height:500px;
 	
 }
 

@@ -24,7 +24,8 @@
 */	
 	$(document).ready(function() {
 	
-
+	$('#bookmark-form')[0].reset();
+	$('#bookmark-icon-form')[0].reset();
 	
 	if (localStorage.getItem('bookmarkIcons') !== null && localStorage.getItem('bookmarkIcons')!== null) {
 
@@ -33,8 +34,8 @@
 		fetchBookmarks();
 		let screenWidth = $(window).width();
 		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
-		$('#bookmark-icon-form')[0].reset();
-		$('#bookmark-form')[0].reset();
+		
+		
 		}
 		
 	else if (localStorage.getItem('bookmarkIcons') === null && localStorage.getItem('bookmarkIcons')  === null) {
@@ -48,8 +49,7 @@
 		'border': '5px solid purple',
 		'box-shadow':'2px 2px 5px black'});
 		
-   		$('#bookmark-icon-form')[0].reset();
-		$('#bookmark-form')[0].reset();
+   		
 	}
 	
 	else if (localStorage.getItem('bookmarkIcons')  === null && localStorage.getItem('bookmarkIcons')  !== null )  {
@@ -64,8 +64,7 @@
 		'box-shadow':'2px 2px 5px black'});
 		
    		fetchBookmarks();
-   		$('#bookmark-icon-form')[0].reset();
-		$('#bookmark-form')[0].reset();
+   		
    		
 	}
 
@@ -74,14 +73,12 @@
 		deleteBookmarkIcons();
 		let screenWidth = $(window).width();
 		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
-		$('#bookmark-icon-form')[0].reset();
-	$('#bookmark-form')[0].reset();
+		
 		
 	}
 
 	
-	$('#bookmark-icon-form')[0].reset();
-	$('#bookmark-form')[0].reset();
+	
 	
 	}); //end of document ready
 
@@ -470,6 +467,8 @@
 			alert('You have already opened up a frame from that website');
 			return false;
 		}
+		let screenHeight = $(window).height();
+		let iframeHeight = screenHeight/2 +'px';
 		
 		bookmarksResults.append('<div class="frame-wrapper col-md-12 ">' +
 		'<div class="pull-left size-wrapper" style="" title="Size control. W is for width. H is for height. Or if your browser allows you can drag the frame to control size.">'+ '<span id="width-increase" class="size" onclick="increaseWidth(\''+url+'\')" onmouseover="hoverInWidthIncrease(\''+url+'\')" onmouseout="hoverOutWidthIncrease(\''+url+'\')"> W+ </span>'+ '</br>'+
@@ -580,11 +579,12 @@
 
 		let screenWidth = $(window).width();
 	let screenHeight = $(window).height();
+	let iframeHeight = screenHeight/2;
+	
 	let borderWidth = $('.bookmark-icon').css('border-width');
 	let bookmarkSizeWidth = $('.bookmark-icon').width();
 	$('#bookmark-size-width').attr({'max': screenWidth/4, 'value': (screenWidth/4)-10});
 	$('#bookmark-size-height').attr({'max': screenHeight/2, 'value': (screenHeight/2)-10});
-	$('iframe').css({'height':screenHeight/2 + 'px'});
 	$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
 	if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {
 	$('.bookmark-icon').css({'border-width': (screenWidth/4) - bookmarkSizeWidth + 'px'});
@@ -604,7 +604,7 @@
 		let bookmarkSizeWidth = $('.bookmark-icon').width();
 		$('#bookmark-size-width').attr({'max': screenWidth/4, 'value': (screenWidth/4)-10});
 		$('#bookmark-size-height').attr({'max': screenHeight/2, 'value': (screenHeight/2)-10});
-		$('iframe').css({'height':screenHeight/2 + 'px'});
+		
 		$('.bookmark-icon').css({'max-width':screenWidth/4 + 'px'});
 		
 		if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {

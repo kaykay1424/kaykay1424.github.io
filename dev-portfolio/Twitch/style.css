@@ -43,12 +43,22 @@ body {
 	position:relative;
 	background-position: center;
 	background-color:white;
-	border:2px groove lightgrey;
+	/*border:2px groove lightgrey;*/
 	
 	/*position:relative;*/
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
 }
+.tv-row {
+	/*padding-bottom:5%;*/
+}
+
 #tv-area {
-	
+	width:100%;height:100%;
 	padding-bottom:0;
 	margin-top:0;
 	
@@ -81,9 +91,10 @@ body {
 	background-image:url('https://s-media-cache-ak0.pinimg.com/originals/d2/1a/85/d21a858585e20efa2056ab7ab277d09b.png');
 	background-size:contain;
 	background-repeat:no-repeat;
-	width:40%;
+	/*width:35%;*/
 	background-color:transparent;
 	position:absolute;
+	top:0;
 	/*top:30%;*/
 	/*position: fixed;
 	top:0;*/
@@ -95,7 +106,7 @@ body {
 	width:45%;
 	margin:auto;
 	background-image:url('https://s-media-cache-ak0.pinimg.com/originals/bb/82/1f/bb821f6a694f85410a68ba1ca2dbc6b2.jpg');
-	background-size:cover;
+	background-size:100% 100%;
 	background-position:center;
 	height:150px;
 	border:10px ridge black;
@@ -103,16 +114,23 @@ body {
 	margin-top:5%;
 }
 
-#baseboard {
+.baseboard-row {
 	background-color:white;
 	border:2px groove lightgrey;
 	height:50px;
 	
+	
+}
+
+.baseboard-row {
+	margin-top:0;
+	margin-bottom:0;
+
 }
 .carpet-row {
 	background-image: url('http://products.empiretoday.com/img/3107.jpg?w=350');
 	background-size:contain;
-	height:250px;
+	min-height:200px;
 	
 }
 #carpet {
@@ -120,8 +138,7 @@ body {
 	/*background-image: url('http://products.empiretoday.com/img/3107.jpg?w=350');
 	background-size:contain;
 	/*height:250px;*/
-	padding-bottom:0;
-	padding-top:1%;
+	padding:0;
 	
 	
 }
@@ -149,6 +166,7 @@ body {
 	padding-top:1%;
 	padding-bottom:1%;
 	color:white;
+	overflow-y:auto;
 }
 
 #home {
@@ -191,17 +209,11 @@ body {
 }
 
 #table {
-	/*position:absolute;
-	bottom:0;*/
-	position:fixed;
+	min-height:100px;
+	position:absolute;
 	bottom:0;
-	/*width:45%;*/
-	height:auto;
-	
-	/*margin-bottom:-50px;*/
 	background-image: url('http://www.muros.co.nz/product_image/Horizontal-Wood-Wall-Panel_Medium-Walnut~0.jpg');
 	background-size:cover;
-	/*left:28%;*/
 	box-shadow:2px 2px 2px black;
 }
 

@@ -26,19 +26,38 @@
 
 $(document).ready(function() {
 	
+	let screenHeight = $(window).height();
+	$('.baseboard-row').height(screenHeight * .05);
+	let baseboardHeight = $('.baseboard-row').height();
+	
+	$('#plant').height(screenHeight/2);
+	$('#painting').height(screenHeight/5);
+	$('#tv-div').height((screenHeight * .60)-baseboardHeight);
+	//$('.tv-row').height(screenHeight * .65);
 	let bodyHeight = $('body').height();
 	let tvRowHeight = $('.tv-row').height();
-	let baseboardHeight = $('.baseboard-row').height();
-	let difference = bodyHeight - (tvRowHeight + baseboardHeight);
+	
+	let difference = screenHeight - (tvRowHeight + baseboardHeight);
 	let containerFluidHeight = tvRowHeight + baseboardHeight;
 	let paintingHeight = $('#painting').height();
 	$('.carpet-row').height(difference);
-	$('#table').css({'height':difference/2 + 'px'});
+	let carpetHeight = $('.carpet-row').height();
+	$('#table').css({'height':difference/2 + 'px', 'max-height':'300px'});
 	let tableHeight = $('#table').height();
 	let tableWidth = $('#table').width();
-	$('#remote').css({'height':tableHeight+ 'px', 'max-height':tableHeight+ 'px' ,'width': tableWidth/3, 'max-width':tableWidth/2 +'px'});
+	$('#remote').css({'height':tableHeight+ 'px', 'max-height':'200px' ,'width': tableWidth/3, 'max-width':tableWidth/2 +'px'});
 	let remoteContainerWidth = $('#remote-controls-container').width();
 	let plantHeight = $('#plant').height();
+	let remoteHeight = $('#remote').height();
+	let paddingTop = carpetHeight-tableHeight;
+	
+	let paintingDifference = (tvRowHeight + baseboardHeight)-(plantHeight);
+	console.log(tvRowHeight);
+	console.log('painting' + paintingHeight);
+	
+	//$('#plant').css({'top':paintingDifference  + 'px'});
+	//$('.carpet-row').css({'padding-top':paddingTop + 'px'});
+	
 	//$('#plant').css({'top': containerFluidHeight- plantHeight + 'px'});
 	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
 	console.log('body:' +bodyHeight);
@@ -46,23 +65,44 @@ $(document).ready(function() {
 	console.log('baseboard:' +baseboardHeight);
 	console.log('difference:' +difference);
 	console.log('containerFluid:' + containerFluidHeight);
+	
+	
 	$(window).resize(function() {
 	
-			let bodyHeight = $('body').height();
-	let tvRowHeight = $('.tv-row').height();
+	let screenHeight = $(window).height();
+	$('.baseboard-row').height(screenHeight * .05);
 	let baseboardHeight = $('.baseboard-row').height();
-	let difference = bodyHeight - (tvRowHeight + baseboardHeight);
-	let conainerFluidHeight = tvRowHeight + baseboardHeight;
+	
+	$('#plant').height(screenHeight/2);
+	$('#painting').height(screenHeight/5);
+	$('#tv-div').height((screenHeight * .60)-baseboardHeight);
+	//$('.tv-row').height(screenHeight * .65);
+	let bodyHeight = $('body').height();
+	let tvRowHeight = $('.tv-row').height();
+	
+	let difference = screenHeight - (tvRowHeight + baseboardHeight);
+	let containerFluidHeight = tvRowHeight + baseboardHeight;
+	let paintingHeight = $('#painting').height();
 	$('.carpet-row').height(difference);
-	$('#table').css({'height':difference/2 + 'px'});
-		let tableHeight = $('#table').height();
+	let carpetHeight = $('.carpet-row').height();
+	$('#table').css({'height':difference/2 + 'px', 'max-height':'300px'});
+	let tableHeight = $('#table').height();
 	let tableWidth = $('#table').width();
-	$('#remote').css({'height':tableHeight+ 'px','max-height':tableHeight+ 'px' , 'width': tableWidth/3,'max-width':tableWidth/2 +'px'});
+	$('#remote').css({'height':tableHeight+ 'px', 'max-height':'200px' ,'width': tableWidth/3, 'max-width':tableWidth/2 +'px'});
 	let remoteContainerWidth = $('#remote-controls-container').width();
-	//$('#plant').css({'top': containerFluidHeight-difference + 'px'});
-	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
 	let plantHeight = $('#plant').height();
+	let remoteHeight = $('#remote').height();
+	let paddingTop = carpetHeight-tableHeight;
+	
+	let paintingDifference = (tvRowHeight + baseboardHeight)-(plantHeight);
+	console.log(tvRowHeight);
+	console.log('painting' + paintingHeight);
+	
+	//$('#plant').css({'top':paintingDifference  + 'px'});
+	$('.carpet-row').css({'padding-top':paddingTop + 'px'});
+	//$('#plant').css({'position':'absolute','bottom':0, 'left':0});
 	//$('#plant').css({'top': containerFluidHeight- plantHeight + 'px'});
+	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
 	console.log('body:' +bodyHeight);
 	console.log('TV:' +tvRowHeight);
 	console.log('baseboard:' +baseboardHeight);

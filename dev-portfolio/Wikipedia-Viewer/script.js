@@ -60,7 +60,7 @@ $(document).ready(function() {
 		
 	}); 
 	
-	
+	$('[data-toggle="popover"]').popover();
 	
 	let favorites = JSON.parse(localStorage.getItem('favorites'));
 	if (favorites !== null) {
