@@ -42,6 +42,8 @@
 */	
 $(document).ready(function() {
 	
+	$('form')[0].reset();
+	
 	var options = {
 		placement: function () {
 			let screenWidth = $(window).width();
@@ -160,10 +162,12 @@ $(document).ready(function() {
 		$('.title-div').hide();
 		let keyword = $('#search').val();
 		let searchLimit = $('#search-limit').val();
+		console.log(searchLimit.length);
 		
 		if (searchLimit.length === 0) {
 			searchLimit = 10;
 		}
+		
 		
 		if (keyword === '') {
 			$('.title-div').hide();

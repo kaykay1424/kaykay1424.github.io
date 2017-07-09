@@ -90,11 +90,12 @@ body {
 #plant {
 	background-image:url('https://s-media-cache-ak0.pinimg.com/originals/d2/1a/85/d21a858585e20efa2056ab7ab277d09b.png');
 	background-size:contain;
+	background-position: center bottom;
 	background-repeat:no-repeat;
 	/*width:35%;*/
 	background-color:transparent;
 	position:absolute;
-	top:0;
+	bottom:0;
 	/*top:30%;*/
 	/*position: fixed;
 	top:0;*/
@@ -119,14 +120,9 @@ body {
 	border:2px groove lightgrey;
 	height:50px;
 	
-	
+	position:relative;
 }
 
-.baseboard-row {
-	margin-top:0;
-	margin-bottom:0;
-
-}
 .carpet-row {
 	background-image: url('http://products.empiretoday.com/img/3107.jpg?w=350');
 	background-size:contain;
@@ -278,37 +274,23 @@ table {
 
 
 @media only screen and (max-height:700px) {
-	#plant {
-		display:none;
-	}
+	
 	#tv-div {
 		30vh;
 	}
 	
 }
-@media only screen and (max-width: 319px) {
-	.painting-container, #painting, #plant {
+
+@media only screen and (max-width:969px) {
+	#plant, .painting-container, #painting {
 		display:none;
 	}
-	
+
 }
-@media only screen and (max-width: 374px) and (min-width:320px) {
-	.painting-container, #painting, #plant {
-		display:none;
-	}
-	
-}
-@media only screen and (max-width: 424px) and (min-width:375px) {
-	.painting-container, #painting, #plant {
-		display:none;
-	}
-	
-	
-}
+
+
 @media only screen and (max-width: 767px) and (min-width:425px) {
-	.painting-container, #painting, #plant {
-		display:none;
-	}
+	
 	
 	.controls {
 	
@@ -316,9 +298,7 @@ table {
 	}
 }
 @media only screen and (max-width: 1023px) and (min-width:768px) {
-	.painting-container, #painting, #plant {
-		display:none;
-	}
+	
 	.controls {
 	
 		width: 15%;
@@ -331,7 +311,7 @@ table {
 		width: 20%;
 	}
 	#plant {
-		top:36%;
+		/*top:36%;*/
 	}
 }
 
@@ -341,7 +321,7 @@ table {
 		width: 15%;
 	}
 	#plant {
-		top:40%;
+		/*top:40%;*/
 	}
 
 	
