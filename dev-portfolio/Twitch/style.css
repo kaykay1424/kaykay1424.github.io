@@ -115,16 +115,18 @@ body {
 
 .baseboard-row {
 	background-color:white;
-	border:2px groove lightgrey;
+	border-top:1px groove lightgrey;
+	border-bottom:1px groove lightgrey;
 	height:50px;
 	
-	position:relative;
+	
 }
 
 .carpet-row {
 	background-image: url('http://products.empiretoday.com/img/3107.jpg?w=350');
 	background-size:contain;
 	min-height:200px;
+	position:relative;
 	
 }
 #carpet {
@@ -203,7 +205,7 @@ body {
 }
 
 #table {
-	min-height:100px;
+	min-height:110px;
 	position:absolute;
 	bottom:0;
 	background-image: url('http://www.muros.co.nz/product_image/Horizontal-Wood-Wall-Panel_Medium-Walnut~0.jpg');
@@ -229,7 +231,7 @@ body {
 	padding-bottom:1%;
 	background-repeat: no-repeat;
 	cursor: pointer;
-	background-size:cover;
+	background-size:100% 100%;
 	text-decoration: none;
 	outline: none;
 	color: #fff;
@@ -279,11 +281,11 @@ table {
 	
 }
 
-@media only screen and (max-width:969px) {
+@media only screen and (max-width:991px) {
 	#plant, .painting-container, #painting {
 		display:none;
 	}
-
+	
 }
 
 

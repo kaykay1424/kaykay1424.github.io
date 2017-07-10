@@ -26,141 +26,6 @@
 
 $(document).ready(function() {
 	
-	let screenHeight = $(window).height();
-	$('.baseboard-row').height(screenHeight * .05);
-	let baseboardHeight = $('.baseboard-row').height();
-	//$('.tv-row').css({'padding-bottom':'3%'});
-	$('#plant').height(screenHeight/2);
-	$('#painting').height(screenHeight/5).css({'max-height':'300px'});
-	//$('#tv-div').css({'margin-bottom': '5%', 'margin-top': '3%'});
-	$('#tv-div').height((screenHeight * .60)-baseboardHeight).css({'max-height':'600px'});
-	if ( (screenHeight * .60)-baseboardHeight <= 600) {
-		$('#painting').css({'margin-top': '10px'});
-		$('#tv-div').height((screenHeight * .60)-baseboardHeight-60).css({'margin-top':'20px', 'margin-bottom':'40px'});
-	
-	}
-	
-	if ($('#tv-div').height() < (screenHeight * .60)-baseboardHeight) {
-		let tvAreaHeight = (screenHeight * .60)-baseboardHeight;
-		let tvDifference = tvAreaHeight- $('#tv-div').height();
-		$('#tv-div').css({'margin-bottom': tvDifference/2 +'px', 'margin-top': tvDifference/2 +'px'});
-		$('#painting').css({'margin-top': tvDifference/4 + 'px'});
-	}
-	
-		
-	
-	//$('.tv-row').height(screenHeight * .65);
-	let bodyHeight = $('body').height();
-	let tvRowHeight = $('.tv-row').height();
-	
-	let difference = screenHeight - (tvRowHeight + baseboardHeight);
-	let containerFluidHeight = tvRowHeight + baseboardHeight;
-	let paintingHeight = $('#painting').height();
-	$('.carpet-row').height(difference);
-	let carpetHeight = $('.carpet-row').height();
-	$('#table').css({'height':difference/2 + 'px', 'max-height':'300px','min-height':'120px'});
-	let tableHeight = $('#table').height();
-	let tableWidth = $('#table').width();
-	$('#remote').css({'height':tableHeight-20+ 'px', 'max-height':'100px', 'min-height':'100px' ,'width': tableWidth/3, 'max-width':tableWidth/2 +'px'});
-	let remoteContainerWidth = $('#remote-controls-container').width();
-	let plantHeight = $('#plant').height();
-	let remoteHeight = $('#remote').height();
-	let paddingTop = carpetHeight-tableHeight;
-	
-	
-	
-	if (remoteHeight < tableHeight) {
-		
-		let tableDifference = $('#table').height() - $('#remote').height();
-		//$('#table').css({'padding-top': tableDifference-5 + 'px'});
-	}
-	
-	//let paintingDifference = (screenHeight/2) - ((baseboardHeight+tvRowHeight)-plantHeight);
-	let paintingDifference =(tvRowHeight + baseboardHeight) - (plantHeight );
-	$('#plant').css({'top':paintingDifference + baseboardHeight + 'px'});
-	//console.log(paintingDifference);
-	//console.log('painting' + paintingHeight);
-	
-	//$('#plant').css({'top':-paintingDifference + 'px'});
-	//$('.carpet-row').css({'padding-top':paddingTop + 'px'});
-	
-	//$('#plant').css({'top': containerFluidHeight- plantHeight + 'px'});
-	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
-	/*console.log('body:' +bodyHeight);
-	console.log('TV:' +tvRowHeight);
-	console.log('baseboard:' +baseboardHeight);
-	console.log('difference:' +difference);
-	console.log('containerFluid:' + containerFluidHeight);*/
-	console.log(baseboardHeight+tvRowHeight);
-	console.log(plantHeight);
-	console.log(paintingDifference);
-	
-	
-	$(window).resize(function() {
-	
-	let screenHeight = $(window).height();
-	$('.baseboard-row').height(screenHeight * .05);
-	let baseboardHeight = $('.baseboard-row').height();
-	
-	$('#plant').height(screenHeight/2);
-	$('#painting').height(screenHeight/5);
-	$('#tv-div').height((screenHeight * .60)-baseboardHeight).css({'max-height':'600px'});
-	
-	if ( (screenHeight * .60)-baseboardHeight <= 600) {
-		$('#tv-div').height((screenHeight * .60)-baseboardHeight-60).css({'margin-top':'20px', 'margin-bottom':'40px'});
-	
-	}
-	
-	if ($('#tv-div').height() < (screenHeight * .60)-baseboardHeight) {
-		let tvAreaHeight = (screenHeight * .60)-baseboardHeight;
-		let tvDifference = tvAreaHeight- $('#tv-div').height();
-		$('#tv-div').css({'margin-bottom': tvDifference/2, 'margin-top': tvDifference/2});
-		$('#painting').css({'margin-top': tvDifference/4});
-	}
-	//$('.tv-row').height(screenHeight * .65);
-	let bodyHeight = $('body').height();
-	let tvRowHeight = $('.tv-row').height();
-	
-	let difference = screenHeight - (tvRowHeight + baseboardHeight);
-	let containerFluidHeight = tvRowHeight + baseboardHeight;
-	let paintingHeight = $('#painting').height();
-	$('.carpet-row').height(difference);
-	let carpetHeight = $('.carpet-row').height();
-	$('#table').css({'height':difference/2 + 'px', 'max-height':'300px', 'min-height':'100px'});
-	let tableHeight = $('#table').height();
-	let tableWidth = $('#table').width();
-	$('#remote').css({'max-height':'100px' ,'width': tableWidth/3, 'min-height':'80px','max-width':tableWidth/2 +'px'}).height(tableHeight-20);
-	let remoteHeight = $('#remote').height();
-	
-	let remoteContainerWidth = $('#remote-controls-container').width();
-	let plantHeight = $('#plant').height();
-	
-	let paddingTop = carpetHeight-tableHeight;
-	
-	//let paintingDifference = (screenHeight/2) - ((baseboardHeight+tvRowHeight)-plantHeight);
-	let paintingDifference =(tvRowHeight + baseboardHeight) - (plantHeight );
-	$('#plant').css({'top':paintingDifference + baseboardHeight + 'px'});
-	//$('#plant').css({'top':-paintingDifference + 'px'});
-	console.log(tvRowHeight);
-	console.log('painting' + paintingHeight);
-	
-	//$('#plant').css({'top':paintingDifference  + 'px'});
-	//$('.carpet-row').css({'padding-top':paddingTop + 'px'});
-	//$('#plant').css({'position':'absolute','bottom':0, 'left':0});
-	//$('#plant').css({'top': containerFluidHeight- plantHeight + 'px'});
-	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
-	console.log('body:' +bodyHeight);
-	console.log('TV:' +tvRowHeight);
-	console.log('baseboard:' +baseboardHeight);
-	console.log('difference:' +difference);
-	console.log('containerFluid:' + containerFluidHeight);
-	
-	if (remoteHeight < tableHeight) {
-		
-		let tableDifference = $('#table').height() - $('#remote').height();
-		//$('#table').css({'padding-top': tableDifference + 'px'});
-	}
-	});
 	
 	fetchChannels();
 	$('[data-toggle="popover"]').popover(); 
@@ -192,7 +57,7 @@ $(document).ready(function() {
 		$('#current-channel-content').show();
 		$('#channel-header').show();
 		$('#current-channel-img').show();
-		$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'contain','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
+		$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'100% 100%','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
 		 $('#current-channel-content').html('<h3>Online Channels</h3>' + '<p>Hover over the channel with your cursor to view more details about the program. Click on the program to view it on the tv screen or click the the channel name to go their twitch page' );		
 		$('#tv').css('background-image','none').removeClass('padding-top');
 		$('#tv').css('background', 'linear-gradient(#FAFFFE,#780AE8)');	
@@ -294,7 +159,7 @@ $(document).ready(function() {
 							).css({'overflow-x':'hidden', 'overflow-y':'auto'});
 					$('#tv').css('background-image','none').removeClass('padding-top');
 					$('#tv').css('background', 'linear-gradient(#FAFFFE,#780AE8)');
-					$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'contain','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
+					$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'100% 100%','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
 		
 					$('#current-channel-img').show();
 					if (localStorage.getItem('channels') === null) {
@@ -494,7 +359,7 @@ $(document).ready(function() {
 		$('#current-channel-content').show();
 		$('#channel-header').show();
 		$('#current-channel-img').show();
-		$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'contain','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
+		$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'100% 100%','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
 		$('#current-channel-content').html('<h3>Online Channels</h3>' + '<p>Hover over the channel(s) to view more details on the program</p>' );
 		$('#tv').css('background-image','none').removeClass('padding-top');
 		$('#tv').css('background', 'linear-gradient(#FAFFFE,#780AE8)');	
@@ -607,7 +472,7 @@ $(document).ready(function() {
 				).css({'overflow-x':'hidden', 'overflow-y':'auto'});;
 				$('#tv').css('background-image','none').removeClass('padding-top');
 				$('#tv').css('background', 'linear-gradient(#FAFFFE,#780AE8)');
-				$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'contain','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
+				$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'100% 100%','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
 		
 				$('#current-channel-img').show();
 				if (localStorage.getItem('channels') === null) {
@@ -1210,10 +1075,10 @@ $(document).ready(function() {
 		$('#current-channel-img').show();
 		$('#current-channel-content').show();
 		$('#channel-header').show();
-		$('#current-channel-img').show();
+		
 		$('#channel-header').css({'background-color':'black', 'color': 'white'}).html('<th>Channel</th>' + '<th>Program</th>'+ '<th>Stream</th>' );	
 
-		$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'contain','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
+		$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'100% 100%','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
 
 		$('#current-channel-content').html('<h4 class="modal-title">Search for Twitch channels</h4>'+
 		'<form id="twitch-form" onsubmit="">' +
@@ -1341,7 +1206,7 @@ $(document).ready(function() {
 			$('#current-channel-img').show();
 			let tableContent = document.getElementById('add-table-content');
 		
-			$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'contain','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
+			$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'100% 100%','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
 		
 			if (localStorage.getItem('channels') === null) {
 				tableContent.innerHTML = '';
@@ -1476,7 +1341,7 @@ $(document).ready(function() {
 				).css({'overflow-x':'hidden', 'overflow-y':'auto'});;
 				$('#tv').css('background-image','none').removeClass('padding-top');
 				$('#tv').css('background', 'linear-gradient(#FAFFFE,#780AE8)');
-				$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'contain','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
+				$('#current-channel-img').css({'height':'200px','background-image':'url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV")', 'background-size':'100% 100%','background-repeat':'no-repeat','background-color':'white','background-position':'center center'});
 		
 				$('#current-channel-img').show();
 				if (localStorage.getItem('channels') === null) {
@@ -1698,5 +1563,143 @@ $(document).ready(function() {
 		
 	} // end of showProgramLogo(name)
 	
+	
+	let screenHeight = $(window).height();
+	$('.baseboard-row').height(screenHeight * .05);
+	let baseboardHeight = $('.baseboard-row').height();
+	//$('.tv-row').css({'padding-bottom':'3%'});
+	$('#plant').height(screenHeight/2);
+	$('#painting').height(screenHeight/5).css({'max-height':'300px'});
+	//$('#tv-div').css({'margin-bottom': '5%', 'margin-top': '3%'});
+	$('#tv-div').height((screenHeight * .60)-baseboardHeight).css({'max-height':'600px'});
+	if ( (screenHeight * .60)-baseboardHeight <= 600) {
+		$('#painting').css({'margin-top': '10px'});
+		$('#tv-div').height((screenHeight * .60)-baseboardHeight-60).css({'margin-top':'20px', 'margin-bottom':'40px'});
+	
+	}
+	
+	if ($('#tv-div').height() < (screenHeight * .60)-baseboardHeight) {
+		let tvAreaHeight = (screenHeight * .60)-baseboardHeight;
+		let tvDifference = tvAreaHeight- $('#tv-div').height();
+		$('#tv-div').css({'margin-bottom': tvDifference/2 +'px', 'margin-top': tvDifference/2 +'px'});
+		$('#painting').css({'margin-top': tvDifference/4 + 'px'});
+	}
+	
+		
+	
+	//$('.tv-row').height(screenHeight * .65);
+	let bodyHeight = $('body').height();
+	let tvRowHeight = $('.tv-row').height();
+	
+	let difference = screenHeight - (tvRowHeight + baseboardHeight);
+	let containerFluidHeight = tvRowHeight + baseboardHeight;
+	let paintingHeight = $('#painting').height();
+	$('.carpet-row').height(difference);
+	let carpetHeight = $('.carpet-row').height();
+	$('#table').css({'height':difference/2 + 'px', 'max-height':'300px','min-height':'120px'});
+	let tableHeight = $('#table').height();
+	let tableWidth = $('#table').width();
+	$('#remote').css({'height':tableHeight-20+ 'px', 'max-height':'100px', 'min-height':'100px' ,'width': tableWidth/3, 'max-width':tableWidth/2 +'px'});
+	let remoteContainerWidth = $('#remote-controls-container').width();
+	let plantHeight = $('#plant').height();
+	let remoteHeight = $('#remote').height();
+	let paddingTop = carpetHeight-tableHeight;
+	
+
+	
+	if (remoteHeight < tableHeight) {
+		
+		let tableDifference = $('#table').height() - $('#remote').height();
+		//$('#table').css({'padding-top': tableDifference-5 + 'px'});
+	}
+	
+	//let paintingDifference = (screenHeight/2) - ((baseboardHeight+tvRowHeight)-plantHeight);
+	let paintingDifference =(tvRowHeight + baseboardHeight) - (plantHeight );
+	$('#plant').css({'top':paintingDifference + baseboardHeight + 'px'});
+	//console.log(paintingDifference);
+	//console.log('painting' + paintingHeight);
+	
+	//$('#plant').css({'top':-paintingDifference + 'px'});
+	//$('.carpet-row').css({'padding-top':paddingTop + 'px'});
+	
+	//$('#plant').css({'top': containerFluidHeight- plantHeight + 'px'});
+	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
+	/*console.log('body:' +bodyHeight);
+	console.log('TV:' +tvRowHeight);
+	console.log('baseboard:' +baseboardHeight);
+	console.log('difference:' +difference);
+	console.log('containerFluid:' + containerFluidHeight);*/
+	console.log(baseboardHeight+tvRowHeight);
+	console.log(plantHeight);
+	console.log(paintingDifference);
+	
+	
+	$(window).resize(function() {
+	
+	let screenHeight = $(window).height();
+	$('.baseboard-row').height(screenHeight * .05);
+	let baseboardHeight = $('.baseboard-row').height();
+	
+	$('#plant').height(screenHeight/2);
+	$('#painting').height(screenHeight/5);
+	$('#tv-div').height((screenHeight * .60)-baseboardHeight).css({'max-height':'600px'});
+	
+	if ( (screenHeight * .60)-baseboardHeight <= 600) {
+		$('#tv-div').height((screenHeight * .60)-baseboardHeight-60).css({'margin-top':'20px', 'margin-bottom':'40px'});
+	
+	}
+	
+	if ($('#tv-div').height() < (screenHeight * .60)-baseboardHeight) {
+		let tvAreaHeight = (screenHeight * .60)-baseboardHeight;
+		let tvDifference = tvAreaHeight- $('#tv-div').height();
+		$('#tv-div').css({'margin-bottom': tvDifference/2, 'margin-top': tvDifference/2});
+		$('#painting').css({'margin-top': tvDifference/4});
+	}
+	//$('.tv-row').height(screenHeight * .65);
+	let bodyHeight = $('body').height();
+	let tvRowHeight = $('.tv-row').height();
+	
+	let difference = screenHeight - (tvRowHeight + baseboardHeight);
+	let containerFluidHeight = tvRowHeight + baseboardHeight;
+	let paintingHeight = $('#painting').height();
+	$('.carpet-row').height(difference);
+	let carpetHeight = $('.carpet-row').height();
+	$('#table').css({'height':difference/2 + 'px', 'max-height':'300px', 'min-height':'100px'});
+	let tableHeight = $('#table').height();
+	let tableWidth = $('#table').width();
+	$('#remote').css({'max-height':'100px' ,'width': tableWidth/3, 'min-height':'80px','max-width':tableWidth/2 +'px'}).height(tableHeight-20);
+	let remoteHeight = $('#remote').height();
+	
+	let remoteContainerWidth = $('#remote-controls-container').width();
+	let plantHeight = $('#plant').height();
+	
+	let paddingTop = carpetHeight-tableHeight;
+	
+	//let paintingDifference = (screenHeight/2) - ((baseboardHeight+tvRowHeight)-plantHeight);
+	let paintingDifference =(tvRowHeight + baseboardHeight) - (plantHeight );
+	$('#plant').css({'top':paintingDifference + baseboardHeight + 'px'});
+	//$('#plant').css({'top':-paintingDifference + 'px'});
+	console.log(tvRowHeight);
+	console.log('painting' + paintingHeight);
+	
+	//$('#plant').css({'top':paintingDifference  + 'px'});
+	//$('.carpet-row').css({'padding-top':paddingTop + 'px'});
+	//$('#plant').css({'position':'absolute','bottom':0, 'left':0});
+	//$('#plant').css({'top': containerFluidHeight- plantHeight + 'px'});
+	//$('.controls').css({'width':remoteContainerWidth/3 +'%'});
+	console.log('body:' +bodyHeight);
+	console.log('TV:' +tvRowHeight);
+	console.log('baseboard:' +baseboardHeight);
+	console.log('difference:' +difference);
+	console.log('containerFluid:' + containerFluidHeight);
+	
+	if (remoteHeight < tableHeight) {
+		
+		let tableDifference = $('#table').height() - $('#remote').height();
+		//$('#table').css({'padding-top': tableDifference + 'px'});
+	}
+	$('iframe').height($('#tv').height());
+	$('iframe').width($('#tv').width());
+	});
 	
 	
