@@ -58,6 +58,12 @@ body {
 	z-index:1000;
 }
 
+#list-group {
+
+	max-height:150px;
+	overflow-y:auto;
+}
+
 #list-group li a:hover {
 	text-decoration:none;
 }
@@ -170,6 +176,8 @@ iframe {
 	padding:10px;
 	display:none;
 	max-width:100%;
+	max-height:150px;
+	overflow-y:auto;
 	position:fixed;
 	bottom:0;
 	right:0;
@@ -182,6 +190,9 @@ iframe {
 #bookmark-storage-ul {
 	max-width:100%;
 	list-style-type:none;
+	max-height:150px;
+	overflow-y:auto;
+	
 }
 
 #bookmark-storage-ul li:before {
