@@ -17,31 +17,35 @@
 html,body {
      
   	height: 100%;
-  	padding-bottom:0;
+  	
   	
    
 }
 
+
 body {
-	/*background-size: 100% auto;*/
-	/*background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center ;*/
-	text-shadow: 2px 2px 2px black;
 	background-color:orange;
+	/*background-size: 100% 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center ;
+	
+	
 	
 	/*position: relative;*/
-   	/*padding-top: 5%;*/
-   
-	-ms-word-break: break-all;
-     word-break: break-all;
-
-     /* Non standard for WebKit */
-     word-break: break-word;
-
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-        hyphens: auto;
+   	padding-top: 5%;
+   	 min-height:100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+   	background-position:center;
+   text-shadow: 2px 2px 2px black;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
 	
 }
 
@@ -67,13 +71,17 @@ body {
 	position:absolute;
 	bottom:0;
 }
+
 #week-forecast .col-md-2 {
 	padding:1%;
 }
+
 #week-forecast a {
 	color: white;
 	text-decoration: underline;
 }
+
+
 
 .popover-title {
 	color: white;
@@ -106,6 +114,37 @@ body {
 	font-size: 20px;
 	display:none;
 }
+#week-forecast {
+	background-color: rgba(20,250,100,.5);
+	color: white;
+	padding-top:0;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	display:none;
+	/*height:auto;
+	position: fixed;
+  	bottom: 0;*/
+  	width:100%;
+  	position:relative;
+	position:sticky;
+	top:100%;
+	
+	
+	
+
+	
+}
+
+#week-forecast div {
+	/*width:15%;
+	display:inline-block;
+	padding:1%;*/
+}
+
+#forecasts {
+		margin-bottom:10%;
+	}
+
 @media only screen and (max-width: 200px)  {
 	#current-forecast {
 		border-radius: 0;
@@ -123,11 +162,8 @@ body {
 		border-bottom: 2px solid white;
 		border-right: 0;
 	}
-	#week-forecast {
-		position:initial;
-		
 	
-	}
+	
 
 }
 
@@ -144,11 +180,8 @@ body {
 		border-bottom: 2px solid white;
 		border-right: 0;
 	}
-	#week-forecast {
-		position:initial;
-		
 	
-	}
+	
 }
 @media only screen and (max-width: 375px) and (min-width:321px) {
 	#current-forecast {
@@ -156,56 +189,48 @@ body {
 
 		
 	}
-	#forecasts {
-		margin-bottom:10%;
-	}
+	
 	#week-forecast .col-md-2:not(#day5) {
 		border-bottom: 2px solid white;
 		border-right: 0;
 	}
-	#week-forecast {
-		position:initial;
-		
 	
-	}
+	
 }
-@media only screen and (max-width: 425px) and (min-width:375px) {
+@media only screen and (max-width: 700px) and (min-width:375px) {
 	#current-forecast {
 		border-radius: 0;
 		
 		
 	}
-	#forecasts {
-		margin-bottom:10%;
-	}
+	
 	#week-forecast .col-md-2:not(#day5) {
 		border-bottom: 2px solid white;
 		border-right: 0;
 	}
-	#week-forecast {
-		position:initial;
-		
 	
-	}
+	
 }
-@media only screen and (max-width: 991px) and (min-width:426px) {
+@media only screen and (max-width:991px) and (min-width:701px) {
 	#current-forecast {
 		border-radius: 0;
 		
 		
 	}
-	#forecasts {
-		margin-bottom:10%;
-	}
+	
 	#week-forecast .col-md-2:not(#day5) {
 		border-bottom: 2px solid white;
 		border-right: 0;
 	}
-	#week-forecast {
-		position:initial;
-		
+	/*#week-forecast div {
+	width:15%;
+	display:inline-block;
 	
-	}
+}*/
+	
+	
+}
+
 	
 }
 @media only screen and (max-width: 1023px) and (min-width:992px) {
@@ -214,9 +239,7 @@ body {
 		
 		
 	}
-	#forecasts {
-		margin-bottom:10%;
-	}
+	
 	#week-forecast .col-md-2:not(#day5) {
 		border-right: 2px solid white;
 		border-bottom: 0;
@@ -225,44 +248,33 @@ body {
 		margin:3%;
 	
 	}
-	#week-forecast {
-		position:initial;
-		
 	
-	}
 
 }
 @media only screen and (max-width: 1440px) and (min-width:1024px) {
 	#current-forecast {
 		border-radius: 100%;
-		margin-bottom:10%;
 		padding:3%;
 	}
 	#week-forecast .col-md-2:not(#day5) {
 		border-right: 2px solid white;
 		border-bottom: 0;
 	}
-	#week-forecast {
-		height:auto;
-		overflow:visible;
-	}
+	
 
 }
 
 @media only screen and (max-width: 2560px) and (min-width:1441px) {
 	#current-forecast {
 		border-radius: 100%;
-		margin-bottom:10%;
+		
 		
 	}
 	#week-forecast .col-md-2:not(#day5) {
 		border-right: 2px solid white;
 		border-bottom: 0;
 	}
-	#week-forecast {
-		height:auto;
-		overflow:visible;
-	}
+	
 	 
 
 }
@@ -271,26 +283,9 @@ body {
 	
 	/*margin-bottom: 15%;*/
 	display: none;
-	height:100%;
+	
+	
 }
-#week-forecast {
-	background-color: rgba(20,250,100,.5);
-	color: white;
-	padding-top:0;
-	border-top: 2px solid white;
-	border-bottom: 2px solid white;
-	display:none;
-	/*height:auto;
-	position: fixed;
-  	bottom: 0;*/
-  	width: 100%;
- 	/*overflow:auto;*/
-  /* Set the fixed height of the footer here */
-  	
-	
-	/*overflow:auto;*/
-	
-	
 
-	
-}
+
+

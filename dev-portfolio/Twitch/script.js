@@ -429,7 +429,7 @@ $(document).ready(function() {
 					let  createdAt = data.stream.created_at;
 					program = data.stream.channel.game;
 					let schedule = getTime(createdAt);
-					$('#' + name).find('.stream').html('Online <img src="http://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
+					$('#' + name).find('.stream').html('Online <img src="https://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
 						
 					$('#' + name).find('.program').html(program);
 	
@@ -562,7 +562,7 @@ $(document).ready(function() {
 									$('#' + thisChannelName).mouseenter(showProgramDetails(thisChannelName));
 									$('#' + thisChannelName).find('.program').html(program);
 									$('#' + thisChannelName).find('a').css({'color': '#337ab7', 'text-decoration':'none'});
-									$('#' + thisChannelName).find('.stream').html('Online <img src="http://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
+									$('#' + thisChannelName).find('.stream').html('Online <img src="https://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
 									$('#' +thisChannelName).css({'background-color': 'white', 'color': 'black'});
 				
 			 					
@@ -610,7 +610,7 @@ $(document).ready(function() {
 									program = data.stream.channel.game;
 									
 									$('#' + thisChannelName).find('.program').html(program);
-									$('#' + thisChannelName).find('.stream').html('Online <img src="http://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
+									$('#' + thisChannelName).find('.stream').html('Online <img src="https://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
 									$('#' + thisChannelName).find('a').css({'color': '#337ab7', 'text-decoration':'none'});
 									$('#' +thisChannelName).css({'background-color': 'white', 'color': 'black'});
 			
@@ -1303,7 +1303,7 @@ $(document).ready(function() {
 		
 							program = data.stream.channel.game;
 							$('#' + name).find('.program').html(program);
-							$('#' + name).find('.stream').html('Online <img src="http://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
+							$('#' + name).find('.stream').html('Online <img src="https://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
 							$('#' + name).find('a').css({'color': '#337ab7', 'text-decoration': 'none' });
 							$('#' +name).css({'background-color': 'white', 'color': 'black'});
 						
@@ -1431,7 +1431,7 @@ $(document).ready(function() {
 									$('#' + thisChannelName).mouseenter(showProgramDetails(thisChannelName));
 									$('#' + thisChannelName).find('.program').html(program);
 									$('#' + thisChannelName).find('a').css({'color': '#337ab7', 'text-decoration':'none'});
-									$('#' + thisChannelName).find('.stream').html('Online <img src="http://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
+									$('#' + thisChannelName).find('.stream').html('Online <img src="https://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
 									$('#' +thisChannelName).css({'background-color': 'white', 'color': 'black'});
 				
 			 					
@@ -1479,7 +1479,7 @@ $(document).ready(function() {
 									program = data.stream.channel.game;
 									$('#' + thisChannelName).mouseenter(showProgramDetails(thisChannelName));
 									$('#' + thisChannelName).find('.program').html(program);
-									$('#' + thisChannelName).find('.stream').html('Online <img src="http://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
+									$('#' + thisChannelName).find('.stream').html('Online <img src="https://www.userlogos.org/files/logos/jumpordie/trakt_01.png" width="30"/>');
 									$('#' + thisChannelName).find('a').css({'color': '#337ab7', 'text-decoration':'none'});
 									$('#' +thisChannelName).css({'background-color': 'white', 'color': 'black'});
 			
@@ -1531,7 +1531,7 @@ $(document).ready(function() {
 		
 			let tvHeight = $('#tv').height();
 			let tvWidth = $('#tv').width();
-			$('#tv').html('<iframe src="http://player.twitch.tv/?channel='+name+'" height="'+tvHeight+'" frameborder="" width="'+tvWidth+'"  allowfullscreen="yes"></iframe>').css({'overflow':'hidden'});
+			$('#tv').html('<iframe src="https://player.twitch.tv/?channel='+name+'" height="'+tvHeight+'" frameborder="" width="'+tvWidth+'"  allowfullscreen="yes"></iframe>').css({'overflow':'hidden'});
 			$('#current-channel-img').hide();
 			$('#current-channel-content').hide();
 			$('#channel-header').hide();
