@@ -1,226 +1,358 @@
-
-
-.container:first-child {
-	margin-top: 5%;
-}
-
 body {
+
 	background-color: lightblue;
-	padding-bottom:0;
+	
 	overflow-wrap: break-word;
+	
 	word-wrap: break-word;
+	
 	-webkit-hyphens: auto;
+	
 	-ms-hyphens: auto;
+	
 	-moz-hyphens: auto;
+	
 	hyphens: auto;
 	
 }
 
-.jumbotron h1 {
-	font-family: 'Griffy', cursive;
-	color: #1159D7;
-	text-shadow: 2px 2px 2px black;
-	margin-bottom:5%;
-}
-
-.jumbotron {
-	width: 60%;
-	margin:5% auto;
+#bookmark-icon-area {
+	
+	position: fixed;
+	
+	right: 0;
+	
+	top: 0;
+	
+	z-index: 1000;
 	
 }
 
-#bookmark-form-button-wrapper {
-	text-align:center;
-	width:100%;
+.bookmark-icon {
+
+	cursor: pointer;
+	
+	width: 60px;
+	
+	height: 110px;
+	
+	background-image: url("https://cache-graphicslib.viator.com/graphicslib/thumbs360x240/3731/SITours/skip-the-line-eiffel-tower-tour-by-night-in-paris-404583.jpg");
+	
+	background-size: cover;
+	
+	background-position: center;
+	
+	border: 5px solid gold;
+	
+	box-shadow: 2px 2px 5px black;
+	
 }
 
-.alert {
-	display: none;
-} 
+#button-design {  
 
-.alert ul {
-	list-style-type:none;
+	box-shadow: 2px 2px 2px black;
+	
 }
 
-.alert li:before {
-	content: '\26A0';
-	padding-right: 10px;
+#button-design .glyphicon-edit {
 
+	color: white;
+	
 }
 
-.error {
-	border: 2px solid red;
-}
+#bookmark-collapse {
 
-#bookmark-icon-area {
-	position:fixed;
-	right:0;
-	z-index:1000;
+	max-width: 100%;
+	
 }
 
 #list-group {
 
-	max-height:150px;
-	overflow-y:auto;
+	max-height: 150px;
+	
+	overflow-y: auto;
+	
 }
 
 #list-group li a:hover {
-	text-decoration:none;
-}
 
-#bookmark-icon-form .form-group{
-	display: inline-block;
-	display: -moz-inline-stack;
-	margin-left: 2%;
-}
-
-
-
-.bookmark-icon {
-	cursor:pointer;
-}
-
-#bookmarksResults {
-	overflow-x:hidden;
-}
-
-#button-design {  
-	box-shadow:2px 2px 2px black;
-}
-
-#button-design .glyphicon-edit {
-	color:white;
-}
-
-#bookmark-collapse {
-	max-width:100%;
-}
-
-.background-options, .bookmark-options, .border-options {
-	margin-left: 3%;
-}
-
-.background-options h4, .bookmark-options h4, .border-options h4 {
-	margin-left: -3%;
-}
-
-#bookmark-icon-form hr {
-	background-color:blue;
-}
-
-#bookmark-icon-form {
-	overflow:auto;
-}
-
-#bookmark-icon-form button[type="button"] {
-	background-color: black;
-	color:white;
-}
-
-.modal-body .popover {
+	text-decoration: none;
 	
-	background-color:lightblue;
 }
 
-.modal-body .popover .arrow:after {
-	border-bottom-color:lightblue;
+.glyphicon-remove {
+	
+	color: red;
+	
 }
 
+#jumbotron-div {
 
-
-hr {
-	border-color: grey;
-	box-shadow: 2px 2px 2px;
+	margin-top: 3%;
+	
 }
+
+.jumbotron {
+
+	width: 60%;
+	
+	margin: 5% auto;
+	
+}
+
+.jumbotron h1 {
+
+	font-family: 'Griffy', cursive;
+	
+	color: #1159D7;
+	
+	text-shadow: 2px 2px 2px black;
+	
+	margin-bottom: 5%;
+	
+}
+
+.error {
+
+	border: 2px solid red;
+	
+}
+
+#bookmark-form-button-wrapper {
+	
+	text-align: center;
+	
+	width: 100%;
+	
+}
+
+.alert {
+
+	display: none;
+	
+} 
 
 .frame-wrapper {
+	
 	margin-bottom: 5%;
-	display:block;
+	
+	display: block;
 }
 
 iframe {
+
 	resize: both;
-	box-shadow:2px 2px 2px;
+	
+	box-shadow: 2px 2px 2px;
+	
 	border: none;
-	/*min-height:500px;*/
+	
 	
 }
 
+.frame-name {
+
+	font-weight:bold;
+
+}
+
+#span-remove {
+	
+	background-color: red;
+	
+	color: white;
+	
+	margin-right: 2px;
+	
+	box-shadow: 2px 2px 2px black;
+
+}
+
+#span-minimize {
+
+	background-color: orange;
+	
+	color: white;
+	
+	margin-right: 2%;
+	
+	box-shadow: 2px 2px 2px black;
+
+}
+
 .glyphicon, .size, .move-frame span {
+	
 	cursor: pointer;
+	
 }
 
 .size-wrapper {
-	box-shadow:2px 2px 2px black;
+	
+	box-shadow: 2px 2px 2px black;
+	
 	margin-top: 5%;
-	background-color:#1159D7;
-	color:white;
+	
+	background-color: #1159D7;
+	
+	color: white;
+	
 }
-.glyphicon-remove {
-	color: red;
+
+
+
+#minimize-bar {
+
+	padding: 10px;
+	 
+	display: none;
+	
+	max-width: 100%;
+	
+	max-height: 150px;
+	
+	overflow-y: auto;
+	
+	position: fixed;
+	
+	bottom: 0;
+	
+	right: 0;
+	
+	background-color: rgba(255,240,250,.5);
+	
+}
+
+
+
+#minimized-bookmarks-list {
+	
+	max-width: 100%;
+	
+	list-style-type: none;
+	
+	max-height: 150px;
+	
+	overflow-y: auto;
+	
+}
+
+#minimized-bookmarks-list li:before {
+	
+	content: '\002B';  /* css code for plus sign */
+	
+    padding-right: 12px;
+    
+    color:  #1159D7; 
+    
+    font-weight: bold;
+
 }
 
 .bookmark-li {
+	
 	color:  #1159D7;
+	
 	font-weight: bold;
+	
 }
 
 .bookmark-li:hover {
 
 	cursor: pointer;
-	color: #1159D7;
+	
 	border-bottom: 2px solid #1159D7;
-}
-
-#minimize-bar {
-	padding:10px;
-	display:none;
-	max-width:100%;
-	max-height:150px;
-	overflow-y:auto;
-	position:fixed;
-	bottom:0;
-	right:0;
-	background-color:rgba(255,240,250,.5);
 	
 }
 
-
-
-#bookmark-storage-ul {
-	max-width:100%;
-	list-style-type:none;
-	max-height:150px;
-	overflow-y:auto;
+.bookmark-icon-popover  {
+	
+	background-color: lightblue;
 	
 }
 
-#bookmark-storage-ul li:before {
-	content: '\002B'; 
-    padding-right: 12px;
-    color:  #1159D7; 
-    font-weight: bold;
-
+.bookmark-icon-popover.bottom > .arrow, .bookmark-icon-popover.bottom > .arrow:after {
+		
+	border-bottom-color: lightblue;
 }
 
+
+
+#bookmark-icon-form {
+	
+	overflow: auto;
+	
+}
+
+#bookmark-icon-form .form-group{
+	
+	display: inline-block;
+	
+	display: -moz-inline-stack;
+	
+	margin-left: 2%;
+	
+}
+
+#bookmark-icon-form hr {
+	
+	border-color: grey;
+	
+	box-shadow: 2px 2px 2px;
+	
+}
+
+.background-options, .bookmark-options, .border-options {
+	
+	margin-left: 3%;
+	
+}
+
+.background-options h4, .bookmark-options h4, .border-options h4 {
+	
+	margin-left: -3%;
+	
+}
+
+#bookmark-icon-form button[type="button"] {
+	
+	background-color: black;
+	
+	color: white;
+}
+
+	/* Responsive Styles */
+	
 @media only screen and (max-width: 500px) {
+	
 	iframe {
+		
 		width: 100%;
+		
 		max-width: 100%;
+		
 	}	
 	
 	.size-wrapper {
-		display:none;
+	
+		display: none;
+		
 	}
 }
+
 @media only screen and (min-width: 501px) {
+	
 	iframe {
+	
 		width: 95%;
+		
 		max-width: 95%;
+		
 	}	
 	
 	.size-wrapper {
-		display:block;
+	
+		display: block;
+		
 	}
 
 }

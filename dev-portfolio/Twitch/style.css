@@ -1,289 +1,401 @@
-/*@media screen and (max-width: 700px) {
-	#table {
-		margin-top: 40%;
-	}
-	.controls {
-		width: 43%;
-	}
-	#remote {
-		width:20%;
-	}
-}
-@media screen and (min-width: 700px) {
-	#table {
-		margin-top: 10%;
-	}
-	.controls {
-		width: 35%;
-	}
-	#remote {
-		width:15%;
-	}
-}
-@media screen and (max-width: 320px) {
-	overflow:auto;
-}
-*/
-html, body {
-	height:100%;
-	padding-top:0;
-}
 body {
-	/*padding-bottom:350px;*/
-	padding-top:0;
+
+	padding-top: 0;
 	
-	/*background-color: lightblue;/
-	background-image:url('https://s-media-cache-ak0.pinimg.com/originals/f9/77/76/f97776d7e62229264ff8144cc60caff6.jpg');
+	height: 100%;
 	
-	background-image:url('https://i.startsatsixty.com.au/wp-content/uploads/20150312164501/110315_room_blankspace.jpg');
-	background-size:contain;
-	/*background-repeat: no-repeat;*/
-	/*background-image: url('http://products.empiretoday.com/img/3107.jpg?w=350');
-	background-size:100px 100px;*/
-	position:relative;
+	position: relative;
+	
 	background-position: center;
-	background-color:white;
-	/*border:2px groove lightgrey;*/
 	
-	/*position:relative;*/
 	overflow-wrap: break-word;
-	word-wrap: break-word;
-	-webkit-hyphens: auto;
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;
-}
-
-
-#tv-area {
-	width:100%;height:100%;
-	padding-bottom:0;
-	margin-top:0;
 	
-	background-image:url('https://s-media-cache-ak0.pinimg.com/originals/f9/77/76/f97776d7e62229264ff8144cc60caff6.jpg');
-	/*background-image:url('https://i.startsatsixty.com.au/wp-content/uploads/20150312164501/110315_room_blankspace.jpg');*/
-	background-size:contain;
-	/*background-repeat: no-repeat;*/
-	background-position: center;
+	word-wrap: break-word;
+	
+	-webkit-hyphens: auto;
+	
+	-ms-hyphens: auto;
+	
+	-moz-hyphens: auto;
+	
+	hyphens: auto;
+	
 }
-#tv {
-	overflow-x:hidden;
+
+.container-fluid {
+	
+	height: 100%;
+	
+	padding-bottom: 0;
+	
+}
+
+#plant {
+
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/d2/1a/85/d21a858585e20efa2056ab7ab277d09b.png');
+	
+	background-size: contain;
+	
+	background-position: center bottom;
+	
+	background-repeat: no-repeat;
+	
+	background-color: transparent;
+	
+	position: absolute;
+	
+	bottom: 0;
+	
+	height: 400px;
+	
+	z-index: 1000;
+	
+}
+
+#painting {
+	
+	width: 45%;
+	
+	max-height: 300px;
+	
+	margin: auto;
+	
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/d2/1a/85/d21a858585e20efa2056ab7ab277d09b.png'); /* picture of frog */
+	
+	background-size: 100% 100%;
+	
+	background-position: center;
+	
+	border: 10px ridge black;
+	
 	box-shadow: 2px 2px 2px black;
-	background: linear-gradient(#FAFFFE,#780AE8);
-	width:100%;
-	height:100%;
-	border:2px ridge black;
+	
+}
+
+.tv-row {
+	
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/f9/77/76/f97776d7e62229264ff8144cc60caff6.jpg'); /* blue/grey/white wallpaper */
+	
+	background-size: contain;
+
+	background-position: center;
 
 }
 
 #tv-div {
-	border:15px solid black;
-	height: 60vh;
-	padding:0;
+
+	border: 15px solid black;
+	
+	padding: 0;
+	
 	box-shadow: 2px 2px 2px black;
-	margin-bottom:3%;
-	margin-top:1%;
+	
+	margin-bottom: 3%;
+	
+	margin-top: 1%;
+	
+	max-height: 600px;
+	
 } 
 
-#plant {
-	background-image:url('https://s-media-cache-ak0.pinimg.com/originals/d2/1a/85/d21a858585e20efa2056ab7ab277d09b.png');
-	background-size:contain;
-	background-position: center bottom;
-	background-repeat:no-repeat;
-	/*width:35%;*/
-	background-color:transparent;
-	position:absolute;
+#tv {
+	
+	overflow-y: auto;
+	
+	overflow-x: hidden;
+	
+	box-shadow: 2px 2px 2px black;
+	
+	background: linear-gradient(white, #780AE8); /* #780AE8: purple */
+	
+	width: 100%;
+	
+	height: 100%;
+	
+	border: 2px ridge black;
+	
+	position: relative;
+
+}
+
+iframe {
+
+	position: absolute;
+	
 	bottom:0;
-	/*top:30%;*/
-	/*position: fixed;
-	top:0;*/
-	height:400px;
-	z-index:1000;
-}
-
-#painting {
-	width:45%;
-	margin:auto;
-	background-image:url('https://s-media-cache-ak0.pinimg.com/originals/bb/82/1f/bb821f6a694f85410a68ba1ca2dbc6b2.jpg');
-	background-size:100% 100%;
-	background-position:center;
-	height:150px;
-	border:10px ridge black;
-	box-shadow:2px 2px 2px black;
-	margin-top:5%;
-}
-
-.baseboard-row {
-	background-color:white;
-	border-top:1px groove lightgrey;
-	border-bottom:1px groove lightgrey;
-	height:50px;
-	
 	
 }
 
-.carpet-row {
-	background-image: url('http://products.empiretoday.com/img/3107.jpg?w=350');
-	background-size:contain;
-	min-height:200px;
-	position:relative;
-	
-}
-#carpet {
-	/*position:relative;*/
-	/*background-image: url('http://products.empiretoday.com/img/3107.jpg?w=350');
-	background-size:contain;
-	/*height:250px;*/
-	padding:0;
-	
-	
+#tv a {
+
+	text-decoration: none;
+
 }
 
 .padding-top {
+	
 	padding-top: 15%;
-}
-
-.popover {
-	color: black;
-	width: 500px;
 	
 }
 
-#remote-area {
-	margin-top: 3%;
-}
-
-#remote {
-	box-shadow: 2px 2px 2px black;
-	background-color:black;
-	border-radius:10px;
-	height: auto;
-	margin:auto;
-	padding-top:1%;
-	padding-bottom:1%;
-	color:white;
-	overflow-y:auto;
-}
-
-#home {
-	background-image:url('https://lh3.ggpht.com/A0x3jzuH1qRkE10HcTiT4qQr_6iAqVg-CTsoIqxnoIFyv92V91WI3KqiVlOvLtfoMRg=w300');
-	background-position:center center;
-	background-color:white;
-}
-
-#online {
-	background-image:url('http://www.clker.com/cliparts/c/8/3/c/13523550961548622750button-green-md.png');
-	background-position:center center;
-}
-
-#search {
-	background-color:white;
-	background-image:url('https://cms-assets.tutsplus.com/uploads/users/523/posts/27345/preview_image/search-icon-large.png');
-	background-position:center center;
-}
-
-#twitch {
-	background-position:center center;
-	background-color:white;
-	background-image:url('https://blog.roblox.com/wp-content/uploads/2016/12/Twitch-Icon.png');
-}
-
-#watch {
-	background-position:center center;
-	background-color:white;
-	background-image:url('http://www.userlogos.org/files/logos/jumpordie/trakt_01.png' );
-}
-#enter {
-	background-position:center center;
-	background-color:white;
-	background-image:url('https://cdn3.iconfinder.com/data/icons/keyboard/100/237271-Keyboard_enter-512.png');
-}
-#info {
-	background-position:center center;
-	background-color:white;
-	background-image:url('http://www.iconsdb.com/icons/preview/gray/info-2-xxl.png');
-}
-
-#table {
-	min-height:110px;
-	position:absolute;
-	bottom:0;
-	background-image: url('http://www.muros.co.nz/product_image/Horizontal-Wood-Wall-Panel_Medium-Walnut~0.jpg');
-	background-size:cover;
-	box-shadow:2px 2px 2px black;
-}
-
-#remote-controls-container {
-	/*margin-left:10px;
-	width:100%;
-	padding:0;*/
+#content {
 	
+	width: 100%;
 	
 }
 
-
-.controls {
-	border-radius: 100%;
-	display: inline-block;
-	width:25%;
-	height: 20px;
-	margin: 2%;
-	padding-bottom:1%;
-	background-repeat: no-repeat;
-	cursor: pointer;
-	background-size:100% 100%;
-	text-decoration: none;
-	outline: none;
-	color: #fff;
-	background-color: #4CAF50;
-	border: none;
-	border-radius: 15px;
-	box-shadow: 0 4px #999;
-}
-
-.controls:hover {
-	background-color: #3e8e41;
-}
-
-.controls:active {
-	background-color: #3e8e41;
-	box-shadow: 0 2px #666;
-	transform: translateY(4px);
-}
-
-table, tr, th, td {
-	border: 2px solid black;
-	border-collapse: collapse;
-	padding: 5px;
-}
-
-table {
+#current-channel {
+	
+	overflow-x: hidden;
+	
 	width: 100%;
 
 }
 
+#current-channel-img {
+
+	min-height: 200px;
+	
+	background-image: url("https://www.filepicker.io/api/file/vL2cljiRdefa2gBxqsSV"); /* Twitch Logo */
+	
+	background-size: contain;
+	
+	background-repeat: no-repeat;
+	
+	background-color: white;
+	
+	background-position: center center;
+	
+}
+
 #current-channel-content ul {
+
 	list-style-type: none;
-	text-align: left;
 	
 }
 
 #current-channel-content h3 {
-	font-family:'Bernard MT Condensed', 'serif';
+
+	font-family: 'Bernard MT Condensed', 'serif';
+	
 }
 
+#channel-search, #twitch-form {
 
-@media only screen and (max-height:700px) {
+	padding-top: 2%;
 	
-	#tv-div {
-		30vh;
-	}
+	padding-bottom: 2%;
+
+}
+
+.channel-rows {
+	
+	overflow-x: auto;
+
+}
+
+#channel-header {
+
+	background-color: black;
+	
+	color: white;
+
+}
+
+.tv-guide-online-channels, tv-guide-online-search-channels, .tv-guide-channels, .tv-guide-search-channels {
+
+	background-color: white;
+	 
+	color: black;
+
+}
+
+#add-table-content {
+	
+	background-color: white;
+	 
+	color: black;
+
+}
+
+.glyphicon-remove-circle {
+
+	color: red;
+
+}
+
+table, tr, th, td {
+
+	border: 2px solid black;
+	
+	border-collapse: collapse;
+	
+	padding: 5px;
+}
+
+table {
+
+	width: 100%;
+
+}
+
+.baseboard-row {
+	
+	background-color: white;
+	
+	border-top: 1px groove lightgrey;
+	
+	border-bottom: 1px groove lightgrey;
+	
+}
+
+.carpet-row {
+	
+	background-image: url('https://s-media-cache-ak0.pinimg.com/736x/1a/3f/14/1a3f143c07f8178667d6896c49bf0354--carpet-for-bedrooms-bedroom-carpet.jpg');
+	
+	background-size: contain;
+	
+	min-height: 240px;
+	
+	position: relative;
+	
+}
+
+#table {
+
+	min-height: 120px;
+	
+	max-height: 300px;
+	
+	position: absolute;
+	
+	bottom: 0;
+	
+	background-image: url('https://www.pixeden.com/media/k2/galleries/220/003-wood-melamine-subttle-pattern-background-pat.jpg');
+	
+	background-size: cover;
+	
+	border-top-left-radius: 10px;
+	
+	border-top-right-radius: 10px;
+	
+	box-shadow: 2px 2px 2px black;
+	
+}
+
+#remote {
+	
+	box-shadow: 2px 2px 2px black;
+	
+	background-color: black;
+	
+	border-radius: 10px;
+	
+	margin: auto;
+	
+	padding-top: 1%;
+	
+	padding-bottom: 1%;
+	
+	color: white;
+	
+	overflow-y: auto;
+	
+	max-height: 100px;
+	
+	min-height: 80px;
+	
+}
+
+.controls {
+
+	border-radius: 100%;
+	
+	display: inline-block;
+	
+	width: 25%;
+	
+	height: 20px;
+	
+	margin: 2%;
+	
+	background-repeat: no-repeat;
+	
+	cursor: pointer;
+	
+	background-position: center;
+	
+	background-size: 100% 100%;
+	
+	background-color: white;
+	
+	text-decoration: none;
+	
+	box-shadow: 0 4px #999; /* #999: grey */
+	
+}
+
+.controls:active {
+	
+	transform: translateY(4px); /* move button down 4px to simulate effect of pressing button down */
+	
+}
+
+#home {
+	
+	background-image: url('https://lh3.ggpht.com/A0x3jzuH1qRkE10HcTiT4qQr_6iAqVg-CTsoIqxnoIFyv92V91WI3KqiVlOvLtfoMRg=w300');
+	
+}
+
+#online {
+
+	background-image: url('https://www.clker.com/cliparts/c/8/3/c/13523550961548622750button-green-md.png');
+
+}
+
+#search {
+	
+	background-image: url('https://cms-assets.tutsplus.com/uploads/users/523/posts/27345/preview_image/search-icon-large.png');
+	
+}
+
+#twitch {
+	
+	background-image: url('https://blog.roblox.com/wp-content/uploads/2016/12/Twitch-Icon.png');
+	
+}
+
+#watch {
+	
+	background-image: url('https://www.userlogos.org/files/logos/jumpordie/trakt_01.png' );
+	
+}
+
+#enter {
+	
+	background-image: url('https://cdn3.iconfinder.com/data/icons/keyboard/100/237271-Keyboard_enter-512.png');
+	
+}
+
+#delete {
+
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Deletion_icon.svg/1024px-Deletion_icon.svg.png');
+	
+	
+}
+
+#info {
+	
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Infobox_info_icon.svg/1024px-Infobox_info_icon.svg.png');
 	
 }
 
 @media only screen and (max-width:991px) {
+	
 	#plant, .painting-container, #painting {
-		display:none;
+		
+		display: none;
+		
 	}
 	
 }
@@ -291,38 +403,39 @@ table {
 
 @media only screen and (max-width: 767px) and (min-width:425px) {
 	
-	
 	.controls {
 	
 		width: 13%;
+		
 	}
+	
 }
+
 @media only screen and (max-width: 1023px) and (min-width:768px) {
 	
 	.controls {
 	
 		width: 15%;
+		
 	}
 	
 }
+
 @media only screen and (max-width: 1439px) and (min-width:1024px) {
+	
 	.controls {
 	
 		width: 20%;
+		
 	}
-	#plant {
-		/*top:36%;*/
-	}
+	
 }
 
-@media only screen and (max-width: 2560px) and (min-width:1440px) {
+@media only screen and (min-width:1440px) {
+	
 	.controls {
 	
 		width: 15%;
 	}
-	#plant {
-		/*top:40%;*/
-	}
-
 	
 }

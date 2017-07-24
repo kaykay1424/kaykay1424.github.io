@@ -121,13 +121,13 @@ $(document).ready(function() {
   			
 			$('.political-articles-container .article').find('.article-dates:contains('+selectedDate+')').parents('.political-articles-container .article').show();
 			let showArticleLength = $('.political-articles-container .article:visible').length;
-			$('.filter-results').html('Article match(es): '+ showArticleLength).removeClass('form-error').parent().removeClass('text-warning ').addClass('color-white');
+			$('.filter-results').html('Article match(es): '+ showArticleLength).removeClass('form-error').parent().removeClass('text-warning ').addClass('color-white text-center');
 			if (showArticleLength === 0) {
 				$('.political-articles-container').append('<div class="no-results alert alert-danger text-center"><h3>No articles match that search criteria. Please try another search or click on the "Show All Articles" button to see all the articles again.</h3></div>');
 			}
   		}
   		else {
-  			$('#politics-topic-form .filter-results').html('Please choose a topic and/or select a year to search for an article').addClass('form-error').parent().removeClass(' color-white').addClass('text-warning')
+  			$('#politics-topic-form .filter-results').html('Please choose a topic and/or select a year to search for an article').addClass('form-error').parent().removeClass('text-center color-white').addClass('text-warning')
 			$('.political-articles-container .article').show();
 			return false;
   		}
@@ -212,5 +212,7 @@ $(document).ready(function() {
 		}
 		$('#all-topics-form')[0].reset();
 	}); //end of #all-topics-form submit function
+	
+	
 			
 }); // end of document.ready

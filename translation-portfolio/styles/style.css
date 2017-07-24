@@ -5,6 +5,10 @@
 	background-size:contain;
 	background-image:url('https://d2drx6n2xb0i5r.cloudfront.net/site/wp-content/themes/icanlocalize/images/bubbles.png');
 	width:100%;
+	height: 200px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-color:white;
 }
 
 .navbar-header .navbar-brand  {
@@ -99,7 +103,20 @@
 }
  	
 body {
+	
 	background-color:beige;
+	
+	overflow-wrap: break-word;
+	
+	word-wrap: break-word;
+	
+	-webkit-hyphens: auto;
+	
+	-ms-hyphens: auto;
+	
+	-moz-hyphens: auto;
+	
+	hyphens: auto;
 }
 
 footer {
@@ -148,7 +165,7 @@ footer a {
 	height:300px;
 	width:100%;
 	background-image:url('../images/kayla-on-beach.jpeg');
-	background-size:cover;
+	background-size:100% 100%;
 	background-position:center;
 }
 
@@ -179,8 +196,14 @@ footer a {
 	position: absolute;
 	width: 0;
 	height: 0;
-	
+	right: 100%;
+	top: 50%;
+	border-top: 13px solid transparent;
+	border-right: 18px solid lightgrey;
+	border-bottom: 13px solid transparent;
+
 }
+
 
 /* Contact Me Page */
 
@@ -218,8 +241,9 @@ footer a {
 }
 
 .header-bubble-string-tie {
-	width:2%;
-	height:13px;
+	/*width:2%;*/
+	width: 7px;
+	height:15px;
 	background-color:beige;
 	margin:auto;
 	border-left:2px ridge beige;
@@ -227,6 +251,11 @@ footer a {
 	position:absolute;
 	background-image:url('https://st.hzcdn.com/simgs/7e619c2f069d3f82_4-5992/fabric.jpg');
   	background-size: contain;
+  	left: 0;
+	right: 0;
+	margin: auto;
+  	top:-3px;
+  	
 	/*right:49%;
 	top:-2.5%;*/
 	border-radius:4px;
@@ -240,6 +269,7 @@ footer a {
   	background-color:white;
   	color:#206EC4;
   	border-radius:100px;
+  	padding-top: 8px;
 }
 
 .header-bubble-hole {
@@ -247,12 +277,18 @@ footer a {
 	border-radius:100px;
 	border:2px solid #206EC4;
 	box-shadow: 1px 1px 1px 1px black inset;
+	margin:auto;
+	width:20px;
+	height:20px;
+	/*position:relative;*/
+	
 }
 .header-bubble-string-container {
 	padding-top:0;
 }
 .header-bubble-string {
   	border:2px ridge beige;
+  	width: 7px;
   	margin: auto;
   	border-radius:2px;
   	height:80px;
@@ -261,6 +297,7 @@ footer a {
   	background-size: contain;
   	/*box-shadow:2px 0 0 -2px black;*/
   	box-shadow: 1px 1px 1px black;
+  	
 }
 
 .filter-button-container {
@@ -302,8 +339,8 @@ table td[colspan="2"] {
 	/* Government Articles Page */
 
 #gov-image-background-1 {
-	padding:0;
-	height:300px;
+	
+	min-height:300px;
 	background-color:white;
 	background-image:url('http://3.bp.blogspot.com/-sTNrzr0i25o/UEuXJCXAm-I/AAAAAAAAACY/xaJP1jll56s/s1600/2000px-US-GreatSeal-Obverse_svg.png');
 	background-repeat:no-repeat;
@@ -312,8 +349,8 @@ table td[colspan="2"] {
 }
 
 #gov-image-background-2 {
-	padding:0;
-	height:300px;
+	
+	min-height:300px;
 	background-color:white;
 	background-image:url('http://ian.umces.edu/imagelibrary/albums/userpics/10002/normal_ian-symbol-government-1.png');
 	background-repeat:no-repeat;
@@ -326,17 +363,24 @@ table td[colspan="2"] {
 	margin-bottom:5%;
 	background-color:white;
 }
-#government-topic-form-container, #politics-form-container {
+#government-topic-form-container, #politics-form-container, #all-topics-form-container {
 	padding: 0;
+
 }
 
-#government-topic-form {
-	height:300px;
+#government-topic-form-container {
+	
+	background-color:#94600D;
+	
+}
+
+#government-topic-form, #politics-topic-form, #all-topics-form {
+	min-height:300px;
 	padding-top:10px;
 	border-right:2px solid black;
 	border-left:2px solid black;
 	text-align:left;
-	background-color:#94600D;
+	
 	
 }
 
@@ -346,7 +390,21 @@ table td[colspan="2"] {
 	box-shadow: 2px 2px 2px black;
 	margin-bottom:5%;
 	padding-bottom:0;
-	height:auto;
+	
+}
+
+.article-header {
+
+	overflow-x: auto;
+	
+	padding: 5px;
+	
+	margin: auto;
+	
+	width: 50%;
+	
+	
+
 }
 
 .article-header-container {
@@ -357,6 +415,7 @@ table td[colspan="2"] {
 	background-color: #206EC4;
 	color: white;
 	padding:5%;
+	
 	/*padding-bottom:10%;*/
 	
 }
@@ -374,13 +433,13 @@ table td[colspan="2"] {
 .english-translation, .spanish-translation {
 	height:350px;
 	overflow:auto;
-	padding:5px
+	padding:10px
 	
 
 }
 .english-translation-header, .spanish-translation-header  {
 	border-bottom: 2px solid black;
-	padding:5px;
+	padding:15px;
 }
 
 #government-topics-container {
@@ -391,7 +450,7 @@ table td[colspan="2"] {
 	
 #politics-image-background-1 {
 	padding:0;
-	height:300px;
+	min-height:300px;
 	/*background-color:white;*/
 	background-image:url('https://upload.wikimedia.org/wikipedia/en/e/e3/DemocraticLogo.png');
 	background-repeat:no-repeat;
@@ -401,7 +460,7 @@ table td[colspan="2"] {
 
 #politics-image-background-2 {
 	padding:0;
-	height:300px;
+	min-height:300px;
 	/*background-color:white;*/
 	
 	background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Republicanlogo.svg/2000px-Republicanlogo.svg.png');
@@ -410,10 +469,13 @@ table td[colspan="2"] {
 	background-size:contain;
 }
 
+#politics-form-container {
 
+	background-color:#1E2DD7;
+}
 
 #politics-topic-form {
-	height:300px;
+
 	margin: 0;
 	padding-top: 10px;
 	/*border-right:2px solid black;
@@ -463,6 +525,17 @@ table td[colspan="2"] {
 	padding:5px;
 	
 }
+
+button {
+
+	white-space:normal;
+	padding: 10px;
+	border-radius:5px;
+
+}
+
+
+
 	/* Resume Page */
 #resume {
 	margin-top:5%;
@@ -525,7 +598,7 @@ table td[colspan="2"] {
 .resume-sections:not(#translation-experience) {
 	background-color: white;
 	border-right:2px solid black;
-	/*height: 700px;*/
+	height: 700px;
 	
 	
 }
@@ -551,7 +624,66 @@ table td[colspan="2"] {
 
   /* Responsive styles */
 
+
+@media only screen and (max-width: 320px) {
+
+	form {
+	
+		overflow-x: auto
+		
+	}
+	
+	.article-header {
+		
+		width: 100%;
+	
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	button {
+	
+		margin-bottom: 3%;
+		
+	}
+
+}
+
+@media only screen and (max-width: 991px) {
+	
+	.english-translation-header {
+		
+		border-top: 2px solid black;
+	
+	}
+	
+	.header-background {
+	
+		height: 100px;
+	}
+	
+	.resume-sections:not(#translation-experience) {
+		height: auto;
+	}
+	
+	#talkbubble:before  {
+		right: 50%;
+		top: -3%;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 20px solid lightgrey;
+		border-top: none;
+	}
+
+
+
+
+
+}
 /* Mobile Sm */
+/*
 @media only screen and (max-width:319px) {
 	.resume-sections:not(#translation-experience) {
 		height: auto;
@@ -672,7 +804,7 @@ table td[colspan="2"] {
 		border-bottom: 2px solid black;
 	}
 }
-/* Mobile Med */
+/* Mobile Med 
 @media only screen and (max-width: 374px) and (min-width:360px) {
 	.resume-sections:not(#translation-experience) {
 		height: auto;
@@ -698,9 +830,7 @@ table td[colspan="2"] {
 		height:20px;
 		
 	}
-	.header-bubble h1 {
-		/*font-size:14px;*/
-	}
+	
 	.header-bubble-string-tie {
 		width:4%;
 		right:48%;
@@ -722,7 +852,7 @@ table td[colspan="2"] {
 		border-bottom: 2px solid black;
 	}
 }
-/* Mobile Lg */
+/* Mobile Lg 
 @media only screen and (max-width: 413px) and (min-width:375px) {
 	.resume-sections:not(#translation-experience) {
 		height: auto;
@@ -764,7 +894,7 @@ table td[colspan="2"] {
 		border-bottom: 2px solid black;
 	}
 }
-/* Mobile Sm */
+/* Mobile Sm 
 @media only screen and (max-width: 600px) and (min-width:414px) {
 	.resume-sections:not(#translation-experience) {
 		height: auto;
@@ -811,7 +941,7 @@ table td[colspan="2"] {
 	}
 }
 
-/* Tablet */
+/* Tablet 
 @media only screen and (max-width: 799px) and (min-width:601px) {
 	.resume-sections:not(#translation-experience) {
 		height: auto;
@@ -858,7 +988,7 @@ table td[colspan="2"] {
 		border-bottom: 2px solid black;
 	}
 }
-/* Laptop */
+/* Laptop 
 @media only screen and (min-width: 800px) and (max-width:959px) {
 	.resume-sections:not(#translation-experience) {
 		height: auto;
@@ -899,6 +1029,7 @@ table td[colspan="2"] {
 	}
 
 }
+
 @media only screen and (max-width: 1023px) and (min-width:960px) {
 	#portfolio-img {
 		height: 600px;
@@ -1065,4 +1196,4 @@ table td[colspan="2"] {
 		border-radius:100px;
 }
 }
-  
+*/

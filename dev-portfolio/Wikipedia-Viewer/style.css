@@ -1,174 +1,292 @@
 body {
+
 	background-color: #0D8931;
+	
 	background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png');
+	
 	background-size: contain;
+	
 	background-repeat: no-repeat;
+	
 	background-position: center;
+	
 	background-attachment: fixed;
+	
 	overflow-wrap: break-word;
+	
 	word-wrap: break-word;
+	
 	-webkit-hyphens: auto;
+	
 	-ms-hyphens: auto;
+	
 	-moz-hyphens: auto;
+	
 	hyphens: auto;
+	
 }
 
 .container {
 	
 	padding-top: 2%;
+	
 }
 
 #wikipedia-title {
-	background-color:rgba(0,0,0,.6);
-	border-radius:100%;
-	padding:5% 2% 5% 2%;
-	overflow:auto;
+
+	background-color: rgba(0,0,0,.6);
+	
+	border-radius: 100%;
+	
+	padding: 5% 2% 5% 2%;
+	
+	overflow: auto;
+	
+	margin-bottom: 3%;
+	
 }
 
 #wikipedia-title h1 {
+
 	color: white;
+	
 	text-shadow: 2px 2px 2px black;
+	
 }
 
 #searchbox {
+
 	background-color: rgba(199,198,199,.5);
-	border-radius:5px;
+	
+	border-radius: 5px;
+	
 	padding: 2%;
-	text-align:center;
+	
+	text-align: center;
+	
 	margin-bottom: 5%;
+	
 }
 
 form h4 {
-	text-shadow:1px 1px 1px white;
-	color:black;
+
+	text-shadow: 1px 1px 1px white;
+	
+	color: black;
+	
 }
+
+.border-red {
+
+	border: 2px solid red;
+	
+}
+
 #alert-warning {
-	color:red;
-	display:none;
+
+	color: red;
+	
+	display: none;
+	
 }
+
+.random-button-container {
+
+	padding-top:2%;
+
+}
+
+#random {
+	
+	background-color: black;
+	
+}
+
 .title-div {
+
 	background-color: beige;
+	
 	margin-bottom: 3%;
-	border:2px solid black;
+	
+	border: 2px solid black;
+	
 	border-radius: 10px;
-	box-shadow:2px 2px 2px;
+	
+	box-shadow: 2px 2px 2px;
+	
 	padding: 2%;
-	max-height:200px;
-	overflow-y:auto;
+	
+	max-height: 200px;
+	
+	overflow-y: auto;
+	
 }
 
 .title-div:hover {
+
 	box-shadow: 5px 5px 5px #1159D7;
-}
-
-#favorites-bar {
-	padding:10px;
-	display:none;
-	position:fixed;
-	bottom:0;
-	right:0;
-	max-width:45%;
-	background-color:rgba(255,240,250,.5);
-	
-}
-
-#favorites-storage-ul, #bookmarks-storage-ul {
-	list-style-type:square;
-	max-height:100px;
-	overflow-y:auto;
-}
-
-#bookmarks-bar {
-	padding:10px;
-	display:none;
-	position:fixed;
-	max-width:45%;
-	bottom:0;
-	left:0;
-	background-color:rgba(255,240,250,.5);
-	
 	
 }
 
 .glyphicon-star {
+
 	color: rgb(13,167,255);
-	cursor:pointer;
-}
-.glyphicon-bookmark  {
-	color: #0D8931;
-	cursor:pointer;
-}
-
-.btn[data-target="#favorites-storage"]:hover {
-	background-color:rgba(255,0,0,1);
-}
-.glyphicon-remove {
-	color: red;
+	
 	cursor: pointer;
+	
 }
 
-#random {
-	background-color: black;
-}
-.glyphicon-question-sign {
-	color: white;
-	background-color: black;
-}
-.bookmarks-li a, .favorites-li a {
-	color: black;
+.glyphicon-bookmark  {
+
+	color: #0D8931;
+	
+	cursor: pointer;
+	
 }
 
-#favorites-amount {
-	background-color: white;
-	color:#4397FE;
+.bar {
+
+	padding: 10px;
+	
+	display: none;
+	
+	position: fixed;
+	
+	bottom: 0;
+	
+	max-width: 45%;
+	
+	background-color: rgba(255,240,250,.5);
+	
 }
-#favorites-button {
-	background-color: rgba(13,167,255,.5);
-	color:white;
+
+.bar .btn {
+
+	white-space: normal;
+	
 }
+
+.caret {
+
+	font-size: 20px
+	
+}
+
+#bookmarks-bar {
+	
+	left: 0;
+
+}
+
 #bookmarks-button {
+
 	background-color: #0D8931;
+	
 	color:white;
-}
-#bookmarks-amount {
-	background-color: white;
-	color:#0D8931;
-}
-#bookmarks-button:hover {
-	box-shadow: 3px 2px 15px 3px #1CFF00 inset;
-}
-#favorites-button:hover {
-	box-shadow: 3px 2px 10px 3px #43DCFE inset;
+	
 }
 
-.border-red {
-	border: 2px solid red;
+#bookmarks-button:hover {
+
+	box-shadow: 3px 2px 15px 3px #1CFF00 inset;
+	
+}
+
+#bookmarks-amount {
+
+	background-color: white;
+	
+	color: #0D8931;
+	
 }
 
 .info a {
+
+	color: white;
+	
+	text-decoration: none;
+	
+}
+
+#favorites-bar {
+
+	right: 0;
+
+}
+
+#favorites-button {
+
+	background-color: rgba(13,167,255,.5);
+	
 	color:white;
-	text-decoration:none;
+	
 }
-.btn {
-	white-space:normal;
+
+.btn[data-target="#favorites-storage"]:hover {
+
+	background-color: rgba(255,0,0,1);
+	
 }
+
+#favorites-button:hover {
+
+	box-shadow: 3px 2px 10px 3px #43DCFE inset;
+	
+}
+
+#favorites-amount {
+
+	background-color: white;
+	
+	color: #4397FE;
+	
+}
+
+#favorites-storage-ul, #bookmarks-storage-ul {
+
+	list-style-type: square;
+	
+	max-height: 100px;
+	
+	overflow-y: auto;
+	
+	padding-top: 3%;
+	
+}
+
+.bookmarks-li a, .favorites-li a {
+
+	color: black;
+	
+	font-size: 16px;
+	
+}
+
+.glyphicon-remove {
+
+	color: red;
+	
+	cursor: pointer;
+	
+}
+
+.glyphicon-question-sign {
+
+	color: white;
+	
+	background-color: black;
+	
+}
+
+	/* Responsive styles */
+
 @media only screen and (max-width:767px) {
-	#bookmarks-bar  {
-	position:static;
-	margin-bottom:5%;
-	text-align:center;
-	max-width:100%;
 	
-	}
-	#bookmarks-storage-ul, #favorites-storage-ul {
-		text-align:left;
 	
-	}
-	#favorites-bar {
-	position:static;
-	margin-bottom:0;
-	text-align:center;
-	max-width:100%;
+	.container {
+	
+		padding-top: 0;
+		
 	}
 	
 	#wikipedia-title {
@@ -176,9 +294,34 @@ form h4 {
 		border-radius:0;
 		
 	}
-	.container {
 	
-		padding-top: 0;
+	.bar {
+	
+		position: static;
+	
+		text-align: center;
+	
+		max-width: 100%;
+	
 	}
+	
+	#bookmarks-bar  {
+		
+		margin-bottom: 5%;
+	
+	}
+	
+	#bookmarks-storage-ul, #favorites-storage-ul {
+		
+		text-align: left;
+	
+	}
+	
+	#favorites-bar {
+		
+		margin-bottom: 0;
+		
+	}
+	
 
 }
