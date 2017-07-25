@@ -180,6 +180,12 @@
 .social-issues {
 	background-color: #9200FF;
 }
+
+html, body {
+	
+	height: 100%;
+	
+}
  	
 body {
 	
@@ -198,16 +204,19 @@ body {
 	hyphens: auto;
 }
 
-footer {
+.footer {
 	background-color: #159C56;
 	padding: 10px;
+	position: relative;
+	position: sticky;
+	top: 100%;
 }
 
-footer p {
+.footer p {
 	font-size: 16px;
 }
 
-footer h4 {
+.footer h4 {
 	color:beige;
 	text-shadow: 1px 1px 1px black;
 }
