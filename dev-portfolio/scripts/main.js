@@ -116,11 +116,33 @@ if (pageTitle.match(/about/i) !== null) {
 		
 		if (pageTitle.match(/courses/i) !== null) {
 			$('.nav-courses').addClass('active');
+			let navbarHeight = $('.navbar').height();
+			alert(navbarHeight);
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			
+			$(window).resize(function() {
+				let navbarHeight = $('.navbar').height();
+
+				
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			
+			});	
 		}
 		
 		else if (pageTitle.match(/backend/i) !== null) {
 			$('.nav-frontend-backend-projects').addClass('active');
 			$('.nav-projects').addClass('active');
+			let navbarHeight = $('.navbar').height();
+			
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			
+			$(window).resize(function() {
+				let navbarHeight = $('.navbar').height();
+
+				
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			
+			});	
 		}
 		
 		else if (pageTitle.match(/frontend /i) !== null) {
@@ -129,7 +151,7 @@ if (pageTitle.match(/about/i) !== null) {
 			let navbarHeight = $('.navbar').height();
 			
 			$('body').css({'padding-top': navbarHeight + 'px'});
-			alert(navbarHeight);
+			
 			$(window).resize(function() {
 				let navbarHeight = $('.navbar').height();
 
