@@ -1,29 +1,49 @@
 $(document).ready(function() {
 let = pageTitle = $(document).find("title").text();					// All Pages
 if (pageTitle.match(/about/i) !== null) {
+	
 			$('.nav-about').addClass('active');
-			if ($(window).width() >= 176 && $(window).width() <= 240 ) {
+			let navbarHeight = $('.navbar').height();
+			if ($(window).width()  <  1200) {
+					
 					$('#home-navbar').hide();
 					$('#mobile-nav-scroll').hide();
+					$('#mobile-navbar').show(function() {
+						$('body').css({'padding-top': navbarHeight + 'px'});
+					
+					});
 					
 				}
-				else if ($(window).height() >= 1400) {
-					$('#mobile-navbar').hide();
+				else  {
+					$('#mobile-navbar').hide(function() {
+						$('body').css({'padding-top': 0});
+					
+					
+					});
 					$('#home-navbar').show();
 					$('#mobile-nav-scroll').show();
-					alert('big');
+					
 				}
 			$(window).resize(function() {
-				if ($(window).width() >= 176 && $(window).width() <= 359 ) {
-					$('#mobile-navbar').show();
+			let navbarHeight = $('.navbar').height();
+				if ($(window).width()  <  1200) {
 					$('#home-navbar').hide();
 					$('#mobile-nav-scroll').hide();
+					$('#mobile-navbar').show(function() {
+						$('body').css({'padding-top': navbarHeight + 'px'});
+					
+					});
+					
 				}
-				else if ($(window).width() >= 1400) {
-					$('#mobile-navbar').hide();
+				else  {
+					$('#mobile-navbar').hide(function() {
+						$('body').css({'padding-top': 0});
+					
+					
+					});
 					$('#home-navbar').show();
 					$('#mobile-nav-scroll').show();
-					alert('big');
+					
 				}
 				
 			
@@ -40,7 +60,7 @@ if (pageTitle.match(/about/i) !== null) {
 			$('.nav-projects').addClass('active');
 		}
 		
-		else if (pageTitle.match(/frontend /i) !== null) {
+		else if (pageTitle.match(/frontend/i) !== null) {
 			$('.nav-frontend-projects').addClass('active');
 			$('.nav-projects').addClass('active');
 		}
@@ -59,10 +79,10 @@ if (pageTitle.match(/about/i) !== null) {
 		if (pageTitle.match(/about/i) !== null) {
 			//$('.nav-about').addClass('active');
 			console.log($(window).height());
-			alert('yo');
+			//alert('yo');
 			if ($(window).height() >= '1440px') {
 				
-				$('body').css({'background-color':'red'});
+				//$('body').css({'background-color':'red'});
 			}
 			//$('nav').removeClass('navbar-fixed-top');
 		}
