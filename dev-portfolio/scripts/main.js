@@ -4,7 +4,7 @@ if (pageTitle.match(/about/i) !== null) {
 	
 			$('.nav-about').addClass('active');
 			let navbarHeight = $('.navbar').height();
-			if ($(window).width()  <  1200) {
+			if ($(window).width()  <  1440) {
 					
 					$('#home-navbar').hide();
 					$('#mobile-nav-scroll').hide();
@@ -26,7 +26,7 @@ if (pageTitle.match(/about/i) !== null) {
 				}
 			$(window).resize(function() {
 			let navbarHeight = $('.navbar').height();
-				if ($(window).width()  <  1200) {
+				if ($(window).width()  <  1440) {
 					$('#home-navbar').hide();
 					$('#mobile-nav-scroll').hide();
 					$('#mobile-navbar').show(function() {
@@ -53,16 +53,43 @@ if (pageTitle.match(/about/i) !== null) {
 		
 		if (pageTitle.match(/courses/i) !== null) {
 			$('.nav-courses').addClass('active');
+			let navbarHeight = $('.navbar').height();
+
+				
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			$(window).resize(function() {
+				let navbarHeight = $('.navbar').height();
+
+				
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			
+			});
 		}
 		
 		else if (pageTitle.match(/backend/i) !== null) {
 			$('.nav-frontend-backend-projects').addClass('active');
 			$('.nav-projects').addClass('active');
+			let navbarHeight = $('.navbar').height();
+
+				
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			$(window).resize(function() {
+				let navbarHeight = $('.navbar').height();
+
+				
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			
+			});		
+					
 		}
 		
 		else if (pageTitle.match(/frontend/i) !== null) {
 			$('.nav-frontend-projects').addClass('active');
 			$('.nav-projects').addClass('active');
+			
+					
+					
+				
 		}
 		
 		else if (pageTitle.match(/contact/i) !== null) {
@@ -99,6 +126,17 @@ if (pageTitle.match(/about/i) !== null) {
 		else if (pageTitle.match(/frontend /i) !== null) {
 			$('.nav-frontend-projects').addClass('active');
 			$('.nav-projects').addClass('active');
+			let navbarHeight = $('.navbar').height();
+			
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			alert(navbarHeight);
+			$(window).resize(function() {
+				let navbarHeight = $('.navbar').height();
+
+				
+			$('body').css({'padding-top': navbarHeight + 'px'});
+			
+			});		
 		}
 		
 		else if (pageTitle.match(/contact/i) !== null) {
