@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 	<head>
 	
@@ -10,13 +10,13 @@
 		
 		<title>Wikipedia Viewer</title>
 		
+		<link rel="shortcut icon" type="image/x-icon" href="https://cdn.pixabay.com/photo/2017/08/05/11/19/logo-2582755_960_720.png">
+		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		
-		<link rel="shortcut icon" type="image/x-icon" href=" https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" >	  
 		
 		<link rel="stylesheet" href="style.css">
-			
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">	  
 	
 	</head>
 	
@@ -27,13 +27,9 @@
 		
 			<div class="row">
 			
-				<div id="wikipedia-title" class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3"  >
-				
-					<h1 class="text-center">Wikipedia Viewer</h1>
-					
-				</div>  <!-- end of #wikipedia-title -->
-				
-			</div> <!-- end of .row -->
+				<div id="wikipedia-title" class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3"  ><h1 class="text-center">Wikipedia Viewer</h1></div>
+
+			</div> 
 		
 			<div class="row">
 			
@@ -41,59 +37,41 @@
 			
 					<form class="form-inline" >
 				
-						<h4>Search for an article. You can also choose the number of results (the default is 10). </h4>
+						<h2>Search for an article. You can also choose the number of results (the default is 10). </h2>
 						
-						<h4 id="alert-warning">Please enter an article keyword.</h4>
+						<p id="alert-warning">Please enter an article keyword.</p>
 						
 						<div class="form-group">
 						
-							<input id="search" class="form-control" type="text" placeholder="Article search"  >
+							<label for="search">Search: </label><input id="search" class="form-control" type="text" placeholder="Article search" required />
 							
 						</div>
 						
 						<div class="form-group">
 						
-							<input id="search-limit" class="form-control" type="text" placeholder="Search result limit">
+							<label for="search">Search Limit: </label><input id="search-limit" class="form-control" type="number" placeholder="Search result limit" required />
 							
 						</div>
 						
 						<div class="btn-group">
 						
-							<button id="search-button" class="btn btn-primary" type="submit" >
-							
-								<i class="glyphicon glyphicon-search"></i>
-								
-							</button>
-							
-							<a href="#" data-toggle="popover" data-container=".container" data-trigger="hover" title="Lucky Search" data-content="One random article from the keyword(s) searched will be returned."> 
-							
-								<button id="lucky" class="btn btn-default" type="submit">
-								
-									<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Clover_symbol.svg/220px-Clover_symbol.svg.png" width="15" alt="image of four leaf clover" />
-									
-								</button>
-								
-							</a>
-							
+							<button id="search-button" class="btn btn-primary" type="button" ><i class="glyphicon glyphicon-search"></i></button>
+	
+							<a id="lucky" class="btn btn-default" href="#" data-toggle="popover" data-container=".container" data-trigger="hover" title="Lucky Search" data-content="One random article from the keyword(s) searched will be returned."><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Clover_symbol.svg/220px-Clover_symbol.svg.png" width="15" alt="image of four leaf clover" /></a> 
+					
 						</div>
-							
-						
-						
-							<div class="text-center random-button-container">
-							
-								<a href="#" data-toggle="popover" data-container=".container"  data-trigger="hover" title="Random Search" data-content="One random article will be returned.">
-								
-									<button id="random" class="btn btn-default" type="button" ><i class="glyphicon glyphicon-question-sign"></i></button>
-							
-								</a>
+			
+                        <div class="text-center random-button-container">
+                        
+                            <a id="random" class="btn btn-default" href="#" data-toggle="popover" data-container=".container"  data-trigger="hover" title="Random Search" data-content="One random article will be returned."><i class="glyphicon glyphicon-question-sign"></i></a>
 
-					 		</div>
+                        </div>
 					 	
 					</form>
 						
-				</div> <!--end of #searchbox -->
+				</div> <!-- end of #searchbox -->
 				
-			</div> <!--end of .row -->
+			</div> <!-- end of .row -->
 			
 			<div class="row">
 			
@@ -101,53 +79,29 @@
 				
 			</div> <!-- end of .row -->
 			
-		</div> <!--end of .container-->
+		</div> <!-- end of .container-->
 		
 		
 		<div id="bookmarks-bar" class="bar" >
 		
-				<a href="#" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="top" data-content="These articles are added temporarily and will not be available when you reload the page">
-				
-					<span class="badge info">?</span>
-					
-				</a>
-				
-				<button id="bookmarks-button" class="btn" data-toggle="collapse" data-target="#bookmarks-storage" > Read Later
-					
-					<span id="bookmarks-amount"  class="badge"></span>
-					
-				</button>
-				
-			<div id="bookmarks-storage" class="collapse">
-			
-				<ul id="bookmarks-storage-ul" ></ul>
-				
-			</div> <!-- end of #bookmarks-storage -->
+            <a href="#" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="top" data-content="These articles are added temporarily and will not be available when you reload the page"><span class="badge info">&#63;</span></a>
+
+            <button id="bookmarks-button" class="btn" data-toggle="collapse" data-target="#bookmarks-storage" > Read Later <span id="bookmarks-amount"  class="badge"></span></button>
+
+			<div id="bookmarks-storage" class="collapse"><ul id="bookmarks-storage-ul" ></ul></div>
 			 
-		</div> <!-- end of #bookmarks-bar -->
+		</div> 
 		
 			 
 		<div id="favorites-bar" class="bar" >
 				
-			<a href="#" data-toggle="popover" data-trigger="hover" data-container="#favorites-bar" data-placement="top" data-content="These articles are saved in your browser and will be available when you reload the page">
-				
-				<span class="badge info">?</span>
-				
-			</a>
+			<a href="#" data-toggle="popover" data-trigger="hover" data-container="#favorites-bar" data-placement="top" data-content="These articles are saved in your browser and will be available when you reload the page"><span class="badge info">&#63;</span></a>
+
+			<button id="favorites-button" class="btn" data-toggle="collapse" data-target="#favorites-storage" >Favorites <span id="favorites-amount" class="badge" ></span></button>
+	
+			<div id="favorites-storage" class="collapse"><ul id="favorites-storage-ul"></ul></div>
 			
-			<button id="favorites-button" class="btn" data-toggle="collapse" data-target="#favorites-storage" >Favorites
-				
-				<span id="favorites-amount" class="badge" ></span>
-				
-			</button>
-				
-			<div id="favorites-storage" class="collapse">
-			
-				<ul id="favorites-storage-ul"></ul> 
-					
-			</div> <!-- end of #favorites-storage -->
-			
-		</div> <!-- end of #favorites-bar -->
+		</div>
 	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		

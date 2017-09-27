@@ -1,138 +1,178 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 	<head>
+
 		<title>Courses</title>
+
 		<meta charset="utf-8">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 		<link rel="stylesheet" href="styles/main.css">
 		
 	</head>
-	<body class="courses-body">
-		
-		<div class="Navbar"></div>	
-		<div class="container" id="courses" >
+
+	
+	<body>
+	
+		<nav class="Navbar"></nav>	
+
+        <div id="courses" class="container full-container course-full-container">
+        
+            <div class="row">
+
+                <div class="col-md-12 courses-container"  >
+            
+                    <div class="row" >
+            
+                        <h1 class="text-center"> Completed Courses </h1>
+
+                        <div id="frontend-courses-container" class="col-md-5 completed-courses"  >
+
+                            <h2>Frontend Courses </h2>
+
+                            <h3><a href="https://www.codecademy.com/" target="_blank" >Codecademy</a></h3>
+
+                            <ul> 
+
+                                <li>JavaScript Course</li>
+
+                                <li>jQuery Course</li>
+
+                                <li>HTML & CSS</li>
+
+                            </ul>
+
+                            <h3><a href="https://www.w3schools.com/default.asp" target="_blank">W3Schools</a></h3>
+
+                            <ul> 
+
+                                <li>CSS Tutorial</li>
+
+                                <li>JavaScript Tutorial</li>
+
+                                <li>jQuery Tutorial</li>
+
+                                <li>HTML5 Tutorial</li>
+
+                            </ul>
+
+                            <h3><a href="http://htmldog.com/" target="_blank">HTML Dog</a></h3>
+                        
+                            <ul>
+
+                                <li>JavaScript Beginner/Intermediate Tutorial</li>
+
+                            </ul>
+
+                            <h3><a href="https://www.codeschool.com/" target="_blank" >Code School</a></h3>
+
+                            <ul> 
+
+                                <li>Try jQuery: Intro to jQuery  </li>
+
+                            </ul>
+
+                            <h3 ><a href="https://www.khanacademy.org/" target="_blank" >Khan Academy</a></h3>
+
+                            <ul> 
+
+                                <li>Intro to HTML/CSS: Making webpages</li>
+
+                                <li>HTML/JS: Making webpages interactive</li>
+
+                                <li>HTML/JS: Making webpages interactive with jQuery</li>
+
+                                <li>Intro to JS: Drawing & Animation</li>
+        
+                            </ul>
+
+                        </div> <!-- end of #frontend-courses-container -->
+                    
+                        <div id="backend-courses-container" class="col-md-5 completed-courses"  >
+
+                            <h2>Backend Courses </h2>
+
+                            <h3><a href="https://www.w3schools.com/default.asp" target="_blank" >W3Schools</a></h3>
+
+                            <ul> 
+
+                                <li>PHP 5 Tutorial</li>
+
+                                <li>SQL Tutorial</li>
+
+                            </ul>
+
+                            <h3><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></h3>
+
+                            <ul> 
+
+                                <li>Learn SQL Course</li>
+
+                                <li>PHP Course</li>
+
+                                <li>Ruby Course</li>
+
+                            </ul>
+
+                            <h3><a href="https://sqlzoo.net/" target="_blank">SQLZOO</a></h3>
+
+                            <ul> 
+
+                                <li>HTML & CSS</li>
+
+                            </ul>
+
+                            <h3><a href="https://www.codeschool.com/" target="_blank" >Code School</a></h3>
+
+                            <ul> 
+
+                                <li>Rails for Zombies</li>
+
+                            </ul>
+
+                            <h3 ><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a></h3>
+
+                            <ul> 
+
+                                <li>Intro to SQL: Querying and managing data</li>
+
+                            </ul>
+
+                        </div> <!-- end of #backend-courses-container -->
+
+                    </div> <!-- end of .row -->
+
+                </div> <!-- end of .courses-container -->
+            
+            </div> <!-- end of .row -->
+            
+            <div class="row">
 			
-			<div class="col-md-12 courses-container" >
-				
-				<div class="row" >
-				
-						<h2 class="text-center"> Completed Courses </h2>
-					<div class="col-md-6 frontend-courses-container"  >
-						<h4>Frontend Courses </h4>
-						<p data-toggle="collapse" data-target="#codecademy">Codecademy</p>
-							<p id="codecademy" class="collapse"><a target="_blank" href="#">"Codecademy</a> is an education company. But not one in the way you might think.
-							We're committed to building the best learning experience inside and out, making Codecademy the
-							best place for our team to learn, teach, and create the online learning experience of the
-							future."</p>
-						<ul> 
-							<li>JavaScript Course</li>
-							<li>jQuery Course</li>
-							<li>HTML & CSS</li>
-						</ul>
-						<p data-toggle="collapse" data-target="#w3schools">W3Schools</p>
-							<p id="w3schools" class="collapse"><a href="https://www.w3schools.com/default.asp">"W3Schools </a> is a web developers site, with 
-							tutorials and references on web development languages such as HTML, CSS, JavaScript, PHP, SQL, W3.CSS, and Bootstrap, covering most aspects of web programming."</p>
-							<ul> 
-								<li>CSS Tutorial</li>
-								<li>JavaScript Tutorial</li>
-								<li>jQuery Tutorial</li>
-								<li>HTML5 Tutorial</li>
-							</ul>
-						<p data-toggle="collapse" data-target="#html-dog">HTML Dog</p>
-							<p id="html-dog" class="collapse"><a href="http://htmldog.com/">"HTML Dog</a> has been dishing out healthy code treats
-							 since 2003. The idea is, and has always been, to take the somewhat convoluted official specifications of client-side technologies (HTML and its relations) and present them in a much more readable, easier to understand, fashion."</p>
-							<ul>
-								<li>JavaScript Beginner/Intermediate Tutorial</li>
-							</ul>
-						<p data-toggle="collapse" data-target="#code-school">Code School</p>
-							<p id="code-school" class="collapse"> <a href="https://www.codeschool.com/">"Code School</a> is an online learning destination for existing and
-							 aspiring developers that teaches through entertaining content. Each course is built around a creative theme and storyline so that it feels like
-							  you’re playing a game, not sitting in a classroom. We combine gaming mechanics with video instruction and in-browser coding challenges to make 
-							  learning fun and memorable. With over 60 courses covering HTML/CSS, JavaScript, Ruby, Python, .NET, iOS, Git, databases, and more, Code School 
-							  pairs experienced instructors with meticulously produced, high-quality content inspired by our community and network of members."</p>
-							<ul> 
-								<li>Try jQuery: Intro to jQuery  </li>
-							</ul>
-						<p data-toggle="collapse" data-target="#khan-academy">Khan Academy</p>
-							<p id="khan-academy" class="collapse"><a href="https://www.khanacademy.org/">"Khan Academy</a> offers practice exercises, instructional videos, and 
-							a personalized learning dashboard that empower learners to study at their own pace in and outside of the classroom. We tackle math, science, computer
-							 programming, history, art history, economics, and more. Our math missions guide learners from kindergarten to calculus using state-of-the-art, adaptive
-							  technology that identifies strengths and learning gaps. We've also partnered with institutions like NASA, The Museum of Modern Art, The California Academy
-							   of Sciences, and MIT to offer specialized content."</p>
-							<ul> 
-								<li>Intro to HTML/CSS: Making webpages</li>
-								Intro to HTML/CSS: Making webpages
-								<li>HTML/JS: Making webpages interactive</li>
-								<li>HTML/JS: Making webpages interactive with jQuery</li>
-								<li>Intro to JS: Drawing & Animation</li>
-				
-							</ul>
-					</div> <!--end of col-md-6-->
-					<div class="col-md-6"  >
-						<h4>Backend Courses </h4>
-						<p data-toggle="collapse" data-target="#w3schools2">W3Schools</p>
-							<p id="w3schools2" class="collapse"><a href="https://www.w3schools.com/default.asp">"W3Schools </a> is a web developers site, with tutorials and references on
-							 web development languages such as HTML, CSS, JavaScript, PHP, SQL, W3.CSS, and Bootstrap, covering most aspects of web programming."</p>
-							<ul> 
-								<li>PHP 5 Tutorial</li>
-								<li>SQL Tutorial</li>
-							</ul>
-						<p data-toggle="collapse" data-target="#codecademy2">Codecademy</p>
-							<p id="codecademy2" class="collapse"><a target="_blank" href="#">"Codecademy</a> is an education company. But not one in the way you might think.
-							We're committed to building the best learning experience inside and out, making Codecademy the
-							best place for our team to learn, teach, and create the online learning experience of the
-							future."</p>
-							<ul> 
-								<li>Learn SQL Course</li>
-								<li>PHP Course</li>
-								<li>Ruby Course</li>
-							</ul>
-						<p data-toggle="collapse" data-target="#sqlzoo">SQLZOO</p>
-							<p id="sqlzoo" class="collapse"><a href="https://sqlzoo.net/">"SQLZoo</a> includes tutorials and reference to
-							 support people learning SQL." </p>
-							<ul> 
-								<li>HTML & CSS</li>
-							</ul>
-						<p data-toggle="collapse" data-target="#code-school2">Code School</p>
-							<p id="code-school2" class="collapse"><a href="https://www.codeschool.com/">"Code School</a> is an online 
-							learning destination for existing and aspiring developers that teaches through entertaining content. Each
-							 course is built around a creative theme and storyline so that it feels like you’re playing a game, not sitting
-							  in a classroom. We combine gaming mechanics with video instruction and in-browser coding challenges to make
-							   learning fun and memorable. With over 60 courses covering HTML/CSS, JavaScript, Ruby, Python, .NET, iOS, Git,
-								databases, and more, Code School pairs experienced instructors with meticulously produced, high-quality content
-								 inspired by our community and network of members."</p>
-							<ul> 
-								<li>Rails for Zombies</li>
-							</ul>
-						<p data-toggle="collapse" data-target="#khan-academy2">Khan Academy</p>
-							<p id="khan-academy2" class="collapse"><a href="https://www.khanacademy.org/">"Khan Academy</a> offers practice exercises, 
-							instructional videos, and a personalized learning dashboard that empower learners to study at their own pace in and outside 
-							of the classroom. We tackle math, science, computer programming, history, art history, economics, and more. Our math missions
-							 guide learners from kindergarten to calculus using state-of-the-art, adaptive technology that identifies strengths and learning gaps. 
-							 We've also partnered with institutions like NASA, The Museum of Modern Art, The California Academy of Sciences, and MIT to offer specialized content."</p>
-							<ul> 
-								<li>Intro to SQL: Querying and managing data</li>
-				
-							</ul>
-					</div> <!--end of .col-md-6-->
-					
-				</div><!--end of .row-->
-			</div> <!--end of .courses-container-->
-			<div class="text-center col-md-12" style="width:100%;position:relative;background-image:url('http://www.photoshopbuzz.com/wp-content/uploads/2013/06/woodtexture5.jpg');background-size:contain;height:30px;margin-bottom:0;margin-top:0;">
-				<div style="position:absolute;bottom:0;left:0;right:0;margin:auto;height:100px;width:100px;background-size:contain;background-position:center bottom;background-repeat:no-repeat;background-image:url('http://www.bluemaize.net/im/baby/blackboard-eraser-3.jpg');">
-				
-				
-				</div>
-			</div>
-		</div>	<!--end of #courses-->
+                <div class="text-center col-md-12 chalkboard-base">
+
+                    <div class="chalk"></div>
+                
+                </div> <!-- end of .chalkboard-base -->
 			
+			</div> <!-- end of .row -->
+
+		</div> <!-- end of .course-full-container -->
+	
 		<footer class="footer"></footer>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		<script src="https://use.fontawesome.com/7513968413.js"></script>
+
   		<script src="scripts/main.js"></script>
 
 	</body>
+
 </html>

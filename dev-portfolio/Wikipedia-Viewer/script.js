@@ -1,20 +1,21 @@
 /*
 	Explanation of program:
 	
-	When a user enters an article keyword(s) and chooses the number of articles they wish to see
-	displayed that number of Wikipedia articles pertaining to the article keyword(s) will be
-	displayed below the form (if they choose no number of articles the default number of 10 will be
-	used. If the lucky button is clicked only 1 article pertaining to the article keyword(s) will be
-	displayed. If the random button is clicked, one random article will be displayed regardless of
-	article keyword(s). Each article box will show the title and have a max of 3 sentences (or 'N/A'
-	if no introductory sentences are available) shown giving a brief overview of the article along
-	with a star button to favorite the article and save it to the browser's local storage and a
-	bookmark button to bookmark it and read later (it will not be saved to local storage and
-	therefore will not be available after refreshing the page). As articles are added to either
-	category of stored articles, the number of articles in that category will automatically
-	increment. Clicking on the article title in the article box or in the 'Favorites 'or 'Read Later'
-	bars at the bottom of the screen will open that article up in a new page. The user can delete the
-	articles that are favorited or bookmarked and favorite the ones added to the 'Read Later' bar.   
+    When a user clicks on one of the buttons in the form, an article(s) will be displayed below
+    the form by making an ajax call to wikipedia api. When a user enters an article keyword(s),
+    chooses the number of articles they wish to see displayed, and clicks the default search button,
+    the specified number of Wikipedia articles pertaining to the article keyword(s) will be displayed
+    below the form (if they choose no number of articles, the default number of 10 will be used). If
+    the lucky button is clicked only 1 article pertaining to the article keyword(s) will be
+    displayed. If the random button is clicked, one random article will be displayed regardless of
+    article keyword(s). Each article box will show the title and have a max of 3 introductory
+    sentences (or 'N/A' if no introductory sentences are available) giving a brief overview of the
+    article along with a star button to favorite the article and save it to the browser's local
+    storage and a bookmark button to bookmark it and read later (it will not be saved to local
+    storage). As articles are added to either category of stored articles, the number of articles in
+    that category displayed next to the category name will automatically increase and decrease when
+    they are deleted. Clicking on the article title in the article box or in the 'Favorites 'or 'Read
+    Later' bars at the bottom of the screen will open that article up in a new page.  
 	
 	
 */	
@@ -24,6 +25,8 @@ $(document).ready(function() {
 	$('form')[0].reset();
 	
 	let popoverOptions = {
+	
+	    // position popover to top of element or to right of element based on width of window
 	
 		placement: function () {
 		
@@ -63,15 +66,13 @@ $(document).ready(function() {
 	
 	}
 	
-	$('#favorites-button').mouseenter(function() {
+	$('#favorites-button').hover(function() {
 	
 		$('#favorites-button .badge').hide();
 		
 		$('#favorites-button').append('<span class="caret"></span>');
-		
-	});
-	
-	$('#favorites-button').mouseleave(function() {
+	    
+	    }, function() {
 	
 		$('#favorites-button .badge').show();
 		
@@ -79,25 +80,17 @@ $(document).ready(function() {
 		
 	});
 	
-	$('#bookmarks-button').mouseenter(function() {
+	$('#bookmarks-button').hover(function() {
 	
 		$('#bookmarks-button .badge').hide();
 		
 		$('#bookmarks-button').append('<span class="caret"></span>');
-		
-	});
-	
-	$('#bookmarks-button').mouseleave(function() {
+        
+        }, function() {
 	
 		$('#bookmarks-button .badge').show();
 		
 		$('#bookmarks-button .caret').remove();
-		
-	});
-	
-	$('form').on('submit', function(e) {
-	
-		e.preventDefault();
 		
 	});
 	
@@ -107,21 +100,21 @@ $(document).ready(function() {
 	
 	$('#random').click(randomSearch);
 	
-	let favoriteArticleCounter = 0;
+	let favoriteArticleCounter = 0; // counts number of articles added to favorites bar
 	
-	let bookmarkArticleCounter = 0;
+	let bookmarkArticleCounter = 0; // counts number of articles added to read later bar
 	
 	function randomSearch() {
 	
-		$('.title-div').hide();
+		$('.title-div, #alert-warning').hide(); // no need for alert (shows when no keywords are entered) as search keywords are not taken into account when searching for a random article
 		
-		$('#alert-warning').hide();
+		$('#search-limit').val(1); // only 1 article will be displayed
 		
-		$('#search').removeClass('border-red');
+		$('#search').removeClass('border-red').val(''); // remove this class as there is only shown when alert is shown (when no keywords are entered) and keywords are not taken into account when searching for a random article
 		
 		$.ajax({
 		
-			url: "https://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=1&utf8=&format=json",
+			url: "https://en.wikipedia.org/w/api.php?action=query&list=random&rnlimit=1&utf8=&format=json", // search for 1 random article
 			
 			dataType: "jsonp",
 			
@@ -131,37 +124,35 @@ $(document).ready(function() {
 				
 				// get info from 1 random article 
 				
-				extractInfo(searchTitle);
+				getIntro(searchTitle);
 					
-				} // end of success()
+			} // end of success()
 				
-			}); // end of $.ajax()
+		}); // end of $.ajax()
 			
-		} // end of randomSearch()
+	} // end of randomSearch()
 		
 	function luckySearch() {
 	
-		$('.title-div').hide();
+		$('.title-div').hide(); // clear results from any previous search
 		
 		let keyword = $('#search').val();
 		
-		let searchLimit = $('#search-limit').val();
-		
 		if (keyword.length !== 0) {
 		
-			$('#alert-warning').hide();
+			$('#alert-warning').hide(); // remove alert when keywords are entered
 			
-			$('#search').removeClass('border-red');
+			$('#search-limit').val(1); // only 1 article will be displayed
 			
 		}
 		
 		else if (keyword.length === 0) {
-		
-			$('.title-div').hide();
 			
-			$('#alert-warning').show().addClass('animated flash');
+			$('#alert-warning').addClass('animated flash').show(); // show alert when no keywords are entered
 			
-			$('#search').addClass('border-red');
+			$('#search').addClass('border-red'); // show this class when no keywords are entered
+			
+			$('#search-limit').val(''); // clear search result field as no results will be shown without keywords having been entered
 			
 			return false;
 		}
@@ -170,15 +161,15 @@ $(document).ready(function() {
 		
 		$.ajax({
 		
-			url: "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + keyword + "&utf8=&format=json",
+			url: "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + keyword + "&utf8=&format=json", // search for articles pertaining to keyword(s) searched
 			
 			dataType: "jsonp",
 			
 			success: function(info) {
 			
-				let searchArray = info.query.search;
+				let searchArray = info.query.search; // array of articles returned
 				
-				let storeTitlesArray = [];
+				let storeTitlesArray = []; 
 				
 				for (let i = 0; i < searchArray.length; i++) {
 				
@@ -186,71 +177,71 @@ $(document).ready(function() {
 					
 				}
 				
-				let random = Math.floor((Math.random() * storeTitlesArray.length) + 1);
+				let random = Math.floor((Math.random() * storeTitlesArray.length) + 1); // get a random number between 1 and number of articles returned
 				
 				// get info from 1 random article based on keyword
 				
-				extractInfo(storeTitlesArray[random]);	
+				getIntro(storeTitlesArray[random]);	
 
 			} // end of success()
 			
 		}); // end of $.ajax()
-		
-		$('form')[0].reset();
 
 	} // end of luckySearch()
 	
 	function defaultSearch() {
 	
-		$('.title-div').hide();
+		$('.title-div').hide(); // clear results from any previous search
 		
 		let keyword = $('#search').val();
 		
 		let searchLimit = $('#search-limit').val();
 		
 		if (searchLimit.length === 0) {
+	
+		    searchLimit = 10;
+		    
+		    if (keyword.length !== 0) {
+		        
+		        $('#search-limit').val(10); // 10 (default number) articles will be displayed if no number is entered
+		    
+		    }
+
+		} // end of if (searchLimit.length === 0)
 		
-			searchLimit = 10;
+		if (keyword.length === 0) {
+		    
+		    $('#alert-warning').addClass('animated flash').show(); // show alert when no keywords are entered
 			
-		}
-		
-		if (keyword === '') {
-		
-			$('.title-div').hide();
+			$('#search').addClass('border-red'); // show this class when no keywords are entered
 			
-			$('#alert-warning').show().addClass('animated flash');
-			
-			$('#search').addClass('border-red');
+			$('#search-limit').val(''); // clear search result field as no results will be shown without keywords having been entered
 			
 			return false;
 			
 		}
 		
-		else if (keyword !== '') {
+		else if (keyword.length !== 0) {
 			
-			$('#alert-warning').hide();
-			
-			$('#search').removeClass('border-red');
+			$('#alert-warning').hide(); // remove alert when keywords are entered
 			
 		}
-		
-		let titleOfArticle = '';
 
 		$.ajax({
 		
-			url: "https://en.wikipedia.org/w/api.php?action=query&list=search&srlimit=" + searchLimit + "&srsearch=" + keyword + "&utf8=&format=json",
+			url: "https://en.wikipedia.org/w/api.php?action=query&list=search&srlimit=" + searchLimit + "&srsearch=" + keyword + "&utf8=&format=json", // search for inputted number (or 10 if no number is entered) of articles pertaining to keyword(s)
 			
 			dataType: "jsonp",
 			
 			success: function(info) {
 			
-				let searchArray = info.query.search;
+				let searchArray = info.query.search; // array of articles returned
 				
 				let storeTitlesArray = [];
 				
 				for (let i = 0; i < searchArray.length; i++) {
 				
-				storeTitlesArray.push(searchArray[i].title);
+				    storeTitlesArray.push(searchArray[i].title);
 				
 				}
 				
@@ -258,7 +249,7 @@ $(document).ready(function() {
 				
 					// get info from each article based on keyword
 					
-					extractInfo(storeTitlesArray[j]);	
+					getIntro(storeTitlesArray[j]);	
 					
 				}
 				
@@ -266,84 +257,68 @@ $(document).ready(function() {
 			
 		}); // end of $.ajax()
 		
-		$('form')[0].reset();
-		
 	} // end of defaultSearch()
 	
-		/* To gather the title, excerpt, and url of each article, 2 separate functions are used to
-		facilitate querying during the ajax calls so that all details can be gathered. */
+    /* To gather title, excerpt, and url of each article, 2 separate functions are used to
+    facilitate querying during ajax calls so that all details can be gathered. */
 
-	function extractInfo(word) {
+	function getIntro(title) {
 		
 		$.ajax({
 		
-			url: "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=&explaintext=&exsentences=3&titles=" + word + "&utf8=&format=json",
+			url: "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=&explaintext=&exsentences=3&titles=" + title + "&utf8=&format=json", // search for 3 introductory sentences from title gathered from search for articles by keywords
 			
 			dataType: "jsonp",
 			
-			success: function(data,url) {
+			success: function(data) {
 			
-				let queried1 = data.query.pages;
+				let articleInfo = data.query.pages; 
 				
+				let pageId = Object.keys(articleInfo);
 				
-				let key = Object.keys(queried1);
+				let intro = articleInfo[pageId[0]].extract; // 3 introductory sentences of article
 				
-				
-				let title = $('.title').html();
-				
-				extractURL(word, queried1, key);
+				getURL(title, intro);
 				
 			} // end of success()
 			
 		}); // end of $.ajax
 		
-	} // end of extractInfo()
+	} // end of getIntro()
 	
-	function extractURL(title, query, key) {
+	function getURL(title, intro, pageId) {
 	
 		$.ajax({
 		
-			url: "https://en.wikipedia.org/w/api.php?action=query&prop=info&inprop=url&titles=" + title +"&utf8=&format=json" ,
+			url: "https://en.wikipedia.org/w/api.php?action=query&prop=info&inprop=url&titles=" + title +"&utf8=&format=json" , // search for url of from title gathered from search for articles by keywords
 			
 			dataType: "jsonp",
 			
 			success: function(response) {
 			
-				let queried2 = response.query.pages;
+				let articleInfo = response.query.pages;
 				
-				let key2 = Object.keys(queried2);
+				let pageId = Object.keys(articleInfo);
 				
-				let fullURL = queried2[key2[0]].fullurl;
-				
-				let title = query[key[0]].title;
-				
-				let intro = query[key[0]].extract;
+				let fullURL = articleInfo[pageId[0]].fullurl;
 
-				listArticle(title, intro, fullURL);
+				displayArticle(title, intro, fullURL);
 		
 			} // end of success()
 			
 		}); // end of $.ajax()
 		
-	} // end of extractURL() 
+	} // end of getURL() 
 	
-	function listArticle(title, intro, URL) {
+	function displayArticle(title, intro, URL) {
 		
-		if ( intro.length === 0 ) {
+		if (intro.length === 0 ) {
 			
 			let intro = 'N/A';
 			
 		}
 		
-		$("<div class='title-div'>" +"<strong>Title: </strong>" + '<a href="'+URL+'" target="_blank">' + title + '</a>'+ "</br>" + "<strong>Brief Intro:</strong>"+ "<p>"+ intro + "</p> " +"</div>").append('<i>Favorite article:</i> <span class="glyphicon glyphicon-star" onclick="saveFavorites(\'' + title + '\',\'' + URL + '\')" ></span> ' + '<i>Read article later:</i> <span class="glyphicon glyphicon-bookmark"></span>').on('mouseenter',function() {
-			
-			$(this).addClass('animated pulse');
-		
-		}).on('mouseleave',function() {
-		
-			$(this).removeClass('animated pulse');
-	
-		}).on('click', '.glyphicon-bookmark',function() {
+		$('<div class="title-div"><h3><a href="'+URL+'" target="_blank">' + title + '</a></h3><p><strong>Brief Intro:</strong></p><p>'+ intro + '</p> </div>').append('<i>Favorite article:</i> <span class="glyphicon glyphicon-star" onclick="saveFavorites(\'' + title + '\',\'' + URL + '\')" ></span> <i>Read article later:</i> <span class="glyphicon glyphicon-bookmark"></span>').on('click', '.glyphicon-bookmark',function() {
 		
 			let matchingArticlesLength = $('.bookmarks-li:contains('+title+')').length;
 			
@@ -355,42 +330,48 @@ $(document).ready(function() {
 				
 			}
 			
-			let bookmarksLi = $('<li class="bookmarks-li" >'
-			
-			+ '<span>' + '<a href="'+URL+'" target="_blank">' + title + '</a>' + ' ' + '<span class="glyphicon glyphicon-star" onclick="saveFavorites(\'' + title + '\',\'' + URL + '\')"></span>'+ ' ' + '<span class="delete glyphicon glyphicon-remove"> </span>' +'</li>');
+			let bookmarksLi = $('<li class="bookmarks-li" ><span><a href="'+URL+'" target="_blank">' + title + '</a> <span class="glyphicon glyphicon-star" onclick="saveFavorites(\'' + title + '\',\'' + URL + '\')"></span> <span class="delete glyphicon glyphicon-remove"> </span></li>');
 			
 			bookmarksLi.on('click', '.delete', function() {
 			
-			bookmarksLi.remove();
-			
-			bookmarkArticleCounter--;
-			
-			$('#bookmarks-amount').html(bookmarkArticleCounter);
-			
-			if (bookmarkArticleCounter < 1) {
-			
-				$('#bookmarks-bar').hide();
-				
-			}
-			
-		}).appendTo('#bookmarks-storage-ul');
+                bookmarksLi.remove();
+            
+                bookmarkArticleCounter--;
+            
+                $('#bookmarks-amount').html(bookmarkArticleCounter);
+            
+                // if there are no more bookmarks (articles in read later category)
+            
+                if (bookmarkArticleCounter < 1) {
+            
+                    $('#bookmarks-bar').hide();
+                
+                }
+            
+            }).appendTo('#bookmarks-storage-ul');
 
-		bookmarkArticleCounter++;
-		
-		$('#bookmarks-amount').html(bookmarkArticleCounter);
-		
-		$('#bookmarks-bar').show();
+            bookmarkArticleCounter++;
+        
+            $('#bookmarks-amount').html(bookmarkArticleCounter);
+        
+            $('#bookmarks-bar').show();
 		
 		}).appendTo('#article-list');
 	
-	} // end of listArticle()
+	} // end of displayArticle()
 
-	
-	
 	}); // end of document ready 
 	
-	function saveFavorites(title1, URL) {
+	function saveFavorites(articleTitle, URL) {
 	
+		let favorite = {
+		
+			title: articleTitle,
+			
+			url: URL
+			
+		}
+		
 		if (localStorage.getItem('favorites') !== null) {
 		
 			let favorites = JSON.parse(localStorage.getItem('favorites'));
@@ -401,7 +382,7 @@ $(document).ready(function() {
 				
 				let url = favorites[i].url;
 
-				if (title1 === name || URL === url) {
+				if (articleTitle === name) {
 				
 					alert('This article has already been favorited.');
 					
@@ -413,15 +394,7 @@ $(document).ready(function() {
 			
 		} // end of if localStorage.getItem('favorites') !== null
 		
-		let favorite = {
-		
-			title: title1,
-			
-			url: URL
-			
-		}
-		
-		if (localStorage.getItem('favorites') === null) {
+		else if (localStorage.getItem('favorites') === null) {
 		
 			let favorites = [];
 			
@@ -451,9 +424,9 @@ $(document).ready(function() {
 		
 		for (let i = 0; i < favorites.length; i++) {
 		
-			if (favorites[i].url == url) {
+			if (favorites[i].url === url) {
 			
-			favorites.splice(i,1);
+			    favorites.splice(i,1);
 			
 			}
 			
@@ -467,17 +440,21 @@ $(document).ready(function() {
 	
 	function fetchFavorites() {
 	
-		let favoritesStorage = document.getElementById('favorites-storage-ul');
+		let favoritesStorageUl = document.getElementById('favorites-storage-ul');
 		
-		favoritesStorage.innerHTML = '';
+		favoritesStorageUl.innerHTML = '';
 		
 		let favorites = JSON.parse(localStorage.getItem('favorites'));
+		
+		// if there are no more favorites (articles in favorites category)
 		
 		if (favorites.length < 1) {
 		
 			$('#favorites-bar').hide();
 			
 		}
+		
+		// if there are favorites (articles in favorites category)
 		
 		else {
 		
@@ -493,14 +470,8 @@ $(document).ready(function() {
 
 			$('#favorites-amount').html(favorites.length);
 			
-			favoritesStorage.innerHTML += '<li class="favorites-li" >' +
-			
-		 	'<a href="'+url+'" target="_blank">' + name + '</a>' + ' ' +'<span  class="delete-favorites glyphicon glyphicon-remove" onclick="deleteFavorites(\'' + url + '\')" > </span>'   + '</li>';
-			
-			let deleteFavorites = document.getElementsByClassName('delete-favorites');
+			favoritesStorageUl.innerHTML += '<li class="favorites-li" ><a href="'+url+'" target="_blank">' + name + '</a> <span  class="delete-favorites glyphicon glyphicon-remove" onclick="deleteFavorites(\'' + url + '\')" > </span></li>';
 	
 		} // end of for loop
 		
 	} // end of deleteFavorites()
-	
-	

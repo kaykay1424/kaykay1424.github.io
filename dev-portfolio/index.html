@@ -1,330 +1,591 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 	<head>
+
 		<title>About Me</title>
+
 		<meta charset="utf-8">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="styles/main.css">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		
+		<link rel="stylesheet" href="styles/main.css">
+
 	</head>
-	<body data-spy="scroll" data-target="#mobile-nav-scroll" data-offset="300">
-		
-		
-		  
+
+
+	<body class="home-body" data-spy="scroll" data-target="#mobile-nav-scroll" data-offset="300">
+	
+		<!-- This navbar is shown when screen width is less than 1440 -->
 		
 		<nav id="mobile-navbar" class="navbar navbar-inverse navbar-fixed-top ">
+
 		  <div class="container-fluid">
+
 			<div class="navbar-header">
+
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobile-nav">
+
 				<span class="icon-bar"></span>
+
 				<span class="icon-bar"></span>
+
 				<span class="icon-bar"></span>                        
+
 			  </button>
+			  
 			  <a class="navbar-brand" href="index.html">Kayla Clements</a>
+
 			</div>
-			<div class="collapse navbar-collapse" id="mobile-nav">
+
+			<div id="mobile-nav" class="collapse navbar-collapse" >
+
 			  <ul class="nav navbar-nav ">
+
 				<li class="dropdown nav-about ">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu" id="scroll-about">
+
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">About<span class="caret"></span></a>
+
+					<ul id="scroll-about" class="dropdown-menu" >
+
 						<li><a href="#about-me-info">About</a></li>
+
 						<li><a href="#skill-level-info">Skill Level</a></li>
+
 						<li><a href="#sample-projects-group">Projects</a></li>
+
 					</ul>
+
 			 	</li>
+
 				<li><a href="courses.html">Courses</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-					  <li><a href="frontend-projects.html">Frontend Projects</a></li>
-					  <li><a href="frontend-backend-projects.html">Frontend/Backend Projects </a></li>
-					</ul>
-			 	</li>
-				
+
+				<li class="nav-projects"><a href="projects.html">Projects</a></li>
+
 			  </ul>
-			</div>
-		  </div>
+
+			</div> <!-- end of #mobile-nav -->
+
+		  </div> <!-- end of .container-fluid -->
+
 		</nav>
+
+		<!-- This navbar is shown when screen width is greater than 1440 -->
 		
 		<nav id="home-navbar" class="navbar navbar-inverse"  >
-  <div class="container-fluid">
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#home-nav">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>                        
-			  </button>
-			  <a class="navbar-brand" href="index.html">Kayla Clements</a>
-			</div>
-			<div class="collapse navbar-collapse" id="home-nav">
-			  <ul class="nav navbar-nav ">
-				<li class="active"><a href="index.html">About</a></li>
-				<li><a href="courses.html">Courses</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
-					<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-					  <li><a href="frontend-projects.html">Frontend Projects</a></li>
-					  <li><a href="frontend-backend-projects.html">Frontend/Backend Projects </a></li>
-					</ul>
-			 	</li>
-				
-			  </ul>
-			</div>
-		  </div>
-</nav>
 
-		<nav id="mobile-nav-scroll">
-			<ul class="nav nav-pills nav-stacked">
-				<li><a href="#about-me-info">About</a></li>
-				<li><a href="#skill-level-info">Skill Level</a></li>
-				<li><a href="#sample-projects-group">Projects</a></li>
-			</ul>
+  			<div class="container-fluid">
+
+				<div class="navbar-header">
+
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#home-nav">
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>                        
+
+				  </button>
+
+				  <a class="navbar-brand" href="index.html">Kayla Clements</a>
+
+				</div>
+
+				<div id="home-nav" class="collapse navbar-collapse" >
+
+				  <ul class="nav navbar-nav ">
+
+					<li class="active"><a href="index.html">About</a></li>
+
+					<li><a href="courses.html">Courses</a></li>
+
+					<li class="nav-projects"><a href="projects.html">Projects</a></li>
+
+				  </ul>
+
+				</div> <!-- end of #home-nav -->
+
+		  </div> <!-- end of .container-fluid -->
+		  
 		</nav>
-								
-		<div class="container" id="about-me-info" >
-			<div class="row">
-				
-				<div class="col-md-12 my-bio" >
-					<div class="row my-bio-title-row"  >
-						
-						<div class="col-md-12 my-bio-title" >
-							<h3 class="text-center" >About Me</h3>
-						</div> <!--end of .my-bio-title-->
-					
-					</div> <!--end of .row-->
-					<div class="row">
-						<div class="col-md-4 my-photo-container text-center" >
-					<div style="width:100%;background-color:white;margin-bottom:0;padding-bottom:5%;">
-					<img id="my-photo" src="images/kayla-on-beach.jpeg"  />
-					<p  class='greeting'> Hi, I'm Kayla! </p>
-					</div>
-					 
-						<div class=" quick-facts" >
-							<p><code>&lt;education&gt;</code></p> <p class='text-center'> B.A. in Spanish and World Business from University of Tennessee at Knoxville</p><p><code>&lt;&#47;education&gt;</code></p>
-					
-						
-				
-							<p><code>&lt;devexp&gt;</code></p><p class='text-center'>9 months learning full stack development online</p><p><code>&lt;&#47;devexp&gt;</code></p>
-					
-						
-							<p><code>&lt;hobbies&gt;</code></p><p class='text-center'> <ul ><li>Basketball</li><li>Soccer</li><li>Music (hip hop, r&b, pop, rock, soul, salsa, bachata, merengue, sertanejo, pretty much everything)</li><li>Movies (action, comedy, romance)</li><li>Traveling</li><li>Learning language(both computer and human)</li></ul></p><p><code>&lt;&#47;hobbies&gt;</code></p>
-					
-					
-						</div> <!--end of .quick-facts-->
-				</div> <!--end of .my-photo-container-->
-				<div class="col-md-8 backstory-container">
-							<p  class="backstory">I have always been fascinated by technology but never pursued it until the Fall of 2016. After spending
-								 a short time going through a few online courses on Khan Academy, I realized I really enjoyed the challenge of solving problems to get programs to work and getting 
-								 to create an infinite amount of things.Since then I have continued to utilize online courses (check out some of the courses I have used <a href='courses.html'> here </a>) 
-								 to learn Web Development skills and apply those skills by doing projects. I am working to become a Full Stack Developer and am looking for any opportunities in either Frontend
-								  or Backend development.
-							</p>
-							
-						</div> <!--end of .backstory-->
-						
-						
-					</div> <!--end of .row-->
-				
-				</div> <!--end of .my-bio-->
-			</div> <!--end of .row-->
+
+		<!-- This navbar shown when screen width is greater than 1440 -->
 		
-		</div> <!--end of #about-me-info-->
+		<nav id="mobile-nav-scroll">
+
+			<ul class="nav nav-pills nav-stacked">
+
+				<li><a href="#about-me-info">About</a></li>
+
+				<li><a href="#skill-level-info">Skill Level</a></li>
+
+				<li><a href="#sample-projects-group">Projects</a></li>
+
+			</ul>
+
+		</nav>
+
 		
-		<div class="container" id="skill-level-info">
+		<div class="container full-container home-full-container " >
 		
-		<h2 class="text-center"> Languages/Libraries/Frameworks Knowledge Level</h2>
-			<div class="container">
-				<div class="row" >
-				
-					<span class="col-md-3" >HTML (Advanced)</span>
-					<div class="progress">
-						<div class="progress-bar progress-bar-striped progress-bar-html " role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
-							<span class="">77% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
+		    <div class="row">						
+
+                <div id="about-me-info" class="col-md-12"  >
+
+                    <div class="row" >
+
+                        <div class="col-md-12 my-bio" >
+
+                            <div class="row">
+                            
+                                <h1 class="text-center my-bio-title" >About Me</h1>
+
+                                <div class="col-md-4 my-photo-container text-center" >						
+                                
+                                    <p class="job-title"> <em>  Full Stack Developer </em> </p>
+                                
+                                    <div class="my-photo-wrapper">
+
+                                        <img id="my-photo" src="images/kayla-on-beach.jpeg" alt="image of Kayla on beach"  />
+
+                                        <p  class='greeting'> Hi, I'm Kayla! </p>
+
+                                    </div>
+
+                                    <div class=" quick-facts" >
+
+                                        <p><code>&lt;education&gt;</code></p>
+                                    
+                                        <p> B.A. in Spanish and World Business with Chinese minor from University of Tennessee at Knoxville</p>
+                                    
+                                        <p><code>&lt;&#47;education&gt;</code></p>
+
+                                        <p><code>&lt;devexp&gt;</code></p>
+                                    
+                                        <p>1 yr+ learning Full Stack Development online</p>
+                                    
+                                        <p><code>&lt;&#47;devexp&gt;</code></p>
+                    
+                                        <p><code>&lt;hobbies&gt;</code></p>
+                            
+                                            <ul >
+                                        
+                                                <li>Basketball</li>
+                                        
+                                                <li>Soccer</li>
+                                        
+                                                <li>Music (Hip Hop, R&B, Pop, Rock, Soul, Salsa, Bachata, Merengue, Sertanejo, pretty much everything)</li>
+                                        
+                                                <li>Movies (Action, Comedy, Romance)</li>
+                                            
+                                                <li>Traveling</li>
+                                            
+                                                <li>Learning languages (both computer and human)</li>
+                                        
+                                            </ul>
+                                    
+                                        <p><code>&lt;&#47;hobbies&gt;</code></p>
+                    
+                                    </div> <!-- end of .quick-facts -->
+
+                                </div> <!-- end of .my-photo-container -->
+
+                                <div class="col-md-8 backstory-container">
+
+                                    <p  class="backstory">
+                                
+                                        Traveling around the world to places, like South Korea and Costa Rica, as a military brat and a college student, I
+                                   
+                                        discovered my passion for learning foreign languages. However, it was not until the fall of 2016 when I decided to pursue
+                                   
+                                        a long time interest in computer related fields that I discovered that
+                                   
+                                        passion extended to learning computer languages as well. After going
+                                   
+                                        through a few online Web Development lessons, I realized I really enjoyed being able to create programs using programming languages, like JavaScript, to do an infinite number of things and the challenge of
+                                   
+                                        solving problems to make those programs function.
+                                   
+                                        Since then I have continued to utilize online courses (view some of the courses I have
+                                   
+                                        completed <a href="courses.html">here</a> ) to learn Web Development skills and apply those skills by doing projects. I am
+                                   
+                                        working to become a Full Stack Developer and am looking for any opportunities in either Frontend
+                                   
+                                        or Backend Development or both. 
+
+                                    </p>
+                            
+                                </div> <!-- end of .backstory-container -->
+                        
+                            </div> <!-- end of .row -->
+                
+                        </div> <!-- end of .my-bio -->
+
+                    </div> <!-- end of .row -->
+        
+                </div> <!-- end of #about-me-info -->
 			
-			<div class="container">
-				<div class="row">
-					<span class="col-md-3" >CSS (Intermediate) </span>
-					<div class="progress" >
-						<div class="progress-bar progress-bar-striped progress-bar-css " role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" >
-							<span class="">55% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
+			</div> <!-- end of .row -->
 			
-			<div class="container">
-				<div class="row">
-					<span class="col-md-3" >Javascript (Intermediate) </span>
-					<div class="progress"  >
-						<div class="progress-bar progress-bar-striped progress-bar-js" role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100">
-							<span class="">44% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
-			
-			<div class="container">
-				<div class="row">
-					<span class="col-md-3" >jQuery (Intermediate) </span>
-					<div class="progress"  >
-						<div class="progress-bar progress-bar-striped progress-bar-jquery " role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
-							<span class="">77% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
-			
-			<div class="container" >
-				<div class="row">
-					<span class="col-md-3" >Bootstrap (Beginner)</span>
-					<div class="progress">
-						<div class="progress-bar progress-bar-striped progress-bar-bootstrap" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
-							<span class="">33% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
-			
-			<div class="container">
-				<div class="row">
-					<span class="col-md-3" >PHP (Intermediate)</span>
-					<div class="progress" class="col-sm-9"  >
-						<div class="progress-bar progress-bar-striped progress-bar-php" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" >
-							<span class="">55% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
-			<div class="container">
-				<div class="row">
-					<span class="col-md-3" >MySQL (Advanced)</span>
-					<div class="progress" >
-						<div class="progress-bar progress-bar-striped progress-bar-mysql" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
-							<span class="">77% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
-			<div class="container">
-				<div class="row">
-					<span class="col-md-3" >Ruby (Beginner)</span>
-					<div class="progress"   >
-						<div class="progress-bar progress-bar-striped progress-bar-ruby" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100">
-							<span class="">22% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
-			<div class="container">
-				<div class="row">
-					<span class="col-md-3" >Ruby on Rails (Beginner) </span>
-					<div class="progress"  >
-						<div class="progress-bar progress-bar-striped progress-bar-rails" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100">
-							<span class="">11% </span>
-						</div> <!--end of .progress-bar-->
-					</div> <!--end of .progress-->
-				</div> <!--end of .row-->
-			</div> <!--end of .container-->
-		</div>	<!--end of #skill-level-info-->
+            <div class="row">
 		
-		<div id="sample-projects-group" class="container projects-container">
-			<h2 class="text-center"> Projects</h2>
-			<div class="container">
-				<div class="col-md-4 sample-projects" >
-					<div class="panel panel-primary" >
-						<div class="panel-heading" >
-							<h3>
-								<a target="_blank" href="Wikipedia-Viewer/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
-										The wikipedia app allows users to search for a wikipedia article and choose the amount of articles to be returned. If they click on the lucky button one article pertaining to the keywords searched will be returned.
-										If they click the random button, one random article will be returned. Users can bookmark an article to read later or favorite an article, which will then be stored in the browser's local storage. 
-										</p>">Wikipedia Viewer
-								</a>
-							<h3>
-						</div>
-						<div class="panel-body" ><iframe name="wikipedia-viewer" src="Wikipedia-Viewer/index.html" width="100%" height="450px" frameborder="0" ></iframe> </div>
-						<div class="panel-footer">
-								
-										
-										<div class="label frontend-label" >JavaScript</div> <div class="label label-success frontend-label">HTML</div> <div class="label frontend-label">CSS</div> <div class="label frontend-label" > jQuery </div> 
-								
-										
-										<div class="label frontend-label " > Bootstrap </div> 
-										
-									
-								
-								
-						</div> <!--end of.panel-footer-->
-					</div> <!--end of .panel-->
-				</div> <!--end of .sample-projects-->
-				<div class="col-md-4 sample-projects" >
-					<div class="panel panel-primary" >
-						<div class="panel-heading" >
-							<h3>
-								<a  target="_blank" href="Quote-Generator/index.html" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="<p>
-									The quote generator app lets users pick a topic and view randomized quotes from that topic by clicking the next or previous button. Users can also click on the twitter button to tweet the current quote displayed. 
-									</p>">Quote Generator
-								</a>
-							<h3>
-						</div>
-						<div class="panel-body" ><iframe name="Scene Change" src="Quote-Generator/index.html" width="100%" height="450px" frameborder="0" ></iframe></div>
-						<div class="panel-footer">
-							<div class="label frontend-label " >JavaScript</div> <div class="label frontend-label  ">HTML</div> <div class="label frontend-label  ">CSS</div> <div class="label frontend-label " > jQuery </div> 
-								
-										
-								<div class="label frontend-label   " > Bootstrap </div> 
-						</div>
-				
-					</div> <!--end of .panel-->
-				
-				</div> <!--end of .sample-projects-->
-			
-				<div class="col-md-4 sample-projects" >
-					<div class="panel panel-primary" >
-						<div class="panel-heading" >
-							<h3>
-								<a target="_blank" href="http://127.0.0.1/ecommerce/index.php" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true" data-content="<p style='background-color':'rgba(255,255,255,.5);color:black;'>The Online Shop
-									lets users view products and search for products by brand, category, and keywords. A user can add multiple items to their shopping cart and purchase the items using paypal, which will require them
-									to create an account or sign in if not already logged in. After they make an order they will be sent an email regarding their order and view their order as well as edit their account. There is also an admin panel to manage the website.
-									</p>">Online Shop
-								</a>
-							<h3>
-						</div>
-						<div class="panel-body"><iframe name="Bookmark Application" src="http://127.0.0.1/ecommerce/index.php" width="100%" height="450px" frameborder="0" ></iframe></div>
-						<div class="panel-footer">
-							
-							<div class="label frontend-label  " >JavaScript</div> <div class="label frontend-label  ">HTML</div> <div class="label frontend-label ">CSS</div> <div class="label frontend-label " > jQuery </div> 
-								
-										
-							<div class="label frontend-label " > Bootstrap </div> <div class="label backend-label " > PHP </div> <div class="label backend-label " > SQL</div> 
-						 </div>
+                <div id="skill-level-info" class="col-md-12" >
 	
-					</div> <!--end of .panel-->
+                    <div class="row" >
+				
+                        <h2 class="text-center"> Skill Level</h2>
+
+                        <span class="col-md-3" >HTML (Advanced)</span>
+
+                        <div class="progress">
+
+                            <div class="progress-bar progress-bar-striped progress-bar-html" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
+
+                                <span>77% </span>
+
+                            </div> <!--end of .progress-bar -->
+
+                        </div> <!-- end of .progress -->
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <span class="col-md-3" > CSS (Intermediate) </span>
+
+                        <div class="progress" >
+
+                            <div class="progress-bar progress-bar-striped progress-bar-css " role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" >
+
+                                <span> 55% </span>
+
+                            </div> <!-- end of .progress-bar -->
+
+                        </div> <!-- end of .progress -->
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <span class="col-md-3" >Javascript (Intermediate) </span>
+
+                        <div class="progress"  >
+
+                            <div class="progress-bar progress-bar-striped progress-bar-js" role="progressbar" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100">
+
+                                <span>44% </span>
+
+                            </div> <!-- end of .progress-bar -->
+
+                        </div> <!-- end of .progress -->
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <span class="col-md-3" >jQuery (Intermediate) </span>
+
+                        <div class="progress"  >
+
+                            <div class="progress-bar progress-bar-striped progress-bar-jquery " role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
+
+                                <span>77% </span>
+
+                            </div> <!-- end of .progress-bar-->
+
+                        </div> <!-- end of .progress-->
+
+                    </div> <!-- end of .row-->
+        
+                    <div class="row">
+
+                        <span class="col-md-3" >Bootstrap (Intermediate)</span>
+
+                        <div class="progress">
+
+                            <div class="progress-bar progress-bar-striped progress-bar-bootstrap" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+
+                                <span>55% </span>
+
+                            </div> <!-- end of .progress-bar -->
+
+                        </div> <!-- end of .progress -->
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <span class="col-md-3" >PHP (Intermediate)</span>
+
+                        <div class="progress" >
+
+                            <div class="progress-bar progress-bar-striped progress-bar-php" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" >
+
+                                <span>55% </span>
+
+                            </div> <!-- end of .progress-bar -->
+
+                        </div> <!-- end of .progress -->
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <span class="col-md-3" >MySQL (Advanced)</span>
+
+                        <div class="progress" >
+
+                            <div class="progress-bar progress-bar-striped progress-bar-mysql" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">
+
+                                <span>77% </span>
+
+                            </div> <!-- end of .progress-bar -->
+
+                        </div> <!-- end of .progress -->
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <span class="col-md-3" >Ruby (Beginner)</span>
+
+                        <div class="progress" >
+
+                            <div class="progress-bar progress-bar-striped progress-bar-ruby" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100">
+
+                                <span>22% </span>
+
+                            </div> <!-- end of .progress-bar -->
+
+                        </div> <!-- end of .progress -->
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <span class="col-md-3" >Ruby on Rails (Beginner) </span>
+
+                        <div class="progress" >
+
+                            <div class="progress-bar progress-bar-striped progress-bar-rails" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100">
+
+                                <span>11% </span>
+
+                            </div> <!-- end of .progress-bar -->
+
+                        </div> <!-- end of .progress -->
+
+                    </div> <!-- end of .row -->
+
+                </div>	<!-- end of #skill-level-info -->
 			
-				</div><!--end of .sample-projects-->
+            </div> <!-- end of .row -->
 			
-				<div class="col-md-4 col-md-offset-4 alert alert-info" >
-						<p style="">See more <a href="frontend-projects.html"> frontend projects </a>  or <a href="frontend-backend-projects.html"> frontend/backend projects </a> </p>
-				</div> <!--end of .alert-info-->
-			</div> <!--end of .container-->
-		</div> <!--end of #sample-projects-group-->
-		
+			<div class="row">
+
+                <div id="sample-projects-group" class="col-md-12">
+
+                    <div class="row">
+                
+                        <h2 class="text-center"> Projects</h2>
+
+                        <div id="wikipedia-project" class="col-md-4 sample-projects" >
+
+                            <div class="panel" >
+
+                                <div class="panel-heading" >
+
+                                    <h3> Wikipedia Viewer</h3>
+
+                                </div>
+
+                                <div class="panel-body" ><img src="images/wikipedia-viewer.jpg" alt="image of wikipedia viewer" /></div>
+
+                                <div class="panel-footer">
+                        
+                                    <div class="project-summary">
+                         
+                                        <p>
+                                    
+                                           The Wikipedia Viewer allows users to search for a Wikipedia article and choose the amount of articles to be returned. 
+
+                                            Users can bookmark an article to read later or favorite an article, which will then be stored in the browser's local storage.
+                                    
+                                        <p>
+                                    
+                                            <a href='Wikipedia-Viewer/index.html' target='_blank'>View project</a> |
+                                    
+                                            <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Wikipedia-Viewer' target='_blank'>View code</a>
+                                        
+                                        </p>
+                                    
+                                    </div>
+                                
+                                    <div class="project-skills" >
+                            
+                                        <div class="label frontend-label">HTML</div>
+                            
+                                        <div class="label frontend-label">CSS</div>
+                            
+                                        <div class="label frontend-label " > Bootstrap </div> 
+                            
+                                        <div class="label frontend-label" >JavaScript</div>
+                            
+                                        <div class="label frontend-label" > jQuery </div> 
+                            
+                                        <div class="label backend-label " > API </div>
+                                
+                                    </div>
+
+                                </div> <!-- end of.panel-footer -->
+
+                            </div> <!-- end of .panel -->
+
+                        </div> <!-- end of .sample-projects -->
+
+                        <div class="col-md-4 sample-projects" >
+
+                            <div class="panel" >
+
+                                <div class="panel-heading" >
+
+                                    <h3>Random Quote Generator</h3>
+
+                                </div>
+
+                                <div class="panel-body" ><img src="images/quote-generator.jpg" alt="image of random quote generator" /></div>
+
+                                <div class="panel-footer">
+                        
+                                    <div class="project-summary">
+                         
+                                       <p>  
+                                   
+                                            The Random Quote Generator lets users view random inspirational quotes, view the source of the quote as well as tweet the current quote along with the author
+                                
+                                            on a new page.
+                                 
+                                        <p>
+                                    
+                                            <a href='Random-Quote-Generator/index.html' target='_blank'>View project</a> |
+                                         
+                                             <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Random-Quote-Generator' target='_blank'>View code</a>
+                                    
+                                        </p>
+
+                                    </div>
+                                
+                                    <div class="project-skills"> 
+                            
+                                        <div class="label frontend-label  ">HTML</div>
+                            
+                                        <div class="label frontend-label  ">CSS</div>
+                            
+                                        <div class="label frontend-label" > Bootstrap </div>
+                            
+                                        <div class="label frontend-label" >JavaScript</div>
+                            
+                                        <div class="label frontend-label " > jQuery </div> 
+                            
+                                        <div class="label backend-label " > API </div> 
+                                
+                                    </div>
+
+                                </div> <!-- end of.panel-footer -->
+
+                            </div> <!-- end of .panel -->
+
+                        </div> <!-- end of .sample-projects -->
+
+                        <div class="col-md-4 sample-projects" >
+
+                            <div class="panel" >
+
+                                <div class="panel-heading" >
+
+                                    <h3>Twitch App</h3>
+
+                                </div>
+
+                                <div class="panel-body"><img src="images/twitch-app.jpg" alt="image of weather app" /> </div>
+
+                                <div class="panel-footer">
+                        
+                                    <div class="project-summary">
+                         
+                                       <p>
+                                   
+                                           The Twitch App allows a user to search for Twitch channels and save them to the browser's local storage. Once saved, he or she can search for them, view details about their streaming status, delete them, and go to their Twitch page in a new browser window.
+                                    
+                                        <p>
+                                    
+                                            <a href='Twitch-App/index.html' target='_blank'>View project</a> |
+                                    
+                                            <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Twitch-App' target='_blank'>View code</a>
+                                        
+                                        </p>
+        
+                                    </div> 
+                                
+                                    <div class="project-skills">
+                        
+                                        <div class="label frontend-label  ">HTML</div>
+                            
+                                        <div class="label frontend-label  ">CSS</div>
+                            
+                                        <div class="label frontend-label" > Bootstrap </div>
+                            
+                                        <div class="label frontend-label" >JavaScript</div>
+                            
+                                        <div class="label frontend-label " > jQuery </div> 
+                            
+                                        <div class="label backend-label " > API </div>
+                                
+                                    </div>
+                            
+                                </div> <!-- end of .panel-footer -->
+
+                            </div> <!-- end of .panel -->
+        
+                        </div> <!-- end of .sample-projects -->
+                
+                    </div> <!-- end of .row -->
+                
+                    <div class="row">
+        
+                        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 alert" >
+
+                            <p>See more <a href="projects.html"> projects </a>  </p>
+
+                        </div> <!-- end of .alert -->
+                
+                    </div>
+    
+                </div> <!--end of #sample-projects-group-->
+			
+			</div> <!-- end of .row -->
+	
+		</div> <!-- end of .full-container -->
+	
 		<footer class="footer"></footer>
 		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 		<script src="https://use.fontawesome.com/7513968413.js"></script>
+	
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+	
 		<script src="scripts/main.js"></script>
-		
+	
 	</body>
+
 </html>

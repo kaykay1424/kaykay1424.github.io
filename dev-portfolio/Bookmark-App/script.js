@@ -1,31 +1,23 @@
 /*
 	Explanation of program:
 	
-	The user can bookmark a site saving it in their browser's local storage by submitting the form
-	on the page. The name of the website will be displayed in a list of bookmarks (also saved
-	in the local storage) that the user can access by clicking on the bookmark in the upper right hand corner.
-	He or she can then click on the website name to open that site up in a new window,
-	click the red X button to delete that website from the list, or click the plus button to open the website up
-	in a frame on the page (if there is no same origin policy preventing the website from being loaded). A user
-	can delete the website frame, minimize it, or increase/decrease the width and height. Once a frame is minimized
-	the user can show it again by clicking on the button in the bottom right hand corner that appears after a frame is minimized
-	 and clicking the website name. If there are no more minimized frames that box will disappear.  
-	
-	If there are no bookmark designs saved in the browser's local storage,
-	the default design will be displayed. He or she can design their own bookmark by clicking on
-	the edit button below the bookmark and submitting the form that is displayed after clicking the
-	edit button. If the user has saved a bookmark design their latest design will be fetched from
-	the local storage and displayed.
+    The user can bookmark a site saving it in their browser's local storage by submitting the
+    form on the page. The name of the website will be displayed in a list of saved bookmarks that the
+    user can access by clicking on the bookmark in the upper right hand corner. He or she can then
+    click on the website name to open that site up in a new window or click the red X button to
+    delete that website from the list.
+
+    If there are no bookmark designs saved in the browser's local storage, the default design
+    will be displayed. He or she can design their own bookmark by clicking on the edit button below
+    the bookmark and submitting the form that is displayed after clicking the edit button. If the
+    user has saved a bookmark design, their latest design will be fetched from the browser's local
+    storage and displayed.
 	
 */	
 
 $(document).ready(function() {
 	
-	$('#bookmark-form')[0].reset();
-	
-	$('#bookmark-icon-form')[0].reset();
-	
-	if (localStorage.getItem('bookmarkIcons') !== null && localStorage.getItem('bookmarkIcons')!== null) {
+	if (localStorage.getItem('bookmarkIcons') !== null && localStorage.getItem('bookmarks') !== null) {
 
 		fetchBookmarkIcons();
 		
@@ -33,108 +25,112 @@ $(document).ready(function() {
 		
 		fetchBookmarks();
 		
-		let screenWidth = $(window).width();
-		
-		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
-		
-	}
-		
-	else if (localStorage.getItem('bookmarkIcons') === null && localStorage.getItem('bookmarkIcons')  === null) {
-		
-		let screenWidth = $(window).width();
-		
-		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
-   		
 	}
 	
-	else if (localStorage.getItem('bookmarkIcons')  === null && localStorage.getItem('bookmarkIcons')  !== null )  {
-		
-		let screenWidth = $(window).width();
-		
-		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
-		
+	else if (localStorage.getItem('bookmarkIcons')  === null && localStorage.getItem('bookmarks')  !== null )  {
+
    		fetchBookmarks();
    		
 	}
 
-	else if (localStorage.getItem('bookmarkIcons') === null && localStorage.getItem('bookmarkIcons')  !== null) {
+	else if (localStorage.getItem('bookmarks') === null && localStorage.getItem('bookmarkIcons')  !== null) {
 		
 		fetchBookmarkIcons();
 		
 		deleteBookmarkIcons();
 		
-		let screenWidth = $(window).width();
-		
-		$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
-		
 	}
-	
-}); //end of document ready
-
-	$('.bookmark-icon').click(function() {
-	
-		fetchBookmarks();
-	
-	});
 	
 	$('[data-toggle="popover"]').popover();
 	
-	$('#bookmark-icon-form').on('submit', changeBookmark);
+	$('#bookmark-form')[0].reset();
 	
-	$('.background-options').mouseenter(function() {
+	$('#bookmark-icon-form')[0].reset();
 	
-		$('#background-options-hr').css({'border-color': 'blue'});
-		
+	$('a').click(function(e) {
+	    
+	    e.preventDefault();
+	
 	});
 	
-	$('.background-options').mouseleave(function() {
+	$('#bookmark-icon-form').on('submit', changeBookmark);
+	
+	$("#bookmark-form").on('submit', saveBookmark);
+	
+	$('.bookmark-icon').click(function() {
+	
+	    if (localStorage.getItem('bookmarks') !== null) {
+	    
+	        let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+	        
+	        if (bookmarks.length === 0) {
+	        
+	            alert('There are no bookmarks saved.');
+	        }
+	        
+	        else {
+	
+                fetchBookmarks();
+            
+                $('#button-design').toggle();
+		    
+		    }
+		
+		} // end of if (localStorage.getItem('bookmarks') !== null)
+		
+		else {
+		    
+		    alert('No bookmarks have been added.');
+		
+		}
+
+	});
+	
+	$('.background-options').hover(function() {
+	
+		$('#background-options-hr').css({'border-color': '#1159D7'}); // #1159D7: blue color
+		
+	}, function() {
 	
 		$('#background-options-hr').css({'border-color': 'grey'});
 		
 	});
 	
-	$('.bookmark-options').mouseenter(function() {
+	$('.bookmark-options').hover(function() {
 	
-		$('#bookmark-options-hr').css({'border-color': 'blue'});
+		$('#bookmark-options-hr').css({'border-color': '#1159D7'}); // #1159D7: blue color
 		
-	});
-	
-	$('.bookmark-options').mouseleave(function() {
+	}, function() {
 	
 		$('#bookmark-options-hr').css({'border-color': 'grey'});
 		
 	});
 	
-	$('.border-options').mouseenter(function() {
+	$('.border-options').hover(function() {
 	
-		$('#border-options-hr').css({'border-color': 'blue'});
+		$('#border-options-hr').css({'border-color': '#1159D7'}); // #1159D7: blue color
 		
-	});
-	
-	$('.border-options').mouseleave(function() {
+	}, function() {
 	
 		$('#border-options-hr').css({'border-color': 'grey'});
 		
 	});
 	
-	$('.bookmark-icon').click(function() {
-	
-		$('#button-design').toggle();
-
-	});
-
-
-	let backgroundImage = '';
-	
-	let bookmarkCounter = 0;
-	
 	$('#button-design').click(function() {
-	
-		$('.alert-danger').hide();
 		
 		$('#bookmark-icon-form input, #bookmark-icon-form select ').removeClass('error');
+		
+		$('.alert').hide();
 	
 	});
+	
+}); //end of document ready
+
+    let screenWidth;
+    
+    let screenHeight;
+    
+    let maxBookmarkIconWidth;
 
 	function changeBookmark(e) {
 	
@@ -172,33 +168,33 @@ $(document).ready(function() {
 		
 		let bookmarkIcon = {
 				
-				"background-color": bgColor,
+            "background-color": bgColor,
+            
+            "background-image": bgImage,
+            
+            "border-color": borderColor,
+            
+            "border-style": borderStyle,
+            
+            "border-width": borderWidth,
+            
+            "background-size": bgSize,
+            
+            "background-size-width": bgSizeWidth,
+            
+            "background-size-height": bgSizeHeight,
+            
+            "background-repeat": bgRepeat,
+            
+            "background-position": bgPosition,
+            
+            "bookmark-size-width": bookmarkSizeWidth,
+            
+            "bookmark-size-height": bookmarkSizeHeight
 				
-				"background-image": bgImage,
-				
-				"border-color": borderColor,
-				
-				"border-style": borderStyle,
-				
-				"border-width": borderWidth,
-				
-				"background-size": bgSize,
-				
-				"background-size-width": bgSizeWidth,
-				
-				"background-size-height": bgSizeHeight,
-				
-				"background-repeat": bgRepeat,
-				
-				"background-position": bgPosition,
-				
-				"bookmark-size-width": bookmarkSizeWidth,
-				
-				"bookmark-size-height": bookmarkSizeHeight
-				
-			 }
+		}
 		
-		 if (localStorage.getItem('bookmarkIcons') === null) {
+		if (localStorage.getItem('bookmarkIcons') === null) {
 		 
 			let bookmarkIcons = [];
 			
@@ -227,66 +223,54 @@ $(document).ready(function() {
 		let bookmarkIcons = JSON.parse(localStorage.getItem('bookmarkIcons'));
 		
 		let length = bookmarkIcons.length-1;
-	
-		for (i = 0; i < bookmarkIcons.length; i++) {
 
-			let backgroundColor = bookmarkIcons[length]["background-color"];
-			
-			let borderColor = bookmarkIcons[length]["border-color"];
-			
-			let borderStyle = bookmarkIcons[length]["border-style"];
-			
-			let borderWidth = bookmarkIcons[length]["border-width"];
-			
-			let bgSize = bookmarkIcons[length]["background-size"];
-			
-			let bgSizeWidth = bookmarkIcons[length]["background-size-width"];
-			
-			let bgSizeHeight = bookmarkIcons[length]["background-size-height"];
-			
-			let bgRepeat = bookmarkIcons[length]["background-repeat"];
-			
-			let bgPosition = bookmarkIcons[length]["background-position"];
-			
-			let bookmarkWidth = bookmarkIcons[length]["bookmark-size-width"];
-			
-			let bookmarkHeight = bookmarkIcons[length]["bookmark-size-height"];
-			
-			backgroundImage = bookmarkIcons[length]["background-image"];
-			
-			if (bgSize === 'none') {
-			
-				$('.bookmark-icon').css({'background-size': bgSizeWidth + 'px' + ' ' + bgSizeHeight +'px' });
-				
-			}
-			
-			else if (bgSize === 'cover') {
-			
-				$('.bookmark-icon').css({'background-size': 'cover' });
+        let backgroundColor = bookmarkIcons[length]["background-color"];
+        
+        let borderColor = bookmarkIcons[length]["border-color"];
+        
+        let borderStyle = bookmarkIcons[length]["border-style"];
+        
+        let borderWidth = bookmarkIcons[length]["border-width"];
+        
+        let bgSize = bookmarkIcons[length]["background-size"];
+        
+        let bgSizeWidth = bookmarkIcons[length]["background-size-width"];
+        
+        let bgSizeHeight = bookmarkIcons[length]["background-size-height"];
+        
+        let bgRepeat = bookmarkIcons[length]["background-repeat"];
+        
+        let bgPosition = bookmarkIcons[length]["background-position"];
+        
+        let bookmarkWidth = bookmarkIcons[length]["bookmark-size-width"];
+        
+        let bookmarkHeight = bookmarkIcons[length]["bookmark-size-height"];
+        
+        let backgroundImage = bookmarkIcons[length]["background-image"];
+        
+        if (bgSize === 'none') {
+        
+            $('.bookmark-icon').css({'background-size': bgSizeWidth + 'px' + ' ' + bgSizeHeight +'px' });
+            
+        }
+        
+        else if (bgSize === 'cover') {
+        
+            $('.bookmark-icon').css({'background-size': 'cover' });
 
-			}
-				
-			else if (bgSize === 'contain') {
-			
-				$('.bookmark-icon').css({'background-size': 'contain' });
-				
-			}
+        }
+            
+        else if (bgSize === 'contain') {
+        
+            $('.bookmark-icon').css({'background-size': 'contain' });
+            
+        }
 
-			$('.bookmark-icon').css({'width': bookmarkWidth+'px', 'height':
-			
-			bookmarkHeight+'px','background-position': bgPosition, 'background-color':
-			
-			backgroundColor,'background-image':'url('+backgroundImage+')','background-repeat': bgRepeat,'border-color': borderColor,
-			
-			'border-style':borderStyle,'border-width': borderWidth+'px', 'box-shadow': '2px 2px 5px black'});
-
-		} // end of for loop
+        $('.bookmark-icon').css({'width': bookmarkWidth+'px', 'height':bookmarkHeight+'px','background-position': bgPosition, 'background-color': backgroundColor,'background-image':'url('+backgroundImage+')','background-repeat': bgRepeat,'border-color': borderColor, 'border-style':borderStyle,'border-width': borderWidth+'px', 'box-shadow': '2px 2px 5px black'});
 
 	} // end of fetchBookmarkIcons()
 
 	function validateBookmarkIconsForm() {
-	
-		let screenWidth = $(window).width();
 		
 		let bgSize = $('#bg-size').val();
 		
@@ -307,9 +291,7 @@ $(document).ready(function() {
 		let bookmarkSizeWidth = $('#bookmark-size-width').val();
 		
 		let bookmarkSizeHeight = $('#bookmark-size-height').val();
-		
-		let status = '';
-		
+
 		let backgroundStatus = '';
 		
 		let bookmarkStatus = '';
@@ -317,6 +299,8 @@ $(document).ready(function() {
 		let borderStatus = '';
 		
 		let sizeStatus = '';
+		
+		// if an image is chosen either height/width can be inputted or a keyword (cover or chosen) can be chosen 
 
 		if (bgImage.length !== 0 && ((bgSizeWidth.length !== 0 && bgSizeHeight.length !== 0 && bgSize === 'none') || (bgSize !== 'none' && bgSizeWidth.length === 0 && bgSizeHeight.length === 0 ))) {
 			
@@ -328,6 +312,8 @@ $(document).ready(function() {
 			
 		}
 		
+		// if a color is chosen, size fields should be left blank or 'none' should be selected 
+		
 		else if (bgColor !== 'transparent' && (bgSizeWidth.length === 0 && bgSizeHeight.length === 0 && bgSize === 'none')) {
 			
 			backgroundStatus = true;
@@ -337,6 +323,8 @@ $(document).ready(function() {
 			$('#bg-size, #bg-size-width,#bg-size-height, #bg-color, #bg-image').removeClass('error');
 			
 		}
+		
+		// if these conditions are not met, show error alert
 		
 		else {
 		
@@ -348,6 +336,8 @@ $(document).ready(function() {
 			
 		}
 		
+		// width and height should be inputted							
+		
 		if (bookmarkSizeWidth.length !== 0 && bookmarkSizeHeight.length !== 0 ) {
 		
 			bookmarkStatus = true;
@@ -357,6 +347,8 @@ $(document).ready(function() {
 			$('#bookmark-size-height, #bookmark-size-width').removeClass('error');
 			
 		}
+		
+		// if not, show error alert
 		
 		else {
 		
@@ -368,11 +360,15 @@ $(document).ready(function() {
 			
 		}
 		
+		// background size (width/height) of image cannot be bigger than bookmark size, if background size is bigger than bookmark size, show error alert 
+		
 		if (bgSizeWidth.length !== 0 || bgSizeHeight.length !== 0) {
 		
 			if (bgSizeWidth > bookmarkSizeWidth || bgSizeHeight > bookmarkSizeHeight ) {
 			
 				sizeStatus = false;
+				
+				console.log( bgSizeWidth);
 				
 				$('#background-size-errors').html('The background size (width/height) of the image cannot be bigger than the bookmark size (width: '+bookmarkSizeWidth+'/height: '+bookmarkSizeHeight+'). Please decrease the width <strong>and/or</strong> height of the image background.').show();
 				
@@ -390,7 +386,9 @@ $(document).ready(function() {
 				
 			}
 			
-		}
+		} // end of if (bgSizeWidth.length !== 0 || bgSizeHeight.length !== 0)
+		
+		// if a border style option is chosen, all other options must be chosen as well, if they are not all selected, show error alert
 		
 		if (borderColor !== 'transparent' || borderStyle !== 'none' || borderWidth.length !== 0  ) {
 				 
@@ -414,43 +412,67 @@ $(document).ready(function() {
 			
 			}
 		
-		}
+		} // end of if (borderColor !== 'transparent' || borderStyle !== 'none' || borderWidth.length !== 0  )
+		
+		// if border width is chosen
 		
 		if (borderWidth.length !== 0) {
 		
-			if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {
+		    // if remaining width between max bookmark icon width size and current size is less than 10 (max border width size)
+		
+			if (maxBookmarkIconWidth - bookmarkSizeWidth < 10) { 
 			
-				let goodBorderSize  = screenWidth/4 - bookmarkSizeWidth;
+			    let validBorderSize = maxBookmarkIconWidth - bookmarkSizeWidth; // remaining width between max bookmark icon width size and current size 
+
+				if (borderWidth > validBorderSize ) {
 				
-				if (goodBorderSize === 0) {
+				    if (validBorderSize === 0) {
+				        
+				        $('#border-size-errors').html('The bookmark size width is at its maximum size, therefore a border cannot be added. Please leave the border width field blank or decrease the size of the bookmark.').show();
+				        
+				    }
+				    
+				    else {
+
+					    $('#border-size-errors').html('The border width must be less than or equal to ' + validBorderSize + '. Please decrease the size.').show();
 					
-					$('#border-size-errors').html('Please decrease the size of the bookmark (width/height) in order to add a border.').show();
+					}
+				
+				    $('#border-width').addClass('error');
+				    
+				    sizeStatus = false;
 				
 				}
 				
 				else {
 				
-				$('#border-size-errors').html('The border width must be less than or equal to ' + goodBorderSize + '. Please decrease the size.').show();
+				    $('#border-size-errors').hide();
 				
-				$('#border-width').addClass('error');
+				    $('#border-width').removeClass('error');
+				    
+				     sizeStatus = true;
 				
 				}
 				
-				sizeStatus = false;
-				
-			}
-			
-			else {
-			
-				sizeStatus = true;
-				
-				$('#border-size-errors').hide();
-				
-				$('#border-width').removeClass('error');
-				
-			}
+			} // end of if (maxBookmarkIconWidth - bookmarkSizeWidth < 10) 
+		
+		} 
+		
+		// if no border option is chosen
+		
+		if (borderWidth.length === 0 && borderColor === 'transparent' &&  borderStyle === 'none') {
+		    
+            $('#border-size-errors,#border-errors').hide();
+
+            $('#border-width,#border-color, #border-style').removeClass('error');
+
+            sizeStatus = true;
+            
+            borderStatus = true;
 		
 		}
+		
+		// background and bookmark conditions must be met, if optional fields are filled out conditions for those fields must be met in order to submit form successfully
 		
 		if (backgroundStatus === true && bookmarkStatus === true ) {
 		
@@ -472,7 +494,7 @@ $(document).ready(function() {
 						
 						}
 					
-					}
+					} // end of if (sizeStatus !== '')
 					
 					else {
 						
@@ -480,7 +502,7 @@ $(document).ready(function() {
 					
 					}
 					
-				}
+				} // end of if (borderStatus === true)
 				
 				else {
 					
@@ -507,7 +529,7 @@ $(document).ready(function() {
 						
 						}
 					
-					}
+					} // end of if ( borderStatus !== '')
 					
 					else {
 					
@@ -515,7 +537,7 @@ $(document).ready(function() {
 					
 					}
 					
-				}
+				} // end of if (sizeStatus === true)
 				
 				else {
 					
@@ -538,43 +560,34 @@ $(document).ready(function() {
 			return false;
 			
 		}
-	
 		
 	} // end of validateBookmarkIconsForm()
 
 	function deleteBookmarkIcons() {
 
-		let bookmarkIconsNull = localStorage.getItem('bookmark-icons');
+		let bookmarkIconsNull = localStorage.getItem('bookmarkIcons');
 		
-		let bookmarkIcons = '';
+		let bookmarkIcons;
 		
 		if (bookmarkIconsNull !== null) {
 		
-			let bookmarkIcons = JSON.parse(localStorage.getItem('bookmark-icons'));
+			bookmarkIcons = JSON.parse(localStorage.getItem('bookmarkIcons'));
 			
-			let fullLength = bookmarkIcons.length;
+			if (bookmarkIcons.length > 1) {
 			
-			let spliceLength = fullLength-10;
+			    bookmarkIcons.splice(0, bookmarkIcons.length-1); // delete previous bookmark icon designs since only most recent design is displayed
 			
-			for (let i = 0; i < bookmarkIcons.length; i++ ) {
-			
-				if (bookmarkIcons.length > 10) {
+			}
 
-				bookmarkIcons.splice(i+1, spliceLength);
-				
-				}
-			
-			} // end of for loop
-		
 		} // end of if (bookmarkIconsNull != null)
+		
+		console.log(bookmarkIcons);
 		
 		localStorage.setItem('bookmark-icons', JSON.stringify(bookmarkIcons));
 		
 		fetchBookmarkIcons();
 		
 	} // end of deleteBookmarkIcons()
-
-	$("#bookmark-form").on('submit', saveBookmark);
 
     function saveBookmark(e) {
     
@@ -616,201 +629,7 @@ $(document).ready(function() {
 		
 		$('#bookmark-form')[0].reset();
 
-
     } // end of saveBookmark()
-        
-	function minimizeFrame(url,name) {
-	
-		let frame = $('iframe[src="'+url+'"]');
-		
-		bookmarkCounter++;
-
-		frame.parent().hide();
-		
-		$('#minimize-bar').show();
-		
-		$('#minimized-bookmarks-list').append('<li>' +
-		
-		'<span class="bookmark-li" name="'+name+'" onclick="showFrame(\'' + url + '\',\'' + name + '\')">' +name+ '</span>' + '</li>');
-		
-	} // end of minimizeFrame()
-
-	function showFrame(url,name) {
-		
-		bookmarkCounter--;
-
-		$('iframe[src="'+url+'"]').parent().show();
-		
-		$('.bookmark-li[name="'+name+'"]').parent().remove();
-		
-		if (bookmarkCounter === 0) {
-		
-			$('#minimize-bar').hide();
-			
-		}
-		
-	} // end of showFrame()
-
-	function decreaseWidth(url) {
-	
-		let frameWidth = $('iframe[src="'+url+'"]').width();
-		
-		if (frameWidth >= 100) {
-		
-			$('iframe[src="'+url+'"]').animate({width: "-=100px"});
-		
-		}
-	} // end of decreaseWidth(url)
-	
-	function increaseWidth(url) {
-	
-		let frameWidth = $('iframe[src="'+url+'"]').width();
-		
-		let screenWidth = $(window).width();
-		
-		if (frameWidth < screenWidth -100) {
-		
-			$('iframe[src="'+url+'"]').animate({width: "+=100px"});
-			
-		}
-		
-		else {
-		
-			return false;
-		}
-
-	} // end of increaseWidth()
-	
-	function decreaseHeight(url) {
-	
-		let frameHeight = $('iframe[src="'+url+'"]').css("height");
-		
-		let heightNumber = parseInt(frameHeight);
-		
-		if (heightNumber > 200) {
-		
-		$('iframe[src="'+url+'"]').animate({height: "-=100px"});
-		
-		}
-		
-	} // end of decreaseHeight(url)
-	
-	function increaseHeight(url) {
-	
-		$('iframe[src="'+url+'"]').animate({height: "+=100px"});
-		
-	} // end of increaseHeight(url)
-	
-	function addFrame(url,name) {
-		
-		let bookmarksResults = $('#bookmarksResults');
-		
-		if ($('#bookmarksResults .frame-wrapper .frame-name:contains('+name+')').length !== 0) {
-		
-			alert('You have already opened up a frame from that website');
-			
-			return false;
-		}
-		
-		let screenHeight = $(window).height();
-		
-		let iframeHeight = screenHeight/2 +'px';
-		
-		bookmarksResults.append('<div class="frame-wrapper col-md-12 ">' +
-		
-		'<div class="pull-left size-wrapper" title="Size control. W is for width. H is for height. Or if your browser allows you can drag the frame to control size.">'+ '<span id="width-increase" class="size" onclick="increaseWidth(\''+url+'\')" onmouseover="hoverInWidthIncrease(\''+url+'\')" onmouseout="hoverOutWidthIncrease(\''+url+'\')"> W+ </span>'+ '</br>'+
-		
-		'<span id="width-decrease" class="size" onclick="decreaseWidth(\''+url+'\')" onmouseover="hoverInWidthDecrease(\''+url+'\')" onmouseout="hoverOutWidthDecrease(\''+url+'\')"> W- </span>'+ '</br>'+ '<span id="height-increase" class="size" onclick="increaseHeight(\''+url+'\')" onmouseover="hoverInHeightIncrease(\''+url+'\')" onmouseout="hoverOutHeightIncrease(\''+url+'\')"> H+ </span>' + '</br>'+
-		
-		'<span id="height-decrease" class="size" onclick="decreaseHeight(\''+url+'\')" onmouseover="hoverInHeightDecrease(\''+url+'\')" onmouseout="hoverOutHeightDecrease(\''+url+'\')"> H- </span>' + '</div>'+ '<div class="move-frame">'+ '<span id="span-remove" class="badge" onclick="deleteFrame(\''+url+'\')" onmouseover="hoverInRemove(\''+url+'\')" onmouseout="hoverOutRemove(\''+url+'\')">&times; </span>' + '<span id="span-minimize" class="badge" onmouseover="hoverInMinimize(\''+url+'\')" onmouseout="hoverOutMinimize(\''+url+'\')" onclick="minimizeFrame(\'' + url + '\',\'' + name + '\')"> &#8722; </span>' +
-		
-		'<span class="frame-name">' +' '+name+'</span>'+ '</div>' + '<iframe src="'+url+'"></iframe>' + '</div>');
-
-		$('.alert').show();
-
-		$('iframe').height(iframeHeight);
-		
-	} // end of addFrame()
-	
-		/* Hover functions for frame buttons */
-		
-	function hoverInRemove(url) {
-	
-		$('iframe[src="'+url+'"]').siblings('.move-frame').children('#span-remove').css({'background-color':'white', 'color':'red'});
-
-	}
-	
-	function hoverOutRemove(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.move-frame').children('#span-remove').css({'background-color':'red', 'color':'white'});
-
-	}
-	
-	function hoverInMinimize(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.move-frame').children('#span-minimize').css({'background-color':'white', 'color':'orange'});
-
-	}
-	
-	function hoverOutMinimize(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.move-frame').children('#span-minimize').css({'background-color':'orange', 'color':'white'});
-
-	}
-
-	function hoverInWidthIncrease(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.size-wrapper').children('#width-increase').css({ 'color':'lightgrey'});
-
-	}
-	
-	function hoverOutWidthIncrease(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.size-wrapper').children('#width-increase').css({'color':'white'});
-
-	}
-	
-	function hoverInWidthDecrease(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.size-wrapper').children('#width-decrease').css({ 'color':'lightgrey'});
-
-	}
-	
-	function hoverOutWidthDecrease(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.size-wrapper').children('#width-decrease').css({'color':'white'});
-
-	}
-	
-	function hoverInHeightIncrease(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.size-wrapper').children('#height-increase').css({ 'color':'lightgrey'});
-
-	}
-	
-	function hoverOutHeightIncrease(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.size-wrapper').children('#height-increase').css({'color':'white'});
-
-	}
-	
-	function hoverInHeightDecrease(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.size-wrapper').children('#height-decrease').css({ 'color':'lightgrey'});
-
-	}
-	
-	function hoverOutHeightDecrease(url) {
-		
-		$('iframe[src="'+url+'"]').siblings('.size-wrapper').children('#height-decrease').css({'color':'white'});
-
-	}
-
-	function deleteFrame(url) {
-		
-		$('iframe[src="'+url+'"]').parent().remove();
-
-	}
 	
 	function deleteBookmark(url) {
 	
@@ -823,7 +642,8 @@ $(document).ready(function() {
 			bookmarks.splice(i,1);
 			
 			}
-		}
+		
+		} // end of for loop
 
 		localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 		
@@ -832,6 +652,12 @@ $(document).ready(function() {
 	} // end of deleteBookmark(url)
 	 
 	function fetchBookmarks() {
+	
+	    if (localStorage.getItem('bookmarks') === null) {
+	        
+	        alert
+	    
+	    }
 	
 		let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
 
@@ -845,93 +671,60 @@ $(document).ready(function() {
 			
 			let url = bookmarks[i].url;
 
-			bookmarkButton.innerHTML +=
-
-				'<li class="list-group-item">'+
-				
-			  '<a target="_blank" href="'+url+'">'+name+'</a>' +
-				
-				'<a href="#" onclick="deleteBookmark(\''+url+'\')">' + ' <span class="glyphicon glyphicon-remove"></span>' + '</a>' +
-			   
-			   '<a  href="#">' + ' <span onclick="addFrame(\'' + url + '\',\'' + name + '\')" class="glyphicon glyphicon-plus"></span>' + '</a>' +
-			   
-			   '</li>' ;
-
+			bookmarkButton.innerHTML += '<li class="list-group-item"><a target="_blank" href="'+url+'">'+name+'</a><a href="#" onclick="deleteBookmark(\''+url+'\')"> <span class="glyphicon glyphicon-remove"></span></a></li>';
+	
 		} // end of for loop
 
 	} // end of fetchBookmarks()
 	
-		/* Responsive Design */
+	// Responsive Design 
 
-	let screenWidth = $(window).width();
+	function responsiveDesign() {
+    
+        screenHeight = $(window).height();
+        
+        screenWidth = $(window).width();
+        
+        let bookmarkIcons;
+        
+        let bookmarkWidth;
+        
+        let bookmarkHeight;
+        
+        if (localStorage.getItem('bookmarkIcons') !== null) {
+        
+            bookmarkIcons = JSON.parse(localStorage.getItem('bookmarkIcons'));
+        
+            let bookmarkIconsLength = bookmarkIcons.length-1;
+        
+            bookmarkWidth = bookmarkIcons[bookmarkIconsLength]["bookmark-size-width"];
+        
+            bookmarkHeight = bookmarkIcons[bookmarkIconsLength]["bookmark-size-height"];
+        
+        }
+        
+        else {
+            
+            bookmarkWidth = 60;
+        
+            bookmarkHeight = 110;
+        
+        }
+        
+        let bookmarkFormWidth = $('#bookmark-form').outerWidth();
+    
+        maxBookmarkIconWidth = Math.round(((screenWidth - bookmarkFormWidth)/2)-10); // make bookmark fit between the bookmarkForm and the right side of window screen (if window screen is wide enough)
+        
+        maxBookmarkIconHeight = Math.round(screenHeight/2);
+    
+        $('#bookmark-size-width').attr({'max': maxBookmarkIconWidth, 'value': maxBookmarkIconWidth});
+    
+        $('#bookmark-size-height').attr({'max': maxBookmarkIconHeight, 'value':  maxBookmarkIconHeight});
+    
+        $('.bookmark-icon').css({'height':bookmarkHeight + 'px', 'width': bookmarkWidth + 'px','max-width': maxBookmarkIconWidth + 'px', 'max-height':maxBookmarkIconHeight + 'px' });
+    
+	} // end of responsiveDesign()
 	
-	let screenHeight = $(window).height();
+	responsiveDesign();
 	
-	let iframeHeight = screenHeight/2;
-	
-	let borderWidth = $('.bookmark-icon').css('border-width');
-	
-	let bookmarkSizeWidth = $('.bookmark-icon').width();
-	
-	$('#bookmark-size-width').attr({'max': Math.round(screenWidth/4), 'value': Math.round(screenWidth/4)});
-	
-	$('#bookmark-size-height').attr({'max':  Math.round(screenHeight/2), 'value':  Math.round(screenHeight/2)});
-	
-	$('.bookmark-icon').css({'max-width': screenWidth/4 + 'px'});
-	
-	if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {
-	
-		$('.bookmark-icon').css({'border-width': (screenWidth/4) - bookmarkSizeWidth + 'px'});
-	
-	}
-	
-	if (screenWidth < 200) {
-	
-		$('#bookmark-icon-form button[type="button"]').removeClass('pull-right').css({'margin-top':'5%'});
-			
-	}
-	
-	else {
-			
-		$('#bookmark-icon-form button[type="button"]').addClass('pull-right').css({'margin-top':0});
-		
-	}
-	
-	$(window).resize(function() {
-		
-		let screenWidth = $(window).width();
-		
-		let screenHeight = $(window).height();
-		
-		let borderWidth = $('.bookmark-icon').css('border-width');
-		
-		let bookmarkSizeWidth = $('.bookmark-icon').width();
-		
-		$('#bookmark-size-width').attr({'max':  Math.round(screenWidth/4), 'value':  Math.round(screenWidth/4)});
-		
-		$('#bookmark-size-height').attr({'max':  Math.round(screenHeight/2), 'value':  Math.round(screenHeight/2)});
-		
-		$('.bookmark-icon').css({'max-width':screenWidth/4 + 'px'});
-		
-		$('iframe').height(screenHeight/2);
-		
-		if (borderWidth > (screenWidth/4) - bookmarkSizeWidth) {
-		
-			$('.bookmark-icon').css({'border-width': (screenWidth/4) - bookmarkSizeWidth + 'px'});
-	
-		}
-		
-		if (screenWidth < 200) {
-		
-			$('#bookmark-icon-form button[type="button"]').removeClass('pull-right').css({'margin-top':'5%'});
-		
-		}
-		
-		else {
-		
-			$('#bookmark-icon-form button[type="button"]').addClass('pull-right').css({'margin-top':0});
-			
-		}
-		
-	});
-
+	$(window).resize(responsiveDesign);
