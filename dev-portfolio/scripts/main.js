@@ -150,7 +150,7 @@ $(document).ready(function() {
   	        
   	        summary: "The Bookmark App lets users save their favorite websites, which can be viewed in a new window, and design their own bookmark.",
   	        
-  	        projectLink: "https://codepen.io/kaykay1424/pen/MpxOzr",
+  	        projectLink: "Bookmark-App/index.html",
   	        
   	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Bookmark-App",
   	        
