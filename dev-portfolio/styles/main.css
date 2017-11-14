@@ -15,12 +15,12 @@ body {
 	overflow-wrap: break-word;
 
 	word-wrap: break-word;
-	
+
 	hyphens: auto;
 
 	min-height: 100%;
-        
-} 
+
+}
 
 .navbar {
 
@@ -28,10 +28,10 @@ body {
 
 	background: linear-gradient(to right, #2027D7,purple); /* #2027D7: blue color */
 
-} 
+}
 
 .navbar .navbar-nav li a, .navbar .navbar-header a {
-	
+
 	color: white;
 
 }
@@ -51,15 +51,15 @@ body {
 }
 
 a {
-	
+
 	color: #A371FF; /* light purple color */
 
 }
 
 a:hover {
-	
+
 	text-decoration: underline;
-	
+
 	color: #A371FF; /* light purple color */
 
 }
@@ -85,7 +85,7 @@ a:hover {
 .footer i {
 
 	color: #2027D7; /* blue color */
-	
+
 	font-size: 16px;
 
 }
@@ -102,7 +102,7 @@ a:hover {
 /* About Me Page */
 
 .affix {
-	
+
 	z-index: 2000;
 
 }
@@ -158,7 +158,7 @@ a:hover {
 }
 
 .nav-pills li.active a  {
-  
+
    background-color: #2027D7; /* blue color */
 
 }
@@ -180,29 +180,29 @@ a:hover {
 	color: white;
 
 	text-shadow: 1px 1px 1px black;
-	
+
 	background-color: grey;
-	
+
 	margin-top: 0;
-	
+
 	margin-bottom: 0;
 
 	padding: 10px;
-	
+
 }
 
 .job-title {
-	
+
 	background-color: #2027D7; /* blue color */
-	
+
 	color: white;
-	
+
 	margin-top: 0;
-	
+
 	margin-bottom: 0;
-	
+
 	padding: 10px;
-	
+
 	font-size: 16px;
 
 }
@@ -218,11 +218,11 @@ a:hover {
 .my-photo-wrapper {
 
 	width: 100%;
-	
+
 	background-color: white;
-	
+
 	margin-bottom: 0;
-	
+
 	padding-bottom: 5%;
 
 }
@@ -238,7 +238,7 @@ a:hover {
 	margin-top: 5%;
 
 	width: 90%;
-	
+
 }
 
 .greeting {
@@ -258,7 +258,7 @@ a:hover {
 	margin: auto;
 
 	margin-top: 5%;
-	
+
 }
 
 .quick-facts code {
@@ -274,13 +274,13 @@ a:hover {
 	background-color: black;
 
 	color: white;
-	
+
 	background-image: url('../images/office-desk.jpg'); /* image of office desk with laptop */
 
 	background-size: cover;
 
 	background-position: center top;
-		
+
 }
 
 .quick-facts {
@@ -304,13 +304,13 @@ a:hover {
 	padding: 0;
 
 	padding-bottom: 5%;
-	
+
 	background-color: rgba(0,0,0,.5); /* black color with .5 transparency */
 
 }
 
 .backstory {
-	
+
 	line-height: 2em;
 
 	font-size: 16px;
@@ -325,7 +325,7 @@ a:hover {
 	background-color: #95C7E0; /* light blue color */
 
 	padding-bottom: 5%;
-	
+
 }
 
 #skill-level-info h2, #sample-projects-group h2 {
@@ -333,7 +333,7 @@ a:hover {
 	background-color: white;
 
 	margin-top: 0;
-	
+
 	margin-bottom: 5%;
 
 	padding: 10px;
@@ -347,13 +347,13 @@ a:hover {
 }
 
 #skill-level-info h2 {
-	
+
 	color: #95C7E0;  /* light blue color */
 
 }
 
 #skill-level-info .row {
-	
+
 	font-weight: bold;
 
 	font-size: 16px;
@@ -362,40 +362,40 @@ a:hover {
 
 }
 
-.progress { 
-	
+.progress {
+
 	display: inline-block;
-	
+
 	width: 73%;
 
 }
 
 .progress-bar-css, .progress-bar-php, .progress-bar-bootstrap {
-	
+
 	width: 55%;
 
 }
 
 .progress-bar-html, .progress-bar-jquery, .progress-bar-mysql {
-	
+
 	width: 77%;
 
 }
 
 .progress-bar-js {
-	
+
 	width: 44%;
 
 }
 
 .progress-bar-ruby {
-	
+
 	width: 22%;
 
 }
 
 .progress-bar-rails {
-	
+
 	width: 11%;
 
 }
@@ -414,7 +414,7 @@ a:hover {
 }
 
 #sample-projects-group .panel {
-	
+
 	margin-bottom: 5%;
 
 }
@@ -424,15 +424,15 @@ a:hover {
 	margin-bottom: 0;
 
 	padding: 10px;
-	
+
 	border-bottom: none;
 
 	text-align: center;
-	
+
 	background-color: black;
-	
+
 	color: white;
-	
+
 }
 
 #sample-projects-group .alert {
@@ -443,17 +443,17 @@ a:hover {
 
 
 /* Courses Page */
- 
+
 .course-full-container {
-	
+
 	background: linear-gradient(to right, black, grey);
-	
+
 	position: relative;
 
 }
 
 #courses {
-	
+
 	padding-bottom: 50px;
 
 }
@@ -467,7 +467,7 @@ a:hover {
 	color: white;
 
 	font-size: 15px;
-	
+
 	padding-top: 30px;
 
 	padding-bottom: 30px;
@@ -475,9 +475,9 @@ a:hover {
 }
 
 .completed-courses {
-	
+
 	padding-top: 15px;
-	
+
 	margin-top: 15px;
 
 }
@@ -489,13 +489,13 @@ a:hover {
 }
 
 #backend-courses-container {
-	
+
 	padding-left: 5%;
 
 }
 
 #frontend-courses-container h2, #backend-courses-container h2 {
-	
+
 	color: #95C7E0;  /* light blue color */;
 
 }
@@ -503,29 +503,29 @@ a:hover {
 .courses-container h3 a {
 
 	text-decoration: underline;
-	
+
 	color: white;
-	
+
 }
 
 .chalkboard-base {
-	
+
 	width: 100%;
-	
+
 	position: absolute;
-	
+
 	bottom: 0;
-	
+
 	background-color: brown;
-	
+
 	background-image: url('https://static.pexels.com/photos/139306/pexels-photo-139306.jpeg'); /* image of wood pattern */
-	
+
 	background-size: cover;
-	
+
 	height: 30px;
-	
+
 	margin-bottom: 0;
-	
+
 	margin-top: 0;
 
 }
@@ -533,32 +533,32 @@ a:hover {
 .chalk {
 
 	position: absolute;
-	
-	top: -5px; 
-	
+
+	top: -5px;
+
 	left: 0;
-	
+
 	right: 0;
-	
+
 	margin: auto;
-	
+
 	height: 5px;
-	
+
 	width: 30px;
-	
+
 	background-color: white;
-	
+
 	border-radius: 5px;
-	
+
 }
 
 
 /* All Projects Pages/About Me Page */
 
 .projects-full-container {
-	
+
 	background-color: white;
-	
+
 }
 
 .projects-form-container {
@@ -570,13 +570,13 @@ a:hover {
 	padding-top: 5%;
 
 	border-bottom: 2px solid black;
-	
+
 	width: 100%;
 
 }
 
 .projects-title-div {
-    
+
     padding: 0;
 
 }
@@ -598,7 +598,7 @@ a:hover {
 }
 
 .form-div {
-    
+
     padding: 0;
 
 }
@@ -608,29 +608,29 @@ a:hover {
 	padding: 10px;
 
 	background-color: white;
-	
+
 	overflow-x: auto;
-	
+
 	background-color: white;
-	
+
 	border-top: 2px solid black;
-	
+
 	border-bottom: 2px solid black;
-	
+
 	box-shadow: 2px 2px 2px black;
 
 }
 
-#projects-form h2 { 
+#projects-form h2 {
 
     font-size: 20px;
 
 }
 
 .form-skills {
-    
+
     margin: auto;
-    
+
     width: 50%;
 
 }
@@ -641,16 +641,18 @@ a:hover {
 
 	margin-bottom: 5%;
 
-	background-color: grey;
+	background-color: white;
 
-	color: white;
+	color: grey;
+
+  border: 2px solid grey;
 
 }
 
 .select-all-languages:hover {
 
 	background-color: grey;
-	
+
 	color: white;
 
 }
@@ -660,18 +662,52 @@ a:hover {
 	margin-top: 3%;
 
 	text-align: center;
-	
+
 	width: 90%;
-	
+
 	margin: auto;
 }
 
 .filter-project-container button {
-	
+
 	margin: 3% 1% 3% 1%;
-	
+
 	white-space: normal;
-	
+
+}
+
+.filter-project-container .btn-primary {
+
+    background-color: white;
+
+    color: #2047FF; /* blue color */
+
+    border: 2px solid #2047FF; /* #2047FF: blue color */
+}
+
+.filter-project-container .btn-primary:hover {
+
+  background-color: #2047FF; /* blue color */
+
+  color: white;
+
+}
+
+.filter-project-container .show-projects {
+
+    background-color: white;
+
+    color: #1E93ED; /* blue color */
+
+    border: 2px solid #1E93ED; /* #2047FF: blue color */
+}
+
+.filter-project-container .show-projects:hover {
+
+  background-color: #1E93ED; /* blue color */
+
+  color: white;
+
 }
 
 .frontend-label {
@@ -699,9 +735,9 @@ form .checkbox .label {
 	margin-top: 0;
 
 	padding-bottom: 5%;
-	
+
 	padding-top: 3%;
-	
+
 }
 
 #projects-container h2 {
@@ -728,28 +764,30 @@ form .checkbox .label {
 
     box-shadow: 2px 2px 2px black;
 
+    border: 1px solid black;
+
 }
 
 .panel-heading {
-    
+
     color: white;
-    
+
     background-color: #4861D7; /* blue color */
 
 }
 
 .panel-body {
 
-   height:  300px; 
-   
+   height:  300px;
+
    padding: 0;
 
 }
 
 .panel-body img {
-    
+
     width: 100%;
-    
+
     height: 100%;
 
 }
@@ -757,49 +795,49 @@ form .checkbox .label {
 .panel-footer {
 
 	overflow-x: auto;
-	
+
 	padding-left: 0;
-	
+
 	padding-right: 0;
 
 }
 
 .project-summary {
-    
+
     padding: 8px;
 
 }
 
 .panel a {
-    
+
     color: #4861D7; /* blue color */
 
 }
 
 .panel a:hover {
-    
+
     color: #4861D7; /* blue color */
 
 }
 
 .project-skills {
-    
+
     margin: 0;
-    
+
     padding: 8px;
-    
+
     border-top: 2px solid black;
 
 }
 
-.project-skills .label { 
+.project-skills .label {
 
     margin: 1%;
-	
+
 	display: inline-block;
-	
+
 	color: white;
-	
+
 	font-size: 13px;
 
 }
@@ -810,7 +848,7 @@ form .checkbox .label {
 @media only screen and (min-width: 768px) {
 
     #about-me-info, #skill-level-info, #sample-projects-group, .projects-full-container, #projects-form {
-    
+
         border-right: 2px solid black;
 
         border-left: 2px solid black;
@@ -818,27 +856,27 @@ form .checkbox .label {
     }
 
 }
-	  
+
 @media only screen and (max-width:991px) {
-	
-	.progress { 
+
+	.progress {
 
 		display: block;
 
 		width: 90%;
 
 		margin-left: 5%;
-	
-	}	
-	
-	.form-skills, .filter-project-container  {
-	    
-	    width: 100%;
-	    
-	    margin: 0;
-	
+
 	}
-	
+
+	.form-skills, .filter-project-container  {
+
+	    width: 100%;
+
+	    margin: 0;
+
+	}
+
 	#projects-container hr {
 
 		display: none;
@@ -852,31 +890,31 @@ form .checkbox .label {
 		border-right: none;
 
 	}
-	
+
 	#backend-courses-container {
-	
+
 		padding-left: 15px;
 
-	}	
+	}
 
 }
 
 @media only screen and (max-width:991px) and (min-width: 768px) {
-	
-	.progress { 
+
+	.progress {
 
 		display: block;
 
 		width: 95%;
-		
+
 		margin-left: 2%;
-			
+
 	}
-	
+
 		#my-photo {
-		
+
 		width: 50%;
-	
+
 	}
 
 }
