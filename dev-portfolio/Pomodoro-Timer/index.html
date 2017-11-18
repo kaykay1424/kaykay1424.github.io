@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pomodoro Timer</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/timer.jpg" />
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+
+	<body>
+
+      <div id="container">
+
+          <h1><span>Pomodoro Timer</span></h1>
+
+          <div id="session-break-length">
+
+              <div class="session-length-choice">
+
+                  <label><b>Break length</b></label> <br/>
+
+                  <input id="break-length" type="number" value="5" />
+
+              </div>
+
+              <div class="session-length-choice">
+
+                  <label><b>Session length</b></label> <br/>
+
+                  <input id="session-length" type="number" value="25" />
+
+              </div>
+
+              <div id="session-control">
+
+                  <button id="session-start" class="start-pause-play" type="button"  >Start </button>
+
+              </div>
+
+          </div> <!-- end of #session-break-length -->
+
+  				<div id="timer">
+
+              <h2 id="session">Session</h2>
+
+              <p id="time"> Time </p>
+
+          </div> <!--end of #timer-->
+
+      </div> <!-- end of #container -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+      <script src="script.js"></script>
+
+	</body>
+
+</html>

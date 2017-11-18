@@ -118,12 +118,6 @@ $('#equal').click(function(){
 
         $('#input-screen').val(result + '\n' + equation + '='+ result);
 
-        // clear everything so another equation can be entered
-
-        equation = '';
-
-        input = '';
-
     }
 
     catch (error) {
@@ -135,6 +129,12 @@ $('#equal').click(function(){
         }
 
     } // end of catch()
+
+    // clear everything so another equation can be entered
+
+    equation = '';
+
+    input = '';
 
 });
 
