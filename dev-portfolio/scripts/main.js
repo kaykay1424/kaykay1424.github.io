@@ -238,6 +238,21 @@ $(document).ready(function() {
 
    	        skills: [ "HTML", "CSS", "JavaScript", "jQuery"]
 
+   	    },
+				{
+
+   	        project: "Pomodoro Timer",
+
+   	        image: "images/pomodoro-timer.jpg",
+
+   	        summary: "The Pomodoro Timer lets users select a session length (in minutes) as well as a break length (in minutes), which can be changed after pausing the timer.",
+
+   	        projectLink: "Pomodoro-Timer/index.html",
+
+   	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Pomodoro-Timer",
+
+   	        skills: [ "HTML", "CSS", "JavaScript", "jQuery"]
+
    	    }
 
 
