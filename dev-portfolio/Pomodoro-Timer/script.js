@@ -144,7 +144,7 @@ $(document).ready(function() {
 
           sessionLength = $('#break-length').val();
 
-          minute = sessionLength-1;
+          minute = sessionLength;
 
           breakTimer = true; // set breakTimer to true as session has ended
 
@@ -156,7 +156,7 @@ $(document).ready(function() {
 
             sessionLength = $('#session-length').val()
 
-            minute = $('#session-length').val();
+            minute = sessionLength;
 
             breakTimer = false; // set breakTimer to false as break has ended
 
@@ -172,7 +172,11 @@ $(document).ready(function() {
 
         seconds = 60;
 
-        minute--;
+        if (minute > 0) {
+
+          minute--;
+
+        }
 
       } // end of if (parseInt(seconds) === 0)
 
@@ -209,8 +213,6 @@ $(document).ready(function() {
       red = 0;
 
       green = 200;
-
-      breakTimer = false; // set breakTimer to false as session timer will start first
 
       // start time here to start counting down
 
@@ -294,7 +296,7 @@ $(document).ready(function() {
 
         seconds = 60;
 
-        $('#time').html($(this).val());
+        $('#time').html(sessionLength);
 
         $('.start-pause-play').attr('id','session-start').html('Start');
 
@@ -320,7 +322,7 @@ $(document).ready(function() {
 
         seconds = 60;
 
-        $('#time').html($(this).val());
+        $('#time').html(sessionLength);
 
         $('.start-pause-play').attr('id','session-start').html('Start');
 
