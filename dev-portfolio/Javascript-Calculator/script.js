@@ -1,4 +1,4 @@
-/* Explanation of program
+/* Explanation of program:
 
   The JavaScript Calculator can solve operations involving multiplication,division,subtraction,and addition.
   The value of the button pressed as well as the entire equation is displayed on the screen each time a number

@@ -234,7 +234,7 @@ $(document).ready(function() {
 
       // clear title attribute as message explaining session needs to be paused before length can be changed is no longer needed
 
-      $('inpu').attr('title','');
+      $('input').attr('title','');
 
       $(this).attr('id','session-play').html('Play');
 

@@ -253,7 +253,22 @@ $(document).ready(function() {
 
    	        skills: [ "HTML", "CSS", "JavaScript", "jQuery"]
 
-   	    }
+   	    },
+				{
+
+  	        project: "Tic Tac Toe Game",
+
+  	        image: "images/tic-tac-toe.jpg",
+
+  	        summary: "The Tic Tac Toe Game lets users choose whether to play alone with the computer or play with someone else and whether to play as X or O.",
+
+						projectLink: "Tic-Tac-To/index.html",
+
+  	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Tic-Tac-Toe",
+
+  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery" ]
+
+  	    }
 
 
   	];
