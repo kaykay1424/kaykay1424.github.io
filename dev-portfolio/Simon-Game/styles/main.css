@@ -408,7 +408,7 @@ body {
 
       top: 95px;
 
-      left: 45px;
+      left: 40px;
 
       border: 5px solid black;
 
@@ -428,9 +428,9 @@ body {
 
       border-radius: 0;
 
-      width: 142px;
+      width: 141px;
 
-      height: 193px;
+      height: 190px;
 
     }
 
@@ -438,7 +438,11 @@ body {
 
       margin-right: 1px;
 
-      margin-bottom: 1px;
+      margin-bottom: 2px;
+
+      margin-top: 1px;
+
+      margin-left: 1px;
 
     }
 
@@ -448,19 +452,23 @@ body {
 
       margin-bottom: 1px;
 
+      margin-top: 1px;
+
     }
 
     #yellow-button {
 
-      margin-top: 1px;
+      margin-top: 3px;
 
       margin-right: 1px;
+
+      margin-left: 1px;
 
     }
 
     #blue-button {
 
-      margin-top: 1px;
+      margin-top: 3px;
 
       margin-left: 1px;
 
