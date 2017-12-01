@@ -268,7 +268,23 @@ $(document).ready(function() {
 
   	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery" ]
 
-  	    }
+  	    },
+
+				{
+
+   	        project: "Simon Game",
+
+   	        image: "images/simon-game.jpg",
+
+   	        summary: "The Simon Game plays an order of colors chosen randomly that the player has to pick correctly until the order of colors reaches 20 after which the player wins the game and the game restarts.",
+
+   	        projectLink: "Simon-Game/index.html",
+
+   	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Simon-Game",
+
+   	        skills: [ "HTML", "CSS", "JavaScript", "jQuery"]
+
+   	    }
 
 
   	];
