@@ -386,7 +386,7 @@ body {
 
     #simon-game-board {
 
-      width: 320px;
+      width: 300px;
 
       border-radius: 0;
 
@@ -400,13 +400,15 @@ body {
 
       border-radius: 0;
 
+      box-sizing: border-box;
+
     }
 
     #control-board {
 
       top: 95px;
 
-      left: 50px;
+      left: 45px;
 
       border: 5px solid black;
 
@@ -426,7 +428,7 @@ body {
 
       border-radius: 0;
 
-      width: 152px;
+      width: 142px;
 
       height: 193px;
 
