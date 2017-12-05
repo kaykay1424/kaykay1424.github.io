@@ -474,6 +474,12 @@ a:hover {
 
 }
 
+.courses-container a {
+
+  color: white;
+
+}
+
 .completed-courses {
 
 	padding-top: 15px;
