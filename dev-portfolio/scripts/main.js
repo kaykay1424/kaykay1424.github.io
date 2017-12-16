@@ -284,8 +284,23 @@ $(document).ready(function() {
 
    	        skills: [ "HTML", "CSS", "JavaScript", "jQuery"]
 
-   	    }
+   	    },
 
+				{
+
+  	        project: "The Electronics Store",
+
+  	        image: "images/electronics-store.jpg",
+
+  	        summary: "The Electronics Store is an example e-commerce site where users can add products, like TVs and cameras, to their shopping cart or wish list, search for products by name, price, discount, brand, or category, purchase products through Paypal, and contact the store. It also includes an admin panel to manage products and customers.",
+
+						projectLink: "https://the-electronics-store.herokuapp.com/",
+
+  	        codeLink: false,
+
+  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SQL", "MySQL", "PostgreSQL", "PHP" ]
+
+  	    }
 
   	];
 
@@ -335,11 +350,14 @@ $(document).ready(function() {
 
                             '<p>'+summary+'</p>'+
 
-                                '<a href="'+projectLink+'" target="_blank">View project</a> |'+
+                                '<a href="'+projectLink+'" target="_blank">View project</a> |';
 
-                                ' <a href="'+codeLink+'" target="_blank">View code</a> '+
+																if (codeLink !== false) {
 
-                            '</p>'+
+																		rows += '<a href="'+codeLink+'" target="_blank">View code</a> '+;
+																}
+
+                            rows +=  '</p>'+
 
                         '</div>'+
 
