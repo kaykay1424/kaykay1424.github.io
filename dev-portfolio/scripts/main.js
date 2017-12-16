@@ -10,6 +10,30 @@ $(document).ready(function() {
 
 	}).popover();
 
+	$('#mobile-nav #scroll-about a').click(function(e) {
+
+		e.preventDefault();
+
+		let href = $(this).attr('href');
+
+		let scrollTo;
+
+		if ($(window).width() < 768) {
+
+			scrollTo = $(href).offset().top - $('#mobile-nav').height() + $('.nav-about').height() - $('#scroll-about').height();
+
+		}
+
+		else {
+
+			scrollTo = $(href).offset().top - $('#mobile-nav').height();
+
+		}
+
+		$('html,body').animate({scrollTop: scrollTo },1000); // scroll to section clicked on
+
+	});
+
 	function addPaddingTop() {
 
         let navbarHeight = $('.navbar').height();
@@ -129,7 +153,7 @@ $(document).ready(function() {
 
 		 });
 
-		 $('.navbar .dropdown-menu li a').smoothScroll();
+		// $('.navbar .dropdown-menu li a').smoothScroll();
 
   	} // end of if ($('script[src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"]').length === 1)
 
@@ -266,7 +290,7 @@ $(document).ready(function() {
 
   	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Tic-Tac-Toe",
 
-  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery" ]
+  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "XSS" ]
 
   	    },
 
@@ -282,7 +306,7 @@ $(document).ready(function() {
 
    	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Simon-Game",
 
-   	        skills: [ "HTML", "CSS", "JavaScript", "jQuery"]
+   	        skills: [ "HTML", "CSS", "JavaScript", "jQuery", "XSS"]
 
    	    },
 
@@ -298,7 +322,7 @@ $(document).ready(function() {
 
   	        codeLink: false,
 
-  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SQL", "MySQL", "PostgreSQL", "PHP" ]
+  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SQL", "MySQL", "PostgreSQL", "PHP", "XSS" ]
 
   	    }
 
@@ -332,9 +356,11 @@ $(document).ready(function() {
 
             let codeLink = projectsArray[i].codeLink;
 
-            rows += '<div class="col-md-6 ">'+
+						// if there is only 1 project in row
 
-                '<div class="panel" >'+
+							rows += '<div class="col-md-6 ">'+
+
+										'<div class="panel" >'+
 
                     '<div class="panel-heading" >'+
 
@@ -350,11 +376,11 @@ $(document).ready(function() {
 
                             '<p>'+summary+'</p>'+
 
-                                '<a href="'+projectLink+'" target="_blank">View project</a> |';
+                                '<a href="'+projectLink+'" target="_blank">View project</a>';
 
 																if (codeLink !== false) {
 
-																		rows += '<a href="'+codeLink+'" target="_blank">View code</a> '+;
+																		rows += '| <a href="'+codeLink+'" target="_blank">View code</a> ';
 																}
 
                             rows +=  '</p>'+
@@ -509,9 +535,25 @@ $(document).ready(function() {
 
 	            let codeLink = projectsArray[i].codeLink;
 
-	            rows += '<div class="col-md-6 ">'+
+							let lastColumn = numProjects;
 
-	                '<div class="panel" >'+
+							let prevColumn = numColumns - 1;
+
+							// if there is only 1 project in row
+
+							if (numColumns === lastColumn && prevColumn % 2 === 0) {
+
+								rows += '<div class="col-md-6 col-md-offset-3">';
+
+							}
+
+							else {
+
+								rows += '<div class="col-md-6 ">';
+
+							}
+
+	            rows +=  '<div class="panel" >'+
 
 	                    '<div class="panel-heading" >'+
 

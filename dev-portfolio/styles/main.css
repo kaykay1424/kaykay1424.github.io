@@ -50,6 +50,20 @@ body {
 
 }
 
+.navbar .navbar-nav li.dropdown ul {
+
+  background-color: black;
+
+}
+
+.navbar .navbar-nav li.dropdown ul li a:hover {
+
+  background-color: black;
+
+  color: white;
+
+}
+
 a {
 
 	color: #A371FF; /* light purple color */
@@ -370,21 +384,21 @@ a:hover {
 
 }
 
-.progress-bar-css, .progress-bar-php, .progress-bar-bootstrap {
+.progress-bar-css, .progress-bar-php, .progress-bar-bootstrap, .progress-bar-js {
 
 	width: 55%;
 
 }
 
-.progress-bar-html, .progress-bar-jquery, .progress-bar-mysql {
+.progress-bar-jquery {
 
-	width: 77%;
+  width: 66%;
 
 }
 
-.progress-bar-js {
+.progress-bar-html,  .progress-bar-mysql {
 
-	width: 44%;
+	width: 77%;
 
 }
 
@@ -633,17 +647,32 @@ a:hover {
 
 }
 
+.form-skills-container {
+
+  width: 80%;
+
+  margin: auto;
+
+}
+
 .form-skills {
 
-    margin: auto;
-
     width: 50%;
+
+    float: left;
+
+
+}
+
+.button-container {
+
+  width: 100%;
+
+  clear: both;
 
 }
 
 .select-all-languages {
-
-	display: block;
 
 	margin-bottom: 5%;
 
