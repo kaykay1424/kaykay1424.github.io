@@ -162,7 +162,7 @@ $(document).ready(function() {
 
   	let frontendSkillsArray = [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery"];
 
-  	let backendSkillsArray = [ "API"];
+  	let backendSkillsArray = [ "API","SQL", "MySQL", "PostgreSQL", "PHP"];
 
   	let projectsArray = [
 
@@ -290,7 +290,7 @@ $(document).ready(function() {
 
   	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Tic-Tac-Toe",
 
-  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "XSS" ]
+  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery" ]
 
   	    },
 
@@ -306,7 +306,7 @@ $(document).ready(function() {
 
    	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Simon-Game",
 
-   	        skills: [ "HTML", "CSS", "JavaScript", "jQuery", "XSS"]
+   	        skills: [ "HTML", "CSS", "JavaScript", "jQuery"]
 
    	    },
 
@@ -322,7 +322,7 @@ $(document).ready(function() {
 
   	        codeLink: false,
 
-  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SQL", "MySQL", "PostgreSQL", "PHP", "XSS" ]
+  	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SQL", "MySQL", "PostgreSQL", "PHP" ]
 
   	    }
 
