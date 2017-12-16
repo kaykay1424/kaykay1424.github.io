@@ -569,11 +569,14 @@ $(document).ready(function() {
 
                                 '<p>'+summary+'</p>'+
 
-                                    '<a href="'+projectLink+'" target="_blank">View project</a> |'+
+                                    '<a href="'+projectLink+'" target="_blank">View project</a>';
 
-                                    ' <a href="'+codeLink+'" target="_blank">View code</a> '+
+																		if (codeLink !== false) {
 
-                                '</p>'+
+																				rows += '| <a href="'+codeLink+'" target="_blank">View code</a> ';
+																		}
+
+                                rows += '</p>'+
 
                             '</div>'+
 
