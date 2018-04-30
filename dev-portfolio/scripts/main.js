@@ -354,7 +354,7 @@ $(document).ready(function() {
 
 		let projectsContainer = document.getElementById('projects-container');
 
-	    let rows = '<div class="row">';
+	  let rows = '<div class="row">';
 
 		let numColumns = 0;
 
@@ -372,11 +372,25 @@ $(document).ready(function() {
 
             let codeLink = projectsArray[i].codeLink;
 
+						let lastColumn = projectsArray.length;
+
+						let prevColumn = numColumns - 1;
+
 						// if there is only 1 project in row
 
-							rows += '<div class="col-md-6 col-md-offset-3">'+
+						if (numColumns === lastColumn && prevColumn % 2 === 0) {
 
-										'<div class="panel" >'+
+							rows += '<div class="col-md-6 col-md-offset-3">';
+
+						}
+
+						else {
+
+							rows += '<div class="col-md-6 ">';
+
+						}
+
+							rows += '<div class="panel" >'+
 
                     '<div class="panel-heading" >'+
 
