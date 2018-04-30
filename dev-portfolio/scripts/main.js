@@ -160,7 +160,7 @@ $(document).ready(function() {
 
   	// Project Pages
 
-  	let frontendSkillsArray = [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery"];
+  	let frontendSkillsArray = [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SCSS","React"];
 
   	let backendSkillsArray = [ "API","SQL", "MySQL", "PostgreSQL", "PHP"];
 
@@ -324,7 +324,23 @@ $(document).ready(function() {
 
   	        skills: [ "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery", "SQL", "MySQL", "PostgreSQL", "PHP" ]
 
-  	    }
+  	    },
+				{
+
+   	        project: "Sample Text Generator",
+
+   	        image: "images/text-generator.jpg",
+
+   	        summary: "The Sample Text Generator allows users to choose the number of paragraphs and the format (text or html) of sample text and displays it.",
+
+   	        projectLink: "https://sample-text-generator.herokuapp.com/",
+
+   	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Text-Generator",
+
+   	        skills: [ "HTML", "CSS", "SCSS", "JavaScript", "jQuery", "React", "API"]
+
+
+   	    }
 
   	];
 
@@ -358,7 +374,7 @@ $(document).ready(function() {
 
 						// if there is only 1 project in row
 
-							rows += '<div class="col-md-6 ">'+
+							rows += '<div class="col-md-6 col-md-offset-3">'+
 
 										'<div class="panel" >'+
 
