@@ -335,7 +335,7 @@ $(document).ready(function() {
 
    	        projectLink: "https://sample-text-generator.herokuapp.com/",
 
-   	        codeLink: "https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Text-Generator",
+   	        codeLink: "https://github.com/kaykay1424/Text-Generator",
 
    	        skills: [ "HTML", "CSS", "SCSS", "JavaScript", "jQuery", "React", "API"]
 
@@ -410,7 +410,7 @@ $(document).ready(function() {
 
 																if (codeLink !== false) {
 
-																		rows += '| <a href="'+codeLink+'" target="_blank">View code</a> ';
+																		rows += ' | <a href="'+codeLink+'" target="_blank">View code</a> ';
 																}
 
                             rows +=  '</p>'+
@@ -603,7 +603,7 @@ $(document).ready(function() {
 
 																		if (codeLink !== false) {
 
-																				rows += '| <a href="'+codeLink+'" target="_blank">View code</a> ';
+																				rows += ' | <a href="'+codeLink+'" target="_blank">View code</a> ';
 																		}
 
                                 rows += '</p>'+
