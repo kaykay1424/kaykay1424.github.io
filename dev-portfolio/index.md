@@ -2,122 +2,171 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
-
-[Link to another page](./another-page.html).
-
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
 
-### Definition lists can be used with HTML syntax.
+## Quick Facts
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
+`<education>`
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+B.A. in Spanish and World Business with Chinese minor from University of Tennessee at Knoxville
 
-```
-The final element.
-```
+`</education>`
+
+`<devexp>`
+
+1 yr+ learning Full Stack Development online
+
+`</devexp>`
+
+`<hobbies>`
+
+*   Basketball
+*   Soccer
+*   Music (Hip Hop, R&B, Pop, Rock, Soul, Salsa, Bachata, Merengue, Sertanejo, pretty much everything)
+*   Movies (Action, Comedy, Romance)
+*   Traveling
+*   Learning languages (both computer and human)
+
+`</hobbies>`
+
+## About Me
+
+Traveling around the world to places, like South Korea and Costa Rica, as a military brat and a college student, I discovered my passion for learning foreign languages. However, it was not until the fall of 2016 when I decided to pursue a longtime interest in computer related fields that I discovered that passion extended to learning computer languages as well. After going through a few online Web Development lessons, I realized I really enjoyed being able to create programs using programming languages, like JavaScript, to do an infinite number of things and the challenge of solving problems to make those programs function. Since then I have continued to utilize online courses, like Free Code Camp and Codecademy (view more of the courses I have completed [here](courses.html) ), to learn Web Development skills and apply those skills by doing projects. I am working to become a Full Stack Developer and am looking for any opportunities in either Frontend or Backend Development or both.
+
+
+## Projects
+
+<div class="col-md-4 sample-projects">
+
+<div class="panel">
+
+<div class="panel-heading">
+
+### JavaScript Calculator
+
+</div>
+
+<div class="panel-body">![image of javascript calculator](images/javascript-calculator.jpg)</div>
+
+<div class="panel-footer">
+
+<div class="project-summary">
+
+The JavaScript Calculator can solve operations involving multiplication, division, subtraction, and addition.
+
+[View project](Javascript-Calculator/index.html) | [View code](https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Javascript-Calculator)
+
+</div>
+
+<div class="project-skills">
+
+<div class="label frontend-label  ">HTML</div>
+
+<div class="label frontend-label  ">CSS</div>
+
+<div class="label frontend-label">JavaScript</div>
+
+<div class="label frontend-label ">jQuery</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4 sample-projects">
+
+<div class="panel">
+
+<div class="panel-heading">
+
+### Random Quote Generator
+
+</div>
+
+<div class="panel-body">![image of random quote generator](images/quote-generator.jpg)</div>
+
+<div class="panel-footer">
+
+<div class="project-summary">
+
+The Random Quote Generator lets users view random inspirational quotes, view the source of the quote as well as tweet the current quote along with the author on a new page.
+
+[View project](Random-Quote-Generator/index.html) | [View code](https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Random-Quote-Generator)
+
+</div>
+
+<div class="project-skills">
+
+<div class="label frontend-label  ">HTML</div>
+
+<div class="label frontend-label  ">CSS</div>
+
+<div class="label frontend-label">Bootstrap</div>
+
+<div class="label frontend-label">JavaScript</div>
+
+<div class="label frontend-label ">jQuery</div>
+
+<div class="label backend-label ">API</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4 sample-projects">
+
+<div class="panel">
+
+<div class="panel-heading">
+
+### The Electronics Store
+
+</div>
+
+<div class="panel-body">![image of electronics store](images/electronics-store.jpg)</div>
+
+<div class="panel-footer">
+
+<div class="project-summary">
+
+The Electronics Store is an example e-commerce site where users can add products, like TVs and cameras, to their shopping cart or wish list, search for products by name, price, discount, brand, or category, purchase products through Paypal, and contact the store. It also includes an admin panel to manage products and customers.
+
+[View project](https://the-electronics-store.herokuapp.com/ )
+
+</div>
+
+<div class="project-skills">
+
+<div class="label frontend-label  ">HTML</div>
+
+<div class="label frontend-label  ">CSS</div>
+
+<div class="label frontend-label">Bootstrap</div>
+
+<div class="label frontend-label">JavaScript</div>
+
+<div class="label frontend-label ">jQuery</div>
+
+<div class="label backend-label ">SQL</div>
+
+<div class="label backend-label ">MySQL</div>
+
+<div class="label backend-label ">PostgreSQL</div>
+
+<div class="label backend-label ">PHP</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
