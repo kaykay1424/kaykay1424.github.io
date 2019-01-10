@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+	  	<title> Projects</title>
+
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Bitter|Mogra" rel="stylesheet">
+
+		<link rel="stylesheet" href="styles/main.css">
+
+	</head>
+
+
+	<body>
+
+		<nav class="Navbar"></nav>
+
+        <div class="container full-container projects-full-container" >
+
+            <div class="row">
+
+                <div class="col-sm-12 projects-form-container">
+
+                    <div class="row">
+
+                        <div class="col-sm-6 col-sm-offset-3 projects-title-div">
+
+                            <h1 class="text-center projects-title "> Projects  </h1>
+
+                        </div>
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <div class="col-sm-6 col-sm-offset-3 projects-form-div">
+
+                            <form id="projects-form" class="text-center" >
+
+                                <h2 class="text-center">Search by Skills </h2>
+
+																<div class="form-skills-container">
+
+	                                <div class="form-skills text-left">
+
+	                                    <div class="checkbox" >
+
+	                                      <label>
+
+	                                          <input type="checkbox" value="HTML"/>
+
+	                                          <span class="label frontend-label"> HTML </span>
+
+	                                      </label>
+
+	                                    </div>
+
+	                                    <div class="checkbox" >
+
+	                                      <label>
+
+	                                          <input type="checkbox" value="CSS">
+
+	                                          <span class="label frontend-label"> CSS </span>
+
+	                                      </label>
+
+	                                    </div>
+
+																			<div class="checkbox" >
+
+																			 <label>
+
+																					 <input type="checkbox" value="SCSS">
+
+																					 <span class="label frontend-label"> SCSS </span>
+
+																			 </label>
+
+																		 </div>
+
+																		 <div class="checkbox" >
+
+																			 <label>
+
+																					 <input type="checkbox" value="Bootstrap">
+
+																					 <span class="label frontend-label"> Bootstrap  </span>
+
+																			 </label>
+
+																		 </div>
+
+	                                    <div class="checkbox" >
+
+	                                      <label>
+
+	                                          <input type="checkbox" value="JavaScript">
+
+	                                          <span class="label frontend-label"> JavaScript </span>
+
+	                                      </label>
+
+	                                    </div>
+
+	                                    <div class="checkbox" >
+
+	                                      <label>
+
+	                                          <input type="checkbox" value="jQuery">
+
+	                                          <span class="label frontend-label"> jQuery </span>
+
+	                                      </label>
+
+	                                    </div>
+
+																			<div class="checkbox" >
+
+																			 <label>
+
+																					 <input type="checkbox" value="React">
+
+																					 <span class="label frontend-label"> React </span>
+
+																			 </label>
+
+																		 </div>
+
+																		</div> <!-- end of .form-skills -->
+
+																		<div class="form-skills text-left">
+
+	                                    <div class="checkbox" >
+
+	                                      <label>
+
+	                                          <input type="checkbox" value="API">
+
+	                                          <span class="label backend-label"> API  </span>
+
+	                                      </label>
+
+	                                    </div>
+
+																			<div class="checkbox" >
+
+	                                      <label>
+
+	                                          <input type="checkbox" value="PHP">
+
+	                                          <span class="label backend-label"> PHP  </span>
+
+	                                      </label>
+
+	                                    </div>
+
+																			<div class="checkbox" >
+
+	                                      <label>
+
+	                                          <input type="checkbox" value="SQL">
+
+	                                          <span class="label backend-label"> SQL  </span>
+
+	                                      </label>
+
+	                                    </div>
+
+																			<div class="checkbox" >
+
+	                                      <label>
+
+	                                          <input type="checkbox" value="MySQL">
+
+	                                          <span class="label backend-label"> MySQL  </span>
+
+	                                      </label>
+
+	                                    </div>
+
+	                                </div> <!-- end of .form-skills -->
+
+															</div> <!-- end of .form-skills-container -->
+
+															<div class="button-container text-center">
+
+																<button class="select-all-languages" type="button">Select/Unselect All</button>
+
+															</div>
+
+                              <div class="filter-project-container" >
+
+                                  <button type="submit" class="btn btn-primary" >Filter project results</button>
+
+                                  <button class="btn btn-info show-projects" type="button">Show all projects</button> <br/>
+
+                                  <p class="filter-results"></p>
+
+                              </div>
+
+                            </form>
+
+                        </div>
+
+                    </div> <!-- end of .row -->
+
+			    </div> <!-- .projects-form-container -->
+
+			</div> <!-- end of .row -->
+
+			<div class="row">
+
+			    <div id="projects-container" class="col-md-12">
+
+					<div class="row">
+
+						<div class="col-md-6 ">
+
+							<div class="panel" >
+
+								<div class="panel-heading" >
+
+									<h3>Bookmark App </h3>
+
+								</div>
+
+								<div class="panel-body" ><img src="images/bookmark-app.jpg" alt="image of bookmark app" /> </div>
+
+								<div class="panel-footer">
+
+								    <div class="project-summary">
+
+                                        <p>The Bookmark App lets users save their favorite websites, which can be viewed in a new window, and design their own bookmark.</p>
+
+                                        <p>
+
+                                            <a href='Bookmark-App/index.html' target='_blank'>View project</a> |
+
+                                            <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Bookmark-App' target='_blank'>View code</a>
+
+                                        </p>
+
+                                    </div>
+
+                                    <div class="project-skills">
+
+                                        <div class="label frontend-label  ">HTML</div>
+
+                                        <div class="label frontend-label  ">CSS</div>
+
+                                        <div class="label frontend-label" > Bootstrap </div>
+
+                                        <div class="label frontend-label" >JavaScript</div>
+
+                                        <div class="label frontend-label " > jQuery </div>
+
+                                    </div>
+
+								</div>
+
+							</div> <!-- end of .panel -->
+
+						</div> <!-- end of .col-md-6 -->
+
+						<div class="col-md-6">
+
+							<div class="panel" >
+
+								<div class="panel-heading" >
+
+									<h3> Local Weather App </h3>
+
+								</div>
+
+								<div class="panel-body"><img src="images/weather-app.jpg" alt="image of local weather app" /> </div>
+
+								<div class="panel-footer">
+
+								    <div class="project-summary">
+
+                                            <p>
+
+                                                The Weather App shows users the current forecast and a 5-day forecast in the user's location (if he/she allows his/her location to be accessed).
+
+                                                Details regarding the weather, such as the temperature, can be changed from imperial measurements to metric measurements.
+
+											</p>
+
+											<p>
+
+											    <a href='Local-Weather-App/index.html' target='_blank'>View project</a> |
+
+											    <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Local-Weather-App' target='_blank'>View code</a>
+
+											</p>
+
+                                    </div>
+
+                                    <div class="project-skills">
+
+                                        <div class="label frontend-label  ">HTML</div>
+
+                                        <div class="label frontend-label  ">CSS</div>
+
+                                        <div class="label frontend-label" > Bootstrap </div>
+
+                                        <div class="label frontend-label" >JavaScript</div>
+
+                                        <div class="label frontend-label " > jQuery </div>
+
+                                        <div class="label backend-label " > API </div>
+
+                                    </div>
+
+								</div> <!-- end of .panel-footer -->
+
+							</div> <!-- end of .panel -->
+
+						</div> <!-- end of col-md-6 -->
+
+					</div> <!-- end of .row -->
+
+					<hr/>
+
+					<div class="row">
+
+						<div class="col-md-6 ">
+
+							<div class="panel" >
+
+                                <div class="panel-heading" >
+
+                                    <h3> Wikipedia Viewer</h3>
+
+                                </div>
+
+                                <div class="panel-body" ><img src="images/wikipedia-viewer.jpg" alt="image of wikipedia viewer" /></div>
+
+                                <div class="panel-footer">
+
+                                    <div class="project-summary">
+
+                                        <p>
+
+                                            The Wikipedia Viewer allows users to search for a Wikipedia article and choose the amount of articles to be returned.
+
+                                            Users can bookmark an article to read later or favorite an article, which will then be stored in the browser's local storage.
+
+                                        </p>
+
+                                        <p>
+
+                                            <a href='Wikipedia-Viewer/index.html' target='_blank'>View project</a> |
+
+                                            <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Wikipedia-Viewer' target='_blank'>View code</a>
+
+                                        </p>
+
+
+                                    </div>
+
+                                    <div class="project-skills" >
+
+                                        <div class="label frontend-label">HTML</div>
+
+                                        <div class="label frontend-label">CSS</div>
+
+                                        <div class="label frontend-label " > Bootstrap </div>
+
+                                        <div class="label frontend-label" >JavaScript</div>
+
+                                        <div class="label frontend-label" > jQuery </div>
+
+                                        <div class="label backend-label " > API </div>
+
+                                    </div>
+
+                                </div> <!-- end of.panel-footer -->
+
+                            </div> <!-- end of .panel -->
+
+						</div> <!-- end of .col-md-6 -->
+
+						<div class="col-md-6 ">
+
+							<div class="panel" >
+
+                                <div class="panel-heading" >
+
+                                    <h3>Random Quote Generator</h3>
+
+                                </div>
+
+                                <div class="panel-body" ><img src="images/quote-generator.jpg" alt="image of random quote generator" /></div>
+
+                                <div class="panel-footer">
+
+                                    <div class="project-summary">
+
+                                       <p>
+
+                                            The Random Quote Generator lets users view random inspirational quotes, view the source of the quote as well as tweet the current quote along with the author
+
+                                            on a new page.
+
+                                        </p>
+
+                                        <p>
+
+                                            <a href='Random-Quote-Generator/index.html' target='_blank'>View project</a> |
+
+                                            <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Random-Quote-Generator' target='_blank'>View code</a>
+
+                                        </p>
+
+                                    </div>
+
+                                    <div class="project-skills">
+
+                                        <div class="label frontend-label  ">HTML</div>
+
+                                        <div class="label frontend-label  ">CSS</div>
+
+                                        <div class="label frontend-label" > Bootstrap </div>
+
+                                        <div class="label frontend-label" >JavaScript</div>
+
+                                        <div class="label frontend-label " > jQuery </div>
+
+                                        <div class="label backend-label " > API </div>
+
+                                    </div>
+
+                                </div> <!-- end of.panel-footer -->
+
+                            </div> <!-- end of .panel -->
+
+						</div> <!-- end of .col-md-6 -->
+
+					</div> <!-- end of .row -->
+
+					<hr/>
+
+					<div class="row">
+
+						<div class="col-md-6 ">
+
+							<div class="panel" >
+
+                                <div class="panel-heading" >
+
+                                    <h3>Twitch App</h3>
+
+                                </div>
+
+                                <div class="panel-body"><img src="images/twitch-app.jpg" alt="image of weather app" /> </div>
+
+                                <div class="panel-footer">
+
+                                    <div class="project-summary">
+
+                                       <p>
+
+                                            The Twitch App allows a user to search for Twitch channels and save them to the browser's local storage.
+
+                                            Once saved, he/she can search for them, view details about their streaming status, delete them, and go to their Twitch page in a new browser window.
+
+                                        </p>
+
+                                         <p>
+
+                                            <a href='Twitch-App/index.html' target='_blank'>View project</a> |
+
+                                            <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Twitch-App' target='_blank'>View code</a>
+
+                                        </p>
+
+                                    </div>
+
+                                    <div class="project-skills">
+
+                                        <div class="label frontend-label  ">HTML</div>
+
+                                        <div class="label frontend-label  ">CSS</div>
+
+                                        <div class="label frontend-label" > Bootstrap </div>
+
+                                        <div class="label frontend-label" >JavaScript</div>
+
+                                        <div class="label frontend-label " > jQuery </div>
+
+                                        <div class="label backend-label " > API </div>
+
+                                    </div>
+
+                                </div> <!-- end of .panel-footer -->
+
+                            </div> <!-- end of .panel -->
+
+						</div> <!-- end of .col-md-6 -->
+
+						<div class="col-md-6 ">
+
+							<div class="panel" >
+
+                                <div class="panel-heading" >
+
+                                    <h3>JavaScript Calculator</h3>
+
+                                </div>
+
+                                <div class="panel-body" ><img src="images/javascript-calculator.jpg" alt="image of javascript calculator" /></div>
+
+                                <div class="panel-footer">
+
+                                    <div class="project-summary">
+
+                                       <p>
+
+                                            The JavaScript Calculator can solve operations involving multiplication, division, subtraction, and addition.
+
+                                        </p>
+
+                                        <p>
+
+                                            <a href='Javascript-Calculator/index.html' target='_blank'>View project</a> |
+
+                                            <a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Javascript-Calculator' target='_blank'>View code</a>
+
+                                        </p>
+
+                                    </div>
+
+                                    <div class="project-skills">
+
+                                        <div class="label frontend-label  ">HTML</div>
+
+                                        <div class="label frontend-label  ">CSS</div>
+
+                                        <div class="label frontend-label" >JavaScript</div>
+
+                                        <div class="label frontend-label " > jQuery </div>
+
+                                    </div>
+
+                                </div> <!-- end of.panel-footer -->
+
+                            </div> <!-- end of .panel -->
+
+						</div> <!-- end of .col-md-6 -->
+
+					</div> <!-- end of .row -->
+
+					<hr/>
+
+					<div class="row">
+
+						<div class="col-md-6 ">
+
+							<div class="panel" >
+
+								<div class="panel-heading" >
+
+									<h3>Pomodoro Timer </h3>
+
+								</div>
+
+								<div class="panel-body" ><img src="images/pomodoro-timer.jpg" alt="image of pomodoro timer" /> </div>
+
+								<div class="panel-footer">
+
+										<div class="project-summary">
+
+																				<p>The Pomodoro Timer lets users select a session length (in minutes) as well as a
+																			  break length (in minutes), which can be changed after pausing the timer. </p>
+
+																				<p>
+
+																						<a href='Pomodoro-Timer/index.html' target='_blank'>View project</a> |
+
+																						<a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Pomodoro-Timer' target='_blank'>View code</a>
+
+																				</p>
+
+																		</div>
+
+																		<div class="project-skills">
+
+																				<div class="label frontend-label  ">HTML</div>
+
+																				<div class="label frontend-label  ">CSS</div>
+
+																				<div class="label frontend-label" >JavaScript</div>
+
+																				<div class="label frontend-label " > jQuery </div>
+
+																		</div>
+
+								</div>
+
+							</div> <!-- end of .panel -->
+
+						</div> <!-- end of .col-md-6 -->
+
+						<div class="col-md-6 ">
+
+							<div class="panel" >
+
+								<div class="panel-heading" >
+
+									<h3>Tic Tac Toe Game </h3>
+
+								</div>
+
+								<div class="panel-body" ><img src="images/tic-tac-toe.jpg" alt="image of tic tac toe game" /> </div>
+
+								<div class="panel-footer">
+
+										<div class="project-summary">
+
+																				<p>The Tic Tac Toe Game lets users choose whether to play alone with the computer
+or play with someone else and whether to play as X or O. </p>
+
+																				<p>
+
+																						<a href='Tic-Tac-Toe/index.html' target='_blank'>View project</a> |
+
+																						<a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Tic-Tac-Toe' target='_blank'>View code</a>
+
+																				</p>
+
+																		</div>
+
+																		<div class="project-skills">
+
+																				<div class="label frontend-label  ">HTML</div>
+
+																				<div class="label frontend-label  ">CSS</div>
+
+																				<div class="label frontend-label" > Bootstrap </div>
+
+																				<div class="label frontend-label" >JavaScript</div>
+
+																				<div class="label frontend-label " > jQuery </div>
+
+																		</div>
+
+								</div>
+
+							</div> <!-- end of .panel -->
+
+						</div> <!-- end of .col-md-6 -->
+
+					</div> <!-- end of .row -->
+
+					<hr/>
+
+					<div class="row">
+
+						<div class="col-md-6 ">
+
+							<div class="panel" >
+
+								<div class="panel-heading" >
+
+									<h3>Simon Game </h3>
+
+								</div>
+
+								<div class="panel-body" ><img src="images/simon-game.jpg" alt="image of simon game" /> </div>
+
+								<div class="panel-footer">
+
+										<div class="project-summary">
+
+													<p>The Simon Game plays an order of colors chosen randomly that the player has to pick correctly until the order of colors reaches 20
+
+															after which the player wins the game and the game restarts.
+
+													</p>
+
+													<p>
+
+															<a href='Simon-Game/index.html' target='_blank'>View project</a> |
+
+															<a href='https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Simon-Game' target='_blank'>View code</a>
+
+													</p>
+
+											</div>
+
+											<div class="project-skills">
+
+													<div class="label frontend-label  ">HTML</div>
+
+													<div class="label frontend-label  ">CSS</div>
+
+													<div class="label frontend-label" >JavaScript</div>
+
+													<div class="label frontend-label " > jQuery </div>
+
+											</div>
+
+									</div>
+
+								</div> <!-- end of .panel -->
+
+							</div> <!-- end of .col-md-6 -->
+
+							<div class="col-md-6 ">
+
+								<div class="panel" >
+
+									<div class="panel-heading" >
+
+										<h3>The Electronics Store </h3>
+
+									</div>
+
+									<div class="panel-body" ><img src="images/electronics-store.jpg" alt="image of electronics store" /> </div>
+
+									<div class="panel-footer">
+
+											<div class="project-summary">
+
+																					<p>The Electronics Store is an example e-commerce site where users can add products, like TVs and cameras, to their shopping cart or wish list, search for products by name, price, discount, brand, or category, purchase products through Paypal, and contact the store. It also includes an admin panel to manage products and customers.  </p>
+
+																					<p>
+
+																							<a href='https://the-electronics-store.herokuapp.com/ ' target='_blank'>View project</a>
+
+																					</p>
+
+																			</div>
+
+																			<div class="project-skills">
+
+																					<div class="label frontend-label  ">HTML</div>
+
+																					<div class="label frontend-label  ">CSS</div>
+
+																					<div class="label frontend-label" > Bootstrap </div>
+
+																					<div class="label frontend-label" >JavaScript</div>
+
+																					<div class="label frontend-label " > jQuery </div>
+
+																					<div class="label backend-label " > SQL </div>
+
+																					<div class="label backend-label " > MySQL </div>
+
+																					<div class="label backend-label " > PostgreSQL </div>
+
+																					<div class="label backend-label " > PHP </div>
+
+																			</div>
+
+									</div>
+
+								</div> <!-- end of .panel -->
+
+							</div> <!-- end of .col-md-6 -->
+
+						</div> <!-- end of .row -->
+
+						<hr/>
+
+						<div class="row">
+
+							<div class="col-md-6 col-md-offset-3">
+
+								<div class="panel" >
+
+									<div class="panel-heading" >
+
+										<h3>Sample Text Generator </h3>
+
+									</div>
+
+									<div class="panel-body" ><img src="images/text-generator.jpg" alt="image of text-generator" /> </div>
+
+									<div class="panel-footer">
+
+											<div class="project-summary">
+
+														<p>The Sample Text Generator allows users to choose the number of paragraphs and the format (text or html) of sample text and displays it.
+
+														</p>
+
+														<p>
+
+																<a href='https://sample-text-generator.herokuapp.com/' target='_blank'>View project</a> |
+
+																<a href='https://github.com/kaykay1424/Text-Generator' target='_blank'>View code</a>
+
+														</p>
+
+												</div>
+
+												<div class="project-skills">
+
+														<div class="label frontend-label  ">HTML</div>
+
+														<div class="label frontend-label  ">CSS</div>
+
+														<div class="label frontend-label  ">SCSS</div>
+
+														<div class="label frontend-label" >JavaScript</div>
+
+														<div class="label frontend-label " > jQuery </div>
+
+														<div class="label frontend-label  ">React</div>
+
+														<div class="label backend-label  ">API</div>
+
+												</div>
+
+										</div>
+
+									</div> <!-- end of .panel -->
+
+								</div> <!-- end of .col-md-6 -->
+
+						</div> <!-- end of .row -->
+
+			    </div> <!-- end of .projects-container -->
+
+			</div> <!-- end of .row -->
+
+		</div> <!-- end of .projects-full-container -->
+
+        <footer class="footer"></footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://use.fontawesome.com/7513968413.js"></script>
+
+        <script src="scripts/main.js"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,209 @@
+html, body {
+	
+	height: 100%;
+	
+}
+
+body {
+
+	background-color: orange;
+  
+   	padding-top: 5%;
+  
+    background-attachment: fixed;
+  
+    background-repeat: no-repeat;
+  
+    background-size: cover;
+  
+   	background-position: center;
+  
+   	text-shadow: 2px 2px 2px black;
+
+	overflow-wrap: break-word;
+
+	word-wrap: break-word;
+	
+	hyphens: auto;
+	
+}
+
+.loading, .location-access, .refresh-page, .error {
+	
+	color: white;
+	
+	font-size: 20px;
+	
+	display: none;
+	
+}
+
+.loading:after {
+
+	overflow: hidden;
+	
+	display: inline-block;    
+	
+	animation: loading_ellipsis 1s infinite; 
+	
+	content: "\2026"; /* ascii code for ellipsis character */
+	
+	width: 0px;
+	
+	vertical-align: bottom;
+	
+}
+
+@keyframes loading_ellipsis {
+	
+	to {
+	
+		width: 30px; 
+		   
+	}
+
+}
+
+#current-forecast-container {
+
+	margin-bottom: 10%;
+	
+	display: none;
+		
+}
+
+#current-forecast {
+
+	background-color: rgba(20,50,200,.5); /* blue color */
+	
+	color: white;
+	
+	text-align: center;
+	
+	border: 2px ridge white;
+	
+	border-radius: 100%;
+	
+	box-shadow: 2px 2px 2px black;
+	
+	padding: 5%;
+	
+}
+
+#week-forecast-container {
+
+	background-color: rgba(20,250,100,.5); /* green color */
+	
+	color: white;
+	
+	border-top: 2px solid white;
+	
+	display: none;
+  	
+  	position: relative;
+	
+	position: sticky;
+	
+	top: 100%;
+
+}
+
+#week-forecast-container .col-md-2 {
+	
+	padding: 1%;
+	
+	height: 150px;
+	
+}
+
+#week-forecast-container .current-day {
+    
+    font-size: 15px;
+
+}
+
+#week-forecast-container .current-day button {
+	
+	margin: 3%;
+
+}
+
+#week-forecast-container a {
+	
+	color: white;
+	
+	text-decoration: underline;
+	
+}
+
+.popover-title {
+	
+	color: white;
+	
+	background-color: #0D94FF; /* blue color */
+	
+}
+
+#data-provider {
+    
+    background-color: rgba(255, 255, 255, .5); /* white color */
+    
+    color: black;
+    
+    text-shadow: none;
+    
+    font-weight: bold;
+
+}
+
+#data-provider .col-md-6 {
+    
+    padding: 8px;
+
+}
+
+#data-provider .col-md-6 p a {
+    
+    color: black;
+    
+    text-shadow: none;
+    
+    font-weight: bold;
+
+}
+
+
+/* Responsive Styles */
+
+
+@media only screen and (max-width: 991px)  {
+
+	#current-forecast {
+		
+		border-radius: 0;
+			
+	}
+	
+	#week-forecast-container .col-md-2:not(#day5) {
+		
+		border-bottom: 2px solid white;
+		
+	}
+	
+}
+
+@media only screen and (min-width:992px) {
+	
+	#current-forecast {
+		
+		border-radius: 100%;
+		
+	}
+	
+	#week-forecast-container .col-md-2:not(#day5) {
+		
+		border-right: 2px solid white;
+		
+	}
+	
+}

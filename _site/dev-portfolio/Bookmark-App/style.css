@@ -1,0 +1,261 @@
+body {
+
+	background-color: lightblue;
+	
+	overflow-wrap: break-word;
+	
+	word-wrap: break-word;
+	
+	hyphens: auto;
+	
+}
+
+#bookmark-icon-area {
+	
+	position: fixed;
+	
+	right: 0;
+	
+	top: 0;
+	
+	z-index: 1000;
+	
+}
+
+.bookmark-icon {
+
+	cursor: pointer;
+	
+	width: 60px;
+	
+	min-width: 40px;
+	
+	height: 110px;
+	
+	min-height: 100px;
+	
+	background-image: url("eiffel-tower.jpg");
+	
+	background-size: cover;
+	
+	background-position: center;
+	
+	border: 5px solid purple;
+	
+	box-shadow: 2px 2px 5px black;
+	
+}
+
+#button-design {  
+
+	box-shadow: 2px 2px 2px black;
+	
+	background-color: #1159D7; /* blue color */
+	
+}
+
+#button-design .glyphicon-edit {
+
+	color: white;
+	
+}
+
+#bookmark-collapse {
+
+	max-width: 100%;
+	
+}
+
+#list-group {
+
+	max-height: 150px;
+	
+	overflow-y: auto;
+	
+}
+
+#list-group li a:hover {
+
+	text-decoration: none;
+	
+}
+
+.glyphicon-remove {
+	
+	color: red;
+	
+}
+
+.container-fluid {
+
+	margin-top: 3%;
+	
+}
+
+#bookmark-form {
+	
+	overflow: auto;
+	
+	background-color: #F8F8F8; /* light grey color */
+	
+	padding: 20px;
+	
+	border-radius: 20px;
+	
+}
+
+#bookmark-form h1 {
+
+	font-family: 'Griffy', cursive;
+	
+	color: #1159D7; /* blue color */
+	
+	text-shadow: 2px 2px 2px black;
+	
+	margin-bottom: 5%;
+	
+}
+
+.error {
+
+	border: 2px solid red;
+	
+}
+
+#bookmark-form .btn {
+	
+	background-color: #1159D7; /* blue color */
+	
+}
+
+.alert {
+
+	display: none;
+	
+} 
+
+.bookmark-icon-popover  {
+	
+	background-color: lightblue;
+	
+}
+
+.bookmark-icon-popover.bottom > .arrow, .bookmark-icon-popover.bottom > .arrow:after {
+		
+	border-bottom-color: lightblue;
+}
+
+#bookmark-icon-form {
+	
+	overflow: auto;
+	
+}
+
+.bookmark-edit-info {
+
+    margin-right: 3px;
+
+}
+
+ .glyphicon {
+    
+    border-radius: 100%;
+
+}
+
+.bookmark-edit-info {
+    
+    color: grey;
+    
+    font-size: 14px;
+
+}
+
+#bookmark-icon-form h1 {
+    
+    font-family: 'Griffy', cursive;
+
+}
+
+#bookmark-icon-form a:hover {
+    
+    text-decoration: none;
+    
+    cursor: default;
+
+}
+
+#bookmark-icon-form .form-group {
+	
+	display: inline-block;
+	
+	display: -moz-inline-stack;
+	
+	margin-left: 2%;
+	
+}
+
+#bookmark-icon-form .background-options h2, .bookmark-options h2, .border-options h2 {
+    
+    color: #1159D7; /* blue color */
+    
+    font-size: 20px;
+
+}
+
+#bookmark-icon-form hr {
+	
+	border-color: grey;
+	
+	box-shadow: 2px 2px 2px;
+	
+}
+
+.background-options, .bookmark-options, .border-options {
+	
+	margin-left: 3%;
+	
+}
+
+.background-options h3, .bookmark-options h3, .border-options h3 {
+	
+	margin-left: -3%;
+	
+}
+
+#bookmark-icon-form button[type="submit"] {
+    
+    background-color: #1159D7; /* blue color */
+
+}
+
+#bookmark-icon-form button[type="button"] {
+	
+	background-color: black;
+	
+	color: white;
+}
+
+@media only screen and (max-width: 200px)  {
+
+    #bookmark-icon-form button[type="button"] {
+        
+        float: none;
+        
+        margin-top: 5%;
+    
+    }
+    
+}
+
+@media only screen and (min-width: 201px)  {
+
+    #bookmark-icon-form button[type="button"] {
+        
+        float: right;
+        
+        margin-top: 0;
+    
+    }
+    
+}

@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body {
+
+  background-color: beige;
+
+  overflow-wrap: break-word;
+
+	word-wrap: break-word;
+
+	hyphens: auto;
+
+}
+
+.active {
+
+  background-color: green !important;
+
+}
+
+.hidden {
+
+  visibility: hidden !important;
+
+}
+
+.text-center {
+
+  text-align: center;
+
+}
+
+.win-text {
+
+  width: 100px;
+
+  padding: 10px;
+
+  font-size: 20px;
+
+  text-align: center;
+
+  background-color: #63D6EB;
+
+  color: white;
+
+  margin: auto;
+
+  border-bottom-left-radius: 10px;
+
+  border-bottom-right-radius: 10px;
+
+}
+
+#simon-game-board {
+
+  height: 400px;
+
+  width: 400px;
+
+  border: 20px solid black;
+
+  margin: auto;
+
+  margin-top: 50px;
+
+  position: relative;
+
+  border-radius: 400px;
+
+  box-shadow: 2px 2px 5px black;
+
+}
+
+#inner-board {
+
+  background-color: black;
+
+  border-radius: 190px;
+
+}
+
+#control-board {
+
+  position: absolute;
+
+  top: 84px;
+
+  left: 84px;
+
+  width: 200px;
+
+  height: 200px;
+
+  border: 16px solid black;
+
+  border-radius: 100%;
+
+  background-color: lightgrey;
+
+}
+
+#controls {
+
+  border-radius: 100%;
+
+  padding-left: 10px;
+
+  padding-right: 10px;
+
+  text-align: center;
+
+  font-family: 'Oswald', sans-serif;
+
+}
+
+#controls div {
+
+  display: inline-block;
+
+  text-align: center;
+
+  height: 40px;
+
+  margin-left: 5px;
+
+  margin-right: 5px;
+
+  float: left;
+
+}
+
+#controls div button {
+
+  display: block;
+
+  margin-top: 5px;
+
+  cursor: pointer;
+
+  border: none;
+
+  box-shadow: 0 3px black; /* #999: grey */
+
+}
+
+#controls div button:active {
+
+  transform: translateY(4px); /* move button down 4px to simulate effect of pressing button down */
+
+}
+
+#controls div#counter-screen {
+
+  background-color: black;
+
+  color: red;
+
+  width: 40px;
+
+  height: 30px;
+
+  line-height: 30px;
+
+  margin-top: 5px;
+
+  display: block;
+
+  border-radius: 10px;
+
+  float: none;
+
+}
+
+#start-button {
+
+  background-color: green;
+
+  width: 20px;
+
+  height: 20px;
+
+  border-radius: 100%;
+
+}
+
+#strict {
+
+  margin-bottom: 10px;
+
+}
+
+#controls div#strict-button-on {
+
+  background-color: red;
+
+  width: 5px;
+
+  height: 5px;
+
+  display: inline-block;
+
+  border-radius: 100%;
+
+  float: none;
+
+  border: 2px solid black;
+
+}
+
+#srict-button {
+
+  background-color: blue;
+
+  width: 20px;
+
+  height: 20px;
+
+  border-radius: 100%;
+
+  margin-bottom: 10px;
+
+}
+
+#controls div#turn-on-off-div {
+
+  float: none;
+
+  clear: both;
+
+  display: block;
+
+  margin-top: 20px;
+
+}
+
+#controls div#turn-on-off {
+
+  display: inline-block;
+
+  float: none;
+
+  height: 16px;
+
+  background-color: black;
+
+  width: 50px;
+
+  margin-top: 10px;
+
+}
+
+#controls div#turn-on-off #off-on-button {
+
+  display: inline-block;
+
+  float: none;
+
+  cursor: pointer;
+
+  width: 15px;
+
+  height: 16px;
+
+  position: relative;
+
+  left: 15px;
+
+  border-radius: 2px;
+
+  background-color: yellow;
+
+  width: 20px;
+
+}
+
+.buttons {
+
+  display: inline-block;
+
+  width: 190px;
+
+  height: 190px;
+
+}
+
+#green-button {
+
+  background-color: green;
+
+  border-top-left-radius: 190px;
+
+  margin-right: 6px;
+
+  margin-bottom: 10px;
+
+}
+
+#green-button:active {
+
+  background-color: darkgreen;
+
+}
+
+#red-button {
+
+  background-color: red;
+
+  border-top-right-radius: 190px;
+
+  margin-left: 10px;
+
+  margin-bottom: 10px;
+
+}
+
+#red-button:active {
+
+  background-color: darkred;
+
+}
+
+#yellow-button {
+
+  background-color: yellow;
+
+  border-bottom-left-radius: 190px;
+
+  margin-top: 6px;
+
+  margin-right: 6px;
+
+}
+
+#yellow-button:active {
+
+  background-color: #C4BE49;
+
+}
+
+#blue-button {
+
+  background-color: blue;
+
+  border-bottom-right-radius: 190px;
+
+  margin-top: 6px;
+
+  margin-left: 10px;
+
+}
+
+#blue-button:active {
+
+  background-color: navy;
+
+}
+
+.hightlight-red {
+
+  background-color: darkred !important;
+
+}
+
+.hightlight-blue {
+
+  background-color: navy !important;
+
+}
+
+.hightlight-yellow {
+
+  background-color: #C4BE49 !important;
+
+}
+
+.hightlight-green {
+
+  background-color: darkgreen !important;
+
+}
+
+/* Responsive Styles */
+
+@media only screen and (max-width:767px) { /* mobile devices smaller than tablet */
+
+    #simon-game-board {
+
+      width: 300px;
+
+      border-radius: 0;
+
+      box-sizing: border-box;
+
+      border: 5px solid black;
+
+    }
+
+    #inner-board {
+
+      border-radius: 0;
+
+      box-sizing: border-box;
+
+    }
+
+    #control-board {
+
+      top: 95px;
+
+      left: 40px;
+
+      border: 5px solid black;
+
+      border-radius: 0;
+
+    }
+
+    #controls {
+
+      padding-left: 5px;
+
+      padding-right: 5px;
+
+    }
+
+    #simon-game-board .buttons {
+
+      border-radius: 0;
+
+      width: 141px;
+
+      height: 190px;
+
+    }
+
+    #green-button {
+
+      margin-right: 1px;
+
+      margin-bottom: 2px;
+
+      margin-top: 1px;
+
+      margin-left: 1px;
+
+    }
+
+    #red-button {
+
+      margin-left: 1px;
+
+      margin-bottom: 1px;
+
+      margin-top: 1px;
+
+    }
+
+    #yellow-button {
+
+      margin-top: 3px;
+
+      margin-right: 1px;
+
+      margin-left: 1px;
+
+    }
+
+    #blue-button {
+
+      margin-top: 3px;
+
+      margin-left: 1px;
+
+    }
+
+}

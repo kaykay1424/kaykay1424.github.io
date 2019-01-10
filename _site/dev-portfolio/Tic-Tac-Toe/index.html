@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html lang="en">
+
+  	<head>
+
+    		<title>Tic Tac Toe</title>
+
+    		<meta charset="utf-8">
+
+    		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" type="image/x-icon" href="tic-tac-toe.png"  />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" >
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="style.css">
+
+  	</head>
+
+    <body>
+
+        <div class="mobile-winner-div not-visible"><p></p></div> <!-- this is shown on mobile devices smaller than tablet when someone wins the game -->
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="text-center col-xs-6 col-xs-offset-3 menu-option-1">
+
+                    <p class="option-statement">Select # of players</p>
+
+                    <div id="num-players-1" class="num-players options">1</div>
+
+                    <div id="num-players-2" class="num-players options">2</div>
+
+                </div> <!-- end of .menu-option-1 -->
+
+                <div class="text-center col-xs-6 col-xs-offset-3 menu-option-2 hide">
+
+                    <p class="option-statement">Choose letter you want to play as</p>
+
+                    <div id="x" class="letters options">X</div>
+
+                    <div id="o" class="letters options">O</div>
+
+                    <button class="btn back"><span class="glyphicon glyphicon-arrow-left"></span> Back</button>
+
+                </div> <!-- end of .menu-option-2 -->
+
+            </div>
+
+            <div class="row">
+
+                <div id="game-status" class="col-xs-3 col-sm-2 col-md-offset-1 hide">
+
+                    <p id="player1" ><span class="letter-choice"></span> <span class="player">Player 1:</span> <span class="score">0</span></p>
+
+                    <p id="player2" ><span class="letter-choice"> </span> <span class="player">Computer:</span>  <span class="score">0</span></p>
+
+                    <button class="btn back-to-menu"><span class="glyphicon glyphicon-arrow-left"></span> Back to menu</button>
+
+                </div>
+
+                <div id="tic-tac-toe-board" class="col-xs-9 col-sm-6 hide">
+
+                    <div class="row">
+
+                        <div id="square1" class="col-xs-4"></div>
+
+                        <div id="square2" class="col-xs-4"></div>
+
+                        <div id="square3" class="col-xs-4"></div>
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <div id="square4" class="col-xs-4"></div>
+
+                        <div id="square5" class="col-xs-4"></div>
+
+                        <div id="square6" class="col-xs-4"></div>
+
+                    </div> <!-- end of .row -->
+
+                    <div class="row">
+
+                        <div id="square7" class="col-xs-4"></div>
+
+                        <div id="square8" class="col-xs-4"></div>
+
+                        <div id="square9" class="col-xs-4"></div>
+
+                    </div> <!-- end of .row -->
+
+                </div> <!-- end of #tic-tac-toe-board -->
+
+                <div class="col-xs-2 col-sm-3 text-center">
+
+                    <div class="winner-div hide"><p class="winner" ></p></div> <!-- this is shown on devices bigger than tablet when someone wins the game -->
+
+                </div>
+
+            </div> <!-- end of .row -->
+
+        </div> <!-- end of .container -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="script.js"></script>
+
+    </body>
+
+</html>

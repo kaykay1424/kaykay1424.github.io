@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+body {
+
+  font-family: 'Arial',serif;
+
+  background-color: rgb(255,253,254); /* white color */
+
+  overflow-wrap: break-word;
+
+	word-wrap: break-word;
+
+	hyphens: auto;
+
+}
+
+#calculator {
+
+    background-color: grey;
+
+    min-height: 420px;
+
+    width: 100%;
+
+    max-width: 400px;
+
+    min-width: 300px;
+
+    border-radius: 20px;
+
+    margin: auto;
+
+    margin-top: 5%;
+
+    padding-top: 20px;
+
+    padding-bottom: 20px;
+
+    box-shadow: 2px 2px 2px;
+
+    overflow: auto;
+
+}
+
+#calculator-content {
+
+    width: 90%;
+
+    margin: auto;
+
+}
+
+.title {
+
+    color: rgb(255,253,254); /* white color */
+
+    text-shadow: 1px 1px 1px black;
+
+    text-align: center;
+
+}
+
+#input-screen {
+
+    margin: auto;
+
+    margin-bottom: 10px;
+
+    width: 80%;
+
+    display: block;
+
+    resize: none;
+
+    height: 60px;
+
+    background-color: lightgrey;
+
+    color: black;
+
+    font-size: 22px;
+
+    line-height: 1.5em;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    border: 1px solid black;
+
+    box-shadow: 1px 1px 1px 1px black inset;
+
+    font-family: 'Orbitron', sans-serif;
+
+    padding: 8px;
+
+}
+
+#input-screen:hover {
+
+  overflow: visible;
+
+}
+
+#clear-buttons-group {
+
+  width: 60%;
+
+  padding-left: 3%;
+
+}
+
+#clear-buttons-group #ac {
+
+    background-color: red;
+
+}
+
+#clear-buttons-group #ce {
+
+    background-color: #FF6100; /* dark orange color */
+
+}
+
+.button {
+
+    background-color: black;
+
+    color: rgb(255,253,254); /* white color */
+
+    border-radius: 5px;
+
+    border: 1px solid rgb(255,253,254); /* rgb(255,253,254): white color */
+
+    height: 40px;
+
+    width: 27%;
+
+    margin: 2%;
+
+    margin-left: 0;
+
+    font-size: 16px;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px black; /* #999: grey */
+
+}
+
+.button:active {
+
+    transform: translateY(4px); /* move button down 4px to simulate effect of pressing button down */
+
+    box-shadow: 0 4px blue;
+
+}
+
+#button-0 {
+
+  width: 60%;
+
+}
+
+#number-buttons-group, #operator-buttons-group {
+
+    float: left;
+
+}
+
+#number-buttons-group div, #operator-buttons-group div {
+
+  text-align: center;
+
+}
+
+#number-buttons-group {
+
+    width: 60%;
+
+}
+
+#operator-buttons-group {
+
+    width: 40%;
+
+}
+
+#operator-buttons-group .button {
+
+    background-color: #173DA1; /* blue color */
+
+    width: 40%;
+
+    margin-bottom: 5%;
+
+    font-size: 18px;
+
+}
+
+#operator-buttons-group #equal {
+
+    width: 84%;
+
+}

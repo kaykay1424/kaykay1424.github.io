@@ -1,0 +1,103 @@
+body {
+
+	background-image: url('slovenia-lake-mountains.jpg'); /* picture of mountains and lake in Slovenia */
+    
+    background-size: 100% 100%;
+    
+    background-repeat: no-repeat;
+    
+    background-attachment: fixed;
+	
+	overflow-wrap: break-word;
+	
+	word-wrap: break-word;
+	
+	-webkit-hyphens: auto;
+	
+	-ms-hyphens: auto;
+	
+	-moz-hyphens: auto;
+	
+	hyphens: auto;
+	
+	color: #2A6299; /* dark blue color*/
+	
+}
+
+#select-quote-container {
+    
+    padding-top: 10%;
+
+}
+
+#quote-topic-title-div #quote-topic-title {
+    
+    background-color: white;
+    
+    padding: 10px;
+    
+    border-top-left-radius: 5px;
+    
+    border-top-right-radius: 5px;
+    
+    border: 5px solid #2A6299;  /* #2A6299: dark blue color*/
+    
+    font-family: 'Cooper Black', sans;
+    
+    font-size: 26px;
+    
+    margin-bottom: 0;
+    
+    border-bottom: 0;
+
+}
+	
+#quote-display {
+
+	border: 5px solid #2A6299;  /* #2A6299 dark blue color*/
+	
+	border-radius: 10px;
+	
+	background-color: white;
+	
+	padding: 15px;
+	
+}
+
+#quote-content {
+    
+    font-size: 16px;
+
+}
+
+#quote-content br {
+
+    margin-bottom: 1%;
+
+}
+
+#new-quote, #quote-source, #twitter {
+
+    background-color: #2A6299;  /* dark blue color*/
+    
+    text-shadow: 2px 2px 2px black;
+    
+    color: white;
+    
+    white-space: normal;
+    
+    margin: 1%;
+
+}
+
+#new-quote:hover, #quote-source:hover, #twitter:hover {
+    
+    box-shadow: 3px 3px 3px black;
+
+}
+
+ #twitter {
+    
+    border-radius: 100%;
+ 
+}
