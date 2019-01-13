@@ -1,0 +1,75 @@
+---
+---
+
+@import "{{ site.theme }}";
+@mixin image($width:50%,$height:50%,$border-color:black,$border-radius:5px) {
+    width: $width;
+    height: $height;
+    border: 5px solid $border-color;
+    border-radius: $border-radius;
+}
+#about-me-img {
+    @include image($border-color:#4276b6);
+    float: left;
+    margin-right: 10px;
+}
+footer i {
+	color: #4276b6; /* blue color */
+	font-size: 16px;
+
+}
+footer a:not(#resume) {
+    background-color: white;
+    padding: 5px;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 3px;
+    box-shadow: 2px 2px 2px black;
+}
+footer a:not(#resume):hover {
+    box-shadow: 2px 2px 2px #4276b6;
+}
+.label {
+    display: inline-block;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 3px;
+}
+.frontend-label {
+    background-color: #2027D7; /* dark blue color */
+}
+.backend-label {
+	background-color: black;
+} 
+.project-title {
+    font-size: 18px;
+    font-weight: bold;
+    border-top: 2px solid black;
+    margin-top: 20px;
+    padding-top: 10px;
+}  
+#simon-game-title {
+    border-top: none;
+}
+.subheader {
+    font-size: 18px;
+}
+.project-img {
+    @include image(100%,100%,black, 0);
+
+}
+a:not(.footer-link):hover {
+    text-decoration: underline;
+}
+body {
+    font-family: 'Monaco', serif;
+}
+@media (max-width: 425px) {
+    #about-me-img {
+        width: 100%;
+        height: 100%;
+        float: none;
+        margin-right: 0;
+    }
+}
