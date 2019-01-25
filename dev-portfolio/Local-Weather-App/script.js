@@ -567,7 +567,7 @@ $(document).ready(function() {
 				 
 				  $('#current-forecast .wind .wind-symbol').html('kph');
 				  
-				 $('#current-forecast .precip .btn-warning ').html('MPH');
+				 $('#current-forecast .wind .btn-warning ').html('MPH');
 		
 			}
 			
@@ -579,7 +579,7 @@ $(document).ready(function() {
 				
 		 		 $('#current-forecast .wind .wind-symbol').html('mph');
 		 		 
-		 		$('#current-forecast .precip .btn-warning ').html('KPH');
+		 		$('#current-forecast .wind .btn-warning ').html('KPH');
 			}
 					
 		});
