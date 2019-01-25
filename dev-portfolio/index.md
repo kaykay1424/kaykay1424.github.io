@@ -23,17 +23,17 @@ Traveling around the world to places, like South Korea and Costa Rica, as a mili
 <h2>Education/Certificates </h2>
 
 <p class="subheader">Freecodecamp (2016-2018)</p>
-*   <a href="https://www.freecodecamp.org/certification/kaykay1424/javascript-algorithms-and-data-structures" >JavaScript Algorithms and Data Structures Certificate</a>
-*   <a href="https://www.freecodecamp.org/certification/kaykay1424/responsive-web-design">Responsive Web Design Certificate </a>
-*   <a href="https://www.freecodecamp.org/certification/kaykay1424/front-end-libraries">Frontend Libraries Certificate</a>)
-*   <a href="https://www.freecodecamp.org/certification/kaykay1424/apis-and-microservices">APIs and Microservices Certificate</a>
-*   <a href="https://www.freecodecamp.org/kaykay1424/front-end-certification">Frontend Certificate</a> 
+*   <a target="_blank" href="https://www.freecodecamp.org/certification/kaykay1424/javascript-algorithms-and-data-structures" >JavaScript Algorithms and Data Structures Certificate</a>
+*   <a target="_blank" href="https://www.freecodecamp.org/certification/kaykay1424/responsive-web-design">Responsive Web Design Certificate </a>
+*   <a target="_blank" href="https://www.freecodecamp.org/certification/kaykay1424/front-end-libraries">Frontend Libraries Certificate</a>
+*   <a target="_blank" href="https://www.freecodecamp.org/certification/kaykay1424/apis-and-microservices">APIs and Microservices Certificate</a>
+*   <a target="_blank"  href="https://www.freecodecamp.org/kaykay1424/front-end-certification">Frontend Certificate</a> 
 
 <p class="subheader">Testdome (2018)</p>
-*   <a href="https://www.testdome.com/cert/1ed0272bf30840f1893133180c18f4c4">JavaScript and SQL Certificate</a>		
-*   <a href="https://www.testdome.com/cert/1a1ad583155e48cdb9a4217155acdad3">HTML/CSS, JavaScript, PHP, and SQL Certificate</a> 		
-*   <a href="https://www.testdome.com/cert/44b6e14667074acbb144982f7c127542">HTML/CSS and Bootstrap Certificate</a>		
-*   <a href="https://www.testdome.com/cert/9d35e07389ce4657bf408f02a1676e04">JavaScript with jQuery Certificate</a>  
+*   <a target="_blank" href="https://www.testdome.com/cert/1ed0272bf30840f1893133180c18f4c4">JavaScript and SQL Certificate</a>		
+*   <a target="_blank"  href="https://www.testdome.com/cert/1a1ad583155e48cdb9a4217155acdad3">HTML/CSS, JavaScript, PHP, and SQL Certificate</a> 		
+*   <a target="_blank" href="https://www.testdome.com/cert/44b6e14667074acbb144982f7c127542">HTML/CSS and Bootstrap Certificate</a>		
+*   <a target="_blank"  href="https://www.testdome.com/cert/9d35e07389ce4657bf408f02a1676e04">JavaScript with jQuery Certificate</a>  
 
 <hr>
 
