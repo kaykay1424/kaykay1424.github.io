@@ -8,15 +8,45 @@
     border: 5px solid $border-color;
     border-radius: $border-radius;
 }
+body {
+    font-family: 'Monaco', serif;
+}
+h2 {
+    text-align: center;
+}
 #about-me-img {
     @include image($border-color:#4276b6);
     float: left;
     margin-right: 10px;
 }
+.subheader {
+    font-size: 18px;
+}
+.label {
+    display: inline-block;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 5px 3px;
+}
+.frontend-label {
+    background-color: #2027D7; /* dark blue color */
+}
+.backend-label {
+	background-color: black;
+} 
+.project-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 10px;
+}  
+.project-img {
+    @include image(100%,100%,black, 0);
+}
 footer i {
 	color: #4276b6; /* blue color */
 	font-size: 16px;
-
 }
 footer a:not(#resume) {
     background-color: white;
@@ -29,41 +59,14 @@ footer a:not(#resume) {
 footer a:not(#resume):hover {
     box-shadow: 2px 2px 2px #4276b6;
 }
-.label {
-    display: inline-block;
-    color: white;
-    padding: 5px;
-    border-radius: 3px;
-    margin: 3px;
-}
-.frontend-label {
-    background-color: #2027D7; /* dark blue color */
-}
-.backend-label {
-	background-color: black;
-} 
-.project-title {
-    font-size: 18px;
-    font-weight: bold;
-    border-top: 2px solid black;
-    margin-top: 20px;
-    padding-top: 10px;
-}  
-#simon-game-title {
-    border-top: none;
-}
-.subheader {
-    font-size: 18px;
-}
-.project-img {
-    @include image(100%,100%,black, 0);
-
-}
 a:not(.footer-link):hover {
     text-decoration: underline;
 }
-body {
-    font-family: 'Monaco', serif;
+.project-border {
+    border: 1px solid black;
+    height: 0;
+    background: none;
+    margin: 20px 0 20px;
 }
 @media (max-width: 425px) {
     #about-me-img {
