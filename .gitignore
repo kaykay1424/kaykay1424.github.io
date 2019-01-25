@@ -1,6 +1,4 @@
 _site
-_layouts
-assets
 .sass-cache
 Gemfile.lock
 *.gem
