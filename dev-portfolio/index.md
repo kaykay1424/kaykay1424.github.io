@@ -39,27 +39,6 @@ Traveling around the world to places, like South Korea and Costa Rica, as a mili
 
 <h2>Projects </h2>
 
-<p class="project-title">Bookmark App</p>
-
-<img class="project-img" src="images/bookmark-app.jpg" alt="image of bookmark app" />
-
-The Bookmark App lets users save their favorite websites, which can be viewed in a new window, and design their own bookmark.
-
-<p class="project-links"><a target="_blank" href="Bookmark-App/index.html" >View project</a> | <a target="_blank" href="https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Bookmark-App">View code</a></p>
-
-<div class="label frontend-label  ">HTML</div>
-
-<div class="label frontend-label  ">CSS</div>
-
-<div class="label frontend-label" > Bootstrap </div>
-
-<div class="label frontend-label" >JavaScript</div>
-
-<div class="label frontend-label " > jQuery </div>
-
-<hr class="project-border">
-
-
 <p id="simon-game-title" class="project-title">Simon Game</p>
 
 <img class="project-img" src="images/simon-game.jpg" alt="image of Simon game" />
