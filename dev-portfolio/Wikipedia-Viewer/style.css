@@ -1,0 +1,335 @@
+body {
+
+	background-color: #0D8931; /* green color */
+	
+	background-image: url('http://maxpixel.freegreatpicture.com/static/photo/1x/Literature-Reading-Books-Pile-Tutorial-Study-1670670.jpg'); /* image of Wikipedia logo */
+	
+	background-size: 70% 100%;
+	
+	background-repeat: no-repeat;
+	
+	background-position: center;
+	
+	background-attachment: fixed;
+	
+	overflow-wrap: break-word;
+	
+	word-wrap: break-word;
+	
+	-webkit-hyphens: auto;
+	
+	-ms-hyphens: auto;
+	
+	-moz-hyphens: auto;
+	
+	hyphens: auto;
+	
+}
+
+.container {
+	
+	padding-top: 2%;
+	
+}
+
+#wikipedia-title {
+	
+	background-color: black;
+	
+	border-radius: 100%;
+	
+	padding: 5% 2% 5% 2%;
+	
+	overflow: auto;
+	
+	margin-bottom: 3%;
+	
+}
+
+#wikipedia-title h1 {
+
+	color: white;
+	
+}
+
+#searchbox {
+	
+	background-color: lightgrey;
+	
+	border-radius: 5px;
+	
+	padding: 2%;
+	
+	text-align: center;
+	
+	margin-bottom: 5%;
+	
+}
+
+#searchbox h2 {
+
+    font-size: 18px;
+
+}
+
+.border-red {
+
+	border: 2px solid red;
+	
+}
+
+#alert-warning {
+
+	color: red;
+	
+	display: none;
+	
+}
+
+form label {
+    
+    margin: 5px;
+
+}
+
+.random-button-container {
+
+	padding-top: 2%;
+
+}
+
+#random {
+	
+	background-color: black;
+	
+}
+
+.title-div {
+
+	background-color: beige;
+	
+	margin-bottom: 15px;
+	
+	border: 2px solid black;
+	
+	border-radius: 10px;
+	
+	box-shadow: 2px 2px 2px;
+	
+	padding: 2%;
+	
+	max-height: 200px;
+	
+	overflow-y: auto;
+	
+}
+
+.title-div h3 {
+    
+    font-size: 16px;
+
+}
+
+.title-div:hover {
+
+	box-shadow: 5px 5px 5px #1159D7; /* blue color */
+	
+	transform: translateY(-10px); /* move div up to further make it stand out */
+	
+}
+
+.glyphicon-star {
+
+	color: rgb(13,167,255); /* light blue color */
+	
+	cursor: pointer;
+	
+}
+
+.glyphicon-bookmark  {
+
+	color: #0D8931; /* green color */
+	
+	cursor: pointer;
+	
+}
+
+.bar {
+
+	padding: 10px;
+	
+	display: none;
+	
+	position: fixed;
+	
+	bottom: 0;
+	
+	max-width: 45%;
+	
+	background-color: rgba(255,240,250,.5); /* white color */
+	
+}
+
+.bar .btn {
+
+	white-space: normal;
+	
+}
+
+#bookmarks-bar {
+	
+	left: 0;
+
+}
+
+#bookmarks-button {
+
+	background-color: #0D8931; /* green color */
+	
+	color: white;
+	
+}
+
+#bookmarks-button:hover {
+
+	box-shadow: 3px 2px 15px 3px #1CFF00 inset; /* #1CFF00: light green color */
+	
+}
+
+#bookmarks-amount {
+
+	background-color: white;
+	
+	color: #0D8931; /* green color */
+	
+}
+
+.info a {
+
+	color: white;
+	
+	text-decoration: none;
+	
+}
+
+#favorites-bar {
+
+	right: 0;
+
+}
+
+#favorites-button {
+
+	background-color: rgb(13,167,255); /* light blue color */
+	
+	color: white;
+	
+}
+
+
+#favorites-button:hover {
+
+	box-shadow: 3px 2px 10px 3px #43DCFE inset; /* #43DCFE: light blue color */
+	
+}
+
+#favorites-amount {
+
+	background-color: white;
+	
+	color: rgb(13,167,255); /* light blue color */
+	
+}
+
+#favorites-storage-ul, #bookmarks-storage-ul {
+
+	list-style-type: square;
+	
+	max-height: 100px;
+	
+	overflow-y: auto;
+	
+	padding-top: 3%;
+	
+}
+
+.bookmarks-li a, .favorites-li a {
+
+	color: black;
+	
+	font-size: 16px;
+	
+}
+
+.glyphicon-remove {
+
+	color: red;
+	
+	cursor: pointer;
+	
+}
+
+.glyphicon-question-sign {
+
+	color: white;
+	
+	background-color: black;
+	
+}
+
+
+/* Responsive styles */
+
+@media only screen and (max-width:767px) {
+	
+	.container {
+	
+		padding-top: 0;
+		
+	}
+	
+	#wikipedia-title {
+		
+		border-radius: 0;
+		
+	}
+	
+	.bar {
+	
+		position: static;
+	
+		text-align: center;
+	
+		max-width: 100%;
+	
+	}
+	
+	#bookmarks-bar  {
+		
+		margin-bottom: 5%;
+	
+	}
+	
+	#bookmarks-storage-ul, #favorites-storage-ul {
+		
+		text-align: left;
+	
+	}
+	
+	#favorites-bar {
+		
+		margin-bottom: 0;
+		
+	}
+	
+}
+
+@media only screen and (max-width: 991px) {
+
+    body {
+	
+	    background-size: 100% 100%;
+	
+	}
+
+}

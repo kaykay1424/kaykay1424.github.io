@@ -39,13 +39,13 @@ Traveling around the world to places, like South Korea and Costa Rica, as a mili
 
 <h2>Projects </h2>
 
-<p id="simon-game-title" class="project-title">Simon Game</p>
+<p class="project-title">Tic Tac Toe</p>
 
-<img class="project-img" src="images/simon-game.jpg" alt="image of Simon game" />
+<img class="project-img" src="images/tic-tac-toe.jpg" alt="image of Tic Tac Toe game" />
 
-The Simon Game plays an order of colors chosen randomly that the player has to pick correctly until the order of colors reaches 20 after which the player wins the game and the game restarts.
+The Tic Tac Toe game lets users choose whether to play alone with the computer or play with someone else and whether to play as X or O. The player that gets 3 Xs or Os in a row wins. If all the squares are filled and no player has gotten 3 in a row, that results in a tie and the game will restart.
 
-<p class="project-links"><a target="_blank" href="Simon-Game/index.html" >View project</a> | <a target="_blank" href="https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Simon-Game">View code</a></p>
+<p class="project-links"><a target="_blank" href="Tic-Tac-Toe/index.html" >View project</a> | <a target="_blank" href="https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Tic-Tac-Toe">View code</a></p>
 
 <div class="label frontend-label  ">HTML</div>
 
@@ -58,13 +58,13 @@ The Simon Game plays an order of colors chosen randomly that the player has to p
 <hr class="project-border">
 
 
-<p class="project-title">Local Weather App</p>
+<p class="project-title">Wikipedia Viewer</p>
 
-<p><img class="project-img" src="images/weather-app.jpg" alt="image of local weather app" />
+<p><img class="project-img" src="images/wikipedia-viewer.jpg" alt="image of wikipedia viewer" />
 
- The Weather App shows users the current forecast and a 5-day forecast in the user's location (if he/she allows his/her location to be accessed). Details regarding the weather, such as the temperature, can be changed from imperial measurements to metric measurements.</p>
+The Wikipedia Viewer allows users to search for a Wikipedia article and choose the amount of articles to be returned. Users can bookmark an article to read later or favorite an article, which will then be stored in the browser's local storage.</p>
 
-<p class="project-links"><a target="_blank" href="Local-Weather-App/index.html" >View project</a> | <a target="_blank" href="https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Local-Weather-App">View code</a></p>
+<p class="project-links"><a target="_blank" href="Wikipedia-Viewer/index.html" >View project</a> | <a target="_blank" href="https://github.com/kaykay1424/kaykay1424.github.io/tree/master/dev-portfolio/Wikipedia-Viewer">View code</a></p>
 
 <div class="label frontend-label  ">HTML</div>
 
