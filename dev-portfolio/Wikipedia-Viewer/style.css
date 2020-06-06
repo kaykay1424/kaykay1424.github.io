@@ -1,16 +1,14 @@
 body {
 
-	background-color: #0D8931; /* green color */
+	background-image: url("library.jpg"), linear-gradient( #451B0B,black); /* #451B0B: dark brown color */
 	
-	background-image: url('http://maxpixel.freegreatpicture.com/static/photo/1x/Literature-Reading-Books-Pile-Tutorial-Study-1670670.jpg'); /* image of Wikipedia logo */
-	
-	background-size: 70% 100%;
+	background-attachment: fixed;
+
+	background-size: 80% 100%, 100% 100%;
 	
 	background-repeat: no-repeat;
 	
 	background-position: center;
-	
-	background-attachment: fixed;
 	
 	overflow-wrap: break-word;
 	
@@ -27,7 +25,7 @@ body {
 }
 
 .container {
-	
+
 	padding-top: 2%;
 	
 }
