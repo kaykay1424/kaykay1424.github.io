@@ -21,7 +21,7 @@
 */	
 
 $(document).ready(function() {
-	
+
 	$('form')[0].reset();
 	
 	let popoverOptions = {
@@ -110,7 +110,7 @@ $(document).ready(function() {
 		
 		$('#search-limit').val(1); // only 1 article will be displayed
 		
-		$('#search').removeClass('border-red').val(''); // remove this class as there is only shown when alert is shown (when no keywords are entered) and keywords are not taken into account when searching for a random article
+		$('#search').removeClass('border-red').val(''); // remove this class as alert is only shown when no keywords are entered and keywords are not taken into account when searching for a random article
 		
 		$.ajax({
 		
@@ -119,8 +119,8 @@ $(document).ready(function() {
 			dataType: "jsonp",
 			
 			success: function(responses) {
-			
-				let searchTitle = responses.query.random.title;
+				console.log(responses)
+				let searchTitle = responses.query.random[0].title;
 				
 				// get info from 1 random article 
 				
@@ -137,12 +137,14 @@ $(document).ready(function() {
 		$('.title-div').hide(); // clear results from any previous search
 		
 		let keyword = $('#search').val();
-		
+
 		if (keyword.length !== 0) {
-		
+
 			$('#alert-warning').hide(); // remove alert when keywords are entered
 			
 			$('#search-limit').val(1); // only 1 article will be displayed
+
+			$('#search').removeClass('border-red'); // remove this class when keywords are entered
 			
 		}
 		
@@ -224,6 +226,8 @@ $(document).ready(function() {
 		else if (keyword.length !== 0) {
 			
 			$('#alert-warning').hide(); // remove alert when keywords are entered
+
+			$('#search').removeClass('border-red'); // remove this class when keywords are entered
 			
 		}
 
