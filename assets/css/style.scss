@@ -8,6 +8,10 @@
     border: 5px solid $border-color;
     border-radius: $border-radius;
 }
+$primary-color: #4276b6;
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Monaco', serif;
 }
@@ -15,16 +19,17 @@ h2 {
     text-align: center;
 }
 #about-me-img {
-    @include image($border-color:#4276b6);
+    @include image($border-color:$primary-color);
     float: left;
-    margin-right: 10px;
+    margin-bottom: .5em;
+    margin-right: 1.5em;
 }
 .subheader {
     font-size: 18px;
 }
 .label {
     display: inline-block;
-    color: white;
+    color: #fff;
     padding: 5px;
     border-radius: 3px;
     margin: 5px 3px;
@@ -33,17 +38,59 @@ h2 {
     background-color: #2027D7; /* dark blue color */
 }
 .backend-label {
-	background-color: black;
+	background-color: #000;
 } 
-.project-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-    padding-top: 10px;
-}  
-.project-img {
-    @include image(100%,100%,black, 0);
+.project-filter {
+    display: inline-block;
+    margin: 10px;
 }
+.project-filters {
+    button {
+        border: 1px solid black;
+        border-radius: 5px;
+        color: #fff;
+        display: inline-block;
+        margin: 1em;
+        padding: 8px;
+        transition: background-color .5s ease;
+    }
+    #clear-all-filters-btn {
+        $color: darkred;
+        background-color: $color;
+        border-color: $color;
+        &:hover {
+            background-color: lighten($color,10%);
+        }
+    }
+    #select-all-filters-btn {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        &:hover {
+            background-color: lighten($primary-color,10%);
+        }
+    } 
+}
+.project-filter input {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.project {
+    .project-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+        padding-top: 10px;
+    }  
+    .project-img {
+        @include image(auto,auto,black, 0);
+        max-width: 100%;
+    }
+    & * {
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+    }
+}
+
 footer i {
 	color: #4276b6; /* blue color */
 	font-size: 16px;
@@ -68,6 +115,23 @@ a:not(.footer-link):hover {
     background: none;
     margin: 20px 0 20px;
 }
+
+/* Animations */
+.fade-enter.fade-enter-active {
+    opacity: 0;
+}
+.fade-enter-done {
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+
 @media (max-width: 425px) {
     #about-me-img {
         width: 100%;
